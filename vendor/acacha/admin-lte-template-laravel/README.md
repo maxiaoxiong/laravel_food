@@ -11,6 +11,7 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 [![Latest Stable Version](https://poser.pugx.org/acacha/admin-lte-template-laravel/v/stable.png)](https://packagist.org/packages/acacha/admin-lte-template-laravel)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/build-status/master)
+[![StyleCI](https://styleci.io/repos/35628567/shield)](https://styleci.io/repos/35628567)
 
 # Installation & use
 
@@ -28,7 +29,21 @@ cd laravel-with-admin-lte
 adminlte-laravel install
 ```
 
-Enjoy!
+Enjoy! If you wish you can use llum:
+
+```bash
+llum boot
+```
+
+To start using you Laravel with AdminLTE project. Llum will configure database (sqlite),execute migrations, install devtools and serve for you.
+
+More info about llum commands in Github [Acacha/llum](https://github.com/acacha/llum).
+
+IMPORTANT NOTE: on MAC OS you will have to replace BSD sed with GNU sed for example using brew:
+
+```bash
+brew install gnu-sed --with-default-names
+```
 
 #Requirements
 
@@ -39,11 +54,16 @@ This packages use (no need to install):
 * [AdminLTE](https://github.com/almasaeed2010/AdminLTE). You can see and AdminLTE theme preview at: http://almsaeedstudio.com/preview/
 * [Pratt](http://blacktie.co/demo/pratt/). Pratt Landing Page
 * [Acacha/llum](https://github.com/acacha/llum). Easy Laravel packages installation (and other tasks). Used to modify config/app.php file without using stubs (so you changes to this file would be respected)
+* Acacha llum requires GNU sed. on MAC OS install GNU sed with:
 
-This package assumes that you have in path your PATH the folder
+```bash
+brew install gnu-sed --with-default-names
+```
+
+This package assumes that you have in path your composer bin folder:
  
 ```
-/home/sergi/.composer/vendor/bin
+/YOUR_PATH_TO_HOME/.composer/vendor/bin
 ```
 
 For example adding this line:
@@ -71,7 +91,7 @@ However acacha/llum use bash scripts and commands like sed thta maybe are no com
 Or you can use version 1.0 of installer with:
  
 ```bash
-composer global require "acacha/adminlte-laravel-installer=~2.0"
+composer global require "acacha/adminlte-laravel-installer=~1.0"
 ```
 
 ## Laravel 5.2
@@ -164,15 +184,44 @@ Note: use the following for Laravel <5.1 versions:
 
 ##Laravel Routes
 
-This package add Laravel routes that you will not find them at routes.php file. The routes installed by package would be find at file:
+This package installs Laravel routes that you will not find them at routes.php file. The routes installed by package would be find at file:
 
  https://github.com/acacha/adminlte-laravel/blob/master/src/Http/routes.php
  
-File included by AdminLTETemplateServiceProvider:
+A file included by AdminLTETemplateServiceProvider:
 
  https://github.com/acacha/adminlte-laravel/blob/master/src/Providers/AdminLTETemplateServiceProvider.php
  
-See issue https://github.com/acacha/adminlte-laravel/issues/47 if you want to change default welcome/landing page route.
+You can override this routes by changing order of ServiceProviders in config/app.php file so if you put:
+
+```php
+App\Providers\RouteServiceProvider::class
+```
+
+After
+
+```php
+Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class
+```
+
+Your routes in routes.php file will override default adminlte-laravel routes.
+
+Also you can install manually the routes in routes.php file. Adminlte-laravel use same routes as Laravel make:auth command use, see:
+ 
+https://github.com/laravel/framework/blob/5.2/src/Illuminate/Auth/Console/stubs/make/routes.stub
+ 
+so you can add this lines to routes.php file:
+
+```php
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+```
+
+And disable AdminLTETemplateServiceProvider in config/app.php file ( take into account that Adminte-laravel Facades and 
+custom commands will not be available).
+
+See issue https://github.com/acacha/adminlte-laravel/issues/69 for more info
 
 ##First steps, database creation, migrations and login
 
@@ -229,6 +278,37 @@ Remove line @include('auth.partials.social_login') in files resources/views/auth
 Social login links in login/register pages returns 404 not found
 
 TODO: See package https://github.com/acacha/acacha-socialite
+
+## Troubleshooting
+
+### GNU sed on MAC OS
+
+Acacha llum need GNU sed to work so replace BSD sed with GNU sed using:
+
+```bash
+brew install gnu-sed --with-default-names
+```
+
+Check you version of sed with:
+
+```bash
+man sed
+```
+
+sed GNU version path is:
+
+```bash
+$ which sed
+/usr/local/bin/sed
+```
+
+Instead of default path of BSD sed (installed by default on MAC OS):
+
+```bash
+/usr/bin/sed
+```
+
+More info at https://github.com/acacha/adminlte-laravel/issues/58
 
 ## See also
 

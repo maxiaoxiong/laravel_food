@@ -9,7 +9,9 @@
         "laravel/framework": "5.2.*",
         "pingplusplus/pingpp-php": "dev-master",
         "acacha/admin-lte-template-laravel": "2.*",
-        "intervention/image": "^2.3"
+        "intervention/image": "^2.3",
+        "dingo/api": "1.0.x@dev",
+        "tymon/jwt-auth": "0.5.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

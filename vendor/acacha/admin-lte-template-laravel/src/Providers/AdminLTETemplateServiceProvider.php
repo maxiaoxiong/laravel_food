@@ -2,9 +2,9 @@
 
 namespace Acacha\AdminLTETemplateLaravel\Providers;
 
+use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Support\ServiceProvider;
-use Acacha\AdminLTETemplateLaravel\Facades\AdminLTE;
 
 /**
  * Class AdminLTETemplateServiceProvider.
@@ -36,10 +36,7 @@ class AdminLTETemplateServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->app->booted(function () {
-            $this->defineRoutes();
-        });
-
+        $this->defineRoutes();
         $this->publishHomeController();
         $this->changeAuthController();
         $this->publishPublicAssets();
