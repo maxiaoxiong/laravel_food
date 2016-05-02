@@ -18,7 +18,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('dishware','DishwareController');
 
-    Route::resource('address','AddressController');
+    Route::resource('buildings','BuildingsController');
 
     Route::resource('floors','FloorsController');
 
@@ -40,6 +40,9 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('image/crop','ImageController@crop');
     Route::get('getWindows/{id}',function($id){
         return \App\Canteen::find($id)->windows;
+    });
+    Route::get('getFloors/{id}',function($id){
+        return \App\Building::find($id)->floors;
     });
     Route::get('orders/today','OrdersController@getTodayOrders');
     Route::get('orders/week','OrdersController@getWeekOrders');

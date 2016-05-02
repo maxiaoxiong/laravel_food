@@ -19,6 +19,13 @@
         console.log(canteen_id);
         getWindows(canteen_id);
     });
+    $('#building_id').change(function(){
+        var building_id =  $('#building_id').val();
+        console.log(building_id);
+        getFloors(building_id);
+    });
+
+
 
 </script>
 <script>

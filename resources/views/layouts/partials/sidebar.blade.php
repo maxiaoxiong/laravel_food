@@ -75,7 +75,7 @@
             <li class="treeview">
                 <a href="#"><i class="fa fa-location-arrow"></i> <span>地址管理</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('address') }}">楼号管理</a></li>
+                    <li><a href="{{ url('buildings') }}">楼号管理</a></li>
                     <li><a href="{{ url('floors') }}">楼层管理</a></li>
                     <li><a href="{{ url('dormitories') }}">宿舍管理</a></li>
                 </ul>

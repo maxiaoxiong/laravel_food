@@ -2,10 +2,10 @@
 
 @section('main-content')
     <div class="box">
-        <form action="{{ url('dormitories/'.$dormitory->id) }}" method="post">
-            <input type="hidden" name="_method" value="put">
+        <form action="{{ url('buildings/'.$building->id) }}" method="post">
+            <input name="_method" type="hidden" value="put">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            @include('dormitories.form')
+            @include('buildings.form')
         </form>
     </div>
 @endsection

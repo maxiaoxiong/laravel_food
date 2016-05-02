@@ -11,40 +11,30 @@
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
                         <tr>
-                            <th>ID</th>
-                            <th>User</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Handle</th>
+                            <th>楼号</th>
+                            <th>楼层</th>
+                            <th>操作</th>
                         </tr>
+                        @foreach($buildings as $building)
                         <tr>
-                            <td>183</td>
-                            <td>John Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="label label-success">Approved</span></td>
-                            <td><a href="{{ url('floors/1/edit') }}" class="btn btn-info btn-xs">编辑</a>&nbsp;&nbsp;<a href="#" class="btn btn-danger btn-xs">删除</a></td>
+                            <td>{{ $building->building_name }}</td>
+                            <td></td>
+                            <td></td>
                         </tr>
-                        <tr>
-                            <td>219</td>
-                            <td>Alexander Pierce</td>
-                            <td>11-7-2014</td>
-                            <td><span class="label label-warning">Pending</span></td>
-                            <td><a href="#" class="btn btn-info btn-xs">编辑</a>&nbsp;&nbsp;<a href="#" class="btn btn-danger btn-xs">删除</a></td>
-                        </tr>
-                        <tr>
-                            <td>657</td>
-                            <td>Bob Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="label label-primary">Approved</span></td>
-                            <td><a href="#" class="btn btn-info btn-xs">编辑</a>&nbsp;&nbsp;<a href="#" class="btn btn-danger btn-xs">删除</a></td>
-                        </tr>
-                        <tr>
-                            <td>175</td>
-                            <td>Mike Doe</td>
-                            <td>11-7-2014</td>
-                            <td><span class="label label-danger">Denied</span></td>
-                            <td><a href="#" class="btn btn-info btn-xs">编辑</a>&nbsp;&nbsp;<a href="#" class="btn btn-danger btn-xs">删除</a></td>
-                        </tr>
+                        @foreach($building->floors as $floor)
+                            <tr>
+                                <td></td>
+                                <td>{{ $floor->floor_name }}</td>
+                                <td><a style="float: left;margin-right: 5px;" href="{{ url('floors/'.$floor->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>
+                                    <form style="float: left;margin-top: -1px;" method="post" action="floors/{{ $floor->id }}">
+                                        <input name="_method" type="hidden" value="delete">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <button type="submit" class="btn btn-danger btn-xs">删除</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                        @endforeach
                     </table>
                 </div>
                 <!-- /.box-body -->

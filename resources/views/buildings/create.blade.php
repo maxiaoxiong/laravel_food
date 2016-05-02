@@ -2,9 +2,9 @@
 
 @section('main-content')
     <div class="box">
-        <form action="{{ url('floors') }}" method="post">
+        <form action="{{ url('buildings') }}" method="post">
             {!! csrf_field() !!}
-            @include('floors.form')
+            @include('buildings.form')
         </form>
     </div>
 @endsection
