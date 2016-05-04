@@ -12,6 +12,20 @@
 */
 
 
+$api = app('Dingo\Api\Routing\Router');
+
+$api->version('v1', function ($api) {
+    $api->group(['namespace' => 'App\Api\Controllers'],function($api){
+        $api->post('user/login','AuthController@authenticate');
+        $api->post('user/register','AuthController@register');
+        $api->group(['middleware'=>'jwt.auth'],function($api){
+            $api->get('orders','OrdersController@index');
+            $api->get('orders/{id}','OrdersController@show');
+
+            $api->get('user/me','AuthController@getAuthenticatedUser');
+        });
+    });
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,8 +41,8 @@ Route::get('/image',function(){
     return $response;
 });
 
-Route::get('/path',function(){
-   return public_path('dish');
+Route::get('/path',function(\Illuminate\Http\Request $request){
+   return dd($request->all());
 });
 //
 //Route::group(['prefix'=>'image'],function(){

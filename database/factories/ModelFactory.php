@@ -22,6 +22,17 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+$factory->define(App\Admin::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->safeEmail,
+        'password' => bcrypt(str_random(10)),
+        'phone' => $faker->randomNumber(9),
+        'sex' => 'man',
+        'avatar' => $faker->imageUrl(300,300),
+        'remember_token' => str_random(10),
+    ];
+});
 $factory->define(App\Canteen::class, function (Faker\Generator $faker) {
     return [
         'canteen_name' => $faker->name,
