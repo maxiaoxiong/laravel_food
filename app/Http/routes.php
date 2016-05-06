@@ -17,6 +17,8 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'],function($api){
         $api->post('user/login','AuthController@authenticate');
+        $api->post('user/getVerifyCode','AuthController@getVerifyCode');
+        $api->post('user/validateCode','AuthController@validateCode');
         $api->post('user/register','AuthController@register');
         $api->group(['middleware'=>'jwt.auth'],function($api){
             $api->get('orders','OrdersController@index');
