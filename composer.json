@@ -12,7 +12,9 @@
         "intervention/image": "^2.3",
         "dingo/api": "1.0.x@dev",
         "tymon/jwt-auth": "0.5.*",
-        "toplan/laravel-sms": "~2.3.1"
+        "toplan/laravel-sms": "~2.3.1",
+        "maatwebsite/excel": "~2.1.0",
+        "barryvdh/laravel-ide-helper": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

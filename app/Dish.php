@@ -31,4 +31,14 @@ class Dish extends Model
     {
         return $this->tastes->lists('id')->all();
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
+    public function ranges()
+    {
+        return $this->hasMany(Range::class);
+    }
 }

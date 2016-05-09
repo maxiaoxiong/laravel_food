@@ -3,7 +3,7 @@
 @section('main-content')
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title"><a href="#" class="btn btn-info">打印今日订单</a></h3>
+            <h3 class="box-title"><a href="{{ url('orders/printOrders/1') }}" class="btn btn-info">打印今日订单</a></h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">

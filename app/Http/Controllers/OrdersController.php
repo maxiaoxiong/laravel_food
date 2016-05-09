@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Api\Components\ExcelExport;
 use App\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Excel;
 
 class OrdersController extends Controller
 {
@@ -32,6 +34,22 @@ class OrdersController extends Controller
         dd('ss');
     }
 
+    public function printOrders($type)
+    {
+        switch($type){
+            case 1:
+                $orders = Order::where('created_at', '>=', Carbon::today())->get();
+                break;
+            case 2:
+                $orders = Order::where('created_at','>=',Carbon::createFromDate()->startOfWeek())->get();
+                break;
+            case 3:
+                $orders = Order::all();
+                break;
+        }
+
+        ExcelExport::export($orders);
+    }
     public function overOrder()
     {
     dd('sss');

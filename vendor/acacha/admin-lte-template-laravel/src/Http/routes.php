@@ -50,5 +50,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('orders/today','OrdersController@getTodayOrders');
     Route::get('orders/week','OrdersController@getWeekOrders');
     Route::get('orders/history','OrdersController@getHistoryOrders');
+    Route::get('orders/printOrders/{type}','OrdersController@printOrders');
 
 });
