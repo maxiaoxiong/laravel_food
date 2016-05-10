@@ -22,7 +22,6 @@ class DishesController extends BaseController
         $orders = Order::groupBy('dish_id')->orderBy('order_no','desc')->get()->take(10);
         return $this->response->collection($orders,new HotDishTransformer())->setStatusCode(200);
     }
-
     public function getWindowDishes($id)
     {
         $dishes = Window::find($id)->dishes()->paginate(8);

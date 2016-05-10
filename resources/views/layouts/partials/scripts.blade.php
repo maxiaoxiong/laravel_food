@@ -31,7 +31,9 @@
 <script>
     //Timepicker
     $(".timepicker").timepicker({
-        showInputs: false
+        showInputs: false,
+        showSeconds:true,
+        showMeridian:false
     });
 </script>
 

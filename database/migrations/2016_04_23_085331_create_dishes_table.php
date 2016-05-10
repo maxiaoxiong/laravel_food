@@ -27,7 +27,7 @@ class CreateDishesTable extends Migration
                 ->references('id')
                 ->on('dishtypes')
                 ->onDelete('cascade');
-            $table->timestamp('order_at');
+            $table->string('delivery_time');
             $table->timestamps();
         });
     }

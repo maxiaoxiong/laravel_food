@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dish extends Model
 {
-    protected $fillable = ['id','dish_name','dish_price','dish_img','window_id','dishtype_id','order_at'];
+    protected $fillable = ['id','dish_name','dish_price','dish_img','window_id','dishtype_id','delivery_time'];
     public function window()
     {
         return $this->belongsTo(Window::class);

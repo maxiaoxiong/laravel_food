@@ -57,7 +57,7 @@
                 <label>Time picker:</label>
 
                 <div class="input-group">
-                    <input type="text" name="order_at" class="form-control timepicker">
+                    <input type="text" name="delivery_time" class="form-control timepicker">
 
                     <div class="input-group-addon">
                         <i class="fa fa-clock-o"></i>

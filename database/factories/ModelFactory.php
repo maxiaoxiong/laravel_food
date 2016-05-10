@@ -119,7 +119,7 @@ $factory->define(App\Dish::class, function (Faker\Generator $faker) {
         'dish_img'  => $faker->imageUrl(320,320),
         'window_id' => $faker->randomElement($window_ids),
         'dishtype_id' => $faker->randomElement($dishtype_ids),
-        'order_at' => Carbon\Carbon::createFromDate()->toDateString()
+        'delivery_at' => Carbon\Carbon::createFromDate()->toTimeString()
     ];
 });
 

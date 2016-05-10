@@ -46,6 +46,7 @@ class DishesController extends Controller
 
     public function update($id,Request $request)
     {
+//        return $request->all();
         if($request->get('dish_id') == 1)
         {
             $id = $request->get('id');
