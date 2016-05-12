@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b63fc759-92a1-42d3-84fe-c95dd96d99f2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/DishesController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/DishesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Transformers/WindowDishesTransformer.php" afterPath="$PROJECT_DIR$/app/Api/Transformers/WindowDishesTransformer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Transformers/HotDishTransformer.php" afterPath="$PROJECT_DIR$/app/Api/Transformers/HotDishTransformer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dishes/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/dishes/form.blade.php" />
     </list>
     <ignored path="pingplus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,12 +44,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DishesController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/DishesController.php">
+      <file leaf-file-name="DiscountTransformer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Api/Transformers/DiscountTransformer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51185495">
-              <caret line="47" column="74" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
-              <folding />
+            <state vertical-scroll-proportion="0.82984656">
+              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+              <folding>
+                <element signature="e#125#150#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,9 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/readme.md" />
-        <option value="$PROJECT_DIR$/config/api.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/BaseController.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Api/Transformers/OrderTransformer.php" />
@@ -100,7 +98,6 @@
         <option value="$PROJECT_DIR$/app/Api/Controllers/CanteensController.php" />
         <option value="$PROJECT_DIR$/app/Api/Transformers/CanteenTransformer.php" />
         <option value="$PROJECT_DIR$/app/Api/Transformers/DishTransformer.php" />
-        <option value="$PROJECT_DIR$/app/Api/Transformers/HotDishTransformer.php" />
         <option value="$PROJECT_DIR$/app/Api/Transformers/DishTransformers.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/WindowsController.php" />
         <option value="$PROJECT_DIR$/app/Api/Transformers/WindowTransformers.php" />
@@ -111,9 +108,13 @@
         <option value="$PROJECT_DIR$/app/Dish.php" />
         <option value="$PROJECT_DIR$/resources/views/dishes/form.blade.php" />
         <option value="$PROJECT_DIR$/vendor/acacha/admin-lte-template-laravel/src/Http/routes.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Api/Transformers/WindowDishesTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/CommentsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/DishesController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Transformers/HotDishTransformer.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/DiscountsController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Transformers/DiscountTransformer.php" />
       </list>
     </option>
   </component>
@@ -139,7 +140,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.5" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1366" />
+    <option name="x" value="-1" />
+    <option name="width" value="1368" />
     <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -706,11 +708,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1" y="0" width="1368" height="768" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22214076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11290322" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -747,69 +749,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19246861">
-          <caret line="26" column="26" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/register.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.930265">
-          <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/landing.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36959553">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.930265">
-          <caret line="39" column="76" selection-start-line="39" selection-start-column="76" selection-end-line="39" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5230126">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/laravel-sms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.046025105">
-          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.034867503">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38354254">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48814505">
-          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/session.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34588563">
@@ -943,13 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Canteen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5467225">
@@ -961,13 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45327756">
           <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/OrdersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6973501">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -996,13 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5230126">
           <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/HotDishTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.058577407">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="30" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1055,13 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Dish.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19804741">
-          <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/dishes/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64016736">
@@ -1083,20 +994,132 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Canteen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1462040184598" expanded="true" signature="91:233" placeholder="{...}" />
+            <marker date="1462040184598" expanded="true" signature="173:231" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Comment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1461761574412" expanded="true" signature="91:328" placeholder="{...}" />
+            <marker date="1461761574412" expanded="true" signature="182:240" placeholder="{...}" />
+            <marker date="1461761574412" expanded="true" signature="268:326" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1462434920525" expanded="false" signature="44:92" placeholder="..." />
+            <marker date="1462434920525" expanded="true" signature="134:145" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BuildingsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.10460251">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1462155469948" expanded="false" signature="44:110" placeholder="..." />
+            <marker date="1462155469948" expanded="true" signature="156:1224" placeholder="{...}" />
+            <marker date="1462155469948" expanded="true" signature="186:297" placeholder="{...}" />
+            <marker date="1462155469948" expanded="true" signature="327:380" placeholder="{...}" />
+            <marker date="1462155469948" expanded="true" signature="425:605" placeholder="{...}" />
+            <marker date="1462155469948" expanded="true" signature="532:598" placeholder="..." />
+            <marker date="1462155469948" expanded="true" signature="636:748" placeholder="{...}" />
+            <marker date="1462155469948" expanded="true" signature="798:1044" placeholder="{...}" />
+            <marker date="1462155469948" expanded="true" signature="971:1037" placeholder="..." />
+            <marker date="1462155469948" expanded="true" signature="1078:1221" placeholder="{...}" />
+            <marker date="1462155469948" expanded="true" signature="1148:1214" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1460047405506" expanded="false" signature="44:311" placeholder="..." />
+            <marker date="1460047405506" expanded="true" signature="352:440" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DiscountsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34867504">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="49" />
+          <folding>
+            <marker date="1462119964710" expanded="false" signature="44:118" placeholder="..." />
+            <marker date="1462119964710" expanded="true" signature="164:380" placeholder="{...}" />
+            <marker date="1462119964710" expanded="true" signature="194:331" placeholder="{...}" />
+            <marker date="1462119964710" expanded="true" signature="365:378" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CommentsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34867504">
+          <caret line="14" column="52" selection-start-line="14" selection-start-column="52" selection-end-line="14" selection-end-column="52" />
+          <folding>
+            <marker date="1463035876566" expanded="false" signature="44:128" placeholder="..." />
+            <marker date="1463035876566" expanded="true" signature="173:436" placeholder="{...}" />
+            <marker date="1463035876566" expanded="true" signature="203:327" placeholder="{...}" />
+            <marker date="1463035876566" expanded="true" signature="361:434" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6868932">
-          <caret line="70" column="19" selection-start-line="70" selection-start-column="19" selection-end-line="70" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.45467225">
+          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+          <folding>
+            <marker date="1463035944078" expanded="false" signature="9:390" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="450:1420" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="473:1419" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="490:1416" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="544:1415" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="1164:1408" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="1206:1407" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="1435:1483" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="1453:1482" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="1614:1809" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="1634:1808" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="1824:1909" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="1876:1908" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="1912:2459" placeholder="//..." />
+            <marker date="1463035944078" expanded="true" signature="2472:2993" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="2490:2992" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="2567:2592" placeholder="..." />
+            <marker date="1463035944078" expanded="true" signature="2594:2991" placeholder="//..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Transformers/WindowDishesTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6522727">
-          <caret line="42" column="54" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.7740586">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
           <folding>
             <marker date="1463021265677" expanded="false" signature="9:86" placeholder=" Created by PhpStorm. ..." />
             <marker date="1463021265677" expanded="false" signature="128:177" placeholder="..." />
+            <marker date="1463021265677" expanded="true" signature="236:1118" placeholder="{...}" />
             <marker date="1463021265677" expanded="true" signature="280:1116" placeholder="{...}" />
             <marker date="1463021265677" expanded="true" signature="354:414" placeholder="..." />
             <marker date="1463021265677" expanded="true" signature="518:753" placeholder="..." />
@@ -1108,11 +1131,115 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/PreferentialDish.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41841003">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+          <folding>
+            <marker date="1462119383734" expanded="true" signature="100:229" placeholder="{...}" />
+            <marker date="1462119383734" expanded="true" signature="169:227" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/OrdersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6973501">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+          <folding>
+            <marker date="1462289467279" expanded="false" signature="9:87" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1462289467279" expanded="false" signature="128:181" placeholder="..." />
+            <marker date="1462289467279" expanded="true" signature="228:611" placeholder="{...}" />
+            <marker date="1462289467279" expanded="true" signature="258:368" placeholder="{...}" />
+            <marker date="1462289467279" expanded="true" signature="399:609" placeholder="{...}" />
+            <marker date="1462289467279" expanded="true" signature="464:543" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Dish.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.034867503">
+          <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
+          <folding>
+            <marker date="1462881395804" expanded="true" signature="88:894" placeholder="{...}" />
+            <marker date="1462881395804" expanded="true" signature="231:291" placeholder="{...}" />
+            <marker date="1462881395804" expanded="true" signature="323:385" placeholder="{...}" />
+            <marker date="1462881395804" expanded="true" signature="415:496" placeholder="{...}" />
+            <marker date="1462881395804" expanded="true" signature="530:615" placeholder="{...}" />
+            <marker date="1462881395804" expanded="true" signature="656:718" placeholder="{...}" />
+            <marker date="1462881395804" expanded="true" signature="748:805" placeholder="{...}" />
+            <marker date="1462881395804" expanded="true" signature="835:892" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/HotDishTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79079497">
+          <caret line="30" column="50" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <folding>
+            <marker date="1463039766422" expanded="false" signature="9:86" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1463039766422" expanded="false" signature="128:178" placeholder="..." />
+            <marker date="1463039766422" expanded="true" signature="232:1150" placeholder="{...}" />
+            <marker date="1463039766422" expanded="true" signature="278:1148" placeholder="{...}" />
+            <marker date="1463039766422" expanded="true" signature="393:635" placeholder="..." />
+            <marker date="1463039766422" expanded="true" signature="413:471" placeholder="..." />
+            <marker date="1463039766422" expanded="true" signature="492:626" placeholder="..." />
+            <marker date="1463039766422" expanded="true" signature="541:625" placeholder="..." />
+            <marker date="1463039766422" expanded="true" signature="705:1140" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/DishesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51185495">
-          <caret line="47" column="74" selection-start-line="47" selection-start-column="74" selection-end-line="47" selection-end-column="74" />
-          <folding />
+        <state vertical-scroll-proportion="0.7782427">
+          <caret line="54" column="41" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="41" />
+          <folding>
+            <marker date="1463039276590" expanded="false" signature="9:86" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1463039276590" expanded="false" signature="127:309" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="356:2007" placeholder="{...}" />
+            <marker date="1463039276590" expanded="true" signature="366:430" placeholder=" @return \Symfony\Component\HttpFoundation\Response ..." />
+            <marker date="1463039276590" expanded="true" signature="461:784" placeholder="{...}" />
+            <marker date="1463039276590" expanded="true" signature="620:677" placeholder="select dish_..orders..." />
+            <marker date="1463039276590" expanded="true" signature="793:875" placeholder=" @param $id ..." />
+            <marker date="1463039276590" expanded="true" signature="918:2005" placeholder="{...}" />
+            <marker date="1463039276590" expanded="true" signature="1027:1152" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1208:1581" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1266:1443" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1283:1442" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1340:1427" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1357:1426" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1637:1896" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1695:1872" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1712:1871" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1769:1856" placeholder="..." />
+            <marker date="1463039276590" expanded="true" signature="1786:1855" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/DiscountsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48814505">
+          <caret line="19" column="100" selection-start-line="19" selection-start-column="100" selection-end-line="19" selection-end-column="100" />
+          <folding>
+            <marker date="1463039932170" expanded="false" signature="9:87" placeholder=" Created by PhpStorm. ..." />
+            <marker date="1463039932170" expanded="true" signature="128:195" placeholder="..." />
+            <marker date="1463039932170" expanded="true" signature="245:456" placeholder="{...}" />
+            <marker date="1463039932170" expanded="true" signature="279:454" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/DiscountTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82984656">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+          <folding>
+            <element signature="e#125#150#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

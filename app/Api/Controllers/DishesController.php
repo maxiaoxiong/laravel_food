@@ -23,7 +23,8 @@ class DishesController extends BaseController
      */
     public function getHot()
     {
-        $orders = Order::groupBy('dish_id')->orderBy('order_no','desc')->get()->take(10);
+        $orders = Order::groupBy('dish_id')->select('dish_id',\DB::raw('sum(order_no) as order_no'))->get()->take(10);
+//        $orders = \DB::select('select dish_id,sum(order_no) from orders GROUP BY dish_id');
         return $this->response->collection($orders,new HotDishTransformer())->setStatusCode(200);
     }
 

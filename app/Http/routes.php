@@ -24,6 +24,7 @@ $api->version('v1', function ($api) {
         $api->get('dishes/hot','DishesController@getHot');
         $api->get('canteens/{id}/windows','WindowsController@index');
         $api->get('windows/{id}/dishes','DishesController@getWindowDishes');
+        $api->get('discounts','DiscountsController@getDishes');
         $api->group(['middleware'=>'jwt.auth'],function($api){
             $api->get('orders','OrdersController@index');
             $api->get('orders/{id}','OrdersController@show');
