@@ -171,6 +171,8 @@ return [
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
+        TomLingham\Searchy\SearchyServiceProvider::class,
+
     ],
 
     /*
@@ -229,6 +231,8 @@ return [
         'SmsManager' => Toplan\Sms\Facades\SmsManager::class,
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
+        'Searchy' => TomLingham\Searchy\Facades\Searchy::class
 
     ],
 

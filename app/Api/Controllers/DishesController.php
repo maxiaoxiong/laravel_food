@@ -9,9 +9,11 @@
 namespace App\Api\Controllers;
 
 
+use App\Api\Transformers\DishDetailTransformer;
 use App\Api\Transformers\DishTransformer;
 use App\Api\Transformers\HotDishTransformer;
 use App\Api\Transformers\WindowDishesTransformer;
+use App\Dish;
 use App\Order;
 use App\Window;
 use Carbon\Carbon;
@@ -53,5 +55,20 @@ class DishesController extends BaseController
             })->paginate(8);
         }
         return $this->response->paginator($dishes,new WindowDishesTransformer())->setStatusCode(200);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function getBreakfast()
+    {
+        $dishes = Dish::where('dishtype_id',1)->paginate(8);
+        return $this->response->paginator($dishes,new DishTransformer())->setStatusCode(200);
+    }
+
+    public function getDetail($id)
+    {
+        $dish = Dish::find($id);
+        return $this->response->item($dish,new DishDetailTransformer())->setStatusCode(200);
     }
 }

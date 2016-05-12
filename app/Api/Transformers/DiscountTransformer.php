@@ -29,6 +29,7 @@ class DiscountTransformer extends TransformerAbstract
         }
 
         $average = ceil($range_sum/$range_length);
+
         return [
             'id' => $preferentialDish->dish->id,
             'name' => $preferentialDish->dish->dish_name,

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7b8b67f1c9ec817a39bee60ec815596e",
-    "content-hash": "60ae145ce737038f7e3a9a0ac690f9d1",
+    "hash": "e73b956829ca59301b872f012b046b67",
+    "content-hash": "2806752bd01bf1e07b8f8ccb73c174da",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -2854,6 +2854,51 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2015-12-08 16:14:14"
+        },
+        {
+            "name": "tom-lingham/searchy",
+            "version": "2.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TomLingham/Laravel-Searchy.git",
+                "reference": "efb1b63e1754cbed4b79dd4948e679360735bcdf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/TomLingham/Laravel-Searchy/efb1b63e1754cbed4b79dd4948e679360735bcdf.zip",
+                "reference": "efb1b63e1754cbed4b79dd4948e679360735bcdf",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TomLingham\\Searchy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Lingham",
+                    "email": "tjlingham@gmail.com"
+                }
+            ],
+            "description": "Laravel Searchy makes user driven searching easy with fuzzy search, basic string matching, Levenshtein Distance and more.",
+            "keywords": [
+                "fuzzy",
+                "laravel",
+                "search"
+            ],
+            "time": "2016-02-21 10:00:34"
         },
         {
             "name": "toplan/laravel-sms",
