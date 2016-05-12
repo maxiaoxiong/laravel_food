@@ -40,7 +40,7 @@ class WindowDishesTransformer extends TransformerAbstract
             'img_url' => $dish['dish_img'],
             'price' => $dish['price'],
             'sales' => $sales,
-            'delivery_time' => $dish['order_at'],
+            'delivery_time' => $dish['delivery_time'],
             'range' => $average
         ];
     }

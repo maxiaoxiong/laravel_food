@@ -67,7 +67,10 @@ Route::get('/path',function(\Illuminate\Http\Request $request){
 //});
 
 Route::get('time',function(){
-    return \App\Dish::find(1)->window->canteen->windows;
+    if(Carbon\Carbon::now()->createFromTime()->toTimeString() > "07:00:00"){
+        return "1";
+    }
+//    return \App\Dish::find(1)->window->canteen->windows;
 //    return \App\Order::find(1)->tastes;
 //    return \Carbon\Carbon::createFromDate()->startOfWeek();
 //    return \App\Order::find(1)->created_at->today();
