@@ -28,6 +28,9 @@ $api->version('v1', function ($api) {
         $api->get('breakfasts','DishesController@getBreakfast');
         $api->get('dishes/{id}','DishesController@getDetail');
         $api->get('search/{keyword}','SearchController@search');
+        $api->get('buildings','BuildingsController@index');
+        $api->get('buildings/{id}/floors','FloorsController@getFloors');
+        $api->get('floors/{id}/dormitories','DormitoriesController@getDormitories');
         $api->group(['middleware'=>'jwt.auth'],function($api){
             $api->get('orders','OrdersController@index');
             $api->get('orders/{id}','OrdersController@show');
@@ -71,9 +74,11 @@ Route::get('/path',function(\Illuminate\Http\Request $request){
 //});
 
 Route::get('time',function(){
-    if(Carbon\Carbon::now()->createFromTime()->toTimeString() > "07:00:00"){
-        return "1";
-    }
+    $order = \App\Order::find(2)->dormitory->name;
+    return $order;
+//    if(Carbon\Carbon::now()->createFromTime()->toTimeString() > "07:00:00"){
+//        return "1";
+//    }
 //    return \App\Dish::find(1)->window->canteen->windows;
 //    return \App\Order::find(1)->tastes;
 //    return \Carbon\Carbon::createFromDate()->startOfWeek();

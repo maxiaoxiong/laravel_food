@@ -12,4 +12,9 @@ class Dormitory extends Model
     {
         return $this->belongsTo(Floor::class);
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

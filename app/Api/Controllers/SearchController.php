@@ -10,14 +10,14 @@ namespace App\Api\Controllers;
 
 
 use App\Api\Transformers\DishTransformer;
+use App\Dish;
 use Searchy;
 
 class SearchController extends BaseController
 {
     public function search($keyword)
     {
-        $dishes = Searchy::dishes('dish_name')->query($keyword)->getQuery();
-        return $this->response->item($dishes,new DishTransformer())->setStatusCode(200);
-        return $dishes;
+        $dishes = Dish::where('dish_name','like','%'.$keyword.'%')->paginate(8);
+        return $this->response->paginator($dishes,new DishTransformer())->setStatusCode(200);
     }
 }

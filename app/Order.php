@@ -27,4 +27,9 @@ class Order extends Model
     {
         return $this->belongsToMany(Tableware::class)->withTimestamps();
     }
+
+    public function dormitory()
+    {
+        return $this->belongsTo(Dormitory::class);
+    }
 }
