@@ -178,4 +178,10 @@ $factory->define(App\TablewareForOrder::class, function (Faker\Generator $faker)
     ];
 });
 
-
+$factory->define(App\Advertise::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'img_url' => $faker->imageUrl(300,200),
+        'url' => $faker->url
+    ];
+});

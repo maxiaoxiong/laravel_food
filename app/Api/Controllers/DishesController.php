@@ -39,7 +39,7 @@ class DishesController extends BaseController
         $timeNow = Carbon::now()->createFromTime()->toTimeString();
         if($timeNow < "06:30:00"){
             $dishes = Window::find($id)->dishes()->where('dishtype_id',1)->paginate(8);
-            return $dishes;
+//            return $dishes;
         }elseif($timeNow > "07:30:00" && $timeNow < "11:30:00"){
             $dishes = Window::find($id)->dishes()->where(function($query){
                 $query->where('dishtype_id',2)->orWhere(function($query){

@@ -39,6 +39,8 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('tablewares','TablewaresController');
 
+    Route::resource('advertises','AdvertisesController');
+
     Route::post('image/upload','ImageController@upload');
     Route::post('image/crop','ImageController@crop');
     Route::get('getWindows/{id}',function($id){

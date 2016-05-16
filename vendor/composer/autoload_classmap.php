@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddDormitoryIdToOrdersTable' => $baseDir . '/database/migrations/2016_05_13_150054_add_dormitory_id_to_orders_table.php',
     'CreateAdminsTable' => $baseDir . '/database/migrations/2016_05_03_161509_create_admins_table.php',
+    'CreateAdvertisesTable' => $baseDir . '/database/migrations/2016_05_16_101850_create_advertises_table.php',
     'CreateBuildingsTable' => $baseDir . '/database/migrations/2016_04_24_022803_create_buildings_table.php',
     'CreateCanteensTable' => $baseDir . '/database/migrations/2016_04_24_022402_create_canteens_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2016_04_24_052404_create_comments_table.php',
