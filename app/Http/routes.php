@@ -75,8 +75,12 @@ Route::get('/path',function(\Illuminate\Http\Request $request){
 //});
 
 Route::get('time',function(){
-    $order = \App\Order::find(2)->dormitory->name;
-    return $order;
+//    return \Carbon\Carbon::now()->startOfDay()->subDay(6);
+    return \App\Order::where('created_at','>=',\Carbon\Carbon::now()->startOfDay()->subDay(6))->count();
+//      return \Carbon\Carbon::now()->subDay(0)->day;
+//    return \Carbon\Carbon::now()->day;
+//    $order = \App\Order::find(2)->dormitory->name;
+//    return $order;
 //    if(Carbon\Carbon::now()->createFromTime()->toTimeString() > "07:00:00"){
 //        return "1";
 //    }

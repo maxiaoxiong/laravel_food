@@ -7,7 +7,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
+use App\Components\LastSevenDay;
 use App\Http\Requests;
+use App\Order;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 /**
@@ -33,6 +38,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $ordersToday = Order::where('created_at','>=',Carbon::today())->count();
+        $ordersHistory = Order::count();
+        $users = User::count();
+        $comments = Comment::count();
+//        $dayArr = LastSevenDay::getDaysArr();
+        return view('home',compact('ordersToday','ordersHistory','users','comments'));
     }
 }

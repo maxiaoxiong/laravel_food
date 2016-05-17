@@ -5,7 +5,7 @@
  * Date: 5/7/16
  * Time: 10:52 AM
  */
-namespace App\Api\Components;
+namespace App\Components;
 
 use Carbon\Carbon;
 
