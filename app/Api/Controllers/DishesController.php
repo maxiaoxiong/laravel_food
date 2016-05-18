@@ -26,7 +26,6 @@ class DishesController extends BaseController
     public function getHot()
     {
         $orders = Order::groupBy('dish_id')->select('dish_id',\DB::raw('sum(order_no) as order_no'))->get()->take(10);
-//        $orders = \DB::select('select dish_id,sum(order_no) from orders GROUP BY dish_id');
         return $this->response->collection($orders,new HotDishTransformer())->setStatusCode(200);
     }
 
@@ -39,14 +38,12 @@ class DishesController extends BaseController
         $timeNow = Carbon::now()->createFromTime()->toTimeString();
         if($timeNow < "06:30:00"){
             $dishes = Window::find($id)->dishes()->where('dishtype_id',1)->paginate(8);
-//            return $dishes;
         }elseif($timeNow > "07:30:00" && $timeNow < "11:30:00"){
             $dishes = Window::find($id)->dishes()->where(function($query){
                 $query->where('dishtype_id',2)->orWhere(function($query){
                     $query->where('dishtype_id',4);
                 });
             })->paginate(8);
-//            $dishes = Window::find($id)->dishes()->where('dishtype_id',2)->where('dishtype_id',4)->paginate(8);
         }elseif($timeNow > "12:30:00" && $timeNow < "17:30:00"){
             $dishes = Window::find($id)->dishes()->where(function($query){
                 $query->where('dishtype_id',3)->orWhere(function($query){

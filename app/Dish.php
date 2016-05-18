@@ -41,4 +41,9 @@ class Dish extends Model
     {
         return $this->hasMany(Range::class);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

@@ -32,7 +32,16 @@ class DishDetailTransformer extends TransformerAbstract
                     $range_sum += $dish->ranges[$i]->range;
                 }
         }
-
+        $arr = [];
+        foreach($dish->comments as $k => $comment)
+        {
+            $arr[$k] = [
+                'user_avatar' => $comment->user->avatar,
+                'user_name' => $comment->user->name,
+                'body' => $comment->body,
+                'created_at' => $comment->created_at
+            ];
+        }
         $average = ceil($range_sum/$range_length);
         return [
             'id' => $dish['id'],
@@ -43,7 +52,8 @@ class DishDetailTransformer extends TransformerAbstract
             'delivery_time' => $dish['delivery_time'],
             'range' => $average,
             'tablewares' => $dish->tablewares,
-            'tastes' => $dish->tastes
+            'tastes' => $dish->tastes,
+            'comments' => $arr
         ];
     }
 }

@@ -11,7 +11,6 @@
 |
 */
 
-
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function ($api) {
@@ -32,6 +31,7 @@ $api->version('v1', function ($api) {
         $api->get('buildings/{id}/floors','FloorsController@getFloors');
         $api->get('floors/{id}/dormitories','DormitoriesController@getDormitories');
         $api->get('advertises','AdvertisesController@index');
+        $api->post('orders','OrdersController@store');
         $api->group(['middleware'=>'jwt.auth'],function($api){
             $api->get('orders','OrdersController@index');
             $api->get('orders/{id}','OrdersController@show');
@@ -43,6 +43,7 @@ $api->version('v1', function ($api) {
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('/charge/pay','OrdersController@handleOrder');
 Route::get('/charge/paid','OrdersController@OverOrder');
