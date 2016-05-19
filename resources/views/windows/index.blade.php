@@ -23,7 +23,7 @@
                             <td>{{ $window->window_name }}</td>
                             <td>{{ $window->canteen->canteen_name }}</td>
                             <td>{{ count($window->dishes) }}</td>
-                            <td><a href="{{ url('windows/'.$window->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>
+                            <td><a style="float: left;margin-right: 5px;" href="{{ url('windows/'.$window->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>
                                 <form style="float: left;margin-top: -1px;" method="post" action="windows/{{ $window->id }}">
                                     <input name="_method" type="hidden" value="delete">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

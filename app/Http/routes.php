@@ -33,6 +33,7 @@ $api->version('v1', function ($api) {
         $api->get('advertises', 'AdvertisesController@index');
         $api->post('orders', 'OrdersController@store');
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
+            $api->post('comments','CommentsController@store');
             $api->get('orders', 'OrdersController@index');
             $api->get('orders/{id}', 'OrdersController@show');
             $api->get('user/me', 'AuthController@getAuthenticatedUser');

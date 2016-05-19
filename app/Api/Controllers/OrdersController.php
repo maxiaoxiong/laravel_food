@@ -42,6 +42,10 @@ class OrdersController extends BaseController
         return $this->response->item($order, new OrderTransformer())->setStatusCode(200);
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function store(Request $request)
     {
         $data = $request->get('data');
@@ -50,18 +54,19 @@ class OrdersController extends BaseController
             if (!$order) {
                 throw new StoreResourceFailedException('创建订单失败！');
             }
-            $order->tastes()->attach($data[$k]['taste_id']);
-            $order->tablewares()->attach($data[$k]['tableware_id']);
+            $order->tastes()->attach($data[ $k ]['taste_id']);
+            $order->tablewares()->attach($data[ $k ]['tableware_id']);
         }
-        $ordersToday = Order::where('created_at','>=',Carbon::today())->count();
+        $ordersToday = Order::where('created_at', '>=', Carbon::today())->count();
         $data = [
             'event' => 'ordersToday',
             'data' => [
                 'num' => $ordersToday
             ]
         ];
-        Redis::publish('test-channel',json_encode($data));
-        return response()->json(['status_code'=>200,'message'=>'创建订单成功！']);
+        Redis::publish('test-channel', json_encode($data));
+
+        return response()->json(['status_code' => 200, 'message' => '创建订单成功！']);
 
     }
 }

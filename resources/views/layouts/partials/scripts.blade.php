@@ -22,9 +22,10 @@
         el: 'body',
         data: {
             ordersToday: {{ $ordersToday or 0}}
+
         },
-        ready: function (){
-            socket.on('test-channel:ordersToday',function(data){
+        ready: function () {
+            socket.on('test-channel:ordersToday', function (data) {
                 this.ordersToday = data.num;
             }.bind(this))
         }
@@ -55,6 +56,7 @@
                 pointRadius: 1,
                 pointHitRadius: 10,
                 data: {{ \App\Components\LastSevenOrders::getSevenDaysOrders() }}
+
 
             }
         ]

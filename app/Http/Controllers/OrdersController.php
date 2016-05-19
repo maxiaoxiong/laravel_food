@@ -12,6 +12,9 @@ use Excel;
 
 class OrdersController extends Controller
 {
+    /**
+     * @param Request $request
+     */
     public function handleOrder(Request $request)
     {
 //        \Pingpp\Pingpp::setApiKey(env('API_KEY'));
@@ -34,14 +37,17 @@ class OrdersController extends Controller
         dd('ss');
     }
 
+    /**
+     * @param $type
+     */
     public function printOrders($type)
     {
-        switch($type){
+        switch ($type) {
             case 1:
                 $orders = Order::where('created_at', '>=', Carbon::today())->get();
                 break;
             case 2:
-                $orders = Order::where('created_at','>=',Carbon::createFromDate()->startOfWeek())->get();
+                $orders = Order::where('created_at', '>=', Carbon::createFromDate()->startOfWeek())->get();
                 break;
             case 3:
                 $orders = Order::all();
@@ -50,26 +56,42 @@ class OrdersController extends Controller
 
         ExcelExport::export($orders);
     }
+
+    /**
+     *
+     */
     public function overOrder()
     {
-    dd('sss');
+        dd('sss');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getTodayOrders()
     {
-        $orders = Order::where('created_at','>=',Carbon::today())->paginate(10);
-        return view('orders.today',compact('orders'));
+        $orders = Order::where('created_at', '>=', Carbon::today())->paginate(10);
+
+        return view('orders.today', compact('orders'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getWeekOrders()
     {
-        $orders = Order::where('created_at','>=',Carbon::createFromDate()->startOfWeek())->paginate(10);
-        return view('orders.week',compact('orders'));
+        $orders = Order::where('created_at', '>=', Carbon::createFromDate()->startOfWeek())->paginate(10);
+
+        return view('orders.week', compact('orders'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function getHistoryOrders()
     {
         $orders = Order::paginate(10);
-        return view('orders.history',compact('orders'));
+
+        return view('orders.history', compact('orders'));
     }
 }
