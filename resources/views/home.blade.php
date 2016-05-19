@@ -13,7 +13,8 @@
 				<!-- small box -->
 				<div class="small-box bg-aqua">
 					<div class="inner">
-						<h3 style="color: #fff">{{ $ordersToday }}</h3>
+						{{--<h3 style="color: #fff" id="ordersToday">{{ $ordersToday }}</h3>--}}
+						<h3 style="color: #fff" id="ordersToday" v-model="ordersToday">@{{ ordersToday }}</h3>
 
 						<p>今日订单</p>
 					</div>

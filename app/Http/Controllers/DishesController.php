@@ -14,12 +14,18 @@ use App\Http\Requests;
 
 class DishesController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $dishes = Dish::latest()->paginate(10);
         return view('dishes.index',compact('dishes'));
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create()
     {
         $canteens = Canteen::all();
@@ -29,6 +35,10 @@ class DishesController extends Controller
         return view('dishes.create',compact('tastes','canteens','tablewares','dishtypes'));
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
         $taste_list = $request->get('taste');
@@ -41,12 +51,15 @@ class DishesController extends Controller
         }else{
             return response()->json(['error'=>'添加失败']);
         }
-//        $dish
     }
 
-    public function update($id,Request $request)
+    /**
+     * @param $id
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update($id, Request $request)
     {
-//        return $request->all();
         if($request->get('dish_id') == 1)
         {
             $id = $request->get('id');
@@ -72,6 +85,10 @@ class DishesController extends Controller
         return redirect()->route('dishes.index');
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function edit($id)
     {
         $canteens = Canteen::all();
@@ -90,6 +107,10 @@ class DishesController extends Controller
         return view('dishes.edit',compact('canteens','dish','tablewares','tastes','dishtypes','taste_id_arr','tableware_id_arr'));
     }
 
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function destroy($id)
     {
         $flag = Dish::destroy($id);

@@ -9,19 +9,35 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
 
-{{--<script src="//cdn.bootcss.com/vue/1.0.16/vue.min.js"></script>--}}
+<script src="//cdn.bootcss.com/vue/1.0.16/vue.min.js"></script>
 <script src="//cdn.bootcss.com/Chart.js/2.1.3/Chart.min.js"></script>
 
 <script src="{{ asset('/js/bootstrap-timepicker.min.js') }}"></script>
 
+<script src="//cdn.bootcss.com/socket.io/1.4.6/socket.io.min.js"></script>
+
+<script>
+    var socket = io('http://192.168.10.10:3000');
+    new Vue({
+        el: 'body',
+        data: {
+            ordersToday: {{ $ordersToday or 0}}
+        },
+        ready: function (){
+            socket.on('test-channel:ordersToday',function(data){
+                this.ordersToday = data.num;
+            }.bind(this))
+        }
+    })
+</script>
 <script>
     var context = document.querySelector('#orders_line').getContext('2d');
     var data = {
-      labels:{{ \App\Components\LastSevenDay::getDaysArr() }},
-        datasets:[
+        labels:{{ \App\Components\LastSevenDay::getDaysArr() }},
+        datasets: [
             {
-                label:"七日内订单走线",
-                fill:false,
+                label: "七日内订单走线",
+                fill: false,
                 lineTension: 0.1,
                 backgroundColor: "rgba(75,192,192,0.4)",
                 borderColor: "rgba(75,192,192,1)",
@@ -39,6 +55,7 @@
                 pointRadius: 1,
                 pointHitRadius: 10,
                 data: {{ \App\Components\LastSevenOrders::getSevenDaysOrders() }}
+
             }
         ]
     };
@@ -49,9 +66,9 @@
 </script>
 
 <script>
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function ($) {
         // 左侧菜单高亮
-        var currentMenu = $('.sidebar-menu a[href="'+window.location.origin + window.location.pathname+'"]:first');
+        var currentMenu = $('.sidebar-menu a[href="' + window.location.origin + window.location.pathname + '"]:first');
 
         if (currentMenu) {
             var treeview = currentMenu.closest('.treeview');
@@ -61,22 +78,22 @@
             } else {
                 return treeview.addClass('active').siblings().removeClass('active');
             }
-        };
+        }
+        ;
     });
 </script>
 
 <script>
-    $('#canteen_id').change(function(){
-        var canteen_id =  $('#canteen_id').val();
+    $('#canteen_id').change(function () {
+        var canteen_id = $('#canteen_id').val();
         console.log(canteen_id);
         getWindows(canteen_id);
     });
-    $('#building_id').change(function(){
-        var building_id =  $('#building_id').val();
+    $('#building_id').change(function () {
+        var building_id = $('#building_id').val();
         console.log(building_id);
         getFloors(building_id);
     });
-
 
 
 </script>
@@ -84,8 +101,8 @@
     //Timepicker
     $(".timepicker").timepicker({
         showInputs: false,
-        showSeconds:true,
-        showMeridian:false
+        showSeconds: true,
+        showMeridian: false
     });
 </script>
 

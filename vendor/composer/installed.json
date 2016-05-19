@@ -4793,6 +4793,53 @@
         ]
     },
     {
+        "name": "tom-lingham/searchy",
+        "version": "2.0.8",
+        "version_normalized": "2.0.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/TomLingham/Laravel-Searchy.git",
+            "reference": "efb1b63e1754cbed4b79dd4948e679360735bcdf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/TomLingham/Laravel-Searchy/efb1b63e1754cbed4b79dd4948e679360735bcdf.zip",
+            "reference": "efb1b63e1754cbed4b79dd4948e679360735bcdf",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "5.*",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpspec/phpspec": "~2.0"
+        },
+        "time": "2016-02-21 10:00:34",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "TomLingham\\Searchy\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Tom Lingham",
+                "email": "tjlingham@gmail.com"
+            }
+        ],
+        "description": "Laravel Searchy makes user driven searching easy with fuzzy search, basic string matching, Levenshtein Distance and more.",
+        "keywords": [
+            "fuzzy",
+            "laravel",
+            "search"
+        ]
+    },
+    {
         "name": "laravel/framework",
         "version": "v5.2.31",
         "version_normalized": "5.2.31.0",
@@ -4924,33 +4971,36 @@
         ]
     },
     {
-        "name": "tom-lingham/searchy",
-        "version": "2.0.8",
-        "version_normalized": "2.0.8.0",
+        "name": "predis/predis",
+        "version": "v1.0.3",
+        "version_normalized": "1.0.3.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/TomLingham/Laravel-Searchy.git",
-            "reference": "efb1b63e1754cbed4b79dd4948e679360735bcdf"
+            "url": "https://github.com/nrk/predis.git",
+            "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04"
         },
         "dist": {
             "type": "zip",
-            "url": "https://packagist.phpcomposer.com/files/TomLingham/Laravel-Searchy/efb1b63e1754cbed4b79dd4948e679360735bcdf.zip",
-            "reference": "efb1b63e1754cbed4b79dd4948e679360735bcdf",
+            "url": "https://packagist.phpcomposer.com/files/nrk/predis/84060b9034d756b4d79641667d7f9efe1aeb8e04.zip",
+            "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04",
             "shasum": ""
         },
         "require": {
-            "illuminate/support": "5.*",
-            "php": ">=5.5.0"
+            "php": ">=5.3.2"
         },
         "require-dev": {
-            "phpspec/phpspec": "~2.0"
+            "phpunit/phpunit": "~4.0"
         },
-        "time": "2016-02-21 10:00:34",
+        "suggest": {
+            "ext-curl": "Allows access to Webdis when paired with phpiredis",
+            "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+        },
+        "time": "2015-07-30 18:34:15",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "TomLingham\\Searchy\\": "src/"
+                "Predis\\": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -4959,15 +5009,17 @@
         ],
         "authors": [
             {
-                "name": "Tom Lingham",
-                "email": "tjlingham@gmail.com"
+                "name": "Daniele Alessandri",
+                "email": "suppakilla@gmail.com",
+                "homepage": "http://clorophilla.net"
             }
         ],
-        "description": "Laravel Searchy makes user driven searching easy with fuzzy search, basic string matching, Levenshtein Distance and more.",
+        "description": "Flexible and feature-complete PHP client library for Redis",
+        "homepage": "http://github.com/nrk/predis",
         "keywords": [
-            "fuzzy",
-            "laravel",
-            "search"
+            "nosql",
+            "predis",
+            "redis"
         ]
     }
 ]

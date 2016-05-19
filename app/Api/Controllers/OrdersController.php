@@ -11,8 +11,10 @@ namespace App\Api\Controllers;
 
 use App\Api\Transformers\OrderTransformer;
 use App\Order;
+use Carbon\Carbon;
 use Dingo\Api\Exception\StoreResourceFailedException;
 use Illuminate\Http\Request;
+use Redis;
 
 class OrdersController extends BaseController
 {
@@ -44,12 +46,21 @@ class OrdersController extends BaseController
     {
         $data = $request->get('data');
         foreach ($data as $k => $v) {
-            $flag = Order::firstOrCreate(array_merge($data[ $k ]));
-            if (!$flag) {
+            $order = Order::Create(array_merge($data[ $k ]));
+            if (!$order) {
                 throw new StoreResourceFailedException('创建订单失败！');
             }
+            $order->tastes()->attach($data[$k]['taste_id']);
+            $order->tablewares()->attach($data[$k]['tableware_id']);
         }
-
+        $ordersToday = Order::where('created_at','>=',Carbon::today())->count();
+        $data = [
+            'event' => 'ordersToday',
+            'data' => [
+                'num' => $ordersToday
+            ]
+        ];
+        Redis::publish('test-channel',json_encode($data));
         return response()->json(['status_code'=>200,'message'=>'创建订单成功！']);
 
     }
