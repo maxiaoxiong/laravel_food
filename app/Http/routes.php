@@ -90,8 +90,15 @@ Route::get('/path', function (\Illuminate\Http\Request $request) {
 //});
 
 Route::get('time', function () {
+
+//    $arr = [1,1,2,2,3,3,5,5,3,3];
+//    return array_unique($arr);
+//    return array_count_values($arr);
+//    return \Carbon\Carbon::create(\Carbon\Carbon::yesterday()->year,\Carbon\Carbon::yesterday()->month,\Carbon\Carbon::yesterday()->day,
+//        '18','30','00');
+//    return \Carbon\Carbon::createFromDate(null,null,\Carbon\Carbon::yesterday()->day,'18','30','00');
 //    return \Carbon\Carbon::now()->startOfDay()->subDay(6);
-    return \App\Order::where('created_at', '>=', \Carbon\Carbon::now()->startOfDay()->subDay(6))->count();
+//    return \App\Order::where('created_at', '>=', \Carbon\Carbon::now()->startOfDay()->subDay(6))->count();
 //      return \Carbon\Carbon::now()->subDay(0)->day;
 //    return \Carbon\Carbon::now()->day;
 //    $order = \App\Order::find(2)->dormitory->name;
@@ -105,6 +112,6 @@ Route::get('time', function () {
 //    return \App\Order::find(1)->created_at->today();
 //    echo \Carbon\Carbon::createFromDate()->isWeekday();
 //    echo \App\Order::find(1)->created_at->isYesterday();
-//    return \Carbon\Carbon::createFromDate()->toDateString();
+//    return \Carbon\Carbc
 });
 Route::get('comment', 'CommentsController@index');

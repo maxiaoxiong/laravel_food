@@ -3,7 +3,10 @@
 @section('main-content')
     <div class="box">
         <div class="box-header with-border">
-            <h3 class="box-title"><a href="{{ url('orders/printOrders/1') }}" class="btn btn-info">打印今日订单</a></h3>
+            <h3 class="box-title"><a href="{{ url('orders/printOrders/1') }}" class="btn btn-info">打印概览表</a>
+                <a href="{{ url('orders/printOrders/2') }}" class="btn btn-primary">打印窗口明细</a>
+                <a href="{{ url('orders/printOrders/1') }}" class="btn btn-info">打印宿舍菜单</a>
+                <a href="{{ url('orders/printOrders/1') }}" class="btn btn-info">打印窗口菜单</a></h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -17,23 +20,23 @@
                     <th>下单时间</th>
                 </tr>
                 @foreach($orders as $order)
-                <tr>
-                    <td>{{ $order->id }}</td>
-                    <td>{{ $order->user->name }}</td>
-                    <td>{{ $order->dish->dish_name }}</td>
-                    <td class="text-light-blue">
-                        @foreach($order->tastes as $taste)
-                            {{ $taste->name }}&nbsp;
-                        @endforeach
-                    </td>
-                    <td class="text-green">
-                        @foreach($order->tablewares as $tableware)
-                            {{ $tableware->tableware_name }}
-                        @endforeach
-                    </td>
-                    <td>{{ $order->created_at }}</td>
-                </tr>
-                    @endforeach
+                    <tr>
+                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->user->name }}</td>
+                        <td>{{ $order->dish->dish_name }}</td>
+                        <td class="text-light-blue">
+                            @foreach($order->tastes as $taste)
+                                {{ $taste->name }}&nbsp;
+                            @endforeach
+                        </td>
+                        <td class="text-green">
+                            @foreach($order->tablewares as $tableware)
+                                {{ $tableware->tableware_name }}
+                            @endforeach
+                        </td>
+                        <td>{{ $order->created_at }}</td>
+                    </tr>
+                @endforeach
             </table>
         </div>
         <!-- /.box-body -->
