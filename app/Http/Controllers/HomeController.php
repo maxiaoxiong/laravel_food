@@ -38,11 +38,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $ordersToday = Order::where('created_at','>=',Carbon::today())->count();
+        $ordersToday = Order::where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+            '18', '30', '00'))->where('created_at','>=',Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
+            '18', '30', '00'))->count();
         $ordersHistory = Order::count();
         $users = User::count();
         $comments = Comment::count();
-//        $dayArr = LastSevenDay::getDaysArr();
         return view('home',compact('ordersToday','ordersHistory','users','comments'));
     }
 }

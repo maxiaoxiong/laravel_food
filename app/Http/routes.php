@@ -11,6 +11,9 @@
 |
 */
 
+use App\Order;
+use Carbon\Carbon;
+
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function ($api) {
@@ -90,7 +93,10 @@ Route::get('/path', function (\Illuminate\Http\Request $request) {
 //});
 
 Route::get('time', function () {
-
+    return Order::where('created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+        '18', '30', '00')->subDay(1))
+        ->where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+            '18', '30', '00')->subDay(0))->sum('order_no');
 //    $arr = [1,1,2,2,3,3,5,5,3,3];
 //    return array_unique($arr);
 //    return array_count_values($arr);

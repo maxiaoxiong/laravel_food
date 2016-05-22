@@ -96,7 +96,7 @@ class OrdersController extends Controller
     public function getTodayOrders()
     {
         $orders = Order::where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '07', '00', '00'))->where('created_at','>=',Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
+            '18', '30', '00'))->where('created_at','>=',Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
             '18', '30', '00'))->paginate(10);
 
         return view('orders.today', compact('orders'));

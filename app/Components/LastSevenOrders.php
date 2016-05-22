@@ -20,14 +20,20 @@ class LastSevenOrders
         for($i=6;$i>=0;$i--)
         {
             if($i<6 && $i>0) {
-                $str .= (Order::where('created_at', '>=', Carbon::now()->startOfDay()->subDay($i))
-                    ->where('created_at', '<=', Carbon::now()->endOfDay()->subDay($i))->sum('order_no')) .',';
+                $str .= (Order::where('created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+                        '18', '30', '00')->subDay($i+1))
+                    ->where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+                        '18', '30', '00')->subDay($i))->sum('order_no')) .',';
             }elseif($i == 0) {
-                $str .= (Order::where('created_at', '>=', Carbon::now()->startOfDay()->subDay($i))
-                        ->where('created_at', '<=', Carbon::now()->endOfDay()->subDay($i))->sum('order_no')) .']';
+                $str .= (Order::where('created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+                        '18', '30', '00')->subDay($i+1))
+                        ->where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+                            '18', '30', '00')->subDay($i))->sum('order_no')) .']';
             }elseif($i == 6){
-                $str .= '['.(Order::where('created_at', '>=', Carbon::now()->startOfDay()->subDay($i))
-                        ->where('created_at', '<=', Carbon::now()->endOfDay()->subDay($i))->sum('order_no')) .',';
+                $str .= '['.(Order::where('created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+                        '18', '30', '00')->subDay($i+1))
+                        ->where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+                            '18', '30', '00')->subDay($i))->sum('order_no')) .',';
             }
         }
         return $str;
