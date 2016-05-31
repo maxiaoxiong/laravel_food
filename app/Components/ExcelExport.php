@@ -159,4 +159,17 @@ class ExcelExport
 
         })->export('xlsx');
     }
+
+    static function exportDormitoryDetail($datas)
+    {
+        \Excel::create('宿舍明细表', function ($excel) use ($datas) {
+
+            $excel->sheet('宿舍明细表', function ($sheet) use ($datas) {
+
+                $sheet->loadView('excels.dormitoryDetail', compact('datas'));
+
+            });
+
+        })->export('xlsx');
+    }
 }

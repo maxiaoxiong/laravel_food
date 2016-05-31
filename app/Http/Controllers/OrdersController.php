@@ -74,9 +74,15 @@ class OrdersController extends Controller
                 }
                 ExcelExport::exportTags($tags);
                 break;
-//            case 3:
-//                $orders = Order::all();
-//                break;
+            case 3:
+                if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
+                    $orders = $this->getDormitoryResult($lastDayTime, $todayMorningTime);
+                } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
+                    $orders = $this->getDormitoryResult($todayMorningTime, $todayNoonTime);
+                } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
+                    $orders = $this->getDormitoryResult($todayNoonTime, $todayAfterTime);
+                }
+                ExcelExport::exportDormitoryDetail($orders);
         }
 
 //        ExcelExport::export($orders);
@@ -96,7 +102,7 @@ class OrdersController extends Controller
     public function getTodayOrders()
     {
         $orders = Order::where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '18', '30', '00'))->where('created_at','>=',Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
+            '18', '30', '00'))->where('created_at', '>=', Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
             '18', '30', '00'))->paginate(10);
 
         return view('orders.today', compact('orders'));
@@ -189,5 +195,40 @@ FROM (SELECT
 WHERE n.canteen_id = c.id ORDER BY window_id');
 
         return $tags;
+    }
+
+    public function getDormitoryResult($time1, $time2)
+    {
+        $orders = \DB::select('SELECT
+  dish_name,
+  order_no,
+  user_name,
+  phone,
+  dormitory_name,
+  floor_name,
+  b.building_name
+FROM (SELECT
+        dish_name,
+        order_no,
+        user_name,
+        phone,
+        dormitory_name,
+        f.floor_name,
+        f.building_id
+      FROM (SELECT
+              dish_name,
+              order_no,
+              u.phone,
+              u.name  AS user_name,
+              d2.name AS dormitory_name,
+              d2.floor_id
+            FROM orders AS o, users AS u, dishes AS d, dormitories AS d2
+            WHERE
+              o.created_at >= "' . $time1 . '" AND o.created_at <= "' . $time2 . '" AND o.dish_id = d.id AND
+              o.user_id = u.id AND o.dormitory_id = d2.id) AS i, floors AS f
+      WHERE i.floor_id = f.id) AS i2, buildings AS b
+WHERE i2.building_id = b.id;');
+
+        return $orders;
     }
 }
