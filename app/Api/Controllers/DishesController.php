@@ -37,7 +37,7 @@ class DishesController extends BaseController
     public function getWindowDishes($id)
     {
         $timeNow = Carbon::now()->createFromTime()->toTimeString();
-        if ($timeNow < "06:30:00" && $timeNow > "17:30:00") {
+        if ($timeNow < "06:30:00" || $timeNow > "17:30:00") {
             $dishes = Window::find($id)->dishes()->where('dishtype_id', 1)->paginate(8);
         } elseif ($timeNow > "07:30:00" && $timeNow < "11:30:00") {
             $dishes = Window::find($id)->dishes()->where(function ($query) {
@@ -45,7 +45,7 @@ class DishesController extends BaseController
                     $query->where('dishtype_id', 4);
                 });
             })->paginate(8);
-        } elseif ($timeNow > "12:30:00" && $timeNow < "17:30:00") {
+        } elseif ($timeNow > "11:30:00" && $timeNow < "17:30:00") {
             $dishes = Window::find($id)->dishes()->where(function ($query) {
                 $query->where('dishtype_id', 3)->orWhere(function ($query) {
                     $query->where('dishtype_id', 4);

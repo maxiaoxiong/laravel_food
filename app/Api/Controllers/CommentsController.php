@@ -15,6 +15,7 @@ class CommentsController extends BaseController
     {
         $user = \JWTAuth::parseToken()->authenticate();
         $comment_list = $user->orders->lists('dish_id')->toArray();
+
         if (!in_array($request->get('dish_id'), $comment_list)) {
             throw new AccessDeniedHttpException('您未购买过该菜，没有权限评论！');
         }

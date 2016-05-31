@@ -9,32 +9,34 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Excel;
+use Pingpp\Charge;
+use Pingpp\Pingpp;
 
 class OrdersController extends Controller
 {
+
     /**
      * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function handleOrder(Request $request)
     {
-        //    \Pingpp\Pingpp::setApiKey(env('API_KEY'));
-//
-//        $charge = \Pingpp\Charge::create(
-//            array(
-//                'order_no' => time().rand(1000,9999),
-//                'amount'   => '10000',
-//                'app'      => ['id'=>env('APP_C_KEY')],
-//                'channel'  => 'alipay',
-//                'currency' => 'cny',
-//                'client_ip' => $request->ip(),
-//                'subject'  => 'pay success',
-//                'body'     => 'pay OK!',
-////                'extra'    => ['success_url'=>'http://ping.app/charge/paid']
-//            )
-//        );
-//
-//        return view('orders.charge',compact('charge'));
-        dd('ss');
+        Pingpp::setApiKey(env('PING_API_KEY'));
+        $charge = Charge::create(
+            array(
+                'order_no'  => time().rand(1000,99999),
+                'amount'    => '100',
+                'app'       => array('id' => env('PING_APP_ID')),
+                'channel'   => 'alipay',
+                'currency'  => 'cny',
+                'client_ip' => $request->ip(),
+                'subject'   => 'Xicode_demo',
+                'body'      => '1',
+//                'extra'     => ['extern_token']
+            )
+        );
+        return $charge;
+        return view('orders.charge',compact('charge'));
     }
 
 

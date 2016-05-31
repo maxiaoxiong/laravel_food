@@ -14,6 +14,7 @@ use App\Order;
 use Carbon\Carbon;
 use Dingo\Api\Exception\StoreResourceFailedException;
 use Illuminate\Http\Request;
+use JWTAuth;
 use Redis;
 
 class OrdersController extends BaseController
@@ -23,9 +24,28 @@ class OrdersController extends BaseController
      */
     public function index()
     {
-        $orders = Order::all();
+        try {
 
-        return $this->response->collection($orders, new OrderTransformer())->setStatusCode(200);
+            if (! $user = JWTAuth::parseToken()->authenticate()) {
+                return response()->json(['user_not_found'], 404);
+            }
+
+        } catch (TokenExpiredException $e) {
+
+            return response()->json(['token_expired'], $e->getStatusCode());
+
+        } catch (TokenInvalidException $e) {
+
+            return response()->json(['token_invalid'], $e->getStatusCode());
+
+        } catch (JWTException $e) {
+
+            return response()->json(['token_absent'], $e->getStatusCode());
+
+        }
+        $orders = Order::where('user_id',$user->id)->get();
+
+        return $this->response->item($orders, new OrderTransformer())->setStatusCode(200);
     }
 
     /**

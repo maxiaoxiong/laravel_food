@@ -53,6 +53,7 @@ class AuthController extends BaseController
         Cache::put($request->get('phone'),$Code,5);
         $newUser = [
             'phone' => $request->get('phone'),
+            'email' => $faker
         ];
         $user = User::firstOrCreate($newUser);
         if(!($user->id)){
