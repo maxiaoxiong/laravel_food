@@ -35,6 +35,7 @@ $api->version('v1', function ($api) {
         $api->get('floors/{id}/dormitories', 'DormitoriesController@getDormitories');
         $api->get('advertises', 'AdvertisesController@index');
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
+            $api->post('dishes/range','DishesController@postRange');
             $api->post('orders', 'OrdersController@store');
             $api->post('comments','CommentsController@store');
             $api->get('orders', 'OrdersController@index');

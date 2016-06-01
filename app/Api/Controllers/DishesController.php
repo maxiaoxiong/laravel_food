@@ -15,8 +15,11 @@ use App\Api\Transformers\HotDishTransformer;
 use App\Api\Transformers\WindowDishesTransformer;
 use App\Dish;
 use App\Order;
+use App\Range;
 use App\Window;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
+use JWTAuth;
 
 class DishesController extends BaseController
 {
@@ -66,10 +69,39 @@ class DishesController extends BaseController
         return $this->response->paginator($dishes, new DishTransformer())->setStatusCode(200);
     }
 
+    /**
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getDetail($id)
     {
         $dish = Dish::find($id);
 
         return $this->response->item($dish, new DishDetailTransformer())->setStatusCode(200);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws AccessDeniedHttpException
+     */
+    public function postRange(Request $request)
+    {
+        $user = JWTAuth::parseToken()->authenticate();
+        $range_list = $user->orders->lists('dish_id')->toArray();
+        if (!in_array($request->get('dish_id'), $range_list)) {
+            throw new AccessDeniedHttpException('您未购买过该菜，没有权限评分！');
+        }
+        $isRange = Range::where('user_id',$user->id)->where('dish_id',$request->get('dish_id'))->get();
+        if(count($isRange) !== 0){
+            return response()->json(['status_code' => 200, 'message' => '请勿重复评分']);
+        }
+        if(count($isRange))
+        $flag = Range::firstOrCreate(array_merge($request->except('token'), ['user_id' => $user->id]));
+        if ($flag) {
+            return response()->json(['status_code' => 200, 'message' => '评分成功'])->setStatusCode(200);
+        } else {
+            return response()->json(['status_code' => 422, 'message' => '评分失败'])->setStatusCode(422);
+        }
     }
 }
