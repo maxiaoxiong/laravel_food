@@ -19,6 +19,10 @@ class CommentsController extends BaseController
         if (!in_array($request->get('dish_id'), $comment_list)) {
             throw new AccessDeniedHttpException('您未购买过该菜，没有权限评论！');
         }
+        $isComment = Comment::where('user_id',$user->id)->where('dish_id',$request->get('dish_id'))->get();
+        if(count($isComment) !== 0){
+            return response()->json(['status_code' => 200, 'message' => '请勿重复评论']);
+        }
         $flag = Comment::create(array_merge($request->all(), ['user_id' => $user->id]));
         if ($flag) {
             return response()->json(['status_code' => 200, 'message' => '评论成功'])->setStatusCode(200);
