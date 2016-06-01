@@ -22,6 +22,8 @@ $api->version('v1', function ($api) {
         $api->post('user/getVerifyCode', 'AuthController@getVerifyCode');
         $api->post('user/validateCode', 'AuthController@validateCode');
         $api->post('user/register', 'AuthController@register');
+        $api->post('user/resetPassword','AuthController@resetPassword');
+        $api->post('user/getResetPasswordCode','AuthController@getResetPasswordCode');
         $api->get('canteens', 'CanteensController@index');
         $api->get('dishes/hot', 'DishesController@getHot');
         $api->get('canteens/{id}/windows', 'WindowsController@index');

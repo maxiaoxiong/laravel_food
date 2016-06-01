@@ -24,6 +24,10 @@ use PhpSms;
 
 class AuthController extends BaseController
 {
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function authenticate(Request $request)
     {
         // grab credentials from the request
@@ -98,6 +102,10 @@ class AuthController extends BaseController
         return response()->json(['status_code' => 422, 'message' => '用户创建未成功！请重新尝试！']);
     }
 
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function validateCode(Request $request)
     {
         $phoneNumber = $request->get('phone');
@@ -111,6 +119,9 @@ class AuthController extends BaseController
         }
     }
 
+    /**
+     * @return mixed
+     */
     public function getAuthenticatedUser()
     {
         try {
@@ -135,5 +146,42 @@ class AuthController extends BaseController
 
         // the token is valid and we have found the user via the sub claim
         return response()->json(compact('user'));
+    }
+
+    public function getResetPasswordCode(Request $request)
+    {
+        $mobile = Mobile::where('mobile',$request->get('phone'))->get();
+        if(count($mobile) == 0){
+            return response()->json(['status_code'=>200,'message'=>'您未注册本应用，请先注册哟！']);
+        }
+        if($mobile[0]->is_verified == 0){
+            return response()->json(['status_code'=>200,'message'=>'您的手机号未验证，请进入登录界面发送验证码进行验证']);
+        }
+
+        $mobile->type = 2;
+        $mobile[0]->save();
+
+        $Code = VerifyCode::generate_code(4);
+        Cache::put($request->get('phone'), $Code, 5);
+        $data = PhpSms::make()->to($request->get('phone'))->content('【小胖带饭】您的验证码是 ' . $Code . '')->send();
+
+        if ($data['logs'][0]['result']['code'] == 0) {
+            return response()->json(['status_code' => 200, 'message' => '发送成功，有效时间为30分钟，请尽快验证']);
+        } elseif ($data['logs'][0]['result']['code'] == 22) {
+            return response()->json(['status_code' => 429, 'message' => '一小时内只能发送三次验证码，请一小时后重新发送']);
+        } else {
+            return response()->json(['status_code' => 401, 'message' => '报错了，请联系管理员！']);
+        }
+    }
+
+    public function resetPassword(Request $request)
+    {
+        $user = User::where('phone',$request->get('phone'))->get();
+        $user[0]->password = bcrypt($request->get('password'));
+        $flag = $user[0]->save();
+        if($flag){
+            return response()->json(['status_code'=>200,'message'=>'修改密码成功！']);
+        }
+        response()->json(['status_code'=>500,'message'=>'出现错误了，请联系管理员！']);
     }
 }
