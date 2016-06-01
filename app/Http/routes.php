@@ -35,9 +35,9 @@ $api->version('v1', function ($api) {
         $api->get('floors/{id}/dormitories', 'DormitoriesController@getDormitories');
         $api->get('advertises', 'AdvertisesController@index');
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
-            $api->post('dishes/range','DishesController@postRange');
+            $api->post('dishes/range', 'DishesController@postRange');
             $api->post('orders', 'OrdersController@store');
-            $api->post('comments','CommentsController@store');
+            $api->post('comments', 'CommentsController@store');
             $api->get('orders', 'OrdersController@index');
             $api->get('orders/{id}', 'OrdersController@show');
             $api->get('user/me', 'AuthController@getAuthenticatedUser');
@@ -56,7 +56,7 @@ Route::get('/s', function () {
             'username' => 'xicode'
         ]
     ];
-    Redis::publish('test-channel',json_encode($data));
+    Redis::publish('test-channel', json_encode($data));
 
     return view();
 });

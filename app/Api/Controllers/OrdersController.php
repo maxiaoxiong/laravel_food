@@ -26,7 +26,7 @@ class OrdersController extends BaseController
     {
         try {
 
-            if (! $user = JWTAuth::parseToken()->authenticate()) {
+            if (!$user = JWTAuth::parseToken()->authenticate()) {
                 return response()->json(['user_not_found'], 404);
             }
 
@@ -43,7 +43,7 @@ class OrdersController extends BaseController
             return response()->json(['token_absent'], $e->getStatusCode());
 
         }
-        $orders = Order::where('user_id',$user->id)->get();
+        $orders = Order::where('user_id', $user->id)->get();
 
         return $this->response->item($orders, new OrderTransformer())->setStatusCode(200);
     }
