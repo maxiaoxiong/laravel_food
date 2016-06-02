@@ -54,7 +54,8 @@
                     <li><a href="{{ url('canteens') }}">餐厅管理</a></li>
                     <li><a href="{{ url('windows') }}">窗口管理</a></li>
                     <li><a href="{{ url('dishes') }}">菜品管理</a></li>
-                    <li><a href="{{ url('dishtypes') }}">类型管理</a></li>
+                    <li><a href="{{ url('dishtypes') }}">早午晚餐</a></li>
+                    <li><a href="{{ url('types') }}">类型管理</a></li>
                     <li><a href="{{ url('tastes') }}">口味管理</a></li>
                     <li><a href="{{ url('discounts') }}">优惠菜品</a></li>
                 </ul>

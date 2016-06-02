@@ -185,3 +185,10 @@ $factory->define(App\Advertise::class, function (Faker\Generator $faker) {
         'url' => $faker->url
     ];
 });
+
+$factory->define(App\Type::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name
+    ];
+});
+

@@ -11,6 +11,7 @@ namespace App\Api\Controllers;
 
 use App\Api\Transformers\WindowTransformers;
 use App\Canteen;
+use App\Type;
 use App\Window;
 
 class WindowsController extends BaseController
@@ -18,6 +19,7 @@ class WindowsController extends BaseController
     public function index($id)
     {
         $windows = Canteen::find($id)->windows;
-        return $this->response->collection($windows,new WindowTransformers())->setStatusCode(200);
+        $types = Type::all();
+        return $this->response->collection($windows,new WindowTransformers())->setMeta($types->toArray())->setStatusCode(200);
     }
 }

@@ -8,6 +8,7 @@ use App\Dishtype;
 use App\PreferentialDish;
 use App\Tableware;
 use App\Taste;
+use App\Type;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -33,8 +34,9 @@ class DishesController extends Controller
         $tablewares = Tableware::all();
         $tastes = Taste::all();
         $dishtypes = Dishtype::all();
+        $types = Type::all();
 
-        return view('dishes.create', compact('tastes', 'canteens', 'tablewares', 'dishtypes'));
+        return view('dishes.create', compact('types', 'tastes', 'canteens', 'tablewares', 'dishtypes'));
     }
 
     /**
@@ -100,6 +102,8 @@ class DishesController extends Controller
         $tastes = Taste::all();
         $dishtypes = Dishtype::all();
         $dish = Dish::find($id);
+        $types = Type::all();
+
         $taste_ids = $dish->tastes;
         for ($i = 0; $i < count($taste_ids); $i ++) {
             $taste_id_arr[ $i ] = $taste_ids[ $i ]->id;
@@ -109,7 +113,7 @@ class DishesController extends Controller
             $tableware_id_arr[ $i ] = $tableware_ids[ $i ]->id;
         }
 
-        return view('dishes.edit', compact('canteens', 'dish', 'tablewares', 'tastes', 'dishtypes', 'taste_id_arr', 'tableware_id_arr'));
+        return view('dishes.edit', compact('canteens', 'dish', 'tablewares', 'tastes', 'dishtypes', 'taste_id_arr', 'tableware_id_arr', 'types'));
     }
 
     /**

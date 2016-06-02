@@ -28,6 +28,7 @@ $api->version('v1', function ($api) {
         $api->get('dishes/hot', 'DishesController@getHot');
         $api->get('canteens/{id}/windows', 'WindowsController@index');
         $api->get('windows/{id}/dishes', 'DishesController@getWindowDishes');
+        $api->get('windows/{window_id}/{type_id}/dishes','DishesController@getWindowTypeDishes');
         $api->get('discounts', 'DiscountsController@getDishes');
         $api->get('breakfasts', 'DishesController@getBreakfast');
         $api->get('dishes/{id}', 'DishesController@getDetail');
@@ -96,10 +97,11 @@ Route::get('/path', function (\Illuminate\Http\Request $request) {
 //});
 
 Route::get('time', function () {
-    return Order::where('created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-        '18', '30', '00')->subDay(1))
-        ->where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '18', '30', '00')->subDay(0))->sum('order_no');
+    return \App\Type::all();
+//    return Order::where('created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+//        '18', '30', '00')->subDay(1))
+//        ->where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+//            '18', '30', '00')->subDay(0))->sum('order_no');
 //    $arr = [1,1,2,2,3,3,5,5,3,3];
 //    return array_unique($arr);
 //    return array_count_values($arr);

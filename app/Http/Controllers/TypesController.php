@@ -2,25 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Dish;
-use App\Dishtype;
+use App\Type;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-/**
- * Class DishtypesController
- * @package App\Http\Controllers
- */
-class DishtypesController extends Controller
+class TypesController extends Controller
 {
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        $dishtypes = Dishtype::all();
-        return view('dishtypes.index',compact('dishtypes'));
+        $types = Type::all();
+        return view('types.index',compact('types'));
     }
 
     /**
@@ -28,7 +23,7 @@ class DishtypesController extends Controller
      */
     public function create()
     {
-        return view('dishtypes.create');
+        return view('types.create');
     }
 
     /**
@@ -37,9 +32,9 @@ class DishtypesController extends Controller
      */
     public function store(Request $request)
     {
-        $flag = Dishtype::firstOrCreate(array_merge($request->except('_token')));
+        $flag = Type::firstOrCreate(array_merge($request->except('_token')));
         if($flag){
-            return redirect()->route('dishtypes.index');
+            return redirect()->route('types.index');
         }
     }
 
@@ -49,8 +44,8 @@ class DishtypesController extends Controller
      */
     public function edit($id)
     {
-        $dishtype = Dishtype::find($id);
-        return view('dishtypes.edit',compact('dishtype'));
+        $type = Type::find($id);
+        return view('types.edit',compact('type'));
     }
 
     /**
@@ -60,11 +55,11 @@ class DishtypesController extends Controller
      */
     public function update($id, Request $request)
     {
-        $dishtype = Dishtype::find($id);
-        $dishtype->dish_type_name = $request->get('dish_type_name');
-        $flag = $dishtype->save();
+        $type = Type::find($id);
+        $type->name = $request->get('name');
+        $flag = $type->save();
         if($flag == 1){
-            return redirect()->route('dishtypes.index');
+            return redirect()->route('types.index');
         }
     }
 
@@ -74,9 +69,9 @@ class DishtypesController extends Controller
      */
     public function destroy($id)
     {
-        $flag = Dishtype::destroy($id);
+        $flag = Type::destroy($id);
         if($flag){
-            return redirect()->route('dishtypes.index');
+            return redirect()->route('types.index');
         }
     }
 }
