@@ -11,6 +11,7 @@
 |
 */
 
+use App\Mobile;
 use App\Order;
 use Carbon\Carbon;
 
@@ -97,7 +98,8 @@ Route::get('/path', function (\Illuminate\Http\Request $request) {
 //});
 
 Route::get('time', function () {
-    return \App\Type::all();
+    return count(Mobile::where('mobile', '18535476501')->where('is_verified', 1)->get());
+//    return \App\Type::all();
 //    return Order::where('created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
 //        '18', '30', '00')->subDay(1))
 //        ->where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,

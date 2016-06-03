@@ -57,6 +57,12 @@ class AuthController extends BaseController
         if ($validator->fails()) {
             throw new StoreResourceFailedException('手机号的长度不对.', $validator->errors());
         }
+        if (count(Mobile::where('mobile', $request->get('phone'))->where('is_verified', 1)->get()) !== 0 && count(User::where('phone', $request->get('phone'))->get() !== 0)) {
+            return response()->json(['status_code' => 400, 'message' => '请勿重复注册']);
+        }
+        if (count(Mobile::where('mobile', $request->get('phone'))->where('is_verified', 1)->get()) !== 0 && count(User::where('phone', $request->get('phone'))->get() == 0)) {
+            return response()->json(['status_code' => 401, 'message' => '您已经验证过手机，正在为您跳转页面！！']);
+        }
         $Code = VerifyCode::generate_code(4);
         Cache::put($request->get('phone'), $Code, 5);
         $newMobile = [
@@ -150,12 +156,12 @@ class AuthController extends BaseController
 
     public function getResetPasswordCode(Request $request)
     {
-        $mobile = Mobile::where('mobile',$request->get('phone'))->get();
-        if(count($mobile) == 0){
-            return response()->json(['status_code'=>200,'message'=>'您未注册本应用，请先注册哟！']);
+        $mobile = Mobile::where('mobile', $request->get('phone'))->get();
+        if (count($mobile) == 0) {
+            return response()->json(['status_code' => 200, 'message' => '您未注册本应用，请先注册哟！']);
         }
-        if($mobile[0]->is_verified == 0){
-            return response()->json(['status_code'=>200,'message'=>'您的手机号未验证，请进入登录界面发送验证码进行验证']);
+        if ($mobile[0]->is_verified == 0) {
+            return response()->json(['status_code' => 200, 'message' => '您的手机号未验证，请进入登录界面发送验证码进行验证']);
         }
 
         $mobile->type = 2;
@@ -176,12 +182,12 @@ class AuthController extends BaseController
 
     public function resetPassword(Request $request)
     {
-        $user = User::where('phone',$request->get('phone'))->get();
+        $user = User::where('phone', $request->get('phone'))->get();
         $user[0]->password = bcrypt($request->get('password'));
         $flag = $user[0]->save();
-        if($flag){
-            return response()->json(['status_code'=>200,'message'=>'修改密码成功！']);
+        if ($flag) {
+            return response()->json(['status_code' => 200, 'message' => '修改密码成功！']);
         }
-        response()->json(['status_code'=>500,'message'=>'出现错误了，请联系管理员！']);
+        response()->json(['status_code' => 500, 'message' => '出现错误了，请联系管理员！']);
     }
 }
