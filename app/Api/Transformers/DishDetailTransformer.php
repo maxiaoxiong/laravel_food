@@ -47,7 +47,7 @@ class DishDetailTransformer extends TransformerAbstract
             'id' => $dish['id'],
             'name' => $dish['dish_name'],
             'img_url' => $dish['dish_img'],
-            'price' => $dish['price'],
+            'price' => $dish['dish_price'],
             'sales' => $sales,
             'delivery_time' => $dish['delivery_time'],
             'range' => $average,
