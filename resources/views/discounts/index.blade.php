@@ -50,9 +50,9 @@
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">价格:</label>
                             <input type="text" class="form-control dish_price" name="dish_price" id="recipient-name">
-                            <input type="hidden" class="form-control dish_id" name="dish_id" value="2">
+                            <input type="hidden" class="form-control" name="type" value="removeFromDiscount">
                             <input type="hidden" class="form-control id" name="id">
-                            <input type="hidden" class="form-control dishId" name="dishId">
+                            <input type="hidden" class="form-control dish_id" name="dish_id">
                         </div>
                     </div>
                     <div class="modal-footer">

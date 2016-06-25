@@ -65,32 +65,55 @@ class DishesController extends Controller
      */
     public function update($id, Request $request)
     {
-        if ($request->get('dish_id') == 1) {
-            $id = $request->get('id');
-            $dish = Dish::findOrFail($id);
-            $data = $request->except('_token', 'id');
-            $flag = PreferentialDish::firstOrCreate(['dish_id' => $id]);
-        } elseif ($request->get('dish_id') == 2) {
-            $id = $request->get('id');
-            $dish = Dish::findOrFail($request->get('dishId'));
-            $data = $request->except('_token', 'id');
-            $flag = PreferentialDish::destroy($id);
-            $dish->update($data);
-
+        if ($request->get('type') == 'addToDiscount') {
+            $this->addToDisCount($request);
+        } elseif ($request->get('type') == 'removeFromDiscount') {
+            $this->removeFromDiscount($request);
             return redirect()->route('discounts.index');
         } else {
-            $dish = Dish::findOrFail($id);
-            $data = $request->except('_token');
-            $taste_list = $request->get('taste');
-            $tableware_list = $request->get('tableware');
-            $dish->tastes()->sync($taste_list);
-            $dish->tablewares()->sync($tableware_list);
+            $this->updateAll($id,$request);
         }
-        $dish->update($data);
-
         return redirect()->route('dishes.index');
     }
 
+    /**
+     * @param $request
+     */
+    public function addToDisCount($request)
+    {
+        $id = $request->get('id');
+        $dish = Dish::findOrFail($id);
+        $data = $request->except('_token', 'id');
+        PreferentialDish::firstOrCreate(['dish_id' => $id]);
+        $dish->update($data);
+    }
+
+    /**
+     * @param $request
+     */
+    public function removeFromDiscount($request)
+    {
+        $id = $request->get('id');
+        $dish = Dish::findOrFail($request->get('dish_id'));
+        $data = $request->except('_token', 'id');
+        PreferentialDish::destroy($id);
+        $dish->update($data);
+    }
+
+    /**
+     * @param $id
+     * @param $request
+     */
+    public function updateAll($id, $request)
+    {
+        $dish = Dish::findOrFail($id);
+        $data = $request->except('_token');
+        $taste_list = $request->get('taste');
+        $tableware_list = $request->get('tableware');
+        $dish->tastes()->sync($taste_list);
+        $dish->tablewares()->sync($tableware_list);
+        $dish->update($data);
+    }
     /**
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

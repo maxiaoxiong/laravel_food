@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="3052987830">
-    <data-source source="LOCAL" name="MySQL - ping@localhost" uuid="271fb792-fe5f-4c6b-b1a7-05d34df17dab">
+  <component name="DataSourceManagerImpl" format="xml" hash="3409140086">
+    <data-source source="LOCAL" name="MySQL - ping@localhost" uuid="68416dd3-dd05-4db3-a460-2dbc69625e9c">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:33060/ping</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/ping</jdbc-url>
       <driver-properties>
+        <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
         <property name="tinyInt1isBit" value="false" />
         <property name="characterEncoding" value="utf8" />

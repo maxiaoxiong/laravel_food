@@ -81,7 +81,6 @@
                 return treeview.addClass('active').siblings().removeClass('active');
             }
         }
-        ;
     });
 </script>
 
@@ -96,7 +95,6 @@
         console.log(building_id);
         getFloors(building_id);
     });
-
 
 </script>
 <script>
@@ -114,14 +112,14 @@
         var name = button.data('transname'); // Extract info from data-* attributes
         var price = button.data('transprice');
         var id = button.data('transid');
-        var dishId = button.data('transdishid');
+        var dish_id = button.data('transdishid');
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this);
         modal.find('.modal-title').text('更改 ' + name + ' 价格');
         modal.find('.dish_price').val(price);
         modal.find('.id').val(id);
-        modal.find('.dishId').val(dishId);
+        modal.find('.dish_id').val(dish_id);
     });
 </script>
 <script>
