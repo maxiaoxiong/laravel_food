@@ -122,14 +122,14 @@ class OrdersController extends BaseController
 
         $ch = \Pingpp\Charge::create(
             array(
-                'order_no'  => $request->get('dish_id'),
+                'order_no'  => join('+',$request->get('dish_id')),
                 'app'       => array('id' => env('PING_APP_ID')),
-                'channel'   => 'alipay',
-                'amount'    => $request->get('price'),
+                'channel'   => $request->get('channel'),
+                'amount'    => $request->get('amount'),
                 'client_ip' => $request->ip(),
                 'currency'  => 'cny',
-                'subject'   => $request->get('dish_name'),
-                'body'      => $request->get('user_name').' 正在购买 '.$request->get('dish_name'),
+                'subject'   => join('+',$request->get('dish_name')),
+                'body'      => $request->get('user_name').' 正在购买 '.join('+',$request->get('dish_name')),
                 'extra'     => array()
             )
         );
