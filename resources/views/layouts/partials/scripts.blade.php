@@ -13,6 +13,7 @@
 <script src="//cdn.bootcss.com/Chart.js/2.1.3/Chart.min.js"></script>
 
 <script src="{{ asset('/js/bootstrap-timepicker.min.js') }}"></script>
+<script src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
 
 <script src="//cdn.bootcss.com/socket.io/1.4.6/socket.io.min.js"></script>
 
@@ -103,6 +104,10 @@
         showInputs: false,
         showSeconds: true,
         showMeridian: false
+    });
+
+    $(".form_datetime").datetimepicker({
+        format: "yyyy-mm-dd hh:ii::ss",
     });
 </script>
 

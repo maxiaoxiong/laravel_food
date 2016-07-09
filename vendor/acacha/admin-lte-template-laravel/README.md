@@ -12,6 +12,7 @@ If you are looking for the Laravel 4 version, use 0.1.5 version/tag and see [OLD
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/acacha/adminlte-laravel/build-status/master)
 [![StyleCI](https://styleci.io/repos/35628567/shield)](https://styleci.io/repos/35628567)
+[![Build Status](https://travis-ci.org/acacha/adminlte-laravel.svg?branch=master)](https://travis-ci.org/acacha/adminlte-laravel)
 
 # Installation & use
 
@@ -278,6 +279,18 @@ Remove line @include('auth.partials.social_login') in files resources/views/auth
 Social login links in login/register pages returns 404 not found
 
 TODO: See package https://github.com/acacha/acacha-socialite
+
+## Localization
+
+All strings are localized using Laravel localization support: https://laravel.com/docs/master/localization
+
+In your config/app.php file you can change locale to change language. You can install only localized files using tag  adminlte_lang:
+
+```bash
+php artisan vendor:publish --tag=adminlte_lang --force
+```
+
+The following languages are supported by default on this package: English, Catalan and Spanish. Please feel free to submit a new pull request with another languages if you wish.
 
 ## Troubleshooting
 

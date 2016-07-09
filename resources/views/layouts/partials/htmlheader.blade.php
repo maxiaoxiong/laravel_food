@@ -25,6 +25,7 @@
 
     <link rel="stylesheet" href="{{ asset('/plugins/croppic/main.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/plugins/croppic/croppic.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/bootstrap-datetimepicker.min.css') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="{{ asset('/css/bootstrap-timepicker.css') }}">

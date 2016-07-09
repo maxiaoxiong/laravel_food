@@ -173,6 +173,8 @@ return [
 
         TomLingham\Searchy\SearchyServiceProvider::class,
 
+        Laracasts\Flash\FlashServiceProvider::class,
+
     ],
 
     /*
@@ -232,7 +234,9 @@ return [
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
-        'Searchy' => TomLingham\Searchy\Facades\Searchy::class
+        'Searchy' => TomLingham\Searchy\Facades\Searchy::class,
+
+        'Flash' => Laracasts\Flash\Flash::class,
 
     ],
 

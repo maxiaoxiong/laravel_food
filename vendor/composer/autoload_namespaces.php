@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'phpDocumentor' => array($vendorDir . '/phpdocumentor/reflection-docblock/src'),
+    'jpush' => array($vendorDir . '/jpush/jpush/src'),
     'Toplan\\Sms' => array($vendorDir . '/toplan/laravel-sms/src'),
     'System' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
@@ -17,6 +18,7 @@ return array(
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
     'Math' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Maatwebsite\\Excel\\' => array($vendorDir . '/maatwebsite/excel/src'),
+    'Laracasts\\Flash' => array($vendorDir . '/laracasts/flash/src'),
     'JakubOnderka\\PhpConsoleHighlighter' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
     'File' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
@@ -25,4 +27,5 @@ return array(
     'Doctrine\\Common\\Annotations\\' => array($vendorDir . '/doctrine/annotations/lib'),
     'Crypt' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Cron' => array($vendorDir . '/mtdowling/cron-expression/src'),
+    'Barryvdh' => array($vendorDir . '/barryvdh/reflection-docblock/src'),
 );

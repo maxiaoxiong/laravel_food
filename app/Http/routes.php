@@ -80,51 +80,65 @@ Route::get('/image', function () {
 Route::get('/path', function (\Illuminate\Http\Request $request) {
     return dd($request->all());
 });
-//
-//Route::group(['prefix'=>'image'],function(){
-//    Route::get('view',function(){
-//       return view('test.image');
-//    });
-//    Route::post('upload',function(\Illuminate\Http\Request $request){
-////        return $request->file('pic');
-//        if($request->hasFile('pic')){
-////            return 'success';
-//            Image::make($request->file('pic'))->resize(300,200)->save('uploads/foo.jpg');
-////            $request->hasFile('pic')->save('uploads/');
-//        }else{
-//            return "failed";
-//        }
-//    });
-//});
 
-Route::get('time', function () {
-    return count(Mobile::where('mobile', '18535476501')->where('is_verified', 1)->get());
-//    return \App\Type::all();
-//    return Order::where('created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-//        '18', '30', '00')->subDay(1))
-//        ->where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-//            '18', '30', '00')->subDay(0))->sum('order_no');
-//    $arr = [1,1,2,2,3,3,5,5,3,3];
-//    return array_unique($arr);
-//    return array_count_values($arr);
-//    return \Carbon\Carbon::create(\Carbon\Carbon::yesterday()->year,\Carbon\Carbon::yesterday()->month,\Carbon\Carbon::yesterday()->day,
-//        '18','30','00');
-//    return \Carbon\Carbon::createFromDate(null,null,\Carbon\Carbon::yesterday()->day,'18','30','00');
-//    return \Carbon\Carbon::now()->startOfDay()->subDay(6);
-//    return \App\Order::where('created_at', '>=', \Carbon\Carbon::now()->startOfDay()->subDay(6))->count();
-//      return \Carbon\Carbon::now()->subDay(0)->day;
-//    return \Carbon\Carbon::now()->day;
-//    $order = \App\Order::find(2)->dormitory->name;
-//    return $order;
-//    if(Carbon\Carbon::now()->createFromTime()->toTimeString() > "07:00:00"){
-//        return "1";
-//    }
-//    return \App\Dish::find(1)->window->canteen->windows;
-//    return \App\Order::find(1)->tastes;
-//    return \Carbon\Carbon::createFromDate()->startOfWeek();
-//    return \App\Order::find(1)->created_at->today();
-//    echo \Carbon\Carbon::createFromDate()->isWeekday();
-//    echo \App\Order::find(1)->created_at->isYesterday();
-//    return \Carbon\Carbc
-});
+
 Route::get('comment', 'CommentsController@index');
+
+/**
+ * web route
+ */
+Route::auth();
+
+Route::resource('home', 'HomeController');
+
+Route::resource('foods','FoodsController');
+
+Route::resource('canteens','CanteensController');
+
+Route::resource('windows','WindowsController');
+
+Route::resource('dishes','DishesController');
+
+Route::resource('dishware','DishwareController');
+
+Route::resource('buildings','BuildingsController');
+
+Route::resource('floors','FloorsController');
+
+Route::resource('dormitories','DormitoriesController');
+
+Route::resource('users','UsersController');
+
+Route::resource('comments','CommentsController');
+
+Route::resource('discounts','DiscountsController');
+
+Route::resource('dishtypes','DishtypesController');
+
+Route::resource('tastes','TastesController');
+
+Route::resource('tablewares','TablewaresController');
+
+Route::resource('advertises','AdvertisesController');
+
+Route::resource('types','TypesController');
+
+Route::post('image/upload','ImageController@upload');
+Route::post('image/crop','ImageController@crop');
+Route::get('getWindows/{id}',function($id){
+    return \App\Canteen::find($id)->windows;
+});
+Route::get('getFloors/{id}',function($id){
+    return \App\Building::find($id)->floors;
+});
+Route::get('orders/today','OrdersController@getTodayOrders');
+Route::get('orders/week','OrdersController@getWeekOrders');
+Route::get('orders/history','OrdersController@getHistoryOrders');
+Route::get('orders/printOrders/{type}','OrdersController@printOrders');
+Route::get('push/history','PushController@index');
+Route::get('push/new','PushController@add');
+Route::post('push/timely','PushController@timely');
+Route::post('push/timing','PushController@timing');
+
+Route::get('pay','OrdersController@pay');
+Route::post('pay/status','OrdersController@payStatus');

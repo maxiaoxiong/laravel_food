@@ -14,6 +14,60 @@ use Pingpp\Pingpp;
 
 class OrdersController extends Controller
 {
+    /**
+     * @param Request $request
+     * @return Charge
+     */
+//    client->server(pay)->server->aliply->server(get Charge Object)->return Charge to client
+//    ->valid true -> server(save to database)
+    public function pay(Request $request){
+        \Pingpp\Pingpp::setApiKey(env('PING_API_KEY'));
+        \Pingpp\Pingpp::setPrivateKeyPath(base_path('RSACret/rsa_private_key.pem'));
+
+        $ch = \Pingpp\Charge::create(
+            array(
+//                'order_no'  => $request->get('dish_id'),
+                'order_no'  => time().rand(1000,99999),
+                'app'       => array('id' => env('PING_APP_ID')),
+                'channel'   => 'alipay',
+//                'amount'    => $request->get('price'),
+                'amount'    => 100,
+                'client_ip' => $request->ip(),
+                'currency'  => 'cny',
+//                'subject'   => $request->get('dish_name'),
+                'subject'   => '杏花村',
+//                'body'      => $request->get('user_name').' 正在购买 '.$request->get('dish_name'),
+                'body'      => '马啸雄'.' 正在购买 '.'杏花村',
+                'extra'     => array()
+            )
+        );
+
+        return $ch;
+    }
+
+    public function payStatus()
+    {
+        $event = json_decode(file_get_contents("php://input"));
+
+        // 对异步通知做处理
+        if (!isset($event->type)) {
+            header($_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request');
+            exit("fail");
+        }
+        switch ($event->type) {
+            case "charge.succeeded":
+                // 开发者在此处加入对支付异步通知的处理代码
+                header($_SERVER['SERVER_PROTOCOL'] . ' 200 OK');
+                break;
+            case "refund.succeeded":
+                // 开发者在此处加入对退款异步通知的处理代码
+                header($_SERVER['SERVER_PROTOCOL'] . ' 200 OK');
+                break;
+            default:
+                header($_SERVER['SERVER_PROTOCOL'] . ' 400 Bad Request');
+                break;
+        }
+    }
 
     /**
      * @param Request $request
@@ -38,6 +92,8 @@ class OrdersController extends Controller
         return $charge;
         return view('orders.charge',compact('charge'));
     }
+
+
 
 
     /**
