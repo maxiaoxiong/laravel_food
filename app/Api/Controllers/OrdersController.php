@@ -105,7 +105,7 @@ class OrdersController extends BaseController
                 'order_no'  => time().rand(1000,99999),
                 'app'       => array('id' => env('PING_APP_ID')),
                 'channel'   => 'alipay',
-                'amount'    => 100,
+                'amount'    => 1,
                 'client_ip' => $request->ip(),
                 'currency'  => 'cny',
                 'subject'   => '杏花村',

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b63fc759-92a1-42d3-84fe-c95dd96d99f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
     </list>
     <ignored path="pingplus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,11 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OrdersController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/OrdersController.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-182">
-              <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+            <state relative-caret-position="324">
+              <caret line="146" column="55" selection-start-line="146" selection-start-column="55" selection-end-line="146" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -94,7 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/orders/today.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Components/LastSevenOrders.php" />
         <option value="$PROJECT_DIR$/app/Components/ExcelExport.php" />
@@ -145,6 +145,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/OrdersController.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
       </list>
     </option>
   </component>
@@ -393,7 +394,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -411,11 +412,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Api" />
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
+              <option name="myItemId" value="Middleware" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -514,12 +515,12 @@
       <workItem from="1467880892259" duration="1221000" />
       <workItem from="1467938360753" duration="934000" />
       <workItem from="1467939316385" duration="12532000" />
-      <workItem from="1467997487934" duration="7940000" />
+      <workItem from="1467997487934" duration="8909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51050000" />
+    <option name="totallyTimeSpent" value="52019000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -532,7 +533,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2510981" sideWeight="0.49444443" order="0" side_tool="false" content_ui="combo" />
@@ -572,13 +573,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/68416dd3-dd05-4db3-a460-2dbc69625e9c/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/DishesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -901,20 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/OrderTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1462288111527" expanded="false" signature="9:87" ph=" Created by PhpStorm. ..." />
-            <marker date="1462288111527" expanded="false" signature="129:179" ph="..." />
-            <marker date="1462288111527" expanded="true" signature="231:440" ph="{...}" />
-            <marker date="1462288111527" expanded="true" signature="277:438" ph="{...}" />
-            <marker date="1462288111527" expanded="true" signature="300:430" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
@@ -1029,38 +1009,6 @@
             <marker date="1468031645663" expanded="true" signature="8166:8973" ph="SELECT dish_... dish_name" />
             <marker date="1468031645663" expanded="true" signature="8276:8922" ph="SELECT dish_... dish_name" />
             <marker date="1468031645663" expanded="true" signature="8434:8873" ph="SELECT dish_... orders" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding>
-            <marker date="1468033261288" expanded="false" signature="9:390" ph="..." />
-            <marker date="1468033261288" expanded="false" signature="398:443" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="500:2538" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="523:2537" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="540:2534" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="597:2533" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2080:2526" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2127:2525" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2553:2601" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2571:2600" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2616:2834" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2635:2833" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2649:2754" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2704:2748" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2968:3170" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="2991:3169" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="3185:3274" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="3240:3273" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="3334:3349" ph=" web route ..." />
-            <marker date="1468033261288" expanded="true" signature="4331:4410" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="4363:4409" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="4424:4502" ph="..." />
-            <marker date="1468033261288" expanded="true" signature="4455:4501" ph="..." />
           </folding>
         </state>
       </provider>
@@ -1204,10 +1152,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/OrderTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1462288111527" expanded="false" signature="9:87" ph=" Created by PhpStorm. ..." />
+            <marker date="1462288111527" expanded="false" signature="129:179" ph="..." />
+            <marker date="1462288111527" expanded="true" signature="231:440" ph="{...}" />
+            <marker date="1462288111527" expanded="true" signature="277:438" ph="{...}" />
+            <marker date="1462288111527" expanded="true" signature="300:430" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/OrdersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-182">
+        <state relative-caret-position="26">
           <caret line="104" column="55" selection-start-line="104" selection-start-column="55" selection-end-line="104" selection-end-column="55" />
+          <folding>
+            <marker date="1468032058225" expanded="false" signature="9:87" ph=" Created by PhpStorm. ..." />
+            <marker date="1468032058225" expanded="false" signature="128:307" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="354:4122" ph="{...}" />
+            <marker date="1468032058225" expanded="true" signature="364:391" ph=" @return mixed ..." />
+            <marker date="1468032058225" expanded="true" signature="421:1120" ph="{...}" />
+            <marker date="1468032058225" expanded="true" signature="441:598" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="508:587" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="634:722" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="758:846" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="873:960" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="1129:1216" ph=" @param $id ..." />
+            <marker date="1468032058225" expanded="true" signature="1248:1492" ph="{...}" />
+            <marker date="1468032058225" expanded="true" signature="1315:1394" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="1501:1583" ph=" @param Request $request ..." />
+            <marker date="1468032058225" expanded="true" signature="1629:2401" ph="{...}" />
+            <marker date="1468032058225" expanded="true" signature="1712:2025" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="1801:1881" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="2127:2250" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="2189:2240" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="2410:2469" ph=" @param Request $request ..." />
+            <marker date="1468032058225" expanded="true" signature="2659:3323" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="2839:3295" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="2858:3285" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="3367:4114" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="3547:4086" ph="..." />
+            <marker date="1468032058225" expanded="true" signature="3566:4076" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding>
+            <marker date="1468037955325" expanded="true" signature="157:366" ph="{...}" />
+            <marker date="1468037955325" expanded="true" signature="167:262" ph=" The URIs that should be excluded from CSRF verification. ..." />
+            <marker date="1468037955325" expanded="true" signature="290:362" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="146" column="55" selection-start-line="146" selection-start-column="55" selection-end-line="146" selection-end-column="55" />
           <folding />
         </state>
       </provider>
