@@ -45,6 +45,8 @@ $api->version('v1', function ($api) {
             $api->get('orders', 'OrdersController@index');
             $api->get('orders/{id}', 'OrdersController@show');
             $api->get('user/me', 'AuthController@getAuthenticatedUser');
+            $api->get('pay','OrdersController@pay');
+            $api->get('paytest','OrdersController@payTest');
         });
     });
 });
@@ -140,5 +142,4 @@ Route::get('push/new','PushController@add');
 Route::post('push/timely','PushController@timely');
 Route::post('push/timing','PushController@timing');
 
-Route::get('pay','OrdersController@pay');
 Route::post('pay/status','OrdersController@payStatus');
