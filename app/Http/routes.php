@@ -38,6 +38,10 @@ $api->version('v1', function ($api) {
         $api->get('buildings/{id}/floors', 'FloorsController@getFloors');
         $api->get('floors/{id}/dormitories', 'DormitoriesController@getDormitories');
         $api->get('advertises', 'AdvertisesController@index');
+        
+        $api->get('pay','OrdersController@pay');
+        $api->get('paytest','OrdersController@payTest');
+
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
             $api->post('dishes/range', 'DishesController@postRange');
             $api->post('orders', 'OrdersController@store');
@@ -45,8 +49,6 @@ $api->version('v1', function ($api) {
             $api->get('orders', 'OrdersController@index');
             $api->get('orders/{id}', 'OrdersController@show');
             $api->get('user/me', 'AuthController@getAuthenticatedUser');
-            $api->get('pay','OrdersController@pay');
-            $api->get('paytest','OrdersController@payTest');
         });
     });
 });
