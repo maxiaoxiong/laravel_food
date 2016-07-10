@@ -9,7 +9,7 @@
         <div class="box-body">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <div class="panel-title">及时推送历史</div>
+                    <div class="panel-title">即时推送历史</div>
                 </div>
                 <div class="panel-body">
                     <table class="table table-hover">
@@ -47,7 +47,7 @@
                             <th>name</th>
                             <th>内容</th>
                             <th>定时时间</th>
-                            <th>发送状态</th>
+                            <th>创建状态</th>
                         </tr>
                         @foreach($timings as $timing)
                             <tr>

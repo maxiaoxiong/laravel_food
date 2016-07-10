@@ -6,7 +6,6 @@
             <h3 class="box-title"><a href="{{ url('orders/printOrders/1') }}" class="btn btn-info">打印概览表</a>
                 <a href="{{ url('orders/printOrders/2') }}" class="btn btn-primary">打印窗口明细</a>
                 <a href="{{ url('orders/printOrders/3') }}" class="btn btn-info">打印宿舍菜单</a>
-                <a href="{{ url('orders/printOrders/1') }}" class="btn btn-info">打印窗口菜单</a></h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">

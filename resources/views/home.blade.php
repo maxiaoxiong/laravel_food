@@ -12,7 +12,7 @@
             <div class="col-lg-3 col-xs-6">
                 <!-- small box -->
                 <div class="small-box bg-aqua">
-                    <div class="inner" v-cloak>
+                    <div class="inner">
                         <h3 style="color: #fff" id="ordersToday" v-model="ordersToday">@{{ ordersToday }}</h3>
 
                         <p>今日订单</p>
@@ -112,39 +112,39 @@
 
     <script>
     $(function(){
-        var sevenOrders = {{ \App\Components\LastSevenOrders::getSevenDaysOrders() }}
-    })(this)
-    var context = document.querySelector('#orders_line').getContext('2d');
-    var data = {
-        labels:{{ \App\Components\LastSevenDay::getDaysArr() }},
-        datasets: [
-            {
-                label: "七日内订单走线",
-                fill: false,
-                lineTension: 0.1,
-                backgroundColor: "rgba(75,192,192,0.4)",
-                borderColor: "rgba(75,192,192,1)",
-                borderCapStyle: 'butt',
-                borderDash: [],
-                borderDashOffset: 0.0,
-                borderJoinStyle: 'miter',
-                pointBorderColor: "rgba(75,192,192,1)",
-                pointBackgroundColor: "#fff",
-                pointBorderWidth: 1,
-                pointHoverRadius: 5,
-                pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                pointHoverBorderColor: "rgba(220,220,220,1)",
-                pointHoverBorderWidth: 2,
-                pointRadius: 1,
-                pointHitRadius: 10,
-                data:
+        var context = document.querySelector('#orders_line').getContext('2d');
+        var data = {
+            labels:{{ \App\Components\LastSevenDay::getDaysArr() }},
+            datasets: [
+                {
+                    label: "七日内订单走线",
+                    fill: false,
+                    lineTension: 0.1,
+                    backgroundColor: "rgba(75,192,192,0.4)",
+                    borderColor: "rgba(75,192,192,1)",
+                    borderCapStyle: 'butt',
+                    borderDash: [],
+                    borderDashOffset: 0.0,
+                    borderJoinStyle: 'miter',
+                    pointBorderColor: "rgba(75,192,192,1)",
+                    pointBackgroundColor: "#fff",
+                    pointBorderWidth: 1,
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointHoverBorderWidth: 2,
+                    pointRadius: 1,
+                    pointHitRadius: 10,
+                    data: {{ \App\Components\LastSevenOrders::getSevenDaysOrders() }}
 
-            }
-        ]
-    };
-    var myLineChart = new Chart(context, {
-        type: 'line',
-        data: data
+                }
+            ]
+        };
+        var myLineChart = new Chart(context, {
+            type: 'line',
+            data: data
+        })
     })
+
     </script>
 @endsection

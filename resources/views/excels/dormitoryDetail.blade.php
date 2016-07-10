@@ -15,7 +15,7 @@
 @foreach($datas as $data)
     <tr>
         <td>{{ $data->user_name }}</td>
-        <td>{{ $data->phone }}</td>
+        <td>{{ $data->user_phone }}</td>
         <td>{{ $data->building_name }}-{{ $data->floor_name }}-{{ $data->dormitory_name }}</td>
         <td>{{ $data->dish_name }}</td>
         <td>{{ $data->order_no }}</td>

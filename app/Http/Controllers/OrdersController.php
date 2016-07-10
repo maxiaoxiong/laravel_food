@@ -116,13 +116,6 @@ class OrdersController extends Controller
 //        ExcelExport::export($orders);
     }
 
-    /**
-     *
-     */
-    public function overOrder()
-    {
-        dd('sss');
-    }
 
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -171,91 +164,18 @@ WHERE i2.canteen_id = canteens.id');
 
     public function getTagsResult($time1, $time2)
     {
-        $tags = \DB::select('SELECT
-  canteen_id,
-  window_id,
-  canteen_name,
-  window_name,
-  dish_name,
+        $tags = \DB::select('SELECT d2.dish_name,order_no,d2.dish_price,
   user_name,
-        user_phone,
-  dormitory_name,
-  order_no,
-  building_name,
-  floor_name,
-  dish_price
-FROM (SELECT
-        canteen_id,
-        dish_name,
-        order_no,
-        window_name,
-  user_name,
-        user_phone,
-        window_id,
-  dormitory_name,
-        b.building_name AS building_name,
-      floor_name,
-  dish_price
-      FROM (SELECT
-              dish_name,
-              order_no,
-              window_id,
-        user_name,
-        user_phone,
-              i.dish_price AS dish_price,
-              dormitory_name,
-              f.building_id AS building_id,
-              f.floor_name AS floor_name
-            FROM (SELECT
-                    dish_id,
-                    dishes.dish_price AS dish_price,
-                    order_no,
-                    users.name AS user_name,
-                    users.phone AS user_phone,
-                    dormitories.floor_id AS floor_id,
-                    dormitories.id AS dormitory_id,
-                    dormitories.name AS dormitory_name
-                  FROM orders,dormitories,users,dishes
-                  WHERE orders.created_at >= "' . $time1 . '" AND orders.created_at <= "' . $time2 . '" AND dormitories.id = dormitory_id AND orders.user_id = users.id AND dishes.id = orders.dish_id
-                 ) AS i, dishes AS d ,floors AS f
-            WHERE i.dish_id = d.id AND f.id = floor_id) AS s, windows AS w ,buildings AS b
-      WHERE s.window_id = w.id AND b.id = building_id) AS n, canteens AS c
-WHERE n.canteen_id = c.id ORDER BY window_id');
+  user_phone,b.building_name,f.floor_name,d.name AS dormitory_name FROM orders AS o , dishes AS d2 , dormitories AS d, floors AS f, buildings AS b WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND o.created_at >= "'.$time1.'" AND created_at <= "'.$time2.'"');
 
         return $tags;
     }
 
     public function getDormitoryResult($time1, $time2)
     {
-        $orders = \DB::select('SELECT
-  dish_name,
-  order_no,
+        $orders = \DB::select('SELECT d2.dish_name,order_no,
   user_name,
-  phone,
-  dormitory_name,
-  floor_name,
-  b.building_name
-FROM (SELECT
-        dish_name,
-        order_no,
-        user_name,
-        phone,
-        dormitory_name,
-        f.floor_name,
-        f.building_id
-      FROM (SELECT
-              dish_name,
-              order_no,
-              u.phone,
-              u.name  AS user_name,
-              d2.name AS dormitory_name,
-              d2.floor_id
-            FROM orders AS o, users AS u, dishes AS d, dormitories AS d2
-            WHERE
-              o.created_at >= "' . $time1 . '" AND o.created_at <= "' . $time2 . '" AND o.dish_id = d.id AND
-              o.user_id = u.id AND o.dormitory_id = d2.id) AS i, floors AS f
-      WHERE i.floor_id = f.id) AS i2, buildings AS b
-WHERE i2.building_id = b.id;');
+  user_phone,b.building_name,f.floor_name,d.name AS dormitory_name FROM orders AS o , dishes AS d2 , dormitories AS d, floors AS f, buildings AS b WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND o.created_at >= "'.$time1.'" AND created_at <= "'.$time2.'"');
 
         return $orders;
     }
