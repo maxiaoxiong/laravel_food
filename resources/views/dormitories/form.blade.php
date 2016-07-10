@@ -27,3 +27,14 @@
 <div class="modal-footer">
     <button type="submit" class="btn btn-primary pull-left">Save changes</button>
 </div>
+
+@section('self_scripts')
+    <script>
+        $('#building_id').change(function () {
+            var building_id = $('#building_id').val();
+            console.log(building_id);
+            getFloors(building_id);
+        });
+    </script>
+
+@endsection

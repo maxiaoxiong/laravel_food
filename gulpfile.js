@@ -12,7 +12,10 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.less('app.less');
-    mix.less('admin-lte/AdminLTE.less');
-    mix.less('bootstrap/bootstrap.less');
+    // mix.less('app.less');
+    // mix.less('admin-lte/AdminLTE.less');
+    // mix.less('bootstrap/bootstrap.less');
+    mix.styles(['bootstrap.css','AdminLTE.css','skin-blue.css','blue.css','main-crop.css',
+    'croppic.css','bootstrap-datetimepicker.min.css','select2.min.css','bootstrap-timepicker.css']);
+    mix.scripts(['jQuery-2.1.4.min.js','bootstrap.min.js','app.min.js','vue.min.js']);
 });

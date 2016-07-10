@@ -70,3 +70,12 @@
         </div>
     </div>
 @endsection
+
+@section('self_scripts')
+    <script src="{{ asset('/js/bootstrap-datetimepicker.min.js') }}"></script>
+    <script>
+        $(".form_datetime").datetimepicker({
+            format: "yyyy-mm-dd hh:ii:ss",
+        });
+    </script>
+@endsection

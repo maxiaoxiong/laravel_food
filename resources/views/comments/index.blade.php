@@ -58,3 +58,18 @@
         </div>
     </div>
 @endsection
+
+@section('self_scripts')
+    <script>
+        $('#detailComment').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var recipient = button.data('author'); // Extract info from data-* attributes
+            var comment = button.data('comment');
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this);
+            modal.find('.modal-title').text('来自用户 ' + recipient + ' 的评论：');
+            modal.find('.modal-body textarea').val('  ' + comment);
+        });
+    </script>
+@endsection

@@ -3,9 +3,16 @@
         <div class="form-group col-md-10 col-md-offset-1">
             <label>选择楼号</label>
             <select class="form-control" name="building_id">
-                @foreach($buildings as $building)
-                    <option @if($building->id == $floor->building->id) selected="selected" @endif value="{{ $building->id }}">{{ $building->building_name }}</option>
-                @endforeach
+                @if(isset($floor))
+                    @foreach($buildings as $building)
+                        <option @if($building->id == $floor->building->id) selected="selected"
+                                @endif value="{{ $building->id }}">{{ $building->building_name }}</option>
+                    @endforeach
+                @else
+                    @foreach($buildings as $building)
+                        <option value="{{ $building->id }}">{{ $building->building_name }}</option>
+                    @endforeach
+                @endif
             </select>
         </div>
         <div class="form-group col-md-10 col-md-offset-1">

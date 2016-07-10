@@ -1,4 +1,7 @@
 <script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>
+<script src="{{ asset('/js/select2.min.js') }}"></script>
+<script src="{{ asset('/js/bootstrap-timepicker.min.js') }}"></script>
+
 {!! csrf_field() !!}
 <div class="modal-body">
     <div class="row">
@@ -100,17 +103,48 @@
     <button type="submit" class="btn btn-primary pull-left">Save changes</button>
 </div>
 
+    <script>
+        var eyeCandy = $('#cropContainerEyecandy');
+        var croppedOptions = {
+            uploadUrl: '/image/upload',
+            cropUrl: '/image/crop',
+            loadPicture: '{{ $dish->dish_img or '' }}',
+            cropData: {
+                'width': eyeCandy.width(),
+                'height': eyeCandy.height()
+            },
+            outputUrlId: 'dish_img'
+        };
+        var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
+    </script>
+
 <script>
-    var eyeCandy = $('#cropContainerEyecandy');
-    var croppedOptions = {
-        uploadUrl: '/image/upload',
-        cropUrl: '/image/crop',
-        loadPicture: '{{ $dish->dish_img or '' }}',
-        cropData: {
-            'width': eyeCandy.width(),
-            'height': eyeCandy.height()
-        },
-        outputUrlId: 'dish_img'
-    };
-    var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
+    $(".select").select2({
+        tags: true,
+        tokenSeparators: [',', ' ']
+    });
+</script>
+<script>
+    $(".timepicker").timepicker({
+        showInputs: false,
+        showSeconds: true,
+        showMeridian: false
+    });
+</script>
+<script>
+    $('#canteen_id').change(function () {
+        var canteen_id = $('#canteen_id').val();
+        console.log(canteen_id);
+        getWindows(canteen_id);
+    });
+
+    function getWindows(canteen_id){
+        $.getJSON('/getWindows/'+canteen_id,function(data){
+            var str = "";
+            for (var i=0;i<data.length;i++){
+                str+="<option value="+data[i].id+">"+data[i].window_name+"</option>"
+            }
+            $('#window_id').html(str);
+        })
+    }
 </script>
