@@ -48,9 +48,9 @@ class APIRequestException extends Exception {
         }
         $headers = $response['headers'];
         if (is_array($headers)) {
-            $this->rateLimitLimit = $headers['X-Rate-Limit-Limit'];
-            $this->rateLimitRemaining = $headers['X-Rate-Limit-Remaining'];
-            $this->rateLimitReset = $headers['X-Rate-Limit-Reset'];
+            $this->rateLimitLimit = 20;
+            $this->rateLimitRemaining = 10;
+            $this->rateLimitReset = 10;
         }
     }
 

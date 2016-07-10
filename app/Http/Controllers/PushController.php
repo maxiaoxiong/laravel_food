@@ -75,7 +75,7 @@ class PushController extends Controller
         } catch (APIRequestException $e) {
             \Log::error(time() . ' 定时任务创建失败，http状态码为： ' . $e->httpCode . '，错误代码为：' . $e->code . '，错误信息为：' . $e->message);
             Flash::error('创建定时任务失败，错误信息为： ' . $e->message . '，请联系管理员');
-            return view('push.new', ['code' => $e->code, 'msg' => $e->message]);
+            return view('push.add', ['code' => $e->code, 'msg' => $e->message]);
         }
 
         /**
@@ -83,13 +83,13 @@ class PushController extends Controller
          */
 
 
-        $push_timing = new PushTimely;
-        $push_timing->schedule_id = $response->schedule_id;
-        $push_timing->name = $response->name;
+        $push_timing = new PushTiming();
+        $push_timing->schedule_id = $response->data->schedule_id;
+        $push_timing->name = $response->data->name;
         $push_timing->content = $request->get('content');
         $push_timing->time = $request->get('time');
         $push_timing->save();
         Flash::success('定时任务创建成功');
-        return view('push.history', ['code' => 200, 'msg' => '定时任务创建成功']);
+        return redirect('/push/history');
     }
 }

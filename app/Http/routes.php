@@ -141,6 +141,7 @@ Route::get('orders/history','OrdersController@getHistoryOrders');
 Route::get('orders/printOrders/{type}','OrdersController@printOrders');
 Route::get('push/history','PushController@index');
 Route::get('push/new','PushController@add');
+
 Route::post('push/timely','PushController@timely');
 Route::post('push/timing','PushController@timing');
 

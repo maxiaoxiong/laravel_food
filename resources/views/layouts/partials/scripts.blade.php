@@ -107,7 +107,7 @@
     });
 
     $(".form_datetime").datetimepicker({
-        format: "yyyy-mm-dd hh:ii::ss",
+        format: "yyyy-mm-dd hh:ii:ss",
     });
 </script>
 
