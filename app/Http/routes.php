@@ -145,3 +145,4 @@ Route::post('push/timely','PushController@timely');
 Route::post('push/timing','PushController@timing');
 
 Route::post('pay/status','OrdersController@payStatus');
+

@@ -27,7 +27,8 @@
                                 <td>{{ $timely->msg_id }}</td>
                                 <td>{{ $timely->sendno }}</td>
                                 <td>{{ $timely->content }}</td>
-                                <td><span class="label label-success"></span>发送成功</td>
+                                <td>{{ $timely->created_at }}</td>
+                                <td><span class="label label-success">Success</span></td>
                             </tr>
                         @endforeach
                     </table>
@@ -48,14 +49,14 @@
                             <th>定时时间</th>
                             <th>发送状态</th>
                         </tr>
-                        @foreach($timelys as $timely)
+                        @foreach($timings as $timing)
                             <tr>
-                                <td>{{ $timely->id }}</td>
-                                <td>{{ $timely->schedule_id }}</td>
-                                <td>{{ $timely->name }}</td>
-                                <td>{{ $timely->content }}</td>
-                                <td>{{ $timely->time }}</td>
-                                <td><span class="label label-success"></span>发送成功</td>
+                                <td>{{ $timing->id }}</td>
+                                <td>{{ $timing->schedule_id }}</td>
+                                <td>{{ $timing->name }}</td>
+                                <td>{{ $timing->content }}</td>
+                                <td>{{ $timing->time }}</td>
+                                <td><span class="label label-success">Success</span></td>
                             </tr>
                         @endforeach
                     </table>

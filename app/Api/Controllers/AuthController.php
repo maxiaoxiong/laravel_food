@@ -115,6 +115,9 @@ class AuthController extends BaseController
     public function validateCode(Request $request)
     {
         $phoneNumber = $request->get('phone');
+        if (empty(Cache::get($phoneNumber))) {
+            return response()->json(['status_code' => 404, 'message' => '验证码不存在或已过期，请重新发送']);
+        }
         if (Cache::get($phoneNumber) == $request->get('verifyCode')) {
             $Mobile = Mobile::where('mobile', $phoneNumber)->update(['is_verified' => 1]);
             if ($Mobile) {
@@ -172,7 +175,7 @@ class AuthController extends BaseController
         $data = PhpSms::make()->to($request->get('phone'))->content('【小胖带饭】您的验证码是 ' . $Code . '')->send();
 
         if ($data['logs'][0]['result']['code'] == 0) {
-            return response()->json(['status_code' => 200, 'message' => '发送成功，有效时间为30分钟，请尽快验证']);
+            return response()->json(['status_code' => 200, 'message' => '发送成功，有效时间为5分钟，请尽快验证']);
         } elseif ($data['logs'][0]['result']['code'] == 22) {
             return response()->json(['status_code' => 429, 'message' => '一小时内只能发送三次验证码，请一小时后重新发送']);
         } else {

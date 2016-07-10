@@ -117,19 +117,24 @@ class OrdersController extends BaseController
         return $ch;
     }
     public function pay(Request $request){
+
         \Pingpp\Pingpp::setApiKey(env('PING_API_KEY'));
         \Pingpp\Pingpp::setPrivateKeyPath(base_path('RSACret/rsa_private_key.pem'));
 
+        $dish_id = $request->get('dish_id');
+        $dish_name = $request->get('dish_name');
+
         $ch = \Pingpp\Charge::create(
             array(
-                'order_no'  => join('+',$request->get('dish_id')),
+                'order_no'  => $dish_id,
                 'app'       => array('id' => env('PING_APP_ID')),
                 'channel'   => $request->get('channel'),
                 'amount'    => $request->get('amount'),
                 'client_ip' => $request->ip(),
                 'currency'  => 'cny',
-                'subject'   => join('+',$request->get('dish_name')),
-                'body'      => $request->get('user_name').' 正在购买 '.join('+',$request->get('dish_name')),
+                'subject'   => $dish_id,
+//                'subject'   => $dish_name,
+                'body'      => $request->get('user_name').' 正在购买 '.$dish_name,
                 'extra'     => array()
             )
         );
