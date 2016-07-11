@@ -23,6 +23,7 @@ class UserOrdersTransformer extends TransformerAbstract
                 'dish_name' => $order->dish->dish_name,
                 'dish_price' => $order->dish->dish_price
             ],
+            'time' => $order['created_at'],
             'tablewares' => $order->tablewares()->get(),
             'tastes' => $order->tastes()->get()
         ];
