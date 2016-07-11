@@ -9,7 +9,7 @@
     <body class="login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+            <a href="{{ url('/login') }}"><b>小胖</b>带饭</a>
         </div><!-- /.login-logo -->
 
         @if (session('status'))
@@ -30,7 +30,7 @@
         @endif
 
         <div class="login-box-body">
-            <p class="login-box-msg">Reset Password</p>
+            <p class="login-box-msg">重置密码</p>
             <form action="{{ url('/password/reset') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="token" value="{{ $token }}">
@@ -53,15 +53,15 @@
                     <div class="col-xs-2">
                     </div><!-- /.col -->
                     <div class="col-xs-8">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">Reset password</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">点击重置</button>
                     </div><!-- /.col -->
                     <div class="col-xs-2">
                     </div><!-- /.col -->
                 </div>
             </form>
 
-            <a href="{{ url('/login') }}">Log in</a><br>
-            <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
+            <a href="{{ url('/login') }}">返回登录页</a><br>
+            <a href="{{ url('/register') }}" class="text-center">注册一个新账户</a>
 
         </div><!-- /.login-box-body -->
 

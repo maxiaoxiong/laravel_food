@@ -83,8 +83,8 @@
             <li class="treeview">
                 <a href="#"><i class="fa fa-mobile"></i> <span>消息推送</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="/push/history">历史推送</a></li>
-                    <li><a href="/push/new">新建推送</a></li>
+                    <li><a href="{{ url('push/history') }}">历史推送</a></li>
+                    <li><a href="{{ url('push/new') }}">新建推送</a></li>
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->

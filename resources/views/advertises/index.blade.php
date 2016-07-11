@@ -1,19 +1,20 @@
 @extends('layouts.app')
 
 @section('main-content')
-    <div class="row">
+    <div class="row" style="height: 600px;">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title"><a href="{{ url('advertises/create') }}" class="btn btn-primary">添加地址</a></h3>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                <div class="box-body">
+                    <table class="table table-bordered">
                         <tr>
                             <th>ID</th>
                             <th>名字</th>
                             <th>图片地址</th>
+                            <th>操作</th>
                         </tr>
                         @foreach($advertises as $advertise)
                             <tr>

@@ -100,6 +100,7 @@ class OrdersController extends Controller
                 } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
                     $tags = $this->getTagsResult($todayNoonTime, $todayAfterTime);
                 }
+//                return $tags;
                 ExcelExport::exportTags($tags);
                 break;
             case 3:
@@ -113,7 +114,6 @@ class OrdersController extends Controller
                 ExcelExport::exportDormitoryDetail($orders);
         }
 
-//        ExcelExport::export($orders);
     }
 
 
@@ -164,9 +164,19 @@ WHERE i2.canteen_id = canteens.id');
 
     public function getTagsResult($time1, $time2)
     {
-        $tags = \DB::select('SELECT d2.dish_name,order_no,d2.dish_price,
+        $tags = \DB::select('SELECT
+  d2.dish_name,
+  order_no,
+  d2.dish_price,
   user_name,
-  user_phone,b.building_name,f.floor_name,d.name AS dormitory_name FROM orders AS o , dishes AS d2 , dormitories AS d, floors AS f, buildings AS b WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND o.created_at >= "'.$time1.'" AND created_at <= "'.$time2.'"');
+  user_phone,
+  b.building_name,
+  f.floor_name,
+  d.name AS dormitory_name,
+  d2.window_id
+FROM orders AS o, dishes AS d2, dormitories AS d, floors AS f, buildings AS b,windows AS w,canteens as c
+WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND
+      d2.window_id = w.id AND w.canteen_id = c.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'"');
 
         return $tags;
     }
@@ -175,7 +185,7 @@ WHERE i2.canteen_id = canteens.id');
     {
         $orders = \DB::select('SELECT d2.dish_name,order_no,
   user_name,
-  user_phone,b.building_name,f.floor_name,d.name AS dormitory_name FROM orders AS o , dishes AS d2 , dormitories AS d, floors AS f, buildings AS b WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND o.created_at >= "'.$time1.'" AND created_at <= "'.$time2.'"');
+  user_phone,b.building_name,f.floor_name,d.name AS dormitory_name FROM orders AS o , dishes AS d2 , dormitories AS d, floors AS f, buildings AS b WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'"');
 
         return $orders;
     }

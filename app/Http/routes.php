@@ -54,7 +54,7 @@ $api->version('v1', function ($api) {
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/s', function () {
@@ -69,9 +69,6 @@ Route::get('/s', function () {
     return view();
 });
 
-
-Route::get('/charge/pay', 'OrdersController@handleOrder');
-Route::get('/charge/paid', 'OrdersController@OverOrder');
 
 Route::get('/image', function () {
     $img = Image::canvas(800, 600, '#ff0000');
@@ -139,6 +136,7 @@ Route::get('orders/today','OrdersController@getTodayOrders');
 Route::get('orders/week','OrdersController@getWeekOrders');
 Route::get('orders/history','OrdersController@getHistoryOrders');
 Route::get('orders/printOrders/{type}','OrdersController@printOrders');
+
 Route::get('push/history','PushController@index');
 Route::get('push/new','PushController@add');
 

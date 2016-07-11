@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main-content')
-    <div class="row">
+    <div class="row" style="height: 600px;">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">

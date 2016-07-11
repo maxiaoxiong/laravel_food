@@ -6,7 +6,7 @@
 
 
 @section('main-content')
-    <section class="content">
+    <section class="content" style="height: 650px;">
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-lg-3 col-xs-6">
