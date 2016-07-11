@@ -126,7 +126,7 @@ class OrdersController extends BaseController
 
         $ch = \Pingpp\Charge::create(
             array(
-                'order_no'  => $dish_id,
+                'order_no'  => time(),
                 'app'       => array('id' => env('PING_APP_ID')),
                 'channel'   => $request->get('channel'),
                 'amount'    => $request->get('amount'),
