@@ -17,9 +17,8 @@ use Redis;
 
 class Orders
 {
-    static public function store(Request $request)
+    static public function store($data)
     {
-        $data = $request->get('data');
         foreach ($data as $k => $v) {
             $order = Order::Create(array_merge($data[ $k ]));
             if (!$order) {
