@@ -28,7 +28,7 @@ class OrdersController extends Controller
         switch ($event->type) {
             case "charge.succeeded":
                 // 开发者在此处加入对支付异步通知的处理代码
-                Orders::store($event->data->object->body);
+                
                 header($_SERVER['SERVER_PROTOCOL'] . ' 200 OK');
                 break;
             case "refund.succeeded":
@@ -178,7 +178,7 @@ WHERE i2.canteen_id = canteens.id');
   msg
 FROM orders AS o, dishes AS d2, dormitories AS d, floors AS f, buildings AS b,windows AS w,canteens as c
 WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND
-      d2.window_id = w.id AND w.canteen_id = c.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'"');
+      d2.window_id = w.id AND w.canteen_id = c.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'" ORDER BY d2.window_id');
 
         return $tags;
     }
