@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Components\ExcelExport;
+use App\Components\Orders;
 use App\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class OrdersController extends Controller
         switch ($event->type) {
             case "charge.succeeded":
                 // 开发者在此处加入对支付异步通知的处理代码
+                Orders::store($event->data->object->body);
                 header($_SERVER['SERVER_PROTOCOL'] . ' 200 OK');
                 break;
             case "refund.succeeded":

@@ -134,7 +134,8 @@ class OrdersController extends BaseController
                 'currency'  => 'cny',
                 'subject'   => time().'.'.$dish_id,
 //                'subject'   => $dish_name,
-                'body'      => $request->get('user_name').' 正在购买 '.$dish_name,
+//                'body'      => $request->get('user_name').' 正在购买 '.$dish_name,
+                'body'      => $request->get('data'),
                 'extra'     => array()
             )
         );
