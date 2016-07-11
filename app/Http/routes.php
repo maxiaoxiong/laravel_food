@@ -41,7 +41,8 @@ $api->version('v1', function ($api) {
         
         $api->post('pay','OrdersController@pay');
         $api->post('paytest','OrdersController@payTest');
-
+        $api->get('user/{id}/orders','UsersController@show');
+        
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
             $api->post('dishes/range', 'DishesController@postRange');
             $api->post('orders', 'OrdersController@store');
@@ -49,6 +50,7 @@ $api->version('v1', function ($api) {
             $api->get('orders', 'OrdersController@index');
             $api->get('orders/{id}', 'OrdersController@show');
             $api->get('user/me', 'AuthController@getAuthenticatedUser');
+
         });
     });
 });

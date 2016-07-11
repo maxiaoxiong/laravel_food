@@ -84,20 +84,20 @@ class ExcelExport
                     foreach ($datas as $data) {
                         if ($data->window_id == $result) {
                             if ($data->order_no == 1) {
-                                $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name));
+                                $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name . "\r\n" . $data->msg));
                                 $num = $num + 1;
                             } elseif ($data->order_no == 2) {
-                                $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name,
-                                    $data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name,
+                                $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name . "\r\n" . $data->msg,
+                                    $data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name . "\r\n" . $data->msg,
                                 ));
                                 $num = $num + 1;
                             }
                             for ($i = 1; $i <= $data->order_no; $i ++) {
                                 if ((($i + 2) - $data->order_no) == 1) {
-                                    $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name,
-                                        $data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name,
+                                    $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name . "\r\n" . $data->msg,
+                                        $data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name . "\r\n" . $data->msg,
                                     ));
-                                    $sheet->setHeight($num,60);
+                                    $sheet->setHeight($num,70);
                                     $sheet->cells('A'.$num,function($cells){
                                         $cells->setAlignment('center');
                                         $cells->setValignment('center');
@@ -113,8 +113,8 @@ class ExcelExport
                                     $num = $num + 1;
                                     break;
                                 } elseif ((($i + 2) - $data->order_no) == 2) {
-                                    $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name));
-                                    $sheet->setHeight($num,60);
+                                    $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name . "\r\n" . $data->msg));
+                                    $sheet->setHeight($num,70);
                                     $sheet->cells('A'.$num,function($cells){
                                         $cells->setAlignment('center');
                                         $cells->setValignment('center');
@@ -130,12 +130,12 @@ class ExcelExport
                                     $num = $num + 1;
                                     break;
                                 }
-                                $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name,
-                                    $data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name,
-                                    $data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name,
+                                $sheet->row($num, array($data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name . "\r\n" . $data->msg,
+                                    $data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name . "\r\n" . $data->msg,
+                                    $data->dish_name . ' ' . 1 . '*' . $data->dish_price . "\r\n" . $data->user_name . "\r\n" . $data->user_phone . "\r\n" . $data->building_name . "-" . $data->floor_name . "-" . $data->dormitory_name . "\r\n" . $data->msg,
                                 ));
 
-                                $sheet->setHeight($num,60);
+                                $sheet->setHeight($num,70);
                                 $sheet->cells('A'.$num,function($cells){
                                     $cells->setAlignment('center');
                                     $cells->setValignment('center');

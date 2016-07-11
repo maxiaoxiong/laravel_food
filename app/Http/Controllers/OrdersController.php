@@ -173,7 +173,8 @@ WHERE i2.canteen_id = canteens.id');
   b.building_name,
   f.floor_name,
   d.name AS dormitory_name,
-  d2.window_id
+  d2.window_id,
+  msg
 FROM orders AS o, dishes AS d2, dormitories AS d, floors AS f, buildings AS b,windows AS w,canteens as c
 WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND
       d2.window_id = w.id AND w.canteen_id = c.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'"');
