@@ -57,7 +57,11 @@ $api->version('v1', function ($api) {
 });
 
 Route::get('/', function () {
-    return view('auth.login');
+    if (Auth::guest()){
+        return view('auth.login');
+    }else{
+        return redirect('/home');
+    }
 });
 
 Route::get('/s', function () {
@@ -91,62 +95,66 @@ Route::get('comment', 'CommentsController@index');
 /**
  * web route
  */
-Route::auth();
+Route::group(['middleware' => ['web','auth']],function (){
+    Route::auth();
 
-Route::resource('home', 'HomeController');
+    Route::get('/home', 'HomeController@index');
 
-Route::resource('foods', 'FoodsController');
+    Route::resource('home', 'HomeController');
 
-Route::resource('canteens', 'CanteensController');
+    Route::resource('foods', 'FoodsController');
 
-Route::resource('windows', 'WindowsController');
+    Route::resource('canteens', 'CanteensController');
 
-Route::resource('dishes', 'DishesController');
+    Route::resource('windows', 'WindowsController');
 
-Route::resource('dishware', 'DishwareController');
+    Route::resource('dishes', 'DishesController');
 
-Route::resource('buildings', 'BuildingsController');
+    Route::resource('dishware', 'DishwareController');
 
-Route::resource('floors', 'FloorsController');
+    Route::resource('buildings', 'BuildingsController');
 
-Route::resource('dormitories', 'DormitoriesController');
+    Route::resource('floors', 'FloorsController');
 
-Route::resource('users', 'UsersController');
+    Route::resource('dormitories', 'DormitoriesController');
 
-Route::resource('comments', 'CommentsController');
+    Route::resource('users', 'UsersController');
 
-Route::resource('discounts', 'DiscountsController');
+    Route::resource('comments', 'CommentsController');
 
-Route::resource('dishtypes', 'DishtypesController');
+    Route::resource('discounts', 'DiscountsController');
 
-Route::resource('tastes', 'TastesController');
+    Route::resource('dishtypes', 'DishtypesController');
 
-Route::resource('tablewares', 'TablewaresController');
+    Route::resource('tastes', 'TastesController');
 
-Route::resource('advertises', 'AdvertisesController');
+    Route::resource('tablewares', 'TablewaresController');
 
-Route::resource('types', 'TypesController');
+    Route::resource('advertises', 'AdvertisesController');
 
-Route::post('image/upload', 'ImageController@upload');
-Route::post('image/crop', 'ImageController@crop');
-Route::get('getWindows/{id}', function ($id) {
-    return \App\Canteen::find($id)->windows;
+    Route::resource('types', 'TypesController');
+
+    Route::post('image/upload', 'ImageController@upload');
+    Route::post('image/crop', 'ImageController@crop');
+    Route::get('getWindows/{id}', function ($id) {
+        return \App\Canteen::find($id)->windows;
+    });
+    Route::get('getFloors/{id}', function ($id) {
+        return \App\Building::find($id)->floors;
+    });
+    Route::get('orders/today', 'OrdersController@getTodayOrders');
+    Route::get('orders/week', 'OrdersController@getWeekOrders');
+    Route::get('orders/history', 'OrdersController@getHistoryOrders');
+    Route::get('orders/printOrders/{type}', 'OrdersController@printOrders');
+
+    Route::get('push/history', 'PushController@index');
+    Route::get('push/new', 'PushController@add');
+
+    Route::post('push/timely', 'PushController@timely');
+    Route::post('push/timing', 'PushController@timing');
+
+    Route::post('pay/status', 'OrdersController@payStatus');
 });
-Route::get('getFloors/{id}', function ($id) {
-    return \App\Building::find($id)->floors;
-});
-Route::get('orders/today', 'OrdersController@getTodayOrders');
-Route::get('orders/week', 'OrdersController@getWeekOrders');
-Route::get('orders/history', 'OrdersController@getHistoryOrders');
-Route::get('orders/printOrders/{type}', 'OrdersController@printOrders');
-
-Route::get('push/history', 'PushController@index');
-Route::get('push/new', 'PushController@add');
-
-Route::post('push/timely', 'PushController@timely');
-Route::post('push/timing', 'PushController@timing');
-
-Route::post('pay/status', 'OrdersController@payStatus');
 
 
 Route::get('test', function () {

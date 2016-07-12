@@ -132,7 +132,7 @@ class OrdersController extends BaseController
                 'amount'    => $request->get('amount'),
                 'client_ip' => $request->ip(),
                 'currency'  => 'cny',
-                'subject'   => $dish_id,
+                'subject'   => '小胖订单-'.time(),
                 'body'      => $request->get('user_name').' 正在购买 '.$dish_name,
                 'extra'     => array()
             )
