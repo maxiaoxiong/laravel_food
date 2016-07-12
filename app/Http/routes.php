@@ -23,13 +23,13 @@ $api->version('v1', function ($api) {
         $api->post('user/getVerifyCode', 'AuthController@getVerifyCode');
         $api->post('user/validateCode', 'AuthController@validateCode');
         $api->post('user/register', 'AuthController@register');
-        $api->post('user/resetPassword','AuthController@resetPassword');
-        $api->post('user/getResetPasswordCode','AuthController@getResetPasswordCode');
+        $api->post('user/resetPassword', 'AuthController@resetPassword');
+        $api->post('user/getResetPasswordCode', 'AuthController@getResetPasswordCode');
         $api->get('canteens', 'CanteensController@index');
         $api->get('dishes/hot', 'DishesController@getHot');
         $api->get('canteens/{id}/windows', 'WindowsController@index');
         $api->get('windows/{id}/dishes', 'DishesController@getWindowDishes');
-        $api->get('windows/{window_id}/{type_id}/dishes','DishesController@getWindowTypeDishes');
+        $api->get('windows/{window_id}/{type_id}/dishes', 'DishesController@getWindowTypeDishes');
         $api->get('discounts', 'DiscountsController@getDishes');
         $api->get('breakfasts', 'DishesController@getBreakfast');
         $api->get('dishes/{id}', 'DishesController@getDetail');
@@ -38,11 +38,11 @@ $api->version('v1', function ($api) {
         $api->get('buildings/{id}/floors', 'FloorsController@getFloors');
         $api->get('floors/{id}/dormitories', 'DormitoriesController@getDormitories');
         $api->get('advertises', 'AdvertisesController@index');
-        
-        $api->post('pay','OrdersController@pay');
-        $api->post('paytest','OrdersController@payTest');
-        $api->get('user/{id}/orders','UsersController@show');
-        
+
+        $api->post('pay', 'OrdersController@pay');
+        $api->post('paytest', 'OrdersController@payTest');
+        $api->get('user/{id}/orders', 'UsersController@show');
+
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
             $api->post('dishes/range', 'DishesController@postRange');
             $api->post('orders', 'OrdersController@store');
@@ -94,57 +94,64 @@ Route::auth();
 
 Route::resource('home', 'HomeController');
 
-Route::resource('foods','FoodsController');
+Route::resource('foods', 'FoodsController');
 
-Route::resource('canteens','CanteensController');
+Route::resource('canteens', 'CanteensController');
 
-Route::resource('windows','WindowsController');
+Route::resource('windows', 'WindowsController');
 
-Route::resource('dishes','DishesController');
+Route::resource('dishes', 'DishesController');
 
-Route::resource('dishware','DishwareController');
+Route::resource('dishware', 'DishwareController');
 
-Route::resource('buildings','BuildingsController');
+Route::resource('buildings', 'BuildingsController');
 
-Route::resource('floors','FloorsController');
+Route::resource('floors', 'FloorsController');
 
-Route::resource('dormitories','DormitoriesController');
+Route::resource('dormitories', 'DormitoriesController');
 
-Route::resource('users','UsersController');
+Route::resource('users', 'UsersController');
 
-Route::resource('comments','CommentsController');
+Route::resource('comments', 'CommentsController');
 
-Route::resource('discounts','DiscountsController');
+Route::resource('discounts', 'DiscountsController');
 
-Route::resource('dishtypes','DishtypesController');
+Route::resource('dishtypes', 'DishtypesController');
 
-Route::resource('tastes','TastesController');
+Route::resource('tastes', 'TastesController');
 
-Route::resource('tablewares','TablewaresController');
+Route::resource('tablewares', 'TablewaresController');
 
-Route::resource('advertises','AdvertisesController');
+Route::resource('advertises', 'AdvertisesController');
 
-Route::resource('types','TypesController');
+Route::resource('types', 'TypesController');
 
-Route::post('image/upload','ImageController@upload');
-Route::post('image/crop','ImageController@crop');
-Route::get('getWindows/{id}',function($id){
+Route::post('image/upload', 'ImageController@upload');
+Route::post('image/crop', 'ImageController@crop');
+Route::get('getWindows/{id}', function ($id) {
     return \App\Canteen::find($id)->windows;
 });
-Route::get('getFloors/{id}',function($id){
+Route::get('getFloors/{id}', function ($id) {
     return \App\Building::find($id)->floors;
 });
-Route::get('orders/today','OrdersController@getTodayOrders');
-Route::get('orders/week','OrdersController@getWeekOrders');
-Route::get('orders/history','OrdersController@getHistoryOrders');
-Route::get('orders/printOrders/{type}','OrdersController@printOrders');
+Route::get('orders/today', 'OrdersController@getTodayOrders');
+Route::get('orders/week', 'OrdersController@getWeekOrders');
+Route::get('orders/history', 'OrdersController@getHistoryOrders');
+Route::get('orders/printOrders/{type}', 'OrdersController@printOrders');
 
-Route::get('push/history','PushController@index');
-Route::get('push/new','PushController@add');
+Route::get('push/history', 'PushController@index');
+Route::get('push/new', 'PushController@add');
 
-Route::post('push/timely','PushController@timely');
-Route::post('push/timing','PushController@timing');
+Route::post('push/timely', 'PushController@timely');
+Route::post('push/timing', 'PushController@timing');
 
-Route::post('pay/status','OrdersController@payStatus');
+Route::post('pay/status', 'OrdersController@payStatus');
 
 
+Route::get('test', function () {
+    $url = "http://xicode.me/uploads/dish/original/nnn.jpg";
+    $s_array = explode('/', $url);
+    echo str_replace("http://xicode.me/",'',$url).'<br>';
+    echo $s_array[sizeof($s_array) - 1].'<br>';
+    echo public_path(str_replace("http://xicode.me/",'',$url));
+});
