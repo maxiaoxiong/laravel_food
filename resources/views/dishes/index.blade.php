@@ -89,4 +89,6 @@
             modal.find('.dish_id').val(dish_id);
         });
     </script>
+
+
 @endsection

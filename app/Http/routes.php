@@ -43,9 +43,10 @@ $api->version('v1', function ($api) {
         $api->post('paytest', 'OrdersController@payTest');
         $api->get('user/{id}/orders', 'UsersController@show');
 
+        $api->post('orders', 'OrdersController@store');
+
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
             $api->post('dishes/range', 'DishesController@postRange');
-            $api->post('orders', 'OrdersController@store');
             $api->post('comments', 'CommentsController@store');
             $api->get('orders', 'OrdersController@index');
             $api->get('orders/{id}', 'OrdersController@show');
@@ -149,9 +150,10 @@ Route::post('pay/status', 'OrdersController@payStatus');
 
 
 Route::get('test', function () {
-    $url = "http://xicode.me/uploads/dish/original/nnn.jpg";
-    $s_array = explode('/', $url);
-    echo str_replace("http://xicode.me/",'',$url).'<br>';
-    echo $s_array[sizeof($s_array) - 1].'<br>';
-    echo public_path(str_replace("http://xicode.me/",'',$url));
+//    $url = "http://xicode.me/uploads/dish/original/nnn.jpg";
+//    $s_array = explode('/', $url);
+//    echo str_replace("http://xicode.me/",'',$url).'<br>';
+//    echo $s_array[sizeof($s_array) - 1].'<br>';
+//    echo public_path(str_replace("http://xicode.me/",'',$url));
+    
 });

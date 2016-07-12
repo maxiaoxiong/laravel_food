@@ -50,7 +50,7 @@ class ImageController extends Controller
     {
         $form_data = Input::all();
         $image_url = $form_data['imgUrl'];
-        $image_url = public_path(str_replace("https://xicode.me/",'',$image_url));
+        $image_url = public_path(str_replace(env('URL'),'',$image_url));
         // resized sizes
         $imgW = $form_data['imgW'];
         $imgH = $form_data['imgH'];

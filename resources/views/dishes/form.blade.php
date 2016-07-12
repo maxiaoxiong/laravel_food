@@ -1,4 +1,3 @@
-<script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>
 <script src="{{ asset('/js/select2.min.js') }}"></script>
 <script src="{{ asset('/js/bootstrap-timepicker.min.js') }}"></script>
 
@@ -102,21 +101,6 @@
 <div class="modal-footer">
     <button type="submit" class="btn btn-primary pull-left">Save changes</button>
 </div>
-
-    <script>
-        var eyeCandy = $('#cropContainerEyecandy');
-        var croppedOptions = {
-            uploadUrl: '/image/upload',
-            cropUrl: '/image/crop',
-            loadPicture: '{{ $dish->dish_img or '' }}',
-            cropData: {
-                'width': eyeCandy.width(),
-                'height': eyeCandy.height()
-            },
-            outputUrlId: 'dish_img'
-        };
-        var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
-    </script>
 
 <script>
     $(".select").select2({
