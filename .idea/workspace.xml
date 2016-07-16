@@ -2,93 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e154256a-0ee7-46ff-bf32-cb97ba6a4214" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_135956_create_types_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_010420_create_order_dish_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_012427_create_sms_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_012822_create_mobiles_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_013359_create_push_timelies_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_063559_create_typeones_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_063611_create_typetwos_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_063621_create_typethrees_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_063653_create_typefours_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_064334_create_dish_typeone_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_065114_create_dish_typetwo_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_065148_create_dish_typethree_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_065214_create_dish_typefour_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_065341_create_order_typeone_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_065559_create_order_typetwo_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_065826_create_order_typethree_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_065900_create_order_typefour_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typefours/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typefours/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typefours/form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typefours/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typeones/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typeones/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typeones/form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typeones/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typethrees/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typethrees/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typethrees/form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typethrees/index.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typetwos/create.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typetwos/edit.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typetwos/form.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/typetwos/index.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2015_12_21_111514_create_sms_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_055435_create_packages_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2016_05_13_150054_add_dormitory_id_to_orders_table.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_07_171019_create_orders_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_151153_create_orders_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_23_085331_create_dishes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_140308_create_dishes_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_021944_create_windows_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_135646_create_windows_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_022402_create_canteens_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_135536_create_canteens_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_022803_create_buildings_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_134042_create_buildings_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_022841_create_floors_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_134137_create_floors_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_023114_create_dormitories_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_135116_create_dormitories_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_051948_create_dishtypes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_140137_create_dishtypes_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_052404_create_comments_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_012044_create_comments_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_053822_create_tablewares_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_145536_create_tablewares_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_054014_create_tableware_for_dish_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_145924_create_dish_tableware_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_054703_create_ranges_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_014200_create_ranges_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_24_060615_create_preferential_dishes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_013116_create_preferential_dishes_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_28_041945_create_tastes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_145651_create_tastes_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_28_042107_create_taste_for_dishes_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_14_145928_create_dish_taste_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_28_080704_create_taste_for_orders_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_010138_create_order_taste_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_04_28_140628_create_tableware_for_orders_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_005914_create_order_tableware_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_05_03_161509_create_admins_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_013705_create_push_timimgs_table.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/database/migrations/2016_05_16_101850_create_advertises_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_07_15_033651_create_advertises_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Transformers/DishDetailTransformer.php" afterPath="$PROJECT_DIR$/app/Api/Transformers/DishDetailTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Transformers/WindowDishesTransformer.php" afterPath="$PROJECT_DIR$/app/Api/Transformers/WindowDishesTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Canteen.php" afterPath="$PROJECT_DIR$/app/Canteen.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Components/LastSevenOrders.php" afterPath="$PROJECT_DIR$/app/Components/LastSevenOrders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Dish.php" afterPath="$PROJECT_DIR$/app/Dish.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/DishTaste.php" afterPath="$PROJECT_DIR$/app/DishTaste.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Dishtype.php" afterPath="$PROJECT_DIR$/app/Dishtype.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CanteensController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CanteensController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DishesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DishesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DishtypesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DishtypesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/FloorsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/FloorsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TablewaresController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TablewaresController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Order.php" afterPath="$PROJECT_DIR$/app/Order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tableware.php" afterPath="$PROJECT_DIR$/app/Tableware.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Taste.php" afterPath="$PROJECT_DIR$/app/Taste.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Window.php" afterPath="$PROJECT_DIR$/app/Window.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/canteens/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/canteens/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/canteens/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/canteens/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dishes/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/dishes/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dishes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/dishes/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dishtypes/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/dishtypes/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dishtypes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/dishtypes/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/sidebar.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/sidebar.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tablewares/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/tablewares/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tablewares/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/tablewares/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/types/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/types/edit.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/windows/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/windows/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/windows/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/windows/index.blade.php" />
     </list>
     <ignored path="pingplus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,11 +32,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OrdersController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/OrdersController.php">
+      <file leaf-file-name="DishDetailTransformer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Api/Transformers/DishDetailTransformer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+            <state relative-caret-position="268">
+              <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+              <caret line="69" column="77" selection-start-line="69" selection-start-column="77" selection-end-line="69" selection-end-column="77" />
+              <caret line="72" column="53" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="53" />
+              <caret line="73" column="79" selection-start-line="73" selection-start-column="79" selection-end-line="73" selection-end-column="79" />
+              <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
+              <caret line="77" column="78" selection-start-line="77" selection-start-column="78" selection-end-line="77" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -178,7 +98,6 @@
         <option value="$PROJECT_DIR$/resources/views/dishes/form.blade.php" />
         <option value="$PROJECT_DIR$/app/Order.php" />
         <option value="$PROJECT_DIR$/app/Api/Transformers/WindowDishesTransformer.php" />
-        <option value="$PROJECT_DIR$/app/Api/Transformers/DishDetailTransformer.php" />
         <option value="$PROJECT_DIR$/app/Dish.php" />
         <option value="$PROJECT_DIR$/app/Tableware.php" />
         <option value="$PROJECT_DIR$/app/Taste.php" />
@@ -186,6 +105,7 @@
         <option value="$PROJECT_DIR$/app/Typetwo.php" />
         <option value="$PROJECT_DIR$/app/Typethree.php" />
         <option value="$PROJECT_DIR$/app/Typefour.php" />
+        <option value="$PROJECT_DIR$/app/Api/Transformers/DishDetailTransformer.php" />
       </list>
     </option>
   </component>
@@ -530,8 +450,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -635,18 +555,19 @@
       <workItem from="1468591558128" duration="13886000" />
       <workItem from="1468627545030" duration="11991000" />
       <workItem from="1468650071125" duration="11000" />
+      <workItem from="1468650463470" duration="1018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89392000" />
+    <option name="totallyTimeSpent" value="90410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20863836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20863836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24390244" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21303074" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -935,13 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/dishes/form.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="209" column="68" selection-start-line="209" selection-start-column="68" selection-end-line="209" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -968,24 +882,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/DishesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/DishDetailTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="56" column="48" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1049,6 +949,183 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+          <folding>
+            <marker date="1468303209572" expanded="false" signature="9:87" ph=" Created by PhpStorm. ..." />
+            <marker date="1468303209572" expanded="false" signature="128:307" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="354:4187" ph="{...}" />
+            <marker date="1468303209572" expanded="true" signature="364:391" ph=" @return mixed ..." />
+            <marker date="1468303209572" expanded="true" signature="421:1120" ph="{...}" />
+            <marker date="1468303209572" expanded="true" signature="441:598" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="508:587" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="634:722" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="758:846" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="873:960" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="1129:1216" ph=" @param $id ..." />
+            <marker date="1468303209572" expanded="true" signature="1248:1492" ph="{...}" />
+            <marker date="1468303209572" expanded="true" signature="1315:1394" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="1501:1583" ph=" @param Request $request ..." />
+            <marker date="1468303209572" expanded="true" signature="1629:2401" ph="{...}" />
+            <marker date="1468303209572" expanded="true" signature="1712:2025" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="1801:1881" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="2127:2250" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="2189:2240" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="2410:2469" ph=" @param Request $request ..." />
+            <marker date="1468303209572" expanded="true" signature="2659:3321" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="2839:3293" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="2858:3283" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="3365:4179" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="3641:4151" ph="..." />
+            <marker date="1468303209572" expanded="true" signature="3660:4141" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/DishesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="107" column="64" selection-start-line="107" selection-start-column="64" selection-end-line="107" selection-end-column="64" />
+          <folding>
+            <marker date="1464877520639" expanded="false" signature="9:86" ph=" Created by PhpStorm. ..." />
+            <marker date="1464877520639" expanded="false" signature="127:428" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="475:4866" ph="{...}" />
+            <marker date="1464877520639" expanded="true" signature="485:549" ph=" @return \Symfony\Component\HttpFoundation\Response ..." />
+            <marker date="1464877520639" expanded="true" signature="580:812" ph="{...}" />
+            <marker date="1464877520639" expanded="true" signature="821:903" ph=" @param $id ..." />
+            <marker date="1464877520639" expanded="true" signature="946:1939" ph="{...}" />
+            <marker date="1464877520639" expanded="true" signature="1082:1180" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1239:1504" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1297:1480" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1316:1479" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1374:1464" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1393:1463" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1563:1828" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1621:1804" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1640:1803" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1698:1788" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1717:1787" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="1949:2061" ph=" @param $window_id ..." />
+            <marker date="1464877520639" expanded="true" signature="2125:3220" ph="{...}" />
+            <marker date="1464877520639" expanded="true" signature="2261:2393" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="2452:2751" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="2517:2700" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="2536:2699" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="2594:2684" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="2709:2727" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="2810:3109" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="2875:3058" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="2894:3057" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="2952:3042" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="3067:3085" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="3229:3293" ph=" @return \Symfony\Component\HttpFoundation\Response ..." />
+            <marker date="1464877520639" expanded="true" signature="3330:3500" ph="{...}" />
+            <marker date="1464877520639" expanded="true" signature="3509:3591" ph=" @param $id ..." />
+            <marker date="1464877520639" expanded="true" signature="3628:3768" ph="{...}" />
+            <marker date="1464877520639" expanded="true" signature="3777:3913" ph=" @param Request $request ..." />
+            <marker date="1464877520639" expanded="true" signature="3963:4864" ph="{...}" />
+            <marker date="1464877520639" expanded="true" signature="4154:4231" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="4375:4468" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="4627:4738" ph="..." />
+            <marker date="1464877520639" expanded="true" signature="4746:4857" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/dishes/form.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5122">
+          <caret line="209" column="68" selection-start-line="209" selection-start-column="68" selection-end-line="209" selection-end-column="68" />
+          <folding>
+            <marker date="1468636171502" expanded="true" signature="174:18643" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="196:18636" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="255:706" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="380:691" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="543:641" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="765:1270" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="887:1255" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="1085:1178" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="1329:1521" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="1466:1506" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="1580:2010" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="1686:1995" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="1845:1945" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="2069:2469" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="2169:2454" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="2312:2404" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="2528:4884" ph="..." />
+            <marker date="1468636171502" expanded="false" signature="2587:2606" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="2607:3113" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="2771:3094" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="2938:3036" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="3164:4869" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="3291:4850" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="4943:7356" ph="..." />
+            <marker date="1468636171502" expanded="false" signature="5002:5021" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="5022:5543" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="5187:5524" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="5364:5466" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="5594:7341" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="5723:7322" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="7415:9828" ph="..." />
+            <marker date="1468636171502" expanded="false" signature="7474:7493" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="7494:8015" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="7659:7996" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="7836:7938" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="8066:9813" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="8195:9794" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="9887:12358" ph="..." />
+            <marker date="1468636171502" expanded="false" signature="9946:9965" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="9966:10503" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="10133:10484" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="10320:10426" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="10554:12343" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="10685:12324" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="12417:14849" ph="..." />
+            <marker date="1468636171502" expanded="false" signature="12471:12490" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="12491:13020" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="12657:13001" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="12839:12943" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="13066:14834" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="13196:14815" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="14908:17359" ph="..." />
+            <marker date="1468636171502" expanded="false" signature="14962:14981" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="14982:15509" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="15139:15490" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="15326:15432" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="15555:17344" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="15686:17325" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="17418:17569" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="17638:18187" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="17675:18138" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="17762:18080" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="17855:17923" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="17976:18057" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="18246:18488" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="18333:18473" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="18372:18454" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="18582:18625" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="18670:18759" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="18769:18870" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="18796:18859" ph="{&quot;tags&quot;: true...}" />
+            <marker date="1468636171502" expanded="true" signature="18879:19013" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="18913:19002" ph="{&quot;showInputs&quot;: false...}" />
+            <marker date="1468636171502" expanded="true" signature="19022:19513" ph="..." />
+            <marker date="1468636171502" expanded="true" signature="19064:19185" ph="{...}" />
+            <marker date="1468636171502" expanded="true" signature="19224:19504" ph="{...}" />
+            <marker date="1468636171502" expanded="true" signature="19284:19497" ph="{...}" />
+            <marker date="1468636171502" expanded="true" signature="19355:19448" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/DishDetailTransformer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="68" column="51" selection-start-line="68" selection-start-column="51" selection-end-line="68" selection-end-column="51" />
+          <caret line="69" column="77" selection-start-line="69" selection-start-column="77" selection-end-line="69" selection-end-column="77" />
+          <caret line="72" column="53" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="53" />
+          <caret line="73" column="79" selection-start-line="73" selection-start-column="79" selection-end-line="73" selection-end-column="79" />
+          <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
+          <caret line="77" column="78" selection-start-line="77" selection-start-column="78" selection-end-line="77" selection-end-column="78" />
           <folding />
         </state>
       </provider>

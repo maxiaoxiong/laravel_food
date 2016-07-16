@@ -54,28 +54,28 @@ class DishDetailTransformer extends TransformerAbstract
             'comments' => $arr,
             'type' => [
                 'tablewares' => [
-                    'data' => $dish->tablewares,
-                    'limit_num' => $dish->tablewares[0]->pivot->limit_num
+                    'data' => $dish->tablewares or '',
+                    'limit_num' => $dish->tablewares[0]->pivot->limit_num or ''
                 ],
                 'tastes' => [
-                    'data' => $dish->tastes,
-                    'limit_num' => $dish->tastes[0]->pivot->limit_num
+                    'data' => $dish->tastes or '',
+                    'limit_num' => $dish->tastes[0]->pivot->limit_num or ''
                 ],
                 'typeones' => [
-                    'data' => $dish->typeones,
-                    'limit_num' => $dish->typeones[0]->pivot->limit_num
+                    'data' => $dish->typeones or '',
+                    'limit_num' => $dish->typeones[0]->pivot->limit_num or ''
                 ],
                 'typetwos' => [
-                    'data' => $dish->typetwos,
-                    'limit_num' => $dish->typetwos[0]->pivot->limit_num
+                    'data' => $dish->typetwos or '',
+                    'limit_num' => $dish->typetwos[0]->pivot->limit_num or ''
                 ],
                 'typethrees' => [
-                    'data' => $dish->typethrees,
-                    'limit_num' => $dish->typethrees[0]->pivot->limit_num
+                    'data' => $dish->typethrees or '',
+                    'limit_num' => $dish->typethrees[0]->pivot->limit_num or ''
                 ],
                 'typefours' => [
-                    'data' => $dish->typefours,
-                    'limit_num' => $dish->typefours[0]->pivot->limit_num
+                    'data' => $dish->typefours or '',
+                    'limit_num' => $dish->typefours[0]->pivot->limit_num or ''
                 ],
             ]
         ];
