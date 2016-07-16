@@ -40,7 +40,7 @@ class FloorsController extends Controller
     public function update($id,Request $request)
     {
         $floor = Floor::find($id);
-        $floor->floor_name = $request->get('floor_name');
+        $floor->name = $request->get('name');
         $floor->building_id = $request->get('building_id');
         $flag = $floor->save();
         if($flag == 1){

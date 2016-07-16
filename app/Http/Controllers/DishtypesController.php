@@ -50,6 +50,7 @@ class DishtypesController extends Controller
     public function edit($id)
     {
         $dishtype = Dishtype::find($id);
+        return $dishtype;
         return view('dishtypes.edit',compact('dishtype'));
     }
 
@@ -61,7 +62,7 @@ class DishtypesController extends Controller
     public function update($id, Request $request)
     {
         $dishtype = Dishtype::find($id);
-        $dishtype->dish_type_name = $request->get('dish_type_name');
+        $dishtype->name = $request->get('name');
         $flag = $dishtype->save();
         if($flag == 1){
             return redirect()->route('dishtypes.index');

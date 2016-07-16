@@ -20,8 +20,8 @@
                         @foreach($windows as $window)
                         <tr>
                             <td>{{ $window->id }}</td>
-                            <td>{{ $window->window_name }}</td>
-                            <td>{{ $window->canteen->canteen_name }}</td>
+                            <td>{{ $window->name }}</td>
+                            <td>{{ $window->canteen->name }}</td>
                             <td>{{ count($window->dishes) }}</td>
                             <td><a style="float: left;margin-right: 5px;" href="{{ url('windows/'.$window->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>
                                 <form style="float: left;margin-top: -1px;" method="post" action="windows/{{ $window->id }}">

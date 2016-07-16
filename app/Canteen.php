@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Canteen extends Model
 {
-    protected $fillable = ['id','canteen_name'];
+    protected $fillable = ['id','name','img'];
 
     public function windows()
     {

@@ -21,10 +21,10 @@
                         @foreach($dishes as $dish)
                         <tr>
                             <td>{{ $dish->id }}</td>
-                            <td>{{ $dish->dish_name }}</td>
-                            <td>{{ $dish->window->window_name }}</td>
-                            <td>{{ $dish->window->canteen->canteen_name }}</td>
-                            <td>{{ $dish->dish_price }}</td>
+                            <td>{{ $dish->name }}</td>
+                            <td>{{ $dish->window->name }}</td>
+                            <td>{{ $dish->window->canteen->name }}</td>
+                            <td>{{ $dish->price }}</td>
                             <td><a style="float: left;margin-right: 5px;" href="dishes/{{ $dish->id }}/edit" class="btn btn-info btn-xs">编辑</a>
                                 <form style="float: left;margin-top: -1px;" method="post" action="dishes/{{ $dish->id }}">
                                     <input name="_method" type="hidden" value="delete">

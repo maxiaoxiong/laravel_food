@@ -11,15 +11,17 @@
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
                         <tr>
-                            <th>ID</th>
+                            <th>#</th>
                             <th>餐厅名</th>
+                            <th>图片地址</th>
                             <th>创建时间</th>
                             <th>操作</th>
                         </tr>
                         @foreach($canteens as $canteen)
                         <tr>
                             <td>{{ $canteen->id }}</td>
-                            <td>{{ $canteen->canteen_name }}</td>
+                            <td>{{ $canteen->name }}</td>
+                            <td>{{ $canteen->img }}</td>
                             <td>{{ $canteen->created_at }}</td>
                             <td><a style="float: left;margin-right: 5px;" href="{{ url('canteens/'.$canteen->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>
                                 <form style="float: left;margin-top: -1px;" method="post" action="canteens/{{ $canteen->id }}">

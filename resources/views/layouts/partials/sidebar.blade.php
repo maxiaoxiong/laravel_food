@@ -61,9 +61,18 @@
                 </ul>
             </li>
             <li class="treeview">
-                <a href="#"><i class="fa fa-drupal"></i> <span>餐具管理</span><i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class="fa fa-file-zip-o"></i> <span>餐具管理</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('tablewares') }}">餐具管理</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class="fa fa-drupal"></i> <span>类型管理</span><i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('typeones') }}">类型一</a></li>
+                    <li><a href="{{ url('typetwos') }}">类型二</a></li>
+                    <li><a href="{{ url('typethrees') }}">类型三</a></li>
+                    <li><a href="{{ url('typefours') }}">类型四</a></li>
                 </ul>
             </li>
             <li class="treeview">

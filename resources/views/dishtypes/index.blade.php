@@ -18,7 +18,7 @@
                         @foreach($dishtypes as $dishtype)
                         <tr>
                             <td>{{ $dishtype->id }}</td>
-                            <td>{{ $dishtype->dish_type_name }}</td>
+                            <td>{{ $dishtype->name }}</td>
                             <td><a style="float: left;margin-right: 5px;" href="{{ url('dishtypes/'.$dishtype->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>
                                 <form style="float: left;margin-top: -1px;" method="post" action="dishtypes/{{ $dishtype->id }}">
                                     <input name="_method" type="hidden" value="delete">

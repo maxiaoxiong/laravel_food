@@ -37,7 +37,7 @@ class TablewaresController extends Controller
     public function update($id, Request $request)
     {
         $Tableware = Tableware::find($id);
-        $Tableware->tableware_name = $request->get('tableware_name');
+        $Tableware->name = $request->get('name');
         $Tableware->price = $request->get('price');
         $flag = $Tableware->save();
         if($flag == 1){

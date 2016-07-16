@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tableware extends Model
 {
-    protected $fillable = ['tableware_name','price'];
+    protected $fillable = ['name','price'];
+
+    protected $hidden = ['pivot','created_at','updated_at'];
 }

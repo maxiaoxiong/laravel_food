@@ -2,7 +2,7 @@
     <div class="row">
         <div class="form-group col-md-10 col-md-offset-1">
             <label for="">餐具名</label>
-            <input type="text" class="form-control" name="tableware_name" value="{{ $tableware->tableware_name or '' }}">
+            <input type="text" class="form-control" name="name" value="{{ $tableware->name or '' }}">
         </div>
         <div class="form-group col-md-10 col-md-offset-1">
             <label for="">价格</label>

@@ -37,7 +37,7 @@ class CanteensController extends Controller
     public function update($id,Request $request)
     {
         $canteen = Canteen::find($id);
-        $canteen->canteen_name = $request->get('canteen_name');
+        $canteen->name = $request->get('name');
         $flag = $canteen->save();
         if($flag == 1){
             return redirect()->route('canteens.index');

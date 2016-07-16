@@ -18,7 +18,7 @@ class DishDetailTransformer extends TransformerAbstract
     {
         $sales = 0;
         for($i=0;$i<count($dish->orders);$i++){
-            $sales += $dish->orders[$i]->order_no;
+            $sales += $dish->orders[$i]->pivot->num;
         }
 
         $range_sum = 0;
@@ -45,15 +45,39 @@ class DishDetailTransformer extends TransformerAbstract
         $average = ceil($range_sum/$range_length);
         return [
             'id' => $dish['id'],
-            'name' => $dish['dish_name'],
+            'name' => $dish['name'],
             'img_url' => $dish['dish_img'],
-            'price' => $dish['dish_price'],
+            'price' => $dish['price'],
             'sales' => $sales,
             'delivery_time' => $dish['delivery_time'],
             'range' => $average,
-            'tablewares' => $dish->tablewares,
-            'tastes' => $dish->tastes,
-            'comments' => $arr
+            'comments' => $arr,
+            'type' => [
+                'tablewares' => [
+                    'data' => $dish->tablewares,
+                    'limit_num' => $dish->tablewares[0]->pivot->limit_num
+                ],
+                'tastes' => [
+                    'data' => $dish->tastes,
+                    'limit_num' => $dish->tastes[0]->pivot->limit_num
+                ],
+                'typeones' => [
+                    'data' => $dish->typeones,
+                    'limit_num' => $dish->typeones[0]->pivot->limit_num
+                ],
+                'typetwos' => [
+                    'data' => $dish->typetwos,
+                    'limit_num' => $dish->typetwos[0]->pivot->limit_num
+                ],
+                'typethrees' => [
+                    'data' => $dish->typethrees,
+                    'limit_num' => $dish->typethrees[0]->pivot->limit_num
+                ],
+                'typefours' => [
+                    'data' => $dish->typefours,
+                    'limit_num' => $dish->typefours[0]->pivot->limit_num
+                ],
+            ]
         ];
     }
 }

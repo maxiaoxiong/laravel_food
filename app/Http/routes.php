@@ -133,6 +133,14 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::resource('advertises', 'AdvertisesController');
 
     Route::resource('types', 'TypesController');
+    
+    Route::resource('typeones','TypeonesController');
+    
+    Route::resource('typetwos','TypetwosController');
+    
+    Route::resource('typethrees','TypethreesController');
+    
+    Route::resource('typefours','TypefoursController');
 
     Route::post('image/upload', 'ImageController@upload');
     Route::post('image/crop', 'ImageController@crop');
@@ -154,6 +162,8 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::post('push/timing', 'PushController@timing');
 
     Route::post('pay/status', 'OrdersController@payStatus');
+    
+    
 });
 
 
