@@ -18,7 +18,7 @@ class FloorTransformer extends TransformerAbstract
     {
         return [
             'id'=> $floor->id,
-            'name' => $floor->floor_name
+            'name' => $floor->name
         ];
     }
 }

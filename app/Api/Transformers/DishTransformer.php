@@ -18,7 +18,7 @@ class DishTransformer extends TransformerAbstract
     {
         $sales = 0;
         for ($i = 0; $i < count($dish->orders); $i ++) {
-            $sales += $dish->orders[ $i ]->order_no;
+            $sales += $dish->orders[ $i ]->pivot->num;
         }
 
         $range_sum = 0;
@@ -37,9 +37,9 @@ class DishTransformer extends TransformerAbstract
 
         return [
             'id' => $dish['id'],
-            'name' => $dish['dish_name'],
+            'name' => $dish['name'],
             'img_url' => $dish['dish_img'],
-            'price' => (string) $dish['dish_price'],
+            'price' => (string) $dish['price'],
             'sales' => $sales,
             'delivery_time' => $dish['delivery_time'],
             'range' => $average

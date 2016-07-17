@@ -28,7 +28,8 @@ class OrdersController extends Controller
         switch ($event->type) {
             case "charge.succeeded":
                 // 开发者在此处加入对支付异步通知的处理代码
-                
+                $order_no = $event->data->object->order_no;
+                Order::where('order_no',$order_no)->update(['status' => '已付款']);
                 header($_SERVER['SERVER_PROTOCOL'] . ' 200 OK');
                 break;
             case "refund.succeeded":

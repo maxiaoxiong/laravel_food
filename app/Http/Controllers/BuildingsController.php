@@ -37,7 +37,7 @@ class BuildingsController extends Controller
     public function update($id,Request $request)
     {
         $building = Building::find($id);
-        $building->building_name = $request->get('building_name');
+        $building->name = $request->get('name');
         $flag = $building->save();
         if($flag == 1){
             return redirect()->route('buildings.index');

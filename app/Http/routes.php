@@ -44,11 +44,11 @@ $api->version('v1', function ($api) {
         $api->get('user/{id}/orders', 'UsersController@show');
 
         $api->post('orders', 'OrdersController@store');
+        $api->get('orders', 'OrdersController@index');
 
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
             $api->post('dishes/range', 'DishesController@postRange');
             $api->post('comments', 'CommentsController@store');
-            $api->get('orders', 'OrdersController@index');
             $api->get('orders/{id}', 'OrdersController@show');
             $api->get('user/me', 'AuthController@getAuthenticatedUser');
 

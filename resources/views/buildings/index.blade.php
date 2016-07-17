@@ -18,7 +18,7 @@
                         @foreach($buildings as $building)
                         <tr>
                             <td>{{ $building->id }}</td>
-                            <td>{{ $building->building_name }}</td>
+                            <td>{{ $building->name }}</td>
                             <td><a style="float: left;margin-right: 5px;" href="{{ url('buildings/'.$building->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>
                                 <form style="float: left;margin-top: -1px;" method="post" action="buildings/{{ $building->id }}">
                                     <input name="_method" type="hidden" value="delete">

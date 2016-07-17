@@ -4,7 +4,7 @@
             <label for="">选择楼号</label>
             <select name="building_id" id="building_id" class="form-control">
                 @foreach($buildings as $building)
-                    <option @if(isset($dormitory)) @if($dormitory->floor->building->id == $building->id) selected="selected" @endif @endif value="{{ $building->id }}">{{ $building->building_name }}</option>
+                    <option @if(isset($dormitory)) @if($dormitory->floor->building->id == $building->id) selected="selected" @endif @endif value="{{ $building->id }}">{{ $building->name }}</option>
                 @endforeach
             </select>
         </div>
@@ -13,7 +13,7 @@
             <select name="floor_id" id="floor_id" class="form-control">
                 @if(isset($dormitory))
                     @foreach($dormitory->floor->building->floors as $floor)
-                        <option @if($dormitory->floor->id == $floor->id) selected="selected" @endif value="{{ $floor->id }}">{{ $floor->floor_name }}</option>
+                        <option @if($dormitory->floor->id == $floor->id) selected="selected" @endif value="{{ $floor->id }}">{{ $floor->name }}</option>
                     @endforeach
                 @endif
             </select>

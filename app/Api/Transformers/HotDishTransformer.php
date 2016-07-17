@@ -17,14 +17,14 @@ class HotDishTransformer extends TransformerAbstract
     public function transform(Order $order)
     {
         $range_sum = 0;
-        $range_length = count($order->dish->ranges);
+        $range_length = count($order->dishes->ranges);
         switch ($range_length) {
             case 0:
                 $range_length = 1;
                 break;
             default:
                 for ($i = 0; $i < $range_length; $i ++) {
-                    $range_sum += $order->dish->ranges[ $i ]->range;
+                    $range_sum += $order->dishes->ranges[ $i ]->range;
                 }
         }
 
@@ -32,11 +32,11 @@ class HotDishTransformer extends TransformerAbstract
 
         return [
             'id' => $order->dish->id,
-            'name' => $order->dish->dish_name,
+            'name' => $order->dish->name,
             'img_url' => $order->dish->dish_img,
-            'price' => $order->dish->dish_price,
+            'price' => $order->dish->price,
             'sales' => (int) ($order['order_no']),
-            'address' => $order->dish->window->canteen->canteen_name . ' ' . $order->dish->window->window_name,
+            'address' => $order->dish->window->canteen->name . ' ' . $order->dish->window->name,
             'delivery_time' => $order->dish->delivery_time,
             'range' => $average
         ];

@@ -16,16 +16,11 @@ class UserOrdersTransformer extends TransformerAbstract
 {
     public function transform(Order $order)
     {
+        /*
+         * 要改
+         */
         return [
-            'order_no' => $order['order_no'],
-            'dish' => [
-                'dish_id' => $order['dish_id'],
-                'dish_name' => $order->dish->dish_name,
-                'dish_price' => $order->dish->dish_price
-            ],
-            'time' => $order['created_at'],
-            'tablewares' => $order->tablewares()->get(),
-            'tastes' => $order->tastes()->get()
+            'dishes' => $order->dishes()->get()
         ];
     }
 }

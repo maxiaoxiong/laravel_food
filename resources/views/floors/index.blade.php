@@ -17,14 +17,14 @@
                         </tr>
                         @foreach($buildings as $building)
                         <tr>
-                            <td>{{ $building->building_name }}</td>
+                            <td>{{ $building->name }}</td>
                             <td></td>
                             <td></td>
                         </tr>
                         @foreach($building->floors as $floor)
                             <tr>
                                 <td></td>
-                                <td>{{ $floor->floor_name }}</td>
+                                <td>{{ $floor->name }}</td>
                                 <td><a style="float: left;margin-right: 5px;" href="{{ url('floors/'.$floor->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>
                                     <form style="float: left;margin-top: -1px;" method="post" action="floors/{{ $floor->id }}">
                                         <input name="_method" type="hidden" value="delete">

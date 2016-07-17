@@ -18,7 +18,7 @@ class CanteenTransformer extends TransformerAbstract
     {
         return [
             'id' => $canteen['id'],
-            'name' => $canteen['canteen_name'],
+            'name' => $canteen['name'],
         ];
     }
 }

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="form-group col-md-10 col-md-offset-1">
             <label for="">楼号</label>
-            <input type="text" name="building_name" class="form-control" value="{{ $building->building_name or '' }}">
+            <input type="text" name="name" class="form-control" value="{{ $building->name or '' }}">
         </div>
     </div>
 </div>

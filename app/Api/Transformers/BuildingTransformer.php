@@ -18,7 +18,7 @@ class BuildingTransformer extends TransformerAbstract
     {
         return [
             'id' => $building->id,
-            'name' => $building->building_name
+            'name' => $building->name
         ];
     }
 }

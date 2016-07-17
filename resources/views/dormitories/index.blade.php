@@ -18,7 +18,7 @@
                         </tr>
                         @foreach($buildings as $building)
                         <tr>
-                            <td>{{ $building->building_name }}</td>
+                            <td>{{ $building->name }}</td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -26,7 +26,7 @@
                             @foreach($building->floors as $floor)
                                 <tr>
                                     <td></td>
-                                    <td>{{ $floor->floor_name }}</td>
+                                    <td>{{ $floor->name }}</td>
                                     <td></td>
                                     <td></td>
                                 </tr>

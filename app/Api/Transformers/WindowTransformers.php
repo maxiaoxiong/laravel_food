@@ -18,7 +18,7 @@ class WindowTransformers extends TransformerAbstract
     {
         return [
             'id' => $window['id'],
-            'name' => $window['window_name']
+            'name' => $window['name']
         ];
     }
 }

@@ -32,11 +32,11 @@ class DiscountTransformer extends TransformerAbstract
 
         return [
             'id' => $preferentialDish->dish->id,
-            'name' => $preferentialDish->dish->dish_name,
+            'name' => $preferentialDish->dish->name,
             'img_url' => $preferentialDish->dish->dish_img,
-            'price' => (string)$preferentialDish->dish->dish_price,
+            'price' => (string)$preferentialDish->dish->price,
             'sales' => (int)$preferentialDish->dish->orders()->sum('order_no'),
-            'address' => $preferentialDish->dish->window->canteen->canteen_name.' '.$preferentialDish->dish->window->window_name,
+            'address' => $preferentialDish->dish->window->canteen->name.' '.$preferentialDish->dish->window->name,
             'delivery_time' => $preferentialDish->dish->delivery_time,
             'range' => $average
         ];
