@@ -168,10 +168,5 @@ Route::group(['middleware' => ['web','auth']],function (){
 
 
 Route::get('test', function () {
-//    $url = "http://xicode.me/uploads/dish/original/nnn.jpg";
-//    $s_array = explode('/', $url);
-//    echo str_replace("http://xicode.me/",'',$url).'<br>';
-//    echo $s_array[sizeof($s_array) - 1].'<br>';
-//    echo public_path(str_replace("http://xicode.me/",'',$url));
     
 });

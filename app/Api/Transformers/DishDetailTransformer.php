@@ -55,27 +55,33 @@ class DishDetailTransformer extends TransformerAbstract
             'type' => [
                 'tablewares' => [
                     'data' => isset($dish->tablewares[0]) ? $dish->tablewares : [],
-                    'limit_num' => isset($dish->tablewares[0]) ? $dish->tablewares[0]->pivot->limit_num : ''
+                    'limit_num' => isset($dish->tablewares[0]) ? $dish->tablewares[0]->pivot->limit_num : '',
+                    'name' => '餐具',
                 ],
                 'tastes' => [
                     'data' => isset($dish->tastes[0]) ? $dish->tastes : [],
-                    'limit_num' => isset($dish->tastes[0]) ? $dish->tastes[0]->pivot->limit_num : ''
+                    'limit_num' => isset($dish->tastes[0]) ? $dish->tastes[0]->pivot->limit_num : '',
+                    'name' => '口味',
                 ],
                 'typeones' => [
                     'data' => isset($dish->typeones[0]) ? $dish->typeones : [],
-                    'limit_num' => isset($dish->typeones[0]) ? $dish->typeones[0]->pivot->limit_num : ''
+                    'limit_num' => isset($dish->typeones[0]) ? $dish->typeones[0]->pivot->limit_num : '',
+                    'name' => '类型一',
                 ],
                 'typetwos' => [
                     'data' => isset($dish->typetwos[0]) ? $dish->typetwos : [],
-                    'limit_num' => isset($dish->typetwos[0]) ? $dish->typetwos[0]->pivot->limit_num : ''
+                    'limit_num' => isset($dish->typetwos[0]) ? $dish->typetwos[0]->pivot->limit_num : '',
+                    'name' => '类型二',
                 ],
                 'typethrees' => [
                     'data' => isset($dish->typethrees[0]) ? $dish->typethrees : [],
-                    'limit_num' => isset($dish->typethrees[0]) ? $dish->typethrees[0]->pivot->limit_num : ''
+                    'limit_num' => isset($dish->typethrees[0]) ? $dish->typethrees[0]->pivot->limit_num : '',
+                    'name' => '类型三',
                 ],
                 'typefours' => [
                     'data' => isset($dish->typefours[0]) ? $dish->typefours : [],
-                    'limit_num' => isset($dish->typefours[0]) ? $dish->typefours[0]->pivot->limit_num : ''
+                    'limit_num' => isset($dish->typefours[0]) ? $dish->typefours[0]->pivot->limit_num : '',
+                    'name' => '类型四',
                 ],
             ]
         ];

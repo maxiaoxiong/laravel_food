@@ -158,9 +158,8 @@ class OrdersController extends Controller
      */
     public function getPrintResult($time1, $time2)
     {
-        $orders = \DB::select('SELECT canteen_name,window_name,dish_name,order_no FROM ( SELECT canteen_id,dish_name,order_no,window_name FROM (SELECT dish_name,order_no,window_id FROM (SELECT dish_id,sum(order_no) AS order_no FROM orders WHERE created_at >= "' . $time1 . '" AND created_at <= "' . $time2 . '" GROUP BY dish_id) AS i,dishes AS d WHERE i.dish_id = d.id) AS s,windows AS w WHERE s.window_id = w.id) AS i2, canteens
-WHERE i2.canteen_id = canteens.id');
-
+        $orders = Order::where('created_at','>=',$time1)->where('created','<=',$time2)->get();
+        
         return $orders;
     }
 

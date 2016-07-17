@@ -31,7 +31,7 @@
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <button type="submit" class="btn btn-danger btn-xs">删除</button>
                                 </form>
-                                <a style="float: left;margin-left:5px;" href="#" data-toggle="modal" data-target="#changePrice" data-transid="{{ $dish->id }}" data-transname="{{ $dish->dish_name }}" data-transprice="{{ $dish->dish_price }}" class="btn btn-success btn-xs">加入特惠</a></td>
+                                <a style="float: left;margin-left:5px;" href="#" data-toggle="modal" data-target="#changePrice" data-transid="{{ $dish->id }}" data-transname="{{ $dish->name }}" data-transprice="{{ $dish->price }}" class="btn btn-success btn-xs">加入特惠</a></td>
                         </tr>
                         @endforeach
                     </table>
@@ -53,7 +53,7 @@
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <label for="recipient-name" class="control-label">价格:</label>
-                                        <input type="text" class="form-control dish_price" name="dish_price" id="recipient-name">
+                                        <input type="text" class="form-control price" name="price" id="recipient-name">
                                         <input type="hidden" class="form-control" name="type" value="addToDiscount">
                                         <input type="hidden" class="form-control id" name="id">
                                     </div>
@@ -84,7 +84,7 @@
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
             var modal = $(this);
             modal.find('.modal-title').text('更改 ' + name + ' 价格');
-            modal.find('.dish_price').val(price);
+            modal.find('.price').val(price);
             modal.find('.id').val(id);
             modal.find('.dish_id').val(dish_id);
         });

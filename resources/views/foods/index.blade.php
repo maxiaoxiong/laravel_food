@@ -35,21 +35,21 @@
                             </tr>
                             @foreach($canteens as $canteen)
                                 <tr>
-                                    <td>{{ $canteen->canteen_name }}</td>
+                                    <td>{{ $canteen->name }}</td>
                                     <td></td>
                                     <td></td>
                                 </tr>
                                 @foreach($canteen->windows as $window)
                                     <tr>
                                         <td></td>
-                                        <td>{{ $window->window_name }}</td>
+                                        <td>{{ $window->name }}</td>
                                         <td></td>
                                     </tr>
                                     @foreach($window->dishes as $dish)
                                         <tr>
                                             <td></td>
                                             <td></td>
-                                            <td>{{ $dish->dish_name }}</td>
+                                            <td>{{ $dish->name }}</td>
                                         </tr>
                                     @endforeach
                                 @endforeach

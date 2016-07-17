@@ -11,22 +11,20 @@
         <div class="box-body">
             <table class="table table-bordered">
                 <tr>
+                    <th>订单号</th>
                     <th>订单人</th>
-                    <th>菜名</th>
-                    <th>数量</th>
                     <th>联系电话</th>
-                    <th>下单餐厅</th>
-                    <th>下单窗口</th>
+                    <th>支付金额</th>
+                    <th>支付状态</th>
                     <th>下单时间</th>
                 </tr>
                 @foreach($orders as $order)
                     <tr>
+                        <td>{{ $order->order_no }}</td>
                         <td>{{ $order->user_name }}</td>
-                        <td>{{ $order->dish->dish_name }}</td>
-                        <td class="text-light-blue">{{ $order->order_no }}</td>
-                        <td class="text-green">{{ $order->user_phone }}</td>
-                        <td>{{ $order->dish->window->canteen->canteen_name }}</td>
-                        <td>{{ $order->dish->window->window_name }}</td>
+                        <td>{{ $order->user_phone }}</td>
+                        <td><span class="label label-default">{{ $order->price }}</span></td>
+                        <td><span class="label @if($order->status == "未付款")label-danger @else label-success @endif">{{ $order->status }}</span></td>
                         <td>{{ $order->created_at }}</td>
                     </tr>
                 @endforeach
