@@ -28,9 +28,12 @@ class DishesController extends BaseController
      */
     public function getHot()
     {
-        $orders = Order::groupBy('dish_id')->select('dish_id', \DB::raw('sum(order_no) as order_no'))->get()->take(10);
-
-        return $this->response->collection($orders, new HotDishTransformer())->setStatusCode(200);
+//        $orders = Order::groupBy('dish_id')->select('dish_id', \DB::raw('sum(order_no) as order_no'))->get()->take(10);
+        $dishes = Dish::with(['orders' => function($query){
+//            $query->groupBy('pivot.dish_id')->orderBy(\DB::raw('sum(pivot.num)'));
+        }])->get();
+        return $dishes;
+//        return $this->response->collection($orders, new HotDishTransformer())->setStatusCode(200);
     }
 
     /**

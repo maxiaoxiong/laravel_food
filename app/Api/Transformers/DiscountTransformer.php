@@ -16,6 +16,11 @@ class DiscountTransformer extends TransformerAbstract
 {
     public function transform(PreferentialDish $preferentialDish)
     {
+        $sales = 0;
+        for($i=0;$i<count($preferentialDish->dish->orders);$i++){
+            $sales += $preferentialDish->dish->orders[$i]->pivot->num;
+        }
+
         $range_sum = 0;
         $range_length = count($preferentialDish->dish->ranges);
         switch ($range_length){
@@ -35,7 +40,7 @@ class DiscountTransformer extends TransformerAbstract
             'name' => $preferentialDish->dish->name,
             'img_url' => $preferentialDish->dish->dish_img,
             'price' => (string)$preferentialDish->dish->price,
-            'sales' => (int)$preferentialDish->dish->orders()->sum('order_no'),
+            'sales' => (int)$sales,
             'address' => $preferentialDish->dish->window->canteen->name.' '.$preferentialDish->dish->window->name,
             'delivery_time' => $preferentialDish->dish->delivery_time,
             'range' => $average
