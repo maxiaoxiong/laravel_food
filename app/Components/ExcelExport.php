@@ -64,10 +64,9 @@ class ExcelExport
 
     static public function exportTags($datas)
     {
-        \Excel::create(Carbon::now(), function ($excel) use ($datas) {
-            foreach ($datas as $data) {
-                $excel->sheet($data->name, function ($sheet) use ($data) {
-
+        foreach ($datas as $data) {
+            \Excel::create($data->canteen->name.'-'.$data->name, function ($excel) use ($data) {
+                $excel->sheet('标签', function ($sheet) use ($data) {
                     foreach ($data->dishes as $k => $dish) {
                         $orders = self::getOrders($dish);
                         if (count($orders) == 0) {
@@ -77,8 +76,8 @@ class ExcelExport
                     }
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
-            }
-        })->export('xlsx');
+            })->export('xlsx');
+        }
     }
 
     static function exportDormitoryDetail($datas)
@@ -107,16 +106,16 @@ class ExcelExport
         $timeNow = Carbon::now();
         if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $lastDayTime)
-                ->where('orders.created_at','<=',$todayMorningTime)
-                ->where('orders.status','已付款')->get();
+                ->where('orders.created_at', '<=', $todayMorningTime)
+                ->where('orders.status', '已付款')->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $todayMorningTime)
-                ->where('orders.created_at','<=',$todayNoonTime)
-                ->where('orders.status','已付款')->get();
+                ->where('orders.created_at', '<=', $todayNoonTime)
+                ->where('orders.status', '已付款')->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $todayNoonTime)
-                ->where('orders.created_at','<=',$todayAfterTime)
-                ->where('orders.status','已付款')->get();
+                ->where('orders.created_at', '<=', $todayAfterTime)
+                ->where('orders.status', '已付款')->get();
         }
 
         return $orders;
