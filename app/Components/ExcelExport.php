@@ -72,7 +72,7 @@ class ExcelExport
                         if (count($orders) == 0) {
                             continue;
                         }
-                        $dishes[] = $dish;
+                        $dishes[$k] = $dish;
                     }
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
