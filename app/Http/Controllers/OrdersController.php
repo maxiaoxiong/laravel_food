@@ -104,7 +104,6 @@ class OrdersController extends Controller
                 } elseif ($timeNow >= $todayNoonTime && $timeNow < Carbon::tomorrow()) {
                     $tags = $this->getTagsResult($todayNoonTime, $todayAfterTime);
                 }
-                return $tags;
                 ExcelExport::exportTags($tags);
                 break;
             case 3:
