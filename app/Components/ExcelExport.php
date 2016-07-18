@@ -17,10 +17,10 @@ class ExcelExport
 
             $excel->sheet('今日订单', function ($sheet) use ($data) {
                 $sheet->setAutoSize(true);
-                for ($i = 1; $i <= count($data); $i ++) {
-                    $sheet->row(ceil($i / 3), array($data[ $i - 1 ]->dish->dish_name . ' ' . $data[ $i - 1 ]->order_no . '*' . $data[ $i - 1 ]->dish->dish_price . "\r\n" . $data[ $i - 1 ]->user->name . "\r\n" . $data[ $i - 1 ]->user->phone . "\r\n" . $data[ $i - 1 ]->dormitory->floor->building->building_name . "-" . $data[ $i - 1 ]->dormitory->floor->floor_name . "-" . $data[ $i - 1 ]->dormitory->name,
-                        $data[ $i ]->dish->dish_name . ' ' . $data[ $i ]->order_no . '*' . $data[ $i ]->dish->dish_price . "\r\n" . $data[ $i ]->user->name . "\r\n" . $data[ $i ]->user->phone . "\r\n" . $data[ $i ]->dormitory->floor->building->building_name . "-" . $data[ $i ]->dormitory->floor->floor_name . "-" . $data[ $i ]->dormitory->name,
-                        $data[ $i + 1 ]->dish->dish_name . ' ' . $data[ $i + 1 ]->order_no . '*' . $data[ $i + 1 ]->dish->dish_price . "\r\n" . $data[ $i + 1 ]->user->name . "\r\n" . $data[ $i + 1 ]->user->phone . "\r\n" . $data[ $i + 1 ]->dormitory->floor->building->building_name . "-" . $data[ $i + 1 ]->dormitory->floor->floor_name . "-" . $data[ $i + 1 ]->dormitory->name));
+                for ($i = 1; $i <= count($data); $i++) {
+                    $sheet->row(ceil($i / 3), array($data[$i - 1]->dish->dish_name . ' ' . $data[$i - 1]->order_no . '*' . $data[$i - 1]->dish->dish_price . "\r\n" . $data[$i - 1]->user->name . "\r\n" . $data[$i - 1]->user->phone . "\r\n" . $data[$i - 1]->dormitory->floor->building->building_name . "-" . $data[$i - 1]->dormitory->floor->floor_name . "-" . $data[$i - 1]->dormitory->name,
+                        $data[$i]->dish->dish_name . ' ' . $data[$i]->order_no . '*' . $data[$i]->dish->dish_price . "\r\n" . $data[$i]->user->name . "\r\n" . $data[$i]->user->phone . "\r\n" . $data[$i]->dormitory->floor->building->building_name . "-" . $data[$i]->dormitory->floor->floor_name . "-" . $data[$i]->dormitory->name,
+                        $data[$i + 1]->dish->dish_name . ' ' . $data[$i + 1]->order_no . '*' . $data[$i + 1]->dish->dish_price . "\r\n" . $data[$i + 1]->user->name . "\r\n" . $data[$i + 1]->user->phone . "\r\n" . $data[$i + 1]->dormitory->floor->building->building_name . "-" . $data[$i + 1]->dormitory->floor->floor_name . "-" . $data[$i + 1]->dormitory->name));
                     $sheet->setHeight(ceil($i / 3), 60);
                     $sheet->cells('A' . ceil($i / 3), function ($cells) {
                         $cells->setAlignment('center');
@@ -160,24 +160,24 @@ class ExcelExport
 //        })->export('xlsx');
 
         \Excel::create('标签表', function ($excel) use ($datas) {
+            foreach ($datas as $data) {
+                $excel->sheet($data->canteen->name.' '.$data->name, function ($sheet) use ($data) {
+//                    $data = $data->dishes[0]->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
+                    foreach ($data->dishes as $dish){
+                        $orders = $dish->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
+                        if (count($orders) == 0){
+                            continue;
+                        }
+                        $dishes[] = $dish;
+                    }
+                    $sheet->loadView('excels.tags', compact('dishes'));
 
-            $arr = [];
-            foreach ($datas as $k => $data) {
-                $arr[$k] = $data->dishes;
+                });
             }
-
-            $results = array_unique($arr);
-            $num = 1;
-            $excel->sheet('标签表', function ($sheet) use ($datas) {
-
-                $sheet->loadView('excels.tags', compact('datas'));
-
-            });
 
         })->export('xlsx');
         
     }
-
     static function exportDormitoryDetail($datas)
     {
         \Excel::create('宿舍明细表', function ($excel) use ($datas) {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Components\ExcelExport;
 use App\Components\Orders;
 use App\Order;
+use App\Window;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -104,6 +105,7 @@ class OrdersController extends Controller
                 } elseif ($timeNow >= $todayNoonTime && $timeNow < Carbon::tomorrow()) {
                     $tags = $this->getTagsResult($todayNoonTime, $todayAfterTime);
                 }
+//                return $tags[0]->dishes[0]->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
                 ExcelExport::exportTags($tags);
                 break;
             case 3:
@@ -180,8 +182,9 @@ class OrdersController extends Controller
 //FROM orders AS o, dishes AS d2, dormitories AS d, floors AS f, buildings AS b,windows AS w,canteens as c
 //WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND
 //      d2.window_id = w.id AND w.canteen_id = c.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'" ORDER BY d2.window_id');
-        $tags = Order::with('dishes')->where('created_at','>=',$time1)->where('created_at','<=',$time2)->get();
-        return $tags;
+//        $tags = Order::with('dishes')->where('created_at','>=',$time1)->where('created_at','<=',$time2)->get();
+        $windows = Window::has('dishes')->get();
+        return $windows;
     }
 
     public function getDormitoryResult($time1, $time2)
