@@ -64,21 +64,29 @@ class ExcelExport
 
     static public function exportTags($datas)
     {
-        foreach ($datas as $data) {
-            \Excel::create($data->canteen->name.'-'.$data->name, function ($excel) use ($data) {
+        \Excel::create('一个excel', function ($excel) use ($datas) {
+            foreach ($datas as $data) {
                 $excel->sheet('标签', function ($sheet) use ($data) {
-                    foreach ($data->dishes as $k => $dish) {
-                        $orders = self::getOrders($dish);
+                    $dishes = $data->dishes;
+//                    foreach ($data->dishes as $k => $dish) {
+//                        $orders = self::getOrders($dish);
+//                        if (count($orders) == 0) {
+//                            continue;
+//                        }
+//                        $dish_list[] = $dish;
+//                    }
+                    for ($i=0;$i<count($dishes);$i++){
+                        $orders = self::getOrders($dishes[$i]);
                         if (count($orders) == 0) {
                             continue;
                         }
-                        $dish_list[] = $dish;
+                        $dish_list[] = $dishes[$i];
                     }
                     $dishes = $dish_list;
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
-            })->export('xlsx');
-        }
+            }
+        })->export('xlsx');
     }
 
     static function exportDormitoryDetail($datas)
