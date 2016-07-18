@@ -93,6 +93,7 @@ class OrdersController extends Controller
                 } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
                     $orders = $this->getPrintResult($todayNoonTime, $todayAfterTime);
                 }
+                return $orders;
                 ExcelExport::exportWindowDetail($orders);
                 break;
             case 2:
@@ -165,21 +166,21 @@ class OrdersController extends Controller
 
     public function getTagsResult($time1, $time2)
     {
-        $tags = \DB::select('SELECT
-  d2.dish_name,
-  order_no,
-  d2.dish_price,
-  user_name,
-  user_phone,
-  b.building_name,
-  f.floor_name,
-  d.name AS dormitory_name,
-  d2.window_id,
-  msg
-FROM orders AS o, dishes AS d2, dormitories AS d, floors AS f, buildings AS b,windows AS w,canteens as c
-WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND
-      d2.window_id = w.id AND w.canteen_id = c.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'" ORDER BY d2.window_id');
-
+//        $tags = \DB::select('SELECT
+//  d2.dish_name,
+//  order_no,
+//  d2.dish_price,
+//  user_name,
+//  user_phone,
+//  b.building_name,
+//  f.floor_name,
+//  d.name AS dormitory_name,
+//  d2.window_id,
+//  msg
+//FROM orders AS o, dishes AS d2, dormitories AS d, floors AS f, buildings AS b,windows AS w,canteens as c
+//WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND
+//      d2.window_id = w.id AND w.canteen_id = c.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'" ORDER BY d2.window_id');
+        $tags = Order::with('dishes')->where('created_at','>=',$time1)->where('created_at','<=',$time2)->get();
         return $tags;
     }
 

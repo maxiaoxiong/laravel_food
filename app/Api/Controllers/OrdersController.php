@@ -23,7 +23,8 @@ use Redis;
 
 class OrdersController extends BaseController
 {
-    protected $order_no;
+    public $order_no;
+    
     /**
      * @return mixed
      */
