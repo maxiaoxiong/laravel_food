@@ -159,12 +159,13 @@ class ExcelExport
 //
 //        })->export('xlsx');
 
-        \Excel::create('标签表', function ($excel) use ($datas) {
+        \Excel::create(Carbon::now(), function ($excel) use ($datas) {
             foreach ($datas as $data) {
-                $excel->sheet($data->canteen->name.' '.$data->name, function ($sheet) use ($data) {
-                    foreach ($data->dishes as $k => $dish){
-                        $orders = $dish->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
-                        if (count($orders) == 0){
+                $excel->sheet($data->canteen->name . ' ' . $data->name, function ($sheet) use ($data) {
+
+                    foreach ($data->dishes as $k => $dish) {
+                        $orders = self::getOrders($dish);
+                        if (count($orders) == 0) {
                             continue;
                         }
                         $dishes[] = $dish;
@@ -173,8 +174,8 @@ class ExcelExport
                 });
             }
         })->export('xlsx');
-        
     }
+
     static function exportDormitoryDetail($datas)
     {
         \Excel::create('宿舍明细表', function ($excel) use ($datas) {
@@ -186,5 +187,33 @@ class ExcelExport
             });
 
         })->export('xlsx');
+    }
+
+    static function getOrders($dish)
+    {
+        $lastDayTime = Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
+            '18', '30', '00');
+        $todayMorningTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+            '07', '00', '00');
+        $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+            '11', '30', '00');
+        $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+            '17', '30', '00');
+        $timeNow = Carbon::now();
+        if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
+            $orders = $dish->orders()->where('orders.created_at', '>=', $lastDayTime)
+                ->where('orders.created_at','<=',$todayMorningTime)
+                ->where('orders.status','已付款')->get();
+        } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
+            $orders = $dish->orders()->where('orders.created_at', '>=', $todayMorningTime)
+                ->where('orders.created_at','<=',$todayNoonTime)
+                ->where('orders.status','已付款')->get();
+        } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
+            $orders = $dish->orders()->where('orders.created_at', '>=', $todayNoonTime)
+                ->where('orders.created_at','<=',$todayAfterTime)
+                ->where('orders.status','已付款')->get();
+        }
+
+        return $orders;
     }
 }

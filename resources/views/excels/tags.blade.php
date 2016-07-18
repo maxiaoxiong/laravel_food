@@ -66,7 +66,6 @@
             @endfor
             <tr>
                 @for($i=0;$i<(($order->pivot->num)%3);$i++)
-
                     <td align="center" valign="middle" height="70" width="40">
                         {{ $dish->name }}
                         1* {{ $dish->price }}
