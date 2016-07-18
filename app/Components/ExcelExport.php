@@ -162,20 +162,16 @@ class ExcelExport
         \Excel::create('标签表', function ($excel) use ($datas) {
             foreach ($datas as $data) {
                 $excel->sheet($data->canteen->name.' '.$data->name, function ($sheet) use ($data) {
-//                    $data = $data->dishes[0]->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
-//                    $dishes = [];
-//                    foreach ($data->dishes as $k => $dish){
-//                        $orders = $dish->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
-//                        if (count($orders) == 0){
-//                            continue;
-//                        }
-//                        $dishes[$k] = $dish;
-//                    }
-                    $dishes = $data->dishes;
+                    foreach ($data->dishes as $k => $dish){
+                        $orders = $dish->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
+                        if (count($orders) == 0){
+                            continue;
+                        }
+                        $dishes[] = $dish;
+                    }
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
             }
-
         })->export('xlsx');
         
     }

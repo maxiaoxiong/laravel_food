@@ -184,6 +184,13 @@ class OrdersController extends Controller
 //      d2.window_id = w.id AND w.canteen_id = c.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'" ORDER BY d2.window_id');
 //        $tags = Order::with('dishes')->where('created_at','>=',$time1)->where('created_at','<=',$time2)->get();
         $windows = Window::has('dishes')->get();
+//        foreach ($windows[0]->dishes as $k => $dish){
+//            $orders = $dish->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
+//            if (count($orders) == 0){
+//                continue;
+//            }
+//            $dishes[] = $dish;
+//        }
         return $windows;
     }
 

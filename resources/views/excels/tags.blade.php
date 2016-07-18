@@ -25,7 +25,8 @@
                             {{ $tableware->name }}
                         @endforeach
                         <br>
-                        {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}.{{ $order->dormitory->name }}
+                        {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}
+                        .{{ $order->dormitory->name }}
                     </td>
                     <td align="center" valign="middle" height="70" width="40">
                         {{ $dish->name }}
@@ -41,7 +42,8 @@
                             {{ $tableware->name }}
                         @endforeach
                         <br>
-                        {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}.{{ $order->dormitory->name }}
+                        {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}
+                        .{{ $order->dormitory->name }}
                     </td>
                     <td align="center" valign="middle" height="70" width="40">
                         {{ $dish->name }}
@@ -57,34 +59,35 @@
                             {{ $tableware->name }}
                         @endforeach
                         <br>
-                        {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}.{{ $order->dormitory->name }}
+                        {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}
+                        .{{ $order->dormitory->name }}
                     </td>
                 </tr>
             @endfor
+            <tr>
+                @for($i=0;$i<(($order->pivot->num)%3);$i++)
+
+                    <td align="center" valign="middle" height="70" width="40">
+                        {{ $dish->name }}
+                        1* {{ $dish->price }}
+                        <br>
+                        {{ $order->user_name }}<br>
+                        {{ $order->user_phone }}<br>
+                        @foreach($order->tastes as $taste)
+                            {{ $taste->name }}
+                        @endforeach
+                        <br>
+                        @foreach($order->tablewares as $tableware)
+                            {{ $tableware->name }}
+                        @endforeach
+                        <br>
+                        {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}
+                        .{{ $order->dormitory->name }}
+                    </td>
+                @endfor
+            </tr>
         @endforeach
     @endforeach
-    <tr>
-        @for($i=0;$i<(($order->pivot->num)%3);$i++)
-
-            <td align="center" valign="middle" height="70" width="40">
-                {{ $dish->name }}
-                1* {{ $dish->price }}
-                <br>
-                {{ $order->user_name }}<br>
-                {{ $order->user_phone }}<br>
-                @foreach($order->tastes as $taste)
-                    {{ $taste->name }}
-                @endforeach
-                <br>
-                @foreach($order->tablewares as $tableware)
-                    {{ $tableware->name }}
-                @endforeach
-                <br>
-                {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}.{{ $order->dormitory->name }}
-            </td>
-        @endfor
-
-    </tr>
 </table>
 </body>
 </html>
