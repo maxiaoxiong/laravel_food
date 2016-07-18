@@ -69,9 +69,9 @@ class ExcelExport
                 $excel->sheet('标签', function ($sheet) use ($data) {
                     foreach ($data->dishes as $k => $dish) {
                         $orders = self::getOrders($dish);
-                        if (count($orders) == 0) {
-                            continue;
-                        }
+//                        if (count($orders) == 0) {
+//                            continue;
+//                        }
                         $dishes[$k] = $dish;
                     }
                     $sheet->loadView('excels.tags', compact('dishes'));
