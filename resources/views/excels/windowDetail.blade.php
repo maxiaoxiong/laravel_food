@@ -11,15 +11,18 @@
         <td>窗口名</td>
         <td>菜名</td>
         <td>份数</td>
+        <td>需支付金钱</td>
     </tr>
     @foreach($datas as $data)
-        <tr>
-            <td>{{ $data->canteen_name }}</td>
-            <td>{{ $data->window_name }}</td>
-            <td>{{ $data->dish_name }}</td>
-            <td>{{ $data->order_no }}</td>
-
-        </tr>
+        @foreach($data->dishes as $dish)
+            <tr>
+                <td>{{ $data->window->canteen->name }}</td>
+                <td>{{ $data->window->name }}</td>
+                <td>{{ $data->name }}</td>
+                <td>{{ $data->pivot->num }}</td>
+                <td>{{ ($data->price)*() }}</td>
+            </tr>
+        @endforeach
     @endforeach
 </table>
 </body>

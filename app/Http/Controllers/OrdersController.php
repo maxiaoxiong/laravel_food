@@ -93,7 +93,6 @@ class OrdersController extends Controller
                 } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
                     $orders = $this->getPrintResult($todayNoonTime, $todayAfterTime);
                 }
-                return $orders;
                 ExcelExport::exportWindowDetail($orders);
                 break;
             case 2:
