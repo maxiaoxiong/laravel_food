@@ -166,19 +166,20 @@ Route::group(['middleware' => ['web','auth']],function (){
 
 
     Route::get('test', function (){
-        $windows = \App\Window::has('dishes')->get();
-        foreach ($windows as $k => $window) {
-            $dishes[$k] = $window->dishes;
-            foreach ($window->dishes as $v => $dish) {
-//                $orders = \App\Components\ExcelExport::getOrders($dish);
-//                        if (count($orders) == 0) {
-//                            continue;
-//                        }
-//                $dishes[] = $dish;
-                $dish_list[] = $dish;
-            }
-            $a = $dish_list;
-        }
-        return $a;
+//        $windows = \App\Window::has('dishes')->get();
+//        foreach ($windows as $k => $window) {
+//            $dishes[$k] = $window->dishes;
+//            foreach ($window->dishes as $v => $dish) {
+////                $orders = \App\Components\ExcelExport::getOrders($dish);
+////                        if (count($orders) == 0) {
+////                            continue;
+////                        }
+////                $dishes[] = $dish;
+//                $dish_list[] = $dish;
+//            }
+//            $a = $dish_list;
+//        }
+//        return $a;
+        return \App\Window::has('dishes')->get();
     });
 });

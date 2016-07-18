@@ -65,8 +65,7 @@ class ExcelExport
     static public function exportTags($datas)
     {
         \Excel::create('一个excel', function ($excel) use ($datas) {
-//            foreach ($datas as $data) {
-            $data = $datas[0];
+            foreach ($datas as $data) {
                 $excel->sheet('标签', function ($sheet) use ($data) {
                     $dishes = $data->dishes;
 //                    foreach ($data->dishes as $k => $dish) {
@@ -86,7 +85,7 @@ class ExcelExport
                     $dishes = $dish_list;
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
-//            }
+            }
         })->export('xlsx');
     }
 

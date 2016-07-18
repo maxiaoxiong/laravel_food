@@ -104,6 +104,7 @@ class OrdersController extends Controller
                 } elseif ($timeNow >= $todayNoonTime && $timeNow < Carbon::tomorrow()) {
                     $tags = $this->getTagsResult($todayNoonTime, $todayAfterTime);
                 }
+                return $tags;
                 ExcelExport::exportTags($tags);
                 break;
             case 3:
@@ -159,7 +160,8 @@ class OrdersController extends Controller
      */
     public function getPrintResult($time1, $time2)
     {
-        $orders = Order::with('dishes')->where('created_at','>=',$time1)->where('created_at','<=',$time2)->get();
+        $orders = Order::with('dishes')->where('created_at','>=',$time1)->where('created_at','<=',$time2)
+                    ->where('status','已付款')->get();
         
         return $orders;
     }
@@ -194,10 +196,11 @@ class OrdersController extends Controller
 
     public function getDormitoryResult($time1, $time2)
     {
-        $orders = \DB::select('SELECT d2.dish_name,order_no,
-  user_name,
-  user_phone,b.building_name,f.floor_name,d.name AS dormitory_name FROM orders AS o , dishes AS d2 , dormitories AS d, floors AS f, buildings AS b WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'"');
-
+//        $orders = \DB::select('SELECT d2.dish_name,order_no,
+//  user_name,
+//  user_phone,b.building_name,f.floor_name,d.name AS dormitory_name FROM orders AS o , dishes AS d2 , dormitories AS d, floors AS f, buildings AS b WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'"');
+        $orders = Order::where('created_at','>=',$time1)->where('created_at','<=',$time2)
+                ->where('status','已付款')->get();
         return $orders;
     }
 }

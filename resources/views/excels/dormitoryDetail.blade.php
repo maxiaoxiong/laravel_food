@@ -9,16 +9,19 @@
     <td>用户名</td>
     <td>手机号</td>
     <td>地址</td>
-    <td>菜名</td>
-    <td>数量</td>
+    <td>菜名*数量</td>
 </tr>
 @foreach($datas as $data)
     <tr>
         <td>{{ $data->user_name }}</td>
         <td>{{ $data->user_phone }}</td>
-        <td>{{ $data->building_name }}-{{ $data->floor_name }}-{{ $data->dormitory_name }}</td>
-        <td>{{ $data->dish_name }}</td>
-        <td>{{ $data->order_no }}</td>
+        <td>{{ $data->dormitory->floor->building->name }}-
+            {{ $data->dormitory->floor->name }}-{{ $data->dormitory->name }}</td>
+        <td>
+            @foreach($data->dishes as $dish)
+                {{ $data->name }} * {{ $data->pivot->num }}
+            @endforeach
+        </td>
     </tr>
 @endforeach
 </body>
