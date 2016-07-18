@@ -36,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/app/Components/ExcelExport.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="170" column="34" selection-start-line="170" selection-start-column="34" selection-end-line="170" selection-end-column="34" />
+              <caret line="170" column="25" selection-start-line="170" selection-start-column="25" selection-end-line="170" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -739,12 +739,12 @@
       <workItem from="1468650463470" duration="7334000" />
       <workItem from="1468720393328" duration="17599000" />
       <workItem from="1468756396901" duration="4833000" />
-      <workItem from="1468802485898" duration="18873000" />
+      <workItem from="1468802485898" duration="19159000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138031000" />
+    <option name="totallyTimeSpent" value="138317000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1486,7 +1486,7 @@
     <entry file="file://$PROJECT_DIR$/app/Components/ExcelExport.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="170" column="34" selection-start-line="170" selection-start-column="34" selection-end-line="170" selection-end-column="34" />
+          <caret line="170" column="25" selection-start-line="170" selection-start-column="25" selection-end-line="170" selection-end-column="25" />
           <folding />
         </state>
       </provider>
