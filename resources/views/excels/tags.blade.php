@@ -7,7 +7,7 @@
 <body>
 <table>
     @foreach($dishes as $dish)
-        {{ $orders = $dish->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get() }}
+        {{ $orders = \App\Components\ExcelExport::getOrders($dish) }}
         @foreach($orders as $order)
             @for($i=0;$i<floor(($order->pivot->num)/3);$i++)
                 <tr>
