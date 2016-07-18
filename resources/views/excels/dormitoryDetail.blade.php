@@ -19,7 +19,7 @@
             {{ $data->dormitory->floor->name }}-{{ $data->dormitory->name }}</td>
         <td>
             @foreach($data->dishes as $dish)
-                {{ $data->name }} * {{ $data->pivot->num }}
+                {{ $dish->name }} * {{ $dish->pivot->num }}
             @endforeach
         </td>
     </tr>

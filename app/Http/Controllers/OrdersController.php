@@ -83,7 +83,7 @@ class OrdersController extends Controller
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             '11', '30', '00');
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '23', '50', '00');
+            '23', '55', '00');
         $timeNow = Carbon::now();
         switch ($type) {
             case 1:
