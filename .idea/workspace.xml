@@ -4,8 +4,6 @@
     <list default="true" id="e154256a-0ee7-46ff-bf32-cb97ba6a4214" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/OrdersController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/OrdersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Components/ExcelExport.php" afterPath="$PROJECT_DIR$/app/Components/ExcelExport.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
     </list>
     <ignored path="pingplus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +35,8 @@
       <file leaf-file-name="OrdersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Api/Controllers/OrdersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
-              <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+            <state relative-caret-position="144">
+              <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -709,12 +707,12 @@
       <workItem from="1468650463470" duration="7334000" />
       <workItem from="1468720393328" duration="17599000" />
       <workItem from="1468756396901" duration="4833000" />
-      <workItem from="1468802485898" duration="8332000" />
+      <workItem from="1468802485898" duration="8685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127490000" />
+    <option name="totallyTimeSpent" value="127843000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,13 +765,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Components/OrderNo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="15" column="112" selection-start-line="15" selection-start-column="112" selection-end-line="15" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/buildings/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
@@ -941,13 +932,6 @@
             <marker date="1468659040828" expanded="true" signature="1061:1146" ph="{...}" />
             <marker date="1468659040828" expanded="true" signature="1179:1242" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -1405,10 +1389,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="18" column="53" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+          <folding>
+            <marker date="1468226747506" expanded="false" signature="9:84" ph=" Created by PhpStorm. ..." />
+            <marker date="1468226747506" expanded="false" signature="125:183" ph="..." />
+            <marker date="1468226747506" expanded="true" signature="229:430" ph="{...}" />
+            <marker date="1468226747506" expanded="true" signature="261:428" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="67" column="22" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+          <folding>
+            <marker date="1468115765051" expanded="false" signature="9:87" ph=" Created by PhpStorm. ..." />
+            <marker date="1468115765051" expanded="false" signature="126:600" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="645:7245" ph="{...}" />
+            <marker date="1468115765051" expanded="true" signature="655:713" ph=" @param Request $request ..." />
+            <marker date="1468115765051" expanded="true" signature="766:1431" ph="{...}" />
+            <marker date="1468115765051" expanded="true" signature="831:1141" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="1036:1131" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="1168:1332" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="1440:1498" ph=" @param Request $request ..." />
+            <marker date="1468115765051" expanded="true" signature="1552:3261" ph="{...}" />
+            <marker date="1468115765051" expanded="true" signature="1596:1668" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="1614:1667" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="1705:1801" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="1978:2071" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="2247:2353" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="2477:2533" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="2618:2716" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="2879:2985" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="3038:3148" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="3156:3254" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="3270:3328" ph=" @param Request $request ..." />
+            <marker date="1468115765051" expanded="true" signature="3377:4191" ph="{...}" />
+            <marker date="1468115765051" expanded="true" signature="3492:3596" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="3641:3746" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="3765:3926" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="3997:4095" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="4200:4258" ph=" @param Request $request ..." />
+            <marker date="1468115765051" expanded="true" signature="4311:4926" ph="{...}" />
+            <marker date="1468115765051" expanded="true" signature="4411:4514" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="4586:4813" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="4704:4803" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="4821:4919" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="4935:4962" ph=" @return mixed ..." />
+            <marker date="1468115765051" expanded="true" signature="5007:5679" ph="{...}" />
+            <marker date="1468115765051" expanded="true" signature="5027:5184" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="5094:5173" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="5220:5308" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="5344:5432" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="5459:5546" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="5739:6815" ph="{...}" />
+            <marker date="1468115765051" expanded="true" signature="5854:5955" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="6000:6112" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="6433:6539" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="6592:6702" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="6710:6808" ph="..." />
+            <marker date="1468115765051" expanded="true" signature="6868:7243" ph="{...}" />
+            <marker date="1468115765051" expanded="true" signature="7062:7156" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Controllers/OrdersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
+        <state relative-caret-position="144">
+          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
           <folding />
         </state>
       </provider>

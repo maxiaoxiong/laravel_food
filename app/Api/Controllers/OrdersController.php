@@ -24,7 +24,7 @@ use Redis;
 class OrdersController extends BaseController
 {
     public $order_no;
-    
+
     /**
      * @return mixed
      */
@@ -75,10 +75,10 @@ class OrdersController extends BaseController
     public function store(Request $request)
     {
         $data = $request->except('dishes');
-        $this->order_no = OrderNo::getOrderNo();
+        \Cache::put($request->get('user_id'),OrderNo::getOrderNo(),5);
         $dishes = $request->get('dishes');
         try {
-            $order = Order::Create(array_merge($data, ['order_no' => $this->order_no]));
+            $order = Order::Create(array_merge($data, ['order_no' => \Cache::get($request->get('user_id'))]));
             foreach ($dishes as $k => $v) {
                 $order->dishes()->attach($dishes[$k]['dish_id'], ['num' => $dishes[$k]['num']]);
                 $dish = Dish::find($dishes[$k]['dish_id']);
@@ -147,13 +147,13 @@ class OrdersController extends BaseController
         $dish_name = $request->get('dish_name');
         $ch = \Pingpp\Charge::create(
             array(
-                'order_no' => $this->order_no,
+                'order_no' => \Cache::get($request->get('user_id')),
                 'app' => array('id' => env('PING_APP_ID')),
                 'channel' => $request->get('channel'),
                 'amount' => $request->get('amount'),
                 'client_ip' => $request->ip(),
                 'currency' => 'cny',
-                'subject' => '小胖订单-' . $this->order_no,
+                'subject' => '小胖订单-' . \Cache::get($request->get('user_id')),
                 'body' => $request->get('user_name') . ' 正在购买 ' . $dish_name ,
                 'extra' => array()
             )
