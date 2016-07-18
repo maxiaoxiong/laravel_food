@@ -65,7 +65,8 @@ class ExcelExport
     static public function exportTags($datas)
     {
         \Excel::create('一个excel', function ($excel) use ($datas) {
-            foreach ($datas as $data) {
+//            foreach ($datas as $data) {
+            $data = $datas[0];
                 $excel->sheet('标签', function ($sheet) use ($data) {
                     $dishes = $data->dishes;
 //                    foreach ($data->dishes as $k => $dish) {
@@ -75,7 +76,7 @@ class ExcelExport
 //                        }
 //                        $dish_list[] = $dish;
 //                    }
-                    for ($i=0;$i<count($dishes);$i++){
+                    for ($i = 0; $i < count($dishes); $i++) {
                         $orders = self::getOrders($dishes[$i]);
                         if (count($orders) == 0) {
                             continue;
@@ -85,7 +86,7 @@ class ExcelExport
                     $dishes = $dish_list;
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
-            }
+//            }
         })->export('xlsx');
     }
 
