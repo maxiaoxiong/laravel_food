@@ -16,11 +16,11 @@
     @foreach($datas as $data)
         @foreach($data->dishes as $dish)
             <tr>
-                <td>{{ $data->window->canteen->name }}</td>
-                <td>{{ $data->window->name }}</td>
-                <td>{{ $data->name }}</td>
-                <td>{{ $data->pivot->num }}</td>
-                <td>{{ ($data->price)*() }}</td>
+                <td>{{ $dish->window->canteen->name }}</td>
+                <td>{{ $dish->window->name }}</td>
+                <td>{{ $dish->name }}</td>
+                <td>{{ $dish->pivot->num }}</td>
+                <td>{{ ($dish->price)*($dish->pivot->num) }} 元</td>
             </tr>
         @endforeach
     @endforeach
