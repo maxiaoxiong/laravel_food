@@ -95,6 +95,9 @@ Route::get('comment', 'CommentsController@index');
 /**
  * web route
  */
+
+Route::post('pay/status', 'OrdersController@payStatus');
+
 Route::group(['middleware' => ['web','auth']],function (){
     Route::auth();
 
@@ -161,7 +164,6 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::post('push/timely', 'PushController@timely');
     Route::post('push/timing', 'PushController@timing');
 
-    Route::post('pay/status', 'OrdersController@payStatus');
 
     Route::get('test', 'OrdersController@getPrintResult');
 });
