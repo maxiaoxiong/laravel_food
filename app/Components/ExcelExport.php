@@ -69,11 +69,12 @@ class ExcelExport
                 $excel->sheet('标签', function ($sheet) use ($data) {
                     foreach ($data->dishes as $k => $dish) {
                         $orders = self::getOrders($dish);
-//                        if (count($orders) == 0) {
-//                            continue;
-//                        }
-                        $dishes[$k] = $dish;
+                        if (count($orders) == 0) {
+                            continue;
+                        }
+                        $dish_list[] = $dish;
                     }
+                    $dishes = $dish_list;
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
             })->export('xlsx');
@@ -102,7 +103,7 @@ class ExcelExport
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             '11', '30', '00');
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '18', '30', '00');
+            '20', '30', '00');
         $timeNow = Carbon::now();
         if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $lastDayTime)
