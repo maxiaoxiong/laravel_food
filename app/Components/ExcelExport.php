@@ -163,15 +163,14 @@ class ExcelExport
             foreach ($datas as $data) {
                 $excel->sheet($data->canteen->name.' '.$data->name, function ($sheet) use ($data) {
 //                    $data = $data->dishes[0]->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
-                    foreach ($data->dishes as $dish){
+                    foreach ($data->dishes as $k => $dish){
                         $orders = $dish->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
                         if (count($orders) == 0){
                             continue;
                         }
-                        $dishes[] = $dish;
+                        $dishes[$k] = $dish;
                     }
                     $sheet->loadView('excels.tags', compact('dishes'));
-
                 });
             }
 
