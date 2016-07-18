@@ -11,7 +11,7 @@
         @foreach($orders as $order)
             @for($i=0;$i<floor(($order->pivot->num)/3);$i++)
                 <tr>
-                    <td align="center" valign="middle" height="70" width="40">
+                    <td align="center" valign="middle" height="100" width="40">
                         {{ $dish->name }}
                         1* {{ $dish->price }}
                         <br>
@@ -28,7 +28,7 @@
                         {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}
                         .{{ $order->dormitory->name }}
                     </td>
-                    <td align="center" valign="middle" height="70" width="40">
+                    <td align="center" valign="middle" height="100" width="40">
                         {{ $dish->name }}
                         1* {{ $dish->price }}
                         <br>
@@ -45,7 +45,7 @@
                         {{ $order->dormitory->floor->building->name }}.{{ $order->dormitory->floor->name }}
                         .{{ $order->dormitory->name }}
                     </td>
-                    <td align="center" valign="middle" height="70" width="40">
+                    <td align="center" valign="middle" height="100" width="40">
                         {{ $dish->name }}
                         1* {{ $dish->price }}
                         <br>
@@ -66,7 +66,7 @@
             @endfor
             <tr>
                 @for($i=0;$i<(($order->pivot->num)%3);$i++)
-                    <td align="center" valign="middle" height="70" width="40">
+                    <td align="center" valign="middle" height="100" width="40">
                         {{ $dish->name }}
                         1* {{ $dish->price }}
                         <br>
