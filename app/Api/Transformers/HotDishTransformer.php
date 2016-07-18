@@ -9,35 +9,36 @@
 namespace App\Api\Transformers;
 
 
+use App\Dish;
 use App\Order;
 use League\Fractal\TransformerAbstract;
 
 class HotDishTransformer extends TransformerAbstract
 {
-    public function transform(Order $order)
+    public function transform(Dish $dish)
     {
         $range_sum = 0;
-        $range_length = count($order->dishes->ranges);
+        $range_length = count($dish->ranges);
         switch ($range_length) {
             case 0:
                 $range_length = 1;
                 break;
             default:
                 for ($i = 0; $i < $range_length; $i ++) {
-                    $range_sum += $order->dishes->ranges[ $i ]->range;
+                    $range_sum += $dish->ranges[ $i ]->range;
                 }
         }
 
         $average = ceil($range_sum / $range_length);
 
         return [
-            'id' => $order->dish->id,
-            'name' => $order->dish->name,
-            'img_url' => $order->dish->dish_img,
-            'price' => $order->dish->price,
-            'sales' => (int) ($order['order_no']),
-            'address' => $order->dish->window->canteen->name . ' ' . $order->dish->window->name,
-            'delivery_time' => $order->dish->delivery_time,
+            'id' => $dish->id,
+            'name' => $dish->name,
+            'img_url' => $dish->dish_img,
+            'price' => $dish->price,
+            'sales' => (int) $dish->ordered_count,
+            'address' => $dish->window->canteen->name . ' ' . $dish->window->name,
+            'delivery_time' => $dish->delivery_time,
             'range' => $average
         ];
     }

@@ -12,6 +12,7 @@ namespace App\Api\Controllers;
 use App\Api\Transformers\OrderTransformer;
 use App\Api\Transformers\UserOrdersTransformer;
 use App\Components\OrderNo;
+use App\Dish;
 use App\Order;
 use Carbon\Carbon;
 use Dingo\Api\Exception\StoreResourceFailedException;
@@ -79,6 +80,11 @@ class OrdersController extends BaseController
             $order = Order::Create(array_merge($data, ['order_no' => $this->order_no]));
             foreach ($dishes as $k => $v) {
                 $order->dishes()->attach($dishes[$k]['dish_id'], ['num' => $dishes[$k]['num']]);
+                $dish = Dish::find($dishes[$k]['dish_id']);
+                $old_ordered_count = $dish->ordered_count;
+                $new_ordered_count = $old_ordered_count + $dishes[$k]['num'];
+                $dish->ordered_count = $new_ordered_count;
+                $dish->save();
                 $order->tastes()->attach($dishes[$k]['taste_id']);
                 $order->tablewares()->attach($dishes[$k]['tableware_id']);
                 $order->typeones()->attach($dishes[$k]['typeone_id']);

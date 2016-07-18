@@ -93,6 +93,7 @@ class OrdersController extends Controller
                 } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
                     $orders = $this->getPrintResult($todayNoonTime, $todayAfterTime);
                 }
+                return $orders;
                 ExcelExport::exportWindowDetail($orders);
                 break;
             case 2:
@@ -158,7 +159,7 @@ class OrdersController extends Controller
      */
     public function getPrintResult($time1, $time2)
     {
-        $orders = Order::where('created_at','>=',$time1)->where('created','<=',$time2)->get();
+        $orders = Order::with('dishes')->where('created_at','>=',$time1)->where('created_at','<=',$time2)->get();
         
         return $orders;
     }

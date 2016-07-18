@@ -53,8 +53,6 @@ $api->version('v1', function ($api) {
             $api->get('user/me', 'AuthController@getAuthenticatedUser');
 
         });
-
-        $api->get('test', 'DishesController@getHot');
     });
 });
 
@@ -164,6 +162,6 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::post('push/timing', 'PushController@timing');
 
     Route::post('pay/status', 'OrdersController@payStatus');
-    
-    
+
+    Route::get('test', 'OrdersController@getPrintResult');
 });
