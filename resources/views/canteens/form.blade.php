@@ -26,7 +26,7 @@
     var croppedOptions = {
         uploadUrl: '/image/upload',
         cropUrl: '/image/crop',
-        loadPicture:'{{ $advertise->img or '' }}',
+        loadPicture:'{{ $canteen->img or '' }}',
         cropData:{
             'width' : eyeCandy.width(),
             'height': eyeCandy.height()

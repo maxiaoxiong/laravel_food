@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="form.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/canteens/form.blade.php">
+      <file leaf-file-name="CanteensController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CanteensController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+            <state relative-caret-position="286">
+              <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -409,12 +409,12 @@
       <workItem from="1468756396901" duration="4833000" />
       <workItem from="1468802485898" duration="37958000" />
       <workItem from="1468853782024" duration="3302000" />
-      <workItem from="1468895447835" duration="13226000" />
+      <workItem from="1468895447835" duration="13336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173644000" />
+    <option name="totallyTimeSpent" value="173754000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -467,13 +467,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Api/Transformers/WindowDishesTransformer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Transformers/FloorTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -1712,8 +1705,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/canteens/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="14" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        <state relative-caret-position="284">
+          <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+          <folding>
+            <marker date="1468911265837" expanded="true" signature="23:683" ph="..." />
+            <marker date="1468911265837" expanded="true" signature="45:676" ph="..." />
+            <marker date="1468911265837" expanded="true" signature="104:255" ph="..." />
+            <marker date="1468911265837" expanded="true" signature="314:555" ph="..." />
+            <marker date="1468911265837" expanded="true" signature="400:540" ph="..." />
+            <marker date="1468911265837" expanded="true" signature="439:521" ph="..." />
+            <marker date="1468911265837" expanded="true" signature="710:791" ph="..." />
+            <marker date="1468911265837" expanded="true" signature="873:1293" ph="..." />
+            <marker date="1468911265837" expanded="true" signature="948:1208" ph="{&quot;uploadUrl&quot;: '/image/upload'...}" />
+            <marker date="1468911265837" expanded="true" signature="1084:1175" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CanteensController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
           <folding />
         </state>
       </provider>
