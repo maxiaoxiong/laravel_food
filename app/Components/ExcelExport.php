@@ -124,7 +124,7 @@ class ExcelExport
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             '11', '30', '00');
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '23', '55', '00');
+            '17', '30', '00');
         $timeNow = Carbon::now();
         if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $lastDayTime)
