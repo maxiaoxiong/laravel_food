@@ -38,6 +38,7 @@ class CanteensController extends Controller
     {
         $canteen = Canteen::find($id);
         $canteen->name = $request->get('name');
+        $canteen->img = $request->get('img');
         $flag = $canteen->save();
         if($flag == 1){
             return redirect()->route('canteens.index');
