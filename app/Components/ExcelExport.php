@@ -102,6 +102,19 @@ class ExcelExport
         })->export('xlsx');
     }
 
+    static function exportSaleDetail($datas)
+    {
+        \Excel::create('销售明细表', function ($excel) use ($datas) {
+
+            $excel->sheet('销售细表', function ($sheet) use ($datas) {
+
+                $sheet->loadView('excels.saleDetail', compact('datas'));
+
+            });
+
+        })->export('xlsx');
+    }
+
     static function getOrders($dish)
     {
         $lastDayTime = Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
@@ -128,5 +141,31 @@ class ExcelExport
         }
 
         return $orders;
+    }
+
+    public static function exportWindowSaleDetail($windows)
+    {
+        \Excel::create('餐厅窗口明细表', function ($excel) use ($windows) {
+
+            $excel->sheet('餐厅窗口明细表', function ($sheet) use ($windows) {
+
+                $sheet->loadView('excels.windowSaleDetail', compact('windows'));
+
+            });
+
+        })->export('xlsx');
+    }
+
+    public static function exportFloorOrderDetail($floors)
+    {
+        \Excel::create('宿舍楼层明细表', function ($excel) use ($floors) {
+
+            $excel->sheet('宿舍楼层明细表', function ($sheet) use ($floors) {
+
+                $sheet->loadView('excels.floorOrderDetail', compact('floors'));
+
+            });
+
+        })->export('xlsx');
     }
 }

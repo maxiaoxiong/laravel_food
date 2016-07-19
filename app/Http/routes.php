@@ -156,6 +156,7 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::get('orders/today', 'OrdersController@getTodayOrders');
     Route::get('orders/week', 'OrdersController@getWeekOrders');
     Route::get('orders/history', 'OrdersController@getHistoryOrders');
+    Route::get('orders/month','OrdersController@getMonthOrders');
     Route::get('orders/printOrders/{type}', 'OrdersController@printOrders');
 
     Route::get('push/history', 'PushController@index');
@@ -166,20 +167,9 @@ Route::group(['middleware' => ['web','auth']],function (){
 
 
     Route::get('test', function (){
-//        $windows = \App\Window::has('dishes')->get();
-//        foreach ($windows as $k => $window) {
-//            $dishes[$k] = $window->dishes;
-//            foreach ($window->dishes as $v => $dish) {
-////                $orders = \App\Components\ExcelExport::getOrders($dish);
-////                        if (count($orders) == 0) {
-////                            continue;
-////                        }
-////                $dishes[] = $dish;
-//                $dish_list[] = $dish;
-//            }
-//            $a = $dish_list;
-//        }
-//        return $a;
-        return \App\Window::has('dishes')->get();
+        $orders =  \App\Floor::find(1)->dormitories[0]->orders()->where('orders.created_at','>=',\Carbon\Carbon::createFromDate()
+            ->startOfMonth())->get();
+        $dishes = $orders[0]->dishes;
+        return $dishes;
     });
 });

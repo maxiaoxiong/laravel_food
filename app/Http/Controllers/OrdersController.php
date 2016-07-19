@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Components\ExcelExport;
 use App\Components\Orders;
+use App\Floor;
 use App\Order;
 use App\Window;
 use Carbon\Carbon;
@@ -17,6 +18,9 @@ use Pingpp\Pingpp;
 class OrdersController extends Controller
 {
 
+    /**
+     *
+     */
     public function payStatus()
     {
         $event = json_decode(file_get_contents("php://input"));
@@ -83,7 +87,7 @@ class OrdersController extends Controller
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             '11', '30', '00');
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '23', '55', '00');
+            '17', '30', '00');
         $timeNow = Carbon::now();
         switch ($type) {
             case 1:
@@ -115,6 +119,20 @@ class OrdersController extends Controller
                     $orders = $this->getDormitoryResult($todayNoonTime, $todayAfterTime);
                 }
                 ExcelExport::exportDormitoryDetail($orders);
+                break;
+            case 4:
+                $orders = Order::where('created_at','>=',Carbon::createFromDate()->startOfMonth())
+                    ->where('status','已付款')->get();
+                ExcelExport::exportSaleDetail($orders); 
+                break;
+            case 5:
+                $windows = Window::has('dishes')->get();
+                ExcelExport::exportWindowSaleDetail($windows);
+                break;
+            case 6:
+                $floors = Floor::has('dormitories')->get();
+                ExcelExport::exportFloorOrderDetail($floors);
+                break;
         }
 
     }
@@ -142,6 +160,13 @@ class OrdersController extends Controller
         return view('orders.week', compact('orders'));
     }
 
+    public function getMonthOrders()
+    {
+        $orders = Order::where('created_at', '>=', Carbon::createFromDate()->startOfMonth())->paginate(10);
+
+        return view('orders.month', compact('orders'));
+    }
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -165,41 +190,33 @@ class OrdersController extends Controller
         return $orders;
     }
 
+    /**
+     * @param $time1
+     * @param $time2
+     * @return mixed
+     */
     public function getTagsResult($time1, $time2)
     {
-//        $tags = \DB::select('SELECT
-//  d2.dish_name,
-//  order_no,
-//  d2.dish_price,
-//  user_name,
-//  user_phone,
-//  b.building_name,
-//  f.floor_name,
-//  d.name AS dormitory_name,
-//  d2.window_id,
-//  msg
-//FROM orders AS o, dishes AS d2, dormitories AS d, floors AS f, buildings AS b,windows AS w,canteens as c
-//WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND
-//      d2.window_id = w.id AND w.canteen_id = c.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'" ORDER BY d2.window_id');
-//        $tags = Order::with('dishes')->where('created_at','>=',$time1)->where('created_at','<=',$time2)->get();
         $windows = Window::has('dishes')->get();
-//        foreach ($windows[0]->dishes as $k => $dish){
-//            $orders = $dish->orders()->where('orders.created_at','>=','2016-07-18 09:12:34')->get();
-//            if (count($orders) == 0){
-//                continue;
-//            }
-//            $dishes[] = $dish;
-//        }
         return $windows;
     }
 
+    /**
+     * @param $time1
+     * @param $time2
+     * @return mixed
+     */
     public function getDormitoryResult($time1, $time2)
     {
-//        $orders = \DB::select('SELECT d2.dish_name,order_no,
-//  user_name,
-//  user_phone,b.building_name,f.floor_name,d.name AS dormitory_name FROM orders AS o , dishes AS d2 , dormitories AS d, floors AS f, buildings AS b WHERE o.dormitory_id = d.id AND d.floor_id = f.id AND f.building_id = b.id AND o.dish_id = d2.id AND o.created_at >= "'.$time1.'" AND o.created_at <= "'.$time2.'"');
         $orders = Order::where('created_at','>=',$time1)->where('created_at','<=',$time2)
                 ->where('status','已付款')->get();
+        return $orders;
+    }
+
+    private function getSaleResult($time1, $time2)
+    {
+        $orders = $orders = Order::where('created_at','>=',$time1)->where('created_at','<=',$time2)
+            ->where('status','已付款')->get();
         return $orders;
     }
 }

@@ -10,7 +10,7 @@ class Dish extends Model
      * @var array
      */
     protected $fillable = ['id','name','price','dish_img','window_id','dishtype_id','delivery_time','type_id', 'ordered_count'];
-    protected $hidden = ['created_at','updated_at'];
+    protected $hidden = ['created_at','updated_at','pivot'];
     public function typefours()
     {
         return $this->belongsToMany(Typefour::class)->withPivot('limit_num')->withTimestamps();

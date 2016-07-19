@@ -49,6 +49,9 @@
                 </ul>
             </li>
             <li class="treeview">
+                <a href="{{ url('orders/month') }}">每月小结</a>
+            </li>
+            <li class="treeview">
                 <a href="#"><i class="fa fa-th"></i> <span>菜品管理</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('canteens') }}">餐厅管理</a></li>

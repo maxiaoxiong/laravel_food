@@ -20,7 +20,9 @@ class UserOrdersTransformer extends TransformerAbstract
          * 要改
          */
         return [
-            'dishes' => $order->dishes()->get()
+            'orders' => $order,
+            'dishes' => $order->dishes()->get(['dishes.id','name']),
+
         ];
     }
 }
