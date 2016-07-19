@@ -8,7 +8,7 @@
             <label for="">上传图片</label>
             <div class="row margin-bottom-40">
                 <div class="col-md-6">
-                    <div id="cropContainerEyecandy"></div>
+                    <div id="cropContainerEyecandyC"></div>
                 </div>
             </div>
         </div>
@@ -18,18 +18,3 @@
 <div class="modal-footer">
     <button type="submit" class="btn btn-primary pull-left">Save</button>
 </div>
-
-<script>
-    var eyeCandy = $('#cropContainerEyecandy');
-    var croppedOptions = {
-        uploadUrl: '/image/upload',
-        cropUrl: '/image/crop',
-        loadPicture:'{{ $advertise->img_url or '' }}',
-        cropData:{
-            'width' : eyeCandy.width(),
-            'height': eyeCandy.height()
-        },
-        outputUrlId:'img'
-    };
-    var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
-</script>

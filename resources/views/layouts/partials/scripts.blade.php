@@ -14,6 +14,20 @@
     };
     var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
 </script>
+<script>
+    var eyeCandy = $('#cropContainerEyecandyC');
+    var croppedOptions = {
+        uploadUrl: '/image/upload',
+        cropUrl: '/image/crop',
+        loadPicture:'{{ $advertise->img or '' }}',
+        cropData:{
+            'width' : eyeCandy.width(),
+            'height': eyeCandy.height()
+        },
+        outputUrlId:'img'
+    };
+    var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
+</script>
 
 <script>
     jQuery(document).ready(function ($) {

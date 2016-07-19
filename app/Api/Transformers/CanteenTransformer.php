@@ -19,6 +19,7 @@ class CanteenTransformer extends TransformerAbstract
         return [
             'id' => $canteen['id'],
             'name' => $canteen['name'],
+            'img_url' => $canteen['img']
         ];
     }
 }
