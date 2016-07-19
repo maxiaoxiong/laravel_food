@@ -8,7 +8,7 @@
             <label for="">上传图片</label>
             <div class="row margin-bottom-40">
                 <div class="col-md-6">
-                    <div id="cropContainerEyecandyC"></div>
+                    <div id="cropContainerEyecandy"></div>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
 <script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>
 
 <script>
-    var eyeCandy = $('#cropContainerEyecandyC');
+    var eyeCandy = $('#cropContainerEyecandy');
     var croppedOptions = {
         uploadUrl: '/image/upload',
         cropUrl: '/image/crop',
