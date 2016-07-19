@@ -18,3 +18,20 @@
 <div class="modal-footer">
     <button type="submit" class="btn btn-primary pull-left">Save</button>
 </div>
+
+<script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>
+
+<script>
+    var eyeCandy = $('#cropContainerEyecandyC');
+    var croppedOptions = {
+        uploadUrl: '/image/upload',
+        cropUrl: '/image/crop',
+        loadPicture:'{{ $advertise->img or '' }}',
+        cropData:{
+            'width' : eyeCandy.width(),
+            'height': eyeCandy.height()
+        },
+        outputUrlId:'img'
+    };
+    var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
+</script>
