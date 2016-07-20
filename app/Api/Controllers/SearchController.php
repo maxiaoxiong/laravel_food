@@ -17,7 +17,7 @@ class SearchController extends BaseController
 {
     public function search($keyword)
     {
-        $dishes = Dish::where('dish_name','like','%'.$keyword.'%')->paginate(8);
+        $dishes = Dish::where('name','like','%'.$keyword.'%')->paginate(8);
         return $this->response->paginator($dishes,new DishTransformer())->setStatusCode(200);
     }
 }

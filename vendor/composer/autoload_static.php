@@ -433,6 +433,7 @@ class ComposerStaticInit4f6176fe03180c9a18fa804d4eed3c31
         'AddOrderedCountToDishesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_18_085253_add_ordered_count_to_dishes_table.php',
         'AlterUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_17_231849_alter_users_table.php',
         'CreateAdvertisesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_15_033651_create_advertises_table.php',
+        'CreateAdvicesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_20_211327_create_advices_table.php',
         'CreateBuildingsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_14_134042_create_buildings_table.php',
         'CreateCanteensTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_14_135536_create_canteens_table.php',
         'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_15_012044_create_comments_table.php',

@@ -102,4 +102,9 @@ class Dish extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function preferentialDish()
+    {
+        return $this->hasOne(PreferentialDish::class);
+    }
 }

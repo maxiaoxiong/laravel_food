@@ -9,6 +9,7 @@ return array(
     'AddOrderedCountToDishesTable' => $baseDir . '/database/migrations/2016_07_18_085253_add_ordered_count_to_dishes_table.php',
     'AlterUsersTable' => $baseDir . '/database/migrations/2016_07_17_231849_alter_users_table.php',
     'CreateAdvertisesTable' => $baseDir . '/database/migrations/2016_07_15_033651_create_advertises_table.php',
+    'CreateAdvicesTable' => $baseDir . '/database/migrations/2016_07_20_211327_create_advices_table.php',
     'CreateBuildingsTable' => $baseDir . '/database/migrations/2016_07_14_134042_create_buildings_table.php',
     'CreateCanteensTable' => $baseDir . '/database/migrations/2016_07_14_135536_create_canteens_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2016_07_15_012044_create_comments_table.php',

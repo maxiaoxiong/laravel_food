@@ -9,6 +9,7 @@
 namespace App\Api\Controllers;
 
 
+use App\Api\Components\Time;
 use App\Api\Transformers\DishDetailTransformer;
 use App\Api\Transformers\DishTransformer;
 use App\Api\Transformers\HotDishTransformer;
@@ -28,7 +29,21 @@ class DishesController extends BaseController
      */
     public function getHot()
     {
-        $dishes = Dish::orderBy('ordered_count','desc')->paginate(10);
+        $todayMorningTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+            '07', '00', '00');
+        $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+            '11', '30', '00');
+        $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+            '17', '30', '00');
+        $timeNow = Carbon::now();
+
+        if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
+            $dishes = Dish::where('dishtype_id',1)->orderBy('ordered_count','desc')->paginate(10);
+        } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
+            $dishes = Dish::where('dishtype_id',2)->orderBy('ordered_count','desc')->paginate(10);
+        } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
+            $dishes = Dish::where('dishtype_id',3)->orderBy('ordered_count','desc')->paginate(10);
+        }
         return $this->response->paginator($dishes,new HotDishTransformer())->setStatusCode(200);
     }
 

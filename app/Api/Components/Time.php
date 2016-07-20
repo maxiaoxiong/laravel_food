@@ -1,22 +1,19 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: xiongzai
- * Date: 5/12/16
- * Time: 2:47 PM
+ * User: xicode
+ * Date: 16-7-20
+ * Time: 下午8:12
  */
 
-namespace App\Api\Controllers;
+namespace App\Api\Components;
 
 
-use App\Api\Transformers\DiscountTransformer;
-use App\Dish;
-use App\PreferentialDish;
 use Carbon\Carbon;
 
-class DiscountsController extends BaseController
+class Time
 {
-    public function getDishes()
+    public static function getCurrentTimeArr()
     {
         $lastDayTime = Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
             '18', '30', '00');
@@ -28,13 +25,12 @@ class DiscountsController extends BaseController
             '17', '30', '00');
         $timeNow = Carbon::now();
 
-        if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
-            $discounts = Dish::has('preferentialDish')->where('dishtype_id',1)->paginate(10);
+        if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
+            return [$lastDayTime, $todayMorningTime];
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',2)->paginate(10);
+            return [$todayMorningTime, $todayNoonTime];
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',3)->paginate(10);
+            return [$todayNoonTime, $todayAfterTime];
         }
-        return $this->response->paginator($discounts,new DiscountTransformer())->setStatusCode(200);
     }
 }

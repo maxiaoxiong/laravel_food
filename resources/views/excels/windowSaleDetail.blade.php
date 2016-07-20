@@ -23,6 +23,7 @@
                     <td>{{ $window->canteen->name }}</td>
                     <td>{{ $window->name }}</td>
                     <td>{{ $dish->name }}</td>
+                    {{ $sum = 0; }}
                     @foreach($orders as $order)
                         {{ $sum += $order->pivot->num }}
                     @endforeach

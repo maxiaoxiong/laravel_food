@@ -38,15 +38,14 @@ $api->version('v1', function ($api) {
         $api->get('buildings/{id}/floors', 'FloorsController@getFloors');
         $api->get('floors/{id}/dormitories', 'DormitoriesController@getDormitories');
         $api->get('advertises', 'AdvertisesController@index');
-
-        $api->post('pay', 'OrdersController@pay');
-        $api->post('paytest', 'OrdersController@payTest');
-        $api->get('user/{id}/orders', 'UsersController@show');
-
-        $api->post('orders', 'OrdersController@store');
-        $api->get('orders', 'OrdersController@index');
+        $api->post('advices','AdvicesController@store');
 
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
+            $api->post('pay', 'OrdersController@pay');
+            $api->get('user/{id}/orders', 'UsersController@show');
+            $api->post('orders', 'OrdersController@store');
+            $api->get('orders', 'OrdersController@index');
+
             $api->post('dishes/range', 'DishesController@postRange');
             $api->post('comments', 'CommentsController@store');
             $api->get('orders/{id}', 'OrdersController@show');
@@ -144,6 +143,8 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::resource('typethrees','TypethreesController');
     
     Route::resource('typefours','TypefoursController');
+    
+    Route::resource('advices','AdvicesController');
 
     Route::post('image/upload', 'ImageController@upload');
     Route::post('image/crop', 'ImageController@crop');
@@ -164,8 +165,7 @@ Route::group(['middleware' => ['web','auth']],function (){
 
     Route::post('push/timely', 'PushController@timely');
     Route::post('push/timing', 'PushController@timing');
-
-
+    
     Route::get('test', function (){
         $orders =  \App\Floor::find(1)->dormitories[0]->orders()->where('orders.created_at','>=',\Carbon\Carbon::createFromDate()
             ->startOfMonth())->get();

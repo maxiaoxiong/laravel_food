@@ -11,14 +11,16 @@
                 <tr>
                     <th>评论号</th>
                     <th>评论人</th>
+                    <th>评论菜</th>
                     <th>评论信息</th>
-                    <th>下单时间</th>
+                    <th>评论时间</th>
                     <th>操作</th>
                 </tr>
                 @foreach($comments as $comment)
                 <tr>
                     <td>{{ $comment->id }}</td>
                     <td>{{ $comment->user->name }}</td>
+                    <td>{{ $comment->dish->name }}</td>
                     <td>{{ substr($comment->body,0,10) }}...</td>
                     <td>{{ $comment->created_at }}</td>
                     <td>
