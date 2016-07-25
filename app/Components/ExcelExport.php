@@ -69,13 +69,6 @@ class ExcelExport
             foreach ($datas as $data) {
                 $excel->sheet('标签', function ($sheet) use ($data) {
                     $dishes = $data->dishes;
-//                    foreach ($data->dishes as $k => $dish) {
-//                        $orders = self::getOrders($dish);
-//                        if (count($orders) == 0) {
-//                            continue;
-//                        }
-//                        $dish_list[] = $dish;
-//                    }
                     for ($i = 0; $i < count($dishes); $i++) {
                         $orders = self::getOrders($dishes[$i]);
                         if (count($orders) == 0) {
