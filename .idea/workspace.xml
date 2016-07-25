@@ -2,332 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e154256a-0ee7-46ff-bf32-cb97ba6a4214" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/node_modules/jquery" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/node_modules/pnotify" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/build-tools/compiler-latest.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/build-tools/compiler.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/desktop/error.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/desktop/info.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/desktop/notice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/desktop/original/error.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/desktop/original/info.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/desktop/original/notice.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/desktop/original/success.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/desktop/success.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/github-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/le_happy_face_by_luchocas-32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/le_happy_face_by_luchocas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/source-screen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/buttonbg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/icon_color_arrow.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/menuhoverbg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_black_matte.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_black_tie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_blitzer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_cupertino.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_dark_hive.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_dot_luv.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_eggplant.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_excite_bike.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_flick.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_hot_sneaks.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_humanity.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_le_frog.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_mint_choco.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_overcast.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_pepper_grinder.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_smoothness.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_south_street.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_start_menu.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_sunny.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_swanky_purse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_trontastic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_ui_dark.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_ui_light.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/images/theme_90_windoze.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/node_modules/jquery" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/pnotify" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-cropped-gan-zha-mo-gu.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-gan-zha-mo-gu.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-hong-shao-da-pai.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/uploads/dish/original/hong-shao-rou.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/web.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/.npminstall.done" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/AUTHORS.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/dist/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/dist/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/dist/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/dist/jquery.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/dist/jquery.slim.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/dist/jquery.slim.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/dist/jquery.slim.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/external/sizzle/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/external/sizzle/dist/sizzle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/external/sizzle/dist/sizzle.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/external/sizzle/dist/sizzle.min.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/.eslintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/ajax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/ajax/jsonp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/ajax/load.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/ajax/parseXML.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/ajax/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/ajax/var/location.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/ajax/var/nonce.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/ajax/var/rquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/ajax/xhr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/attributes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/attributes/attr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/attributes/classes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/attributes/prop.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/attributes/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/attributes/val.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/callbacks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core/DOMEval.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core/access.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core/init.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core/parseHTML.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core/ready-no-deferred.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core/ready.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core/readyException.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/core/var/rsingleTag.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/addGetHookIf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/adjustCSS.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/curCSS.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/hiddenVisibleSelectors.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/showHide.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/var/cssExpand.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/var/getStyles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/var/isHiddenWithinTree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/var/rmargin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/var/rnumnonpx.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/css/var/swap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/data/Data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/data/var/acceptData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/data/var/dataPriv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/data/var/dataUser.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/deferred.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/deferred/exceptionHook.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/deprecated.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/dimensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/effects.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/effects/Tween.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/effects/animatedSelector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/event.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/event/ajax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/event/alias.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/event/focusin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/event/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/event/trigger.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/exports/amd.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/exports/global.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation/_evalUrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation/buildFragment.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation/getAll.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation/setGlobalEval.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation/var/rcheckableType.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation/var/rscriptType.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation/var/rtagName.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/manipulation/wrapMap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/offset.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/queue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/queue/delay.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/selector-native.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/selector-sizzle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/selector.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/serialize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/traversing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/traversing/findFilter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/traversing/var/dir.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/traversing/var/rneedsContext.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/traversing/var/siblings.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/ObjectFunctionString.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/arr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/class2type.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/concat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/document.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/documentElement.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/fnToString.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/getProto.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/hasOwn.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/indexOf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/pnum.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/push.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/rcssNum.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/rnotwhite.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/slice.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/support.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/var/toString.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/jquery/3.1.0/jquery/src/wrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/.npminstall.done" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/COPYING" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/build-tools/COPYING" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/build-tools/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/build-tools/minify.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/buildcustom.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/devnote-stable.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/devnote.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.animate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.brighttheme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.buttons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.buttons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.callbacks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.confirm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.desktop.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.history.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.history.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.mobile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.mobile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/dist/pnotify.nonblock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/beautify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-apollo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-clj.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-go.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-hs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-lisp.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-lua.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-ml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-n.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-proto.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-scala.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-sql.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-tex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-vb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-vhdl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-wiki.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-xq.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/lang-yaml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/prettify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/google-code-prettify/prettify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/includes/themeswitcher/jquery.themeswitcher.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/libtests/browserify/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/libtests/browserify/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/libtests/browserify/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/libtests/requirejs/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.animate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.brighttheme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.buttons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.buttons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.callbacks.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.confirm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.desktop.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.history.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.history.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.material.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.mobile.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.mobile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.nonblock.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.nonblock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.reference.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/src/pnotify.tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/.npminstall/pnotify/3.0.0/pnotify/testing.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/all.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/pnotify.buttons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/pnotify.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/all.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/pnotify.buttons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/pnotify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/css/pnotify.buttons.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/css/pnotify.core.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/pnotify.buttons.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/assets/js/pnotify.core.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/layouts/flashs/notify.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/.travis.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/phpspec.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/phpunit.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/spec/NotifierSpec.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/src/ConfigRepo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/src/LaravelConfigRepo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/src/LaravelSessionStore.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/src/Notifier.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/src/Notify.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/src/NotifyServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/src/SessionStore.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/src/config/laravelPnotify.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/src/views/notify.blade.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vendor/jorgejavierleon/laravelpnotify/tests/ExampleTest.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-5003.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-img0161.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-img0162.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-qq3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-qq5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-qq7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-screenshot-from-2015-12-05-140654.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-screenshot-from-2016-03-25-161553.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-screenshot-from-2016-03-25-162328.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/crop/cropped-screenshot-from-2016-04-17-141926.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/5003.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/img0161.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/img0162.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/qq2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/qq3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/qq4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/qq5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/qq7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/screenshot-from-2015-12-05-140654.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/screenshot-from-2016-03-25-135856.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/screenshot-from-2016-03-25-161553.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/screenshot-from-2016-03-25-162328.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/screenshot-from-2016-04-17-141926.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/u16598982213810685472fm116gp0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/xiongzai.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/uploads/dish/original/白切鸡.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Transformers/DiscountTransformer.php" afterPath="$PROJECT_DIR$/app/Api/Transformers/DiscountTransformer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Components/ExcelExport.php" afterPath="$PROJECT_DIR$/app/Components/ExcelExport.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Dish.php" afterPath="$PROJECT_DIR$/app/Dish.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/DishesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/DishesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/all.css" afterPath="$PROJECT_DIR$/public/css/all.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/all.js" afterPath="$PROJECT_DIR$/public/js/all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dishes/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/dishes/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/dishes/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/dishes/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/excels/floorOrderDetail.blade.php" afterPath="$PROJECT_DIR$/resources/views/excels/floorOrderDetail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/excels/windowSaleDetail.blade.php" afterPath="$PROJECT_DIR$/resources/views/excels/windowSaleDetail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/htmlheader.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/htmlheader.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ExampleTest.php" afterPath="$PROJECT_DIR$/tests/ExampleTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" />
     </list>
     <ignored path="pingplus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -356,14 +31,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ExcelExport.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Components/ExcelExport.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
-              <folding>
-                <element signature="e#117#135#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="96">
+              <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -847,12 +520,12 @@
       <workItem from="1469371523965" duration="2231000" />
       <workItem from="1469375112579" duration="1473000" />
       <workItem from="1469410252327" duration="11000" />
-      <workItem from="1469414215642" duration="2727000" />
+      <workItem from="1469414215642" duration="3070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213812000" />
+    <option name="totallyTimeSpent" value="214155000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -865,7 +538,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24670571" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -874,7 +547,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21229868" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5059347" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31707317" sideWeight="0.4909091" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.61979914" sideWeight="0.4909091" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -905,13 +578,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="47" column="77" selection-start-line="47" selection-start-column="77" selection-end-line="47" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -1445,45 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="49" column="36" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-          <folding>
-            <marker date="1469275004073" expanded="false" signature="9:390" ph="..." />
-            <marker date="1469275004073" expanded="false" signature="398:472" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="529:2636" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="552:2635" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="569:2632" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="626:2631" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2054:2624" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2101:2623" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2651:2781" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2669:2780" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2693:2733" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2739:2778" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2796:3014" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2815:3013" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2829:2934" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="2884:2928" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="3030:3232" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="3053:3231" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="3247:3336" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="3302:3335" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="3396:3411" ph=" web route ..." />
-            <marker date="1469275004073" expanded="true" signature="3486:6068" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="3531:6067" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="4962:5052" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="4997:5051" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="5070:5159" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="5104:5158" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="5750:6064" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="5786:6063" ph="..." />
-            <marker date="1469275004073" expanded="true" signature="5787:6024" ph="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Transformers/DishTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1631,11 +1258,115 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Components/ExcelExport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="86" column="37" selection-start-line="86" selection-start-column="37" selection-end-line="86" selection-end-column="37" />
+        <state relative-caret-position="362">
+          <caret line="88" column="41" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
           <folding>
-            <element signature="e#117#135#0#PHP" expanded="true" />
+            <marker date="1469416936677" expanded="false" signature="9:87" ph=" Created by PhpStorm. ..." />
+            <marker date="1469416936677" expanded="true" signature="121:168" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="187:6959" ph="{...}" />
+            <marker date="1469416936677" expanded="true" signature="229:2592" ph="{...}" />
+            <marker date="1469416936677" expanded="true" signature="259:2568" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="316:2567" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="344:2556" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="383:2555" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="483:2299" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="2334:2450" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="2578:2584" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="2647:2915" ph="{...}" />
+            <marker date="1469416936677" expanded="true" signature="2677:2891" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="2718:2890" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="2746:2878" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="2787:2877" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="2901:2907" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="2962:4106" ph="{...}" />
+            <marker date="1469416936677" expanded="true" signature="2992:4082" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="3035:4081" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="3075:4071" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="3106:4056" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="3143:4055" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="3189:3504" ph="//..." />
+            <marker date="1469416936677" expanded="true" signature="3566:3818" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="3864:3923" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4092:4098" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4157:4428" ph="{...}" />
+            <marker date="1469416936677" expanded="true" signature="4187:4404" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4228:4403" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4256:4391" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4297:4390" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4414:4420" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4474:4739" ph="{...}" />
+            <marker date="1469416936677" expanded="true" signature="4504:4715" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4545:4714" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4573:4702" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4613:4701" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4725:4731" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4777:6275" ph="{...}" />
+            <marker date="1469416936677" expanded="true" signature="4822:4931" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="4977:5074" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="5117:5214" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="5258:5355" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="5436:5657" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="5547:5591" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="5617:5639" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="5729:5952" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="5845:5886" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="5912:5934" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6022:6243" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6135:6177" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6203:6225" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6336:6618" ph="{...}" />
+            <marker date="1469416936677" expanded="true" signature="6366:6594" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6411:6593" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6439:6581" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6484:6580" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6604:6610" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6678:6957" ph="{...}" />
+            <marker date="1469416936677" expanded="true" signature="6708:6933" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6752:6932" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6780:6920" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6824:6919" ph="..." />
+            <marker date="1469416936677" expanded="true" signature="6943:6949" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/OrdersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="157" column="34" selection-start-line="157" selection-start-column="34" selection-end-line="157" selection-end-column="34" />
+          <folding>
+            <marker date="1468811346408" expanded="false" signature="9:87" ph=" Created by PhpStorm. ..." />
+            <marker date="1468811346408" expanded="false" signature="128:435" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="482:5241" ph="{...}" />
+            <marker date="1468811346408" expanded="true" signature="515:542" ph=" @return mixed ..." />
+            <marker date="1468811346408" expanded="true" signature="572:1312" ph="{...}" />
+            <marker date="1468811346408" expanded="true" signature="579:1150" ph="//..." />
+            <marker date="1468811346408" expanded="true" signature="1321:1408" ph=" @param $id ..." />
+            <marker date="1468811346408" expanded="true" signature="1440:1684" ph="{...}" />
+            <marker date="1468811346408" expanded="true" signature="1507:1586" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="1693:1775" ph=" @param Request $request ..." />
+            <marker date="1468811346408" expanded="true" signature="1821:3466" ph="{...}" />
+            <marker date="1468811346408" expanded="true" signature="1999:2993" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="2154:2983" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="3017:3089" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="3192:3315" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="3254:3305" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="3475:3534" ph=" @param Request $request ..." />
+            <marker date="1468811346408" expanded="true" signature="3723:4375" ph="{...}" />
+            <marker date="1468811346408" expanded="true" signature="3909:4346" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="3928:4336" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="4418:5238" ph="{...}" />
+            <marker date="1468811346408" expanded="true" signature="4654:5209" ph="..." />
+            <marker date="1468811346408" expanded="true" signature="4673:5199" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
+          <folding />
         </state>
       </provider>
     </entry>
