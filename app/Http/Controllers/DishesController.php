@@ -55,12 +55,13 @@ class DishesController extends Controller
     public function store(Request $request)
     {
         $validator = \Validator::make($request->all(),[
-            'taste' => 'required|array',
-            'tableware' => 'required|array',
-            'typeone' => 'required|array',
-            'typetwo' => 'required|array',
-            'typethree' => 'required|array',
-            'typefour' => 'required|array'
+            'canteen_id' => 'required',
+            'window_id' => 'required',
+            'name' => 'required',
+            'dishtype_id' => 'required',
+            'type_id' => 'required',
+            'price' => 'required',
+            'dish_img' => 'required'
         ]);
         if ($validator->fails()){
             Notify::error($validator->errors()->all());
