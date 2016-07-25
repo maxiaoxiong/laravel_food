@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Excel;
+use Jleon\LaravelPnotify\Notify;
 use Pingpp\Charge;
 use Pingpp\Pingpp;
 
@@ -34,7 +35,7 @@ class OrdersController extends Controller
             case "charge.succeeded":
                 // 开发者在此处加入对支付异步通知的处理代码
                 $order_no = $event->data->object->order_no;
-                Order::where('order_no',$order_no)->update(['status' => '已付款']);
+                Order::where('order_no', $order_no)->update(['status' => '已付款']);
                 header($_SERVER['SERVER_PROTOCOL'] . ' 200 OK');
                 break;
             case "refund.succeeded":
@@ -46,7 +47,7 @@ class OrdersController extends Controller
                 break;
         }
     }
-    
+
     /**
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -56,22 +57,20 @@ class OrdersController extends Controller
         Pingpp::setApiKey(env('PING_API_KEY'));
         $charge = Charge::create(
             array(
-                'order_no'  => time().rand(1000,99999),
-                'amount'    => '100',
-                'app'       => array('id' => env('PING_APP_ID')),
-                'channel'   => 'alipay',
-                'currency'  => 'cny',
+                'order_no' => time() . rand(1000, 99999),
+                'amount' => '100',
+                'app' => array('id' => env('PING_APP_ID')),
+                'channel' => 'alipay',
+                'currency' => 'cny',
                 'client_ip' => $request->ip(),
-                'subject'   => 'Xicode_demo',
-                'body'      => '1',
+                'subject' => 'Xicode_demo',
+                'body' => '1',
 //                'extra'     => ['extern_token']
             )
         );
         return $charge;
-        return view('orders.charge',compact('charge'));
+        return view('orders.charge', compact('charge'));
     }
-
-
 
 
     /**
@@ -91,39 +90,51 @@ class OrdersController extends Controller
         $timeNow = Carbon::now();
         switch ($type) {
             case 1:
-                if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
+                if ($timeNow <= $todayMorningTime) {
                     $orders = $this->getPrintResult($lastDayTime, $todayMorningTime);
                 } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
                     $orders = $this->getPrintResult($todayMorningTime, $todayNoonTime);
                 } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
                     $orders = $this->getPrintResult($todayNoonTime, $todayAfterTime);
                 }
+                if (!isset($orders)) {
+                    Notify::error('非三餐时间不能打印！');
+                    return back();
+                }
                 ExcelExport::exportWindowDetail($orders);
                 break;
             case 2:
-                if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
+                if ($timeNow <= $todayMorningTime) {
                     $tags = $this->getTagsResult($lastDayTime, $todayMorningTime);
                 } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
                     $tags = $this->getTagsResult($todayMorningTime, $todayNoonTime);
                 } elseif ($timeNow >= $todayNoonTime && $timeNow < Carbon::tomorrow()) {
                     $tags = $this->getTagsResult($todayNoonTime, $todayAfterTime);
                 }
-                ExcelExport::exportTags($tags);
+                $flag = ExcelExport::exportTags($tags);
+                if (!$flag) {
+                    Notify::error('当前时间段没有订单！');
+                    return back();
+                }
                 break;
             case 3:
-                if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
+                if ($timeNow <= $todayMorningTime) {
                     $orders = $this->getDormitoryResult($lastDayTime, $todayMorningTime);
                 } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
                     $orders = $this->getDormitoryResult($todayMorningTime, $todayNoonTime);
                 } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
                     $orders = $this->getDormitoryResult($todayNoonTime, $todayAfterTime);
                 }
+                if (!isset($orders)) {
+                    Notify::error('非三餐时间不能打印！');
+                    return back();
+                }
                 ExcelExport::exportDormitoryDetail($orders);
                 break;
             case 4:
-                $orders = Order::where('created_at','>=',Carbon::createFromDate()->startOfMonth())
-                    ->where('status','已付款')->get();
-                ExcelExport::exportSaleDetail($orders); 
+                $orders = Order::where('created_at', '>=', Carbon::createFromDate()->startOfMonth())
+                    ->where('status', '已付款')->get();
+                ExcelExport::exportSaleDetail($orders);
                 break;
             case 5:
                 $windows = Window::has('dishes')->get();
@@ -145,7 +156,7 @@ class OrdersController extends Controller
     {
         $orders = Order::where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             '18', '30', '00'))->where('created_at', '>=', Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
-            '18', '30', '00'))->paginate(10);
+            '18', '30', '00'))->where('status', '已付款')->paginate(10);
 
         return view('orders.today', compact('orders'));
     }
@@ -155,14 +166,14 @@ class OrdersController extends Controller
      */
     public function getWeekOrders()
     {
-        $orders = Order::where('created_at', '>=', Carbon::createFromDate()->startOfWeek())->paginate(10);
+        $orders = Order::where('created_at', '>=', Carbon::createFromDate()->startOfWeek())->where('status', '已付款')->paginate(10);
 
         return view('orders.week', compact('orders'));
     }
 
     public function getMonthOrders()
     {
-        $orders = Order::where('created_at', '>=', Carbon::createFromDate()->startOfMonth())->paginate(10);
+        $orders = Order::where('created_at', '>=', Carbon::createFromDate()->startOfMonth())->where('status', '已付款')->paginate(10);
 
         return view('orders.month', compact('orders'));
     }
@@ -172,7 +183,7 @@ class OrdersController extends Controller
      */
     public function getHistoryOrders()
     {
-        $orders = Order::paginate(10);
+        $orders = Order::where('status', '已付款')->paginate(10);
 
         return view('orders.history', compact('orders'));
     }
@@ -184,9 +195,9 @@ class OrdersController extends Controller
      */
     public function getPrintResult($time1, $time2)
     {
-        $orders = Order::with('dishes')->where('created_at','>=',$time1)->where('created_at','<=',$time2)
-                    ->where('status','已付款')->get();
-        
+        $orders = Order::with('dishes')->where('created_at', '>=', $time1)->where('created_at', '<=', $time2)
+            ->where('status', '已付款')->get();
+
         return $orders;
     }
 
@@ -208,15 +219,15 @@ class OrdersController extends Controller
      */
     public function getDormitoryResult($time1, $time2)
     {
-        $orders = Order::where('created_at','>=',$time1)->where('created_at','<=',$time2)
-                ->where('status','已付款')->get();
+        $orders = Order::where('created_at', '>=', $time1)->where('created_at', '<=', $time2)
+            ->where('status', '已付款')->get();
         return $orders;
     }
 
     private function getSaleResult($time1, $time2)
     {
-        $orders = $orders = Order::where('created_at','>=',$time1)->where('created_at','<=',$time2)
-            ->where('status','已付款')->get();
+        $orders = $orders = Order::where('created_at', '>=', $time1)->where('created_at', '<=', $time2)
+            ->where('status', '已付款')->get();
         return $orders;
     }
 }

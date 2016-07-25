@@ -8,6 +8,7 @@
 namespace App\Components;
 
 use Carbon\Carbon;
+use Jleon\LaravelPnotify\Notify;
 
 class ExcelExport
 {
@@ -82,6 +83,9 @@ class ExcelExport
                         }
                         $dish_list[] = $dishes[$i];
                     }
+                    if (!isset($dish_list)){
+                        return false;
+                    }
                     $dishes = $dish_list;
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
@@ -126,7 +130,7 @@ class ExcelExport
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             '17', '30', '00');
         $timeNow = Carbon::now();
-        if ($timeNow >= $lastDayTime && $timeNow <= $todayMorningTime) {
+        if ($timeNow <= $todayMorningTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $lastDayTime)
                 ->where('orders.created_at', '<=', $todayMorningTime)
                 ->where('orders.status', '已付款')->get();

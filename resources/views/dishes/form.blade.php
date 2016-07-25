@@ -232,6 +232,7 @@
                 </div>
             </div>
         </div>
+
         <input type="text" name="dish_img" id="dish_img" value="{{ $dish->dish_img or '' }}"
                class="form-control hidden">
     </div>
@@ -241,7 +242,6 @@
 </div>
 
 <script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>
-
 <script>
     var eyeCandy = $('#cropContainerEyecandy');
     var croppedOptions = {
@@ -249,8 +249,8 @@
         cropUrl: '/image/crop',
         loadPicture: '{{ $dish->dish_img or '' }}',
         cropData: {
-            'width': eyeCandy.width(),
-            'height': eyeCandy.height()
+            'width': 300,
+            'height': 200
         },
         outputUrlId: 'dish_img'
     };

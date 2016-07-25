@@ -16,6 +16,7 @@ use App\Typetwo;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Jleon\LaravelPnotify\Notify;
 
 class DishesController extends Controller
 {
@@ -43,7 +44,6 @@ class DishesController extends Controller
         $typetwos = Typetwo::all();
         $typethrees = Typethree::all();
         $typefours = Typefour::all();
-
         return view('dishes.create', compact('types', 'tastes', 'canteens', 'tablewares', 'dishtypes'
             , 'typeones', 'typetwos', 'typethrees', 'typefours'));
     }
@@ -54,6 +54,18 @@ class DishesController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(),[
+            'taste' => 'required|array',
+            'tableware' => 'required|array',
+            'typeone' => 'required|array',
+            'typetwo' => 'required|array',
+            'typethree' => 'required|array',
+            'typefour' => 'required|array'
+        ]);
+        if ($validator->fails()){
+            Notify::error($validator->errors()->all());
+            return back();
+        }
         $taste_list = $request->get('taste');
         $tableware_list = $request->get('tableware');
         $typeone_list = $request->get('typeone');
@@ -61,17 +73,22 @@ class DishesController extends Controller
         $typethree_list = $request->get('typethree');
         $typefour_list = $request->get('typefour');
         $dish = Dish::create(array_merge($request->except('_token')));
-        if ($dish) {
+
+        if ($dish instanceof Dish) {
+
             $dish->tastes()->attach($taste_list, ['limit_num' => $request->get('taste_limit_num')]);
             $dish->tablewares()->attach($tableware_list, ['limit_num' => $request->get('tableware_limit_num')]);
             $dish->typeones()->attach($typeone_list, ['limit_num' => $request->get('typeone_limit_num')]);
             $dish->typetwos()->attach($typetwo_list, ['limit_num' => $request->get('typetwo_limit_num')]);
             $dish->typethrees()->attach($typethree_list, ['limit_num' => $request->get('typethree_limit_num')]);
             $dish->typefours()->attach($typefour_list, ['limit_num' => $request->get('typefour_limit_num')]);
-
+            
+            Notify::success('创建成功！');
+            
             return redirect()->route('dishes.index');
         } else {
-            return response()->json(['error' => '添加失败']);
+            Notify::danger('添加菜色失败');
+            return back();
         }
     }
 
@@ -83,13 +100,19 @@ class DishesController extends Controller
     public function update($id, Request $request)
     {
         if ($request->get('type') == 'addToDiscount') {
-            $this->addToDisCount($request);
+            $flag = $this->addToDisCount($request);
+            if (!$flag){
+                Notify::error('更新失败');
+                return back();
+            }
         } elseif ($request->get('type') == 'removeFromDiscount') {
             $this->removeFromDiscount($request);
+            Notify::success('移除优惠菜色成功！');
             return redirect()->route('discounts.index');
         } else {
             $this->updateAll($id, $request);
         }
+        Notify::success('更新成功！');
         return redirect()->route('dishes.index');
     }
 
@@ -101,8 +124,12 @@ class DishesController extends Controller
         $id = $request->get('id');
         $dish = Dish::findOrFail($id);
         $data = $request->except('_token', 'id');
-        PreferentialDish::firstOrCreate(['dish_id' => $id]);
-        $dish->update($data);
+        $preferential_dish = PreferentialDish::firstOrCreate(['dish_id' => $id]);
+        if ($preferential_dish instanceof  PreferentialDish){
+            $dish->update($data);
+            return true;
+        }
+        return false;
     }
 
     /**

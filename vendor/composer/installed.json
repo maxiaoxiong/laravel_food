@@ -4620,5 +4620,35 @@
             }
         ],
         "description": "Easy flash notifications"
+    },
+    {
+        "name": "jorgejavierleon/laravelpnotify",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jorgejavierleon/LaravelPnotify.git",
+            "reference": "623bb6b374e57266369722d1344a809a10d73c9a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://packagist.phpcomposer.com/files/jorgejavierleon/LaravelPnotify/623bb6b374e57266369722d1344a809a10d73c9a.zip",
+            "reference": "623bb6b374e57266369722d1344a809a10d73c9a",
+            "shasum": ""
+        },
+        "require-dev": {
+            "benconstable/phpspec-laravel": "~2.0",
+            "phpspec/phpspec": "~2.0",
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2015-09-25 11:57:01",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Jleon\\LaravelPnotify\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/"
     }
 ]

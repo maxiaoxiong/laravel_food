@@ -5,6 +5,7 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Lang;
+use Jleon\LaravelPnotify\Notify;
 
 trait AuthenticatesUsers
 {
@@ -79,9 +80,10 @@ trait AuthenticatesUsers
         // to login and redirect the user back to the login form. Of course, when this
         // user surpasses their maximum number of attempts they will get locked out.
         if ($throttles && ! $lockedOut) {
+            Notify::success('登陆成功！');
             $this->incrementLoginAttempts($request);
         }
-
+        Notify::error('登陆失败！');
         return $this->sendFailedLoginResponse($request);
     }
 

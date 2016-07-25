@@ -14,6 +14,7 @@
 use App\Mobile;
 use App\Order;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 $api = app('Dingo\Api\Routing\Router');
 
@@ -166,10 +167,11 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::post('push/timely', 'PushController@timely');
     Route::post('push/timing', 'PushController@timing');
     
-    Route::get('test', function (){
-        $orders =  \App\Floor::find(1)->dormitories[0]->orders()->where('orders.created_at','>=',\Carbon\Carbon::createFromDate()
-            ->startOfMonth())->get();
-        $dishes = $orders[0]->dishes;
-        return $dishes;
+    Route::get('test', function (Request $request){
+//        $orders =  \App\Floor::find(1)->dormitories[0]->orders()->where('orders.created_at','>=',\Carbon\Carbon::createFromDate()
+//            ->startOfMonth())->get();
+//        $dishes = $orders[0]->dishes;
+//        return $dishes;
+        return env('URL').'ssss';
     });
 });

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1aee0778f0200ad2cc51f5e802945aab",
-    "content-hash": "64961f11275c4b2c7b5208caf8516cc9",
+    "hash": "3c2a4cbd798cdc47e73f67efa3da8799",
+    "content-hash": "ad2bcdfafcd490eb6faa4c2ad0ecd991",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -846,6 +846,34 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "jorgejavierleon/laravelpnotify",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jorgejavierleon/LaravelPnotify.git",
+                "reference": "623bb6b374e57266369722d1344a809a10d73c9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/jorgejavierleon/LaravelPnotify/623bb6b374e57266369722d1344a809a10d73c9a.zip",
+                "reference": "623bb6b374e57266369722d1344a809a10d73c9a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "benconstable/phpspec-laravel": "~2.0",
+                "phpspec/phpspec": "~2.0",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jleon\\LaravelPnotify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2015-09-25 11:57:01"
         },
         {
             "name": "jpush/jpush",

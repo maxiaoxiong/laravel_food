@@ -75,6 +75,10 @@ class ComposerStaticInit4f6176fe03180c9a18fa804d4eed3c31
             'League\\Fractal\\' => 15,
             'League\\Flysystem\\' => 17,
         ),
+        'J' => 
+        array (
+            'Jleon\\LaravelPnotify\\' => 21,
+        ),
         'I' => 
         array (
             'Intervention\\Image\\' => 19,
@@ -244,6 +248,10 @@ class ComposerStaticInit4f6176fe03180c9a18fa804d4eed3c31
         'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
+        ),
+        'Jleon\\LaravelPnotify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jorgejavierleon/laravelpnotify/src',
         ),
         'Intervention\\Image\\' => 
         array (
@@ -430,7 +438,9 @@ class ComposerStaticInit4f6176fe03180c9a18fa804d4eed3c31
     );
 
     public static $classMap = array (
+        'AddDiscountDishImgToDishes' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_173834_add_discount_dish_img_to_dishes.php',
         'AddOrderedCountToDishesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_18_085253_add_ordered_count_to_dishes_table.php',
+        'AddRangeToRanges' => __DIR__ . '/../..' . '/database/migrations/2016_07_25_105702_add_range_to_ranges.php',
         'AlterUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_17_231849_alter_users_table.php',
         'CreateAdvertisesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_15_033651_create_advertises_table.php',
         'CreateAdvicesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_20_211327_create_advices_table.php',

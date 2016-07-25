@@ -18,9 +18,9 @@
             {{ $orders = $dormitory->orders()->where('status','已付款')->where('orders.created_at','>=',\Carbon\Carbon::createFromDate()
             ->startOfMonth())->get() }}
             @if(count($orders) != 0)
-                {{ $sum_a = 0; }}
+                {{ $sum_a = 0 }}
                 @foreach($orders as $order)
-                    {{ $sum_b = 0; }}
+                    {{ $sum_b = 0 }}
                     {{ $order_price_count += $order->price }}
                     @foreach($order->dishes as $dish)
                         {{ $sum_b += $dish->pivot->num }}

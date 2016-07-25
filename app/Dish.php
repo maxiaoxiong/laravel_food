@@ -9,7 +9,7 @@ class Dish extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id','name','price','dish_img','window_id','dishtype_id','delivery_time','type_id', 'ordered_count'];
+    protected $fillable = ['id','name','price','dish_img','window_id','dishtype_id','delivery_time','type_id', 'ordered_count', 'discount_dish_img'];
     protected $hidden = ['created_at','updated_at','pivot'];
     public function typefours()
     {

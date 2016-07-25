@@ -34,7 +34,7 @@ class DiscountTransformer extends TransformerAbstract
         return [
             'id' => $dish->id,
             'name' => $dish->name,
-            'img_url' => $dish->dish_img,
+            'img_url' => $dish->discount_dish_img,
             'price' => (string)$dish->price,
             'sales' => (int)$dish->ordered_count,
             'address' => $dish->window->canteen->name.' '.$dish->window->name,

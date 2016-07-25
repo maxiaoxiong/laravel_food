@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('main-content')
+    @include('layouts.flashs.message')
+
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
@@ -57,6 +59,18 @@
                                         <input type="hidden" class="form-control" name="type" value="addToDiscount">
                                         <input type="hidden" class="form-control id" name="id">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="">选择图片</label>
+
+                                        <div class="row margin-bottom-40">
+                                            <div class="col-md-6">
+                                                <div id="cropContainerEyecandy"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <input type="text" name="discount_dish_img" id="discount_dish_img" value="{{ $dish->dish_img or '' }}"
+                                           class="form-control hidden">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -73,6 +87,22 @@
 @endsection
 
 @section('self_scripts')
+    <script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>
+    <script>
+        var eyeCandy = $('#cropContainerEyecandy');
+        var croppedOptions = {
+            uploadUrl: '/image/upload',
+            cropUrl: '/image/crop',
+            {{--loadPicture: '{{ $dish->dish_img or '' }}',--}}
+            cropData: {
+                'width': 300,
+                'height': 180
+            },
+            outputUrlId: 'discount_dish_img'
+        };
+        var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
+    </script>
+
     <script>
         $('#changePrice').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Button that triggered the modal
@@ -89,6 +119,4 @@
             modal.find('.dish_id').val(dish_id);
         });
     </script>
-
-
 @endsection

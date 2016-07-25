@@ -175,6 +175,8 @@ return [
 
         Laracasts\Flash\FlashServiceProvider::class,
 
+        Jleon\LaravelPnotify\NotifyServiceProvider::class,
+
     ],
 
     /*
@@ -238,6 +240,7 @@ return [
 
         'Flash' => Laracasts\Flash\Flash::class,
 
+        'Notify' => Jleon\LaravelPnotify\Notify::class,
     ],
 
 ];

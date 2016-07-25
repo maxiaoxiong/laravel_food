@@ -59,6 +59,9 @@ desired effect
 @show
 
 @yield('self_scripts')
+<script src="{{ asset('js/pnotify.js') }}"></script>
 
+@include('layouts.flashs.notify')
+@include('layouts.flashs.message')
 </body>
 </html>

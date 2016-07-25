@@ -40,7 +40,7 @@ class ImageController extends Controller
         }
         return Response::json([
             'status'    => 'success',
-            'url'       => env('URL') . 'uploads/dish/original/' . $filename_ext,
+            'url'       => config('web.url') . 'uploads/dish/original/' . $filename_ext,
             'width'     => $image->width(),
             'height'    => $image->height()
         ], 200);
@@ -50,7 +50,7 @@ class ImageController extends Controller
     {
         $form_data = Input::all();
         $image_url = $form_data['imgUrl'];
-        $image_url = public_path(str_replace(env('URL'),'',$image_url));
+//        $image_url = public_path(str_replace(env('URL'),'',$image_url));
         // resized sizes
         $imgW = $form_data['imgW'];
         $imgH = $form_data['imgH'];
@@ -81,7 +81,7 @@ class ImageController extends Controller
 
         return Response::json([
             'status' => 'success',
-            'url' => env('URL') . 'uploads/dish/crop/cropped-' . $filename
+            'url' => config('web.url') . 'uploads/dish/crop/cropped-' . $filename
         ], 200);
 
     }

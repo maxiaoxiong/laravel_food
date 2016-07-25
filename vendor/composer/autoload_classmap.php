@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddDiscountDishImgToDishes' => $baseDir . '/database/migrations/2016_07_24_173834_add_discount_dish_img_to_dishes.php',
     'AddOrderedCountToDishesTable' => $baseDir . '/database/migrations/2016_07_18_085253_add_ordered_count_to_dishes_table.php',
+    'AddRangeToRanges' => $baseDir . '/database/migrations/2016_07_25_105702_add_range_to_ranges.php',
     'AlterUsersTable' => $baseDir . '/database/migrations/2016_07_17_231849_alter_users_table.php',
     'CreateAdvertisesTable' => $baseDir . '/database/migrations/2016_07_15_033651_create_advertises_table.php',
     'CreateAdvicesTable' => $baseDir . '/database/migrations/2016_07_20_211327_create_advices_table.php',
