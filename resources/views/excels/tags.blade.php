@@ -67,6 +67,22 @@
                         <br>
                         {{ $order->user_name }}<br>
                         {{ $order->user_phone }}<br>
+                        @foreach($order->typeones as $typeone)
+                            {{ $typeone->name }}
+                        @endforeach
+                        <br>
+                        @foreach($order->typetwos as $typetwo)
+                            {{ $typetwo->name }}
+                        @endforeach
+                        <br>
+                        @foreach($order->typethrees as $typethree)
+                            {{ $typethree->name }}
+                        @endforeach
+                        <br>
+                        @foreach($order->typefours as $typefour)
+                            {{ $typefour->name }}
+                        @endforeach
+                        <br>
                         @foreach($order->tastes as $taste)
                             {{ $taste->name }}
                         @endforeach
