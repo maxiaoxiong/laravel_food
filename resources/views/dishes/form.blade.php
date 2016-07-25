@@ -228,7 +228,7 @@
 
             <div class="row margin-bottom-40">
                 <div class="col-md-6">
-                    <div id="cropContainerEyecandy"></div>
+                    <div id="cropContainerEyecandy" style="width: 480px;height: 320px;"></div>
                 </div>
             </div>
         </div>
@@ -249,8 +249,8 @@
         cropUrl: '/image/crop',
         loadPicture: '{{ $dish->dish_img or '' }}',
         cropData: {
-            'width': 300,
-            'height': 200
+            'width': eyeCandy.width(),
+            'height': eyeCandy.height()
         },
         outputUrlId: 'dish_img'
     };

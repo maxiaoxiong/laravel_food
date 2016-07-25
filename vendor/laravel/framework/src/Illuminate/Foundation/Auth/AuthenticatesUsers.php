@@ -73,6 +73,7 @@ trait AuthenticatesUsers
         $credentials = $this->getCredentials($request);
 
         if (Auth::guard($this->getGuard())->attempt($credentials, $request->has('remember'))) {
+            Notify::success('登陆成功！');
             return $this->handleUserWasAuthenticated($request, $throttles);
         }
 

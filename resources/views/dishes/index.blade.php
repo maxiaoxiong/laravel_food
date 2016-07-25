@@ -95,8 +95,8 @@
             cropUrl: '/image/crop',
             {{--loadPicture: '{{ $dish->dish_img or '' }}',--}}
             cropData: {
-                'width': 300,
-                'height': 180
+                'width': eyeCandy.width(),
+                'height': eyeCandy.height()
             },
             outputUrlId: 'discount_dish_img'
         };
