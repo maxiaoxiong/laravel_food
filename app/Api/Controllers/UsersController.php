@@ -16,7 +16,7 @@ class UsersController extends BaseController
 {
     public function show($id)
     {
-        $orders = Order::where('user_id',$id)->get();
+        $orders = Order::where('user_id',$id)->where('status','已付款')->get();
         return $this->response->collection($orders,new UserOrdersTransformer())->setStatusCode(200);
     }
 }
