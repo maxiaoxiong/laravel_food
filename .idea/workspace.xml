@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e154256a-0ee7-46ff-bf32-cb97ba6a4214" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/UsersController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/excels/tags.blade.php" afterPath="$PROJECT_DIR$/resources/views/excels/tags.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/DishesController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/DishesController.php" />
     </list>
     <ignored path="pingplus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UsersController.php">
+      <file leaf-file-name="DishesController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Api/Controllers/DishesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+            <state relative-caret-position="185">
+              <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -54,7 +53,6 @@
         <option value="$PROJECT_DIR$/resources/views/canteens/form.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CanteensController.php" />
         <option value="$PROJECT_DIR$/app/Api/Components/Time.php" />
-        <option value="$PROJECT_DIR$/app/Api/Controllers/DishesController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/DiscountsController.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/SearchController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_20_211327_create_advices_table.php" />
@@ -102,6 +100,7 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/partials/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/excels/tags.blade.php" />
         <option value="$PROJECT_DIR$/app/Api/Controllers/UsersController.php" />
+        <option value="$PROJECT_DIR$/app/Api/Controllers/DishesController.php" />
       </list>
     </option>
   </component>
@@ -526,12 +525,12 @@
       <workItem from="1469440585028" duration="17000" />
       <workItem from="1469456309295" duration="6200000" />
       <workItem from="1469506045387" duration="11000" />
-      <workItem from="1469510331656" duration="2711000" />
+      <workItem from="1469510331656" duration="4271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229354000" />
+    <option name="totallyTimeSpent" value="230914000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -668,13 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/DishesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="142" column="20" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/Transformers/DishTransformer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -770,13 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DishesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="235" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1183,10 +1168,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UsersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="18" column="75" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
+          <folding>
+            <marker date="1469513348714" expanded="false" signature="9:84" ph=" Created by PhpStorm. ..." />
+            <marker date="1469513348714" expanded="false" signature="125:183" ph="..." />
+            <marker date="1469513348714" expanded="true" signature="229:453" ph="{...}" />
+            <marker date="1469513348714" expanded="true" signature="261:451" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+        <state relative-caret-position="331">
+          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
           <folding>
             <marker date="1469461652871" expanded="false" signature="9:390" ph="..." />
             <marker date="1469461652871" expanded="false" signature="398:472" ph="..." />
@@ -1221,10 +1219,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/UsersController.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DishesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="18" column="66" selection-start-line="18" selection-start-column="66" selection-end-line="18" selection-end-column="66" />
+        <state relative-caret-position="281">
+          <caret line="232" column="25" selection-start-line="232" selection-start-column="25" selection-end-line="232" selection-end-column="25" />
+          <folding>
+            <marker date="1469461713199" expanded="false" signature="44:319" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="362:8129" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="372:450" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1469461713199" expanded="true" signature="480:597" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="606:684" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1469461713199" expanded="true" signature="715:1222" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="1068:1214" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="1093:1213" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="1231:1347" ph=" @param Request $request ..." />
+            <marker date="1469461713199" expanded="true" signature="1393:3140" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="1438:1728" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="1455:1727" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="1764:1856" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="2272:3051" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="3059:3133" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="3149:3253" ph=" @param $id ..." />
+            <marker date="1469461713199" expanded="true" signature="3305:3905" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="3367:3537" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="3444:3527" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="3595:3752" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="3760:3814" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="3914:3943" ph=" @param $request ..." />
+            <marker date="1469461713199" expanded="true" signature="3989:4360" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="4263:4331" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="4369:4398" ph=" @param $request ..." />
+            <marker date="1469461713199" expanded="true" signature="4449:4676" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="4685:4732" ph=" @param $id ..." />
+            <marker date="1469461713199" expanded="true" signature="4779:6044" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="6053:6149" ph=" @param $id ..." />
+            <marker date="1469461713199" expanded="true" signature="6181:7835" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="6638:6699" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="6801:6870" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="6966:7031" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="7127:7192" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="7294:7363" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="7462:7529" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="7552:7827" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="7575:7826" ph="..." />
+            <marker date="1469461713199" expanded="true" signature="7844:7917" ph=" @param $id ..." />
+            <marker date="1469461713199" expanded="true" signature="7952:8127" ph="{...}" />
+            <marker date="1469461713199" expanded="true" signature="8020:8120" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/Controllers/DishesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="135" column="13" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
           <folding />
         </state>
       </provider>

@@ -130,9 +130,13 @@ class DishesController extends BaseController
     public function postRange(Request $request)
     {
         $user = JWTAuth::parseToken()->authenticate();
-        $range_list = $user->orders->lists('dish_id')->toArray();
+        foreach ($user->orders as $order){
+            foreach ($order->dishes as $dish) {
+                $range_list[] = $dish->id;
+            }
+        }
         if (!in_array($request->get('dish_id'), $range_list)) {
-            throw new AccessDeniedHttpException('您未购买过该菜，没有权限评分！');
+            return response()->json(['status_code' => 403, 'message' => '您未购买过该菜，没有权限评分！']);
         }
         $isRange = Range::where('user_id', $user->id)->where('dish_id', $request->get('dish_id'))->get();
         if (count($isRange) !== 0) {
