@@ -7,6 +7,7 @@ use App\Window;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Jleon\LaravelPnotify\Notify;
 
 class WindowsController extends Controller
 {
@@ -46,5 +47,14 @@ class WindowsController extends Controller
             return redirect()->route('windows.index');
         }
 
+    }
+
+    public function destroy($id)
+    {
+        $flag = Window::destroy($id);
+        if ($flag == 1) {
+            Notify::success('删除成功');
+            return redirect()->route('windows.index');
+        }
     }
 }

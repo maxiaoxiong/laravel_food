@@ -168,10 +168,6 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::post('push/timing', 'PushController@timing');
     
     Route::get('test', function (Request $request){
-//        $orders =  \App\Floor::find(1)->dormitories[0]->orders()->where('orders.created_at','>=',\Carbon\Carbon::createFromDate()
-//            ->startOfMonth())->get();
-//        $dishes = $orders[0]->dishes;
-//        return $dishes;
-        return env('URL').'ssss';
+//        return Carbon::createFromTime()->();
     });
 });

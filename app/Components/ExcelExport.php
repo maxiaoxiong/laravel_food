@@ -83,7 +83,7 @@ class ExcelExport
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
             }
-        })->export('xlsx');
+        })->export('pdf');
     }
 
     static function exportDormitoryDetail($datas)
@@ -136,7 +136,9 @@ class ExcelExport
                 ->where('orders.created_at', '<=', $todayAfterTime)
                 ->where('orders.status', '已付款')->get();
         }
-
+        if (!isset($orders)){
+            $orders = [];
+        }
         return $orders;
     }
 

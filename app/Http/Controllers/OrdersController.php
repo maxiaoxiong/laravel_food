@@ -69,7 +69,6 @@ class OrdersController extends Controller
             )
         );
         return $charge;
-        return view('orders.charge', compact('charge'));
     }
 
 

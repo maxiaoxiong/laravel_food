@@ -231,7 +231,8 @@ class DishesController extends Controller
     {
         $flag = Dish::destroy($id);
         if ($flag == 1) {
-            return redirect()->route('dishtypes.index');
+            Notify::success('删除成功');
+            return redirect()->route('dishes.index');
         }
     }
 }

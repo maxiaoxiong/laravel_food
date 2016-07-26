@@ -6,6 +6,7 @@ use App\Typetwo;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Jleon\LaravelPnotify\Notify;
 
 class TypetwosController extends Controller
 {
@@ -49,6 +50,7 @@ class TypetwosController extends Controller
     {
         $flag = Typetwo::destroy($id);
         if($flag){
+            Notify::success('删除成功！');
             return redirect()->route('typetwos.index');
         }
     }

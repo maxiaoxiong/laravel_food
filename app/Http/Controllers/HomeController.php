@@ -42,7 +42,7 @@ class HomeController extends Controller
             '18', '30', '00'))->where('created_at','>=',Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
             '18', '30', '00'))->count();
         $ordersHistory = Order::count();
-        $users = User::count();
+        $users = User::count() - 1;
         $comments = Comment::count();
         return view('home',compact('ordersToday','ordersHistory','users','comments'));
     }

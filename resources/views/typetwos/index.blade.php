@@ -27,7 +27,7 @@
                                 <td>{{ $typetwo->name }}</td>
                                 <td>{{ $typetwo->price }}</td>
                                 <td><a style="float: left;margin-right: 5px;" href="{{ url('typetwos/'.$typetwo->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>
-                                    <form style="float: left;margin-top: -1px;" method="post" action="typeones/{{ $typetwo->id }}">
+                                    <form style="float: left;margin-top: -1px;" method="post" action="typetwos/{{ $typetwo->id }}">
                                         <input name="_method" type="hidden" value="delete">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <button type="submit" class="btn btn-danger btn-xs">删除</button>

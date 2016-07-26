@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>窗口明细表</title>
 </head>
+<style>
+</style>
 <body>
 <table>
     <tr>

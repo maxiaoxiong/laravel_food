@@ -47,9 +47,9 @@ class TypethreesController extends Controller
 
     public function destroy($id)
     {
-        $flag = Typetwo::destroy($id);
+        $flag = Typethree::destroy($id);
         if($flag){
-            return redirect()->route('typetwos.index');
+            return redirect()->route('typethrees.index');
         }
     }
 }

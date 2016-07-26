@@ -19,7 +19,9 @@
         "predis/predis": "^1.0",
         "jpush/jpush": "v3.3.9",
         "laracasts/flash": "^2.0",
-        "jorgejavierleon/laravelpnotify": "~1.0"
+        "jorgejavierleon/laravelpnotify": "~1.0",
+        "dompdf/dompdf": " ~0.6.1",
+        "mpdf/mpdf": " ~5.7.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
