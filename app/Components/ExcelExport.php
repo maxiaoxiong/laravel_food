@@ -83,7 +83,7 @@ class ExcelExport
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
             }
-        })->export('pdf');
+        })->export('xlsx');
     }
 
     static function exportDormitoryDetail($datas)

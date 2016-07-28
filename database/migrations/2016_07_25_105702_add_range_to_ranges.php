@@ -13,7 +13,7 @@ class AddRangeToRanges extends Migration
     public function up()
     {
         Schema::table('ranges', function (Blueprint $table) {
-            //
+            $table->string('range');
         });
     }
 
