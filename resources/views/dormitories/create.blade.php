@@ -18,7 +18,7 @@
                 $('#floor_id').html(str);
             })
         }
-        {{ $arr = \App\Window::lists('id')->toArray() }}
-        getFloors({{ $arr[0] }});
+
+//        getFloors(1);
     </script>
 @endsection

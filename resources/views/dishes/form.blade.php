@@ -7,6 +7,7 @@
         <div class="form-group col-md-10 col-md-offset-1">
             <label for="canteen_id">选择餐厅</label>
             <select name="canteen_id" id="canteen_id" class="form-control">
+                <option value="">请选择餐厅</option>
                 @foreach($canteens as $canteen)
                     <option @if(isset($dish)) @if($canteen->id == $dish->window->canteen->id) selected="selected"
                             @endif @endif value="{{ $canteen->id }}">{{ $canteen->name }}</option>

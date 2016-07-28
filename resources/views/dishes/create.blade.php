@@ -8,8 +8,6 @@
     </div>
 
     <script>
-        {{ $arr = \App\Canteen::lists('id')->toArray() }}
-        {{ $id = $arr[0] }}
-        getWindows({{ $id }});
+//        getWindows(1);
     </script>
 @endsection
