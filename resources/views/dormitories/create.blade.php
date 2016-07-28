@@ -19,6 +19,6 @@
             })
         }
         {{ $arr = \App\Window::lists('id')->toArray() }}
-        getFloors({{ $arr[rand(0,count($arr)-1)] }});
+        getFloors({{ $arr[0] }});
     </script>
 @endsection

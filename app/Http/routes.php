@@ -39,7 +39,7 @@ $api->version('v1', function ($api) {
         $api->get('buildings/{id}/floors', 'FloorsController@getFloors');
         $api->get('floors/{id}/dormitories', 'DormitoriesController@getDormitories');
         $api->get('advertises', 'AdvertisesController@index');
-        $api->post('advices','AdvicesController@store');
+        $api->post('advices', 'AdvicesController@store');
 
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
             $api->post('pay', 'OrdersController@pay');
@@ -57,9 +57,9 @@ $api->version('v1', function ($api) {
 });
 
 Route::get('/', function () {
-    if (Auth::guest()){
+    if (Auth::guest()) {
         return view('auth.login');
-    }else{
+    } else {
         return redirect('/home');
     }
 });
@@ -98,7 +98,7 @@ Route::get('comment', 'CommentsController@index');
 
 Route::post('pay/status', 'OrdersController@payStatus');
 
-Route::group(['middleware' => ['web','auth']],function (){
+Route::group(['middleware' => ['web', 'auth']], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
@@ -136,16 +136,16 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::resource('advertises', 'AdvertisesController');
 
     Route::resource('types', 'TypesController');
-    
-    Route::resource('typeones','TypeonesController');
-    
-    Route::resource('typetwos','TypetwosController');
-    
-    Route::resource('typethrees','TypethreesController');
-    
-    Route::resource('typefours','TypefoursController');
-    
-    Route::resource('advices','AdvicesController');
+
+    Route::resource('typeones', 'TypeonesController');
+
+    Route::resource('typetwos', 'TypetwosController');
+
+    Route::resource('typethrees', 'TypethreesController');
+
+    Route::resource('typefours', 'TypefoursController');
+
+    Route::resource('advices', 'AdvicesController');
 
     Route::post('image/upload', 'ImageController@upload');
     Route::post('image/crop', 'ImageController@crop');
@@ -158,7 +158,7 @@ Route::group(['middleware' => ['web','auth']],function (){
     Route::get('orders/today', 'OrdersController@getTodayOrders');
     Route::get('orders/week', 'OrdersController@getWeekOrders');
     Route::get('orders/history', 'OrdersController@getHistoryOrders');
-    Route::get('orders/month','OrdersController@getMonthOrders');
+    Route::get('orders/month', 'OrdersController@getMonthOrders');
     Route::get('orders/printOrders/{type}', 'OrdersController@printOrders');
 
     Route::get('push/history', 'PushController@index');
@@ -166,8 +166,9 @@ Route::group(['middleware' => ['web','auth']],function (){
 
     Route::post('push/timely', 'PushController@timely');
     Route::post('push/timing', 'PushController@timing');
-    
-    Route::get('test', function (Request $request){
-//        return Carbon::createFromTime()->();
+
+    Route::get('test', function (Request $request) {
+        $arr = \App\Canteen::lists('id')->toArray();
+        return $arr[0];
     });
 });
