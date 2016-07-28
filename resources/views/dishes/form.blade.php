@@ -250,14 +250,20 @@
     var croppedOptions = {
         uploadUrl: '/image/upload',
         cropUrl: '/image/crop',
+        processInline:true,
         loadPicture: '{{ $dish->dish_img or '' }}',
         cropData: {
             'width': eyeCandy.width(),
             'height': eyeCandy.height()
         },
-        outputUrlId: 'dish_img'
+        outputUrlId: 'dish_img',
+        onReset: function () {
+            console.log('onReset');
+            this.loadPicture = '';
+        }
     };
     var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
+
 </script>
 
 <script>

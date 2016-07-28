@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
 use Input;
+use Jleon\LaravelPnotify\Notify;
 
 class ImageController extends Controller
 {
@@ -31,13 +32,14 @@ class ImageController extends Controller
         $image = $manager->make($photo)->encode('jpg')->save(public_path('uploads/dish/original/') . $filename_ext);
 
         if (!$image) {
-
+            Notify::error('上传失败');
             return Response::json([
                 'status' => 'error',
                 'message' => 'Server error while uploading',
             ], 200);
 
         }
+        Notify::success('上传成功，请裁剪图片！');
         return Response::json([
             'status' => 'success',
             'url' => config('web.url') . 'uploads/dish/original/' . $filename_ext,
@@ -71,14 +73,14 @@ class ImageController extends Controller
         $image->resize($imgW, $imgH)->rotate(-$angle)->crop($cropW, $cropH, $imgX1, $imgY1)->save(public_path('uploads/dish/crop/') . 'cropped-' . $filename);
 
         if (!$image) {
-
+            Notify::error('裁剪失败！');
             return Response::json([
                 'status' => 'error',
                 'message' => 'Server error while uploading',
             ], 200);
 
         }
-
+        Notify::success('裁剪成功！');
         return Response::json([
             'status' => 'success',
             'url' => config('web.url') . 'uploads/dish/crop/cropped-' . $filename
