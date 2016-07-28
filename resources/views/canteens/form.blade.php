@@ -23,6 +23,8 @@
 
 <script>
     var eyeCandy = $('#cropContainerEyecandy');
+    eyeCandy.width(500);
+    eyeCandy.height(500);
     var croppedOptions = {
         uploadUrl: '/image/upload',
         cropUrl: '/image/crop',

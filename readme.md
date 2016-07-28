@@ -6,3 +6,4 @@ _add dingo/api and jwt-auth_
 * 返回销量前十的菜？？？
 * $user->posts 与 $user->posts() 的区别
 * 两个变量相加 和 一个表达式（返回结果）加一个变量
+* collection : item 

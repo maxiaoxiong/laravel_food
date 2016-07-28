@@ -38,13 +38,13 @@ class DishesController extends BaseController
         $timeNow = Carbon::now();
 
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
-            $dishes = Dish::where('dishtype_id', 1)->orderBy('ordered_count', 'desc')->paginate(10);
+            $dishes = Dish::where('dishtype_id', 1)->orderBy('ordered_count', 'desc')->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $dishes = Dish::where('dishtype_id', 2)->orderBy('ordered_count', 'desc')->paginate(10);
+            $dishes = Dish::where('dishtype_id', 2)->orderBy('ordered_count', 'desc')->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $dishes = Dish::where('dishtype_id', 3)->orderBy('ordered_count', 'desc')->paginate(10);
+            $dishes = Dish::where('dishtype_id', 3)->orderBy('ordered_count', 'desc')->get();
         }
-        return $this->response->paginator($dishes, new HotDishTransformer())->setStatusCode(200);
+        return $this->response->collection($dishes, new HotDishTransformer())->setStatusCode(200);
     }
 
     /**
@@ -55,22 +55,22 @@ class DishesController extends BaseController
     {
         $timeNow = Carbon::now()->createFromTime()->toTimeString();
         if ($timeNow < "06:30:00" || $timeNow > "17:30:00") {
-            $dishes = Window::find($id)->dishes()->where('dishtype_id', 1)->paginate(8);
+            $dishes = Window::find($id)->dishes()->where('dishtype_id', 1)->get();
         } elseif ($timeNow > "06:30:00" && $timeNow < "11:30:00") {
             $dishes = Window::find($id)->dishes()->where(function ($query) {
                 $query->where('dishtype_id', 2)->orWhere(function ($query) {
                     $query->where('dishtype_id', 4);
                 });
-            })->paginate(8);
+            })->get();
         } elseif ($timeNow > "11:30:00" && $timeNow < "17:30:00") {
             $dishes = Window::find($id)->dishes()->where(function ($query) {
                 $query->where('dishtype_id', 3)->orWhere(function ($query) {
                     $query->where('dishtype_id', 4);
                 });
-            })->paginate(8);
+            })->get();
         }
 
-        return $this->response->paginator($dishes, new WindowDishesTransformer())->setStatusCode(200);
+        return $this->response->collection($dishes, new WindowDishesTransformer())->setStatusCode(200);
     }
 
 
@@ -83,22 +83,22 @@ class DishesController extends BaseController
     {
         $timeNow = Carbon::now()->createFromTime()->toTimeString();
         if ($timeNow < "06:30:00" || $timeNow > "17:30:00") {
-            $dishes = Window::find($window_id)->dishes()->where('dishtype_id', 1)->where('type_id', $type_id)->paginate(8);
+            $dishes = Window::find($window_id)->dishes()->where('dishtype_id', 1)->where('type_id', $type_id)->get();
         } elseif ($timeNow > "06:30:00" && $timeNow < "11:30:00") {
             $dishes = Window::find($window_id)->dishes()->where(function ($query) {
                 $query->where('dishtype_id', 2)->orWhere(function ($query) {
                     $query->where('dishtype_id', 4);
                 });
-            })->where('type_id', $type_id)->paginate(8);
+            })->where('type_id', $type_id)->get();
         } elseif ($timeNow > "11:30:00" && $timeNow < "17:30:00") {
             $dishes = Window::find($window_id)->dishes()->where(function ($query) {
                 $query->where('dishtype_id', 3)->orWhere(function ($query) {
                     $query->where('dishtype_id', 4);
                 });
-            })->where('type_id', $type_id)->paginate(8);
+            })->where('type_id', $type_id)->get();
         }
 
-        return $this->response->paginator($dishes, new WindowDishesTransformer())->setStatusCode(200);
+        return $this->response->collection($dishes, new WindowDishesTransformer())->setStatusCode(200);
     }
 
     /**
@@ -106,9 +106,9 @@ class DishesController extends BaseController
      */
     public function getBreakfast()
     {
-        $dishes = Dish::where('dishtype_id', 1)->paginate(8);
+        $dishes = Dish::where('dishtype_id', 1)->get();
 
-        return $this->response->paginator($dishes, new DishTransformer())->setStatusCode(200);
+        return $this->response->collection($dishes, new DishTransformer())->setStatusCode(200);
     }
 
     /**

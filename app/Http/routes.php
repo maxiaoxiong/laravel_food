@@ -11,6 +11,7 @@
 |
 */
 
+use App\Dish;
 use App\Mobile;
 use App\Order;
 use Carbon\Carbon;
@@ -168,7 +169,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('push/timing', 'PushController@timing');
 
     Route::get('test', function (Request $request) {
-        $arr = \App\Canteen::lists('id')->toArray();
-        return $arr[0];
+        $dishes = Dish::where('dishtype_id', 3)->orderBy('ordered_count', 'desc')->get();
+        return $dishes;
     });
 });

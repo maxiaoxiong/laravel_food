@@ -229,7 +229,7 @@
 
             <div class="row margin-bottom-40">
                 <div class="col-md-6">
-                    <div id="cropContainerEyecandy" style="width: 480px;height: 320px;"></div>
+                    <div id="cropContainerEyecandy"></div>
                 </div>
             </div>
         </div>
@@ -245,6 +245,8 @@
 <script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>
 <script>
     var eyeCandy = $('#cropContainerEyecandy');
+    eyeCandy.width(300);
+    eyeCandy.height(180);
     var croppedOptions = {
         uploadUrl: '/image/upload',
         cropUrl: '/image/crop',

@@ -29,12 +29,12 @@ class DiscountsController extends BaseController
         $timeNow = Carbon::now();
 
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
-            $discounts = Dish::has('preferentialDish')->where('dishtype_id',1)->paginate(10);
+            $discounts = Dish::has('preferentialDish')->where('dishtype_id',1)->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',2)->paginate(10);
+            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',2)->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',3)->paginate(10);
+            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',3)->get();
         }
-        return $this->response->paginator($discounts,new DiscountTransformer())->setStatusCode(200);
+        return $this->response->collection($discounts,new DiscountTransformer())->setStatusCode(200);
     }
 }
