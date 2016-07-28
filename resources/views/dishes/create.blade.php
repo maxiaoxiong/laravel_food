@@ -8,6 +8,7 @@
     </div>
 
     <script>
-        getWindows(1);
+        {{ $arr = \App\Canteen::lists('id')->toArray() }}
+        getWindows({{ $arr[rand(0,count($arr)-1)] }});
     </script>
 @endsection

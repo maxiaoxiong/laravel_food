@@ -23,14 +23,14 @@ class ImageController extends Controller
         $original_name_without_ext = substr($original_name, 0, strlen($original_name) - 4);
 
         $filename = $this->sanitize($original_name_without_ext);
-        $allowed_filename = $this->createUniqueFilename( $filename );
+        $allowed_filename = $this->createUniqueFilename($filename);
 
-        $filename_ext = $allowed_filename .'.jpg';
+        $filename_ext = $allowed_filename . '.jpg';
 
         $manager = new ImageManager();
-        $image = $manager->make( $photo )->encode('jpg')->save(public_path('uploads/dish/original/') . $filename_ext );
+        $image = $manager->make($photo)->encode('jpg')->save(public_path('uploads/dish/original/') . $filename_ext);
 
-        if( !$image) {
+        if (!$image) {
 
             return Response::json([
                 'status' => 'error',
@@ -39,10 +39,10 @@ class ImageController extends Controller
 
         }
         return Response::json([
-            'status'    => 'success',
-            'url'       => config('web.url') . 'uploads/dish/original/' . $filename_ext,
-            'width'     => $image->width(),
-            'height'    => $image->height()
+            'status' => 'success',
+            'url' => config('web.url') . 'uploads/dish/original/' . $filename_ext,
+            'width' => $image->width(),
+            'height' => $image->height()
         ], 200);
     }
 
@@ -64,13 +64,13 @@ class ImageController extends Controller
         $angle = $form_data['rotation'];
 
         $filename_array = explode('/', $image_url);
-        $filename = $filename_array[sizeof($filename_array)-1];
+        $filename = $filename_array[sizeof($filename_array) - 1];
 
         $manager = new ImageManager();
-        $image = $manager->make( $image_url );
+        $image = $manager->make($image_url);
         $image->resize($imgW, $imgH)->rotate(-$angle)->crop($cropW, $cropH, $imgX1, $imgY1)->save(public_path('uploads/dish/crop/') . 'cropped-' . $filename);
 
-        if( !$image) {
+        if (!$image) {
 
             return Response::json([
                 'status' => 'error',
@@ -93,7 +93,7 @@ class ImageController extends Controller
             "â€”", "â€“", ",", "<", ".", ">", "/", "?");
         $clean = trim(str_replace($strip, "", strip_tags($string)));
         $clean = preg_replace('/\s+/', "-", $clean);
-        $clean = ($anal) ? preg_replace("/[^a-zA-Z0-9]/", "", $clean) : $clean ;
+        $clean = ($anal) ? preg_replace("/[^a-zA-Z0-9]/", "", $clean) : $clean;
 
         return ($force_lowercase) ?
             (function_exists('mb_strtolower')) ?
@@ -103,13 +103,12 @@ class ImageController extends Controller
     }
 
 
-    private function createUniqueFilename( $filename )
+    private function createUniqueFilename($filename)
     {
         $upload_path = public_path('uploads');
         $full_image_path = $upload_path . $filename . '.jpg';
 
-        if ( File::exists( $full_image_path ) )
-        {
+        if (File::exists($full_image_path)) {
             // Generate token for image
             $image_token = substr(sha1(mt_rand()), 0, 5);
             return $filename . '-' . $image_token;
