@@ -90,6 +90,8 @@
     <script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>
     <script>
         var eyeCandy = $('#cropContainerEyecandy');
+        eyeCandy.width(300);
+        eyeCandy.height(200);
         var croppedOptions = {
             uploadUrl: '/image/upload',
             cropUrl: '/image/crop',

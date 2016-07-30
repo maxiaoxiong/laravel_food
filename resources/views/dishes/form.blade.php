@@ -259,7 +259,7 @@
         outputUrlId: 'dish_img',
         onReset: function () {
             console.log('onReset');
-            this.loadPicture = '';
+//             = '';
         }
     };
     var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
