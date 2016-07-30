@@ -60,8 +60,8 @@ class ImageController extends Controller
         $imgY1 = $form_data['imgY1'];
         $imgX1 = $form_data['imgX1'];
         // crop box
-        $cropW = $form_data['width'];
-        $cropH = $form_data['height'];
+        $cropW = (int) $form_data['width'];
+        $cropH = (int) $form_data['height'];
         // rotation angle
         $angle = $form_data['rotation'];
 
