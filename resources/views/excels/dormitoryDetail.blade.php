@@ -8,6 +8,9 @@
     td{
         width:20px;
     }
+    .dishes{
+        width: 30px;
+    }
 </style>
 <body>
 <tr>
@@ -22,7 +25,7 @@
         <td>{{ $data->user_phone }}</td>
         <td>{{ $data->dormitory->floor->building->name }}-
             {{ $data->dormitory->floor->name }}-{{ $data->dormitory->name }}</td>
-        <td>
+        <td class="dishes">
             @foreach($data->dishes as $dish)
                 {{ $dish->name }} * {{ $dish->pivot->num }}
             @endforeach
