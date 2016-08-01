@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>窗口明细表</title>
 </head>
+<style>
+    td{
+        height:30px;
+        width:30px;
+    }
+</style>
 <body>
 <table>
     <tr>

@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>宿舍明细表</title>
 </head>
+<style>
+    td{
+        width:30px;
+    }
+</style>
 <body>
 <tr>
     <td>用户名</td>
