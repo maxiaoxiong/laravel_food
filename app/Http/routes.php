@@ -41,6 +41,7 @@ $api->version('v1', function ($api) {
         $api->get('floors/{id}/dormitories', 'DormitoriesController@getDormitories');
         $api->get('advertises', 'AdvertisesController@index');
         $api->post('advices', 'AdvicesController@store');
+        $api->get('times','TimesController@index');
 
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
             $api->post('pay', 'OrdersController@pay');
@@ -147,6 +148,10 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('typefours', 'TypefoursController');
 
     Route::resource('advices', 'AdvicesController');
+    
+    Route::resource('names', 'NamesController');
+
+    Route::resource('times', 'TimesController');
 
     Route::post('image/upload', 'ImageController@upload');
     Route::post('image/crop', 'ImageController@crop');
@@ -169,7 +174,39 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('push/timing', 'PushController@timing');
 
     Route::get('test', function (Request $request) {
-        $dishes = Dish::where('dishtype_id', 3)->orderBy('ordered_count', 'desc')->get();
-        return $dishes;
+//        return \App\Window::find(1)->dishes[0]->orders()->where('orders.created_at','>=',Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+//            '17', '30', '00'))->get()[0]->pivot->num;
+        $windows = \App\Window::has('dishes')->get();
+        foreach ($windows as $window){
+            //所有有菜的窗口
+            foreach ($window->dishes as $dish){
+                //窗口下所有的菜
+                //该菜的所有订单
+                $orders = $dish->orders()->where('orders.created_at','>=',Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+                    '17', '30', '00'))->get();
+                if (count($orders) != 0) {
+                    foreach ($orders as $order) {
+                        for ($i=0;$i<$order->pivot->num;$i++){
+                            $dish_detail[] = [
+                                'dish_name' => $dish->name,
+                                'dish_price' => $dish->price,
+                                'user_name' => $order->user_name,
+                                'user_phone' => $order->user_phone,
+                                'typeone' => $order->typeones,
+                                'typetwo' => $order->typetwos,
+                                'typethree' => $order->typethrees,
+                                'typefour' => $order->typefours,
+                                'taste' => $order->tastes,
+                                'tableware' => $order->tablewares,
+                                'address' => $order->dormitory->floor->building->name.'-'.$order->dormitory->floor->name.
+                                    '-'.$order->dormitory->name,
+                            ];
+                        }
+                    }
+                }
+            }
+
+        }
+        return $dish_detail;
     });
 });

@@ -107,7 +107,17 @@
         </div>
         <div class="form-group col-md-10 col-md-offset-1">
             <div class="form-horizontal col-md-8" style="margin-left: -15px;">
-                <label for="">类型一</label>
+                <label for="">
+                    类型一
+                    <select class="form-control" name="typeone_name" id="">
+                        <option value="">请选择类型名称</option>
+                        @if(isset($names))
+                            @foreach($names as $name)
+                                <option value="{{ $name->name }}" @if(isset($dish)) @if($dish->typeone_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
+                            @endforeach
+                        @endif
+                    </select>
+                </label>
                 <select name="typeone[]" class="form-control select col-md-8" multiple="multiple"
                         data-placeholder="点击添加">
                     @foreach($typeones as $typeone)
@@ -164,7 +174,17 @@
         </div>
         <div class="form-group col-md-10 col-md-offset-1">
             <div class="form-horizontal col-md-8" style="margin-left: -15px;">
-                <label for="">类型二</label>
+                <label for="">
+                    类型二
+                    <select class="form-control" name="typetwo_name" id="">
+                        <option value="">请选择类型名称</option>
+                        @if(isset($names))
+                            @foreach($names as $name)
+                                <option value="{{ $name->name }}" @if(isset($dish)) @if($dish->typetwo_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
+                            @endforeach
+                        @endif
+                    </select>
+                </label>
                 <select name="typetwo[]" class="form-control select col-md-8" multiple="multiple"
                         data-placeholder="点击添加">
                     @foreach($typetwos as $typetwo)
@@ -221,7 +241,17 @@
         </div>
         <div class="form-group col-md-10 col-md-offset-1">
             <div class="form-horizontal col-md-8" style="margin-left: -15px;">
-                <label for="">类型三</label>
+                <label for="">
+                    类型三
+                    <select class="form-control" name="typethree_name" id="">
+                        <option value="">请选择类型名称</option>
+                        @if(isset($names))
+                            @foreach($names as $name)
+                                <option value="{{ $name->name }}" @if(isset($dish)) @if($dish->typethree_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
+                            @endforeach
+                        @endif
+                    </select>
+                </label>
                 <select name="typethree[]" class="form-control select col-md-8" multiple="multiple"
                         data-placeholder="点击添加">
                     @foreach($typethrees as $typethree)
@@ -278,7 +308,17 @@
         </div>
         <div class="form-group col-md-10 col-md-offset-1">
             <div class="form-group col-md-8" style="margin-left: -15px;">
-                <label for="">类型四</label>
+                <label for="">
+                    类型四
+                    <select class="form-control" name="typefour_name" id="">
+                        <option value="">请选择类型名称</option>
+                        @if(isset($names))
+                            @foreach($names as $name)
+                                <option value="{{ $name->name }}" @if(isset($dish)) @if($dish->typefour_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
+                            @endforeach
+                        @endif
+                    </select>
+                </label>
                 <select name="typefour[]" class="form-control select col-md-8" multiple="multiple"
                         data-placeholder="点击添加">
                     @foreach($typefours as $typefour)

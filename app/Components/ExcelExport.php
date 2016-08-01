@@ -68,22 +68,52 @@ class ExcelExport
         \Excel::create('一个excel', function ($excel) use ($datas) {
             foreach ($datas as $data) {
                 $excel->sheet('标签', function ($sheet) use ($data) {
-                    $dishes = $data->dishes;
-                    for ($i = 0; $i < count($dishes); $i++) {
-                        $orders = self::getOrders($dishes[$i]);
-                        if (count($orders) == 0) {
-                            continue;
+//                    $dishes = $data->dishes;
+//                    for ($i = 0; $i < count($dishes); $i++) {
+//                        $orders = self::getOrders($dishes[$i]);
+//                        if (count($orders) == 0) {
+//                            continue;
+//                        }
+//                        $dish_list[] = $dishes[$i];
+//                    }
+                    foreach ($data->dishes as $dish) {
+                        //窗口下所有的菜
+                        //该菜的所有订单
+                        $orders = $dish->orders()->where('orders.created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+                            '17', '30', '00'))->get();
+                        if (count($orders) != 0) {
+                            foreach ($orders as $order) {
+                                for ($i = 0; $i < $order->pivot->num; $i++) {
+                                    $dish_detail[] = [
+                                        'dish_name' => $dish->name,
+                                        'dish_price' => $dish->price,
+                                        'user_name' => $order->user_name,
+                                        'user_phone' => $order->user_phone,
+                                        'typeone' => $order->typeones,
+                                        'typetwo' => $order->typetwos,
+                                        'typethree' => $order->typethrees,
+                                        'typefour' => $order->typefours,
+                                        'taste' => $order->tastes,
+                                        'tableware' => $order->tablewares,
+                                        'address' => $order->dormitory->floor->building->name . '-' . $order->dormitory->floor->name .
+                                            '-' . $order->dormitory->name,
+                                    ];
+                                }
+                            }
                         }
-                        $dish_list[] = $dishes[$i];
                     }
-                    if (!isset($dish_list)){
+//                    if (!isset($dish_list)) {
+//                        return false;
+//                    }
+                    if (!isset($dish_detail)) {
                         return false;
                     }
-                    $dishes = $dish_list;
+//                    $dishes = $dish_list;
+                    $dishes = $dish_detail;
                     $sheet->loadView('excels.tags', compact('dishes'));
                 });
             }
-        })->export('xlsx');
+        })->export('pdf');
     }
 
     static function exportDormitoryDetail($datas)
@@ -136,7 +166,7 @@ class ExcelExport
                 ->where('orders.created_at', '<=', $todayAfterTime)
                 ->where('orders.status', '已付款')->get();
         }
-        if (!isset($orders)){
+        if (!isset($orders)) {
             $orders = [];
         }
         return $orders;

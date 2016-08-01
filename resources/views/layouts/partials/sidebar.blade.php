@@ -66,6 +66,7 @@
                     <li><a href="{{ url('tablewares') }}">餐具管理</a></li>
                 </ul>
             </li>
+            <li class="active"><a href="{{ url('names') }}"><i class='fa fa-neuter'></i> <span>类型名子</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-drupal"></i> <span>类型管理</span><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
@@ -95,6 +96,9 @@
                     <li><a href="{{ url('push/history') }}">历史推送</a></li>
                     <li><a href="{{ url('push/new') }}">新建推送</a></li>
                 </ul>
+            </li>
+            <li class="treeview">
+                <a href="{{ url('times') }}"><i class="fa fa-times"></i> <span>送餐时间</span></a>
             </li>
             <li class="treeview">
                 <a href="{{ url('orders/month') }}"><i class="fa fa-money"></i> <span>每月小结</span></a>

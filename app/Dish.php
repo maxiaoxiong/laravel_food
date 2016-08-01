@@ -9,28 +9,30 @@ class Dish extends Model
     /**
      * @var array
      */
-    protected $fillable = ['id','name','price','dish_img','window_id','dishtype_id','delivery_time','type_id', 'ordered_count', 'discount_dish_img'];
-    protected $hidden = ['created_at','updated_at','pivot'];
+    protected $fillable = ['id', 'name', 'price', 'dish_img', 'window_id', 'dishtype_id', 'delivery_time', 'type_id', 'ordered_count', 'discount_dish_img'
+        , 'typeone_name', 'typetwo_name', 'typethree_name', 'typefour_name'];
+    protected $hidden = ['created_at', 'updated_at', 'pivot'];
+
     public function typefours()
     {
         return $this->belongsToMany(Typefour::class)->withPivot('limit_num')->withTimestamps();
     }
-    
+
     public function typethrees()
     {
         return $this->belongsToMany(Typethree::class)->withPivot('limit_num')->withTimestamps();
     }
-    
+
     public function typetwos()
     {
         return $this->belongsToMany(Typetwo::class)->withPivot('limit_num')->withTimestamps();
     }
-    
+
     public function typeones()
     {
         return $this->belongsToMany(Typeone::class)->withPivot('limit_num')->withTimestamps();
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -84,7 +86,7 @@ class Dish extends Model
      */
     public function orders()
     {
-        return $this->belongsToMany(Order::class,'order_dish')->withPivot('num')->withTimestamps();
+        return $this->belongsToMany(Order::class, 'order_dish')->withPivot('num')->withTimestamps();
     }
 
     /**
