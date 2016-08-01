@@ -6,7 +6,7 @@
 </head>
 <style>
     td {
-        height: 100px;
+        height: 110px;
         width: 35px;
     }
 </style>
