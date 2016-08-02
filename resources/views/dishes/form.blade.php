@@ -443,7 +443,7 @@
 
                     <select name="delivery_time" class="form-control" id="">
                         <option>请选择送餐时间</option>
-                        @if(isset($times))
+                        @if(isset($times) && isset($dish))
                             @foreach($times as $time)
                                 <option value="{{ $time->time }}"
                                         @if($dish->delivery_time == $time->time) selected @endif>{{ $time->time }}</option>
