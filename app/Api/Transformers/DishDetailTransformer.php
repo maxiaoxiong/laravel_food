@@ -71,12 +71,12 @@ class DishDetailTransformer extends TransformerAbstract
                 'typetwo' => [
                     'data' => isset($dish->typetwos[0]) ? $dish->typetwos : [],
                     'limit_num' => isset($dish->typetwos[0]) ? $dish->typetwos[0]->pivot->limit_num : '',
-                    'name' => $dish['typethree_name'],
+                    'name' => $dish['typetwo_name'],
                 ],
                 'typethree' => [
                     'data' => isset($dish->typethrees[0]) ? $dish->typethrees : [],
                     'limit_num' => isset($dish->typethrees[0]) ? $dish->typethrees[0]->pivot->limit_num : '',
-                    'name' => $dish['typefour_name'],
+                    'name' => $dish['typethree_name'],
                 ],
                 'typefour' => [
                     'data' => isset($dish->typefours[0]) ? $dish->typefours : [],

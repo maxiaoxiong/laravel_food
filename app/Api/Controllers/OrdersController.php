@@ -77,6 +77,7 @@ class OrdersController extends BaseController
         $data = $request->except('dishes');
         \Cache::put($request->get('user_id'), OrderNo::getOrderNo(), 5);
         $dishes = $request->get('dishes');
+//        return $dishes[0]['typetwo_id'];
         try {
             $order = Order::Create(array_merge($data, ['order_no' => \Cache::get($request->get('user_id'))]));
             foreach ($dishes as $k => $v) {
@@ -89,7 +90,7 @@ class OrdersController extends BaseController
                 $order->tastes()->attach($dishes[$k]['taste_id']);
                 $order->tablewares()->attach($dishes[$k]['tableware_id']);
                 $order->typeones()->attach($dishes[$k]['typeone_id']);
-                $order->typetwos()->sync($dishes[$k]['typetwo_id']);
+                $order->typetwos()->attach($dishes[$k]['typetwo_id']);
                 $order->typethrees()->attach($dishes[$k]['typethree_id']);
                 $order->typefours()->attach($dishes[$k]['typefour_id']);
             }
