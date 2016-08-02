@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Absolute_Positioner' => $vendorDir . '/dompdf/dompdf/include/absolute_positioner.cls.php',
     'Abstract_Renderer' => $vendorDir . '/dompdf/dompdf/include/abstract_renderer.cls.php',
+    'AddColumnToOrderDish' => $baseDir . '/database/migrations/2016_08_03_064850_add_column_to_order_dish.php',
     'AddDiscountDishImgToDishes' => $baseDir . '/database/migrations/2016_07_24_173834_add_discount_dish_img_to_dishes.php',
     'AddOrderedCountToDishesTable' => $baseDir . '/database/migrations/2016_07_18_085253_add_ordered_count_to_dishes_table.php',
     'AddOverTimeToTimes' => $baseDir . '/database/migrations/2016_08_02_125853_add_over_time_to_times.php',

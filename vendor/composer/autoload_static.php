@@ -457,6 +457,7 @@ class ComposerStaticInit4f6176fe03180c9a18fa804d4eed3c31
     public static $classMap = array (
         'Absolute_Positioner' => __DIR__ . '/..' . '/dompdf/dompdf/include/absolute_positioner.cls.php',
         'Abstract_Renderer' => __DIR__ . '/..' . '/dompdf/dompdf/include/abstract_renderer.cls.php',
+        'AddColumnToOrderDish' => __DIR__ . '/../..' . '/database/migrations/2016_08_03_064850_add_column_to_order_dish.php',
         'AddDiscountDishImgToDishes' => __DIR__ . '/../..' . '/database/migrations/2016_07_24_173834_add_discount_dish_img_to_dishes.php',
         'AddOrderedCountToDishesTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_18_085253_add_ordered_count_to_dishes_table.php',
         'AddOverTimeToTimes' => __DIR__ . '/../..' . '/database/migrations/2016_08_02_125853_add_over_time_to_times.php',

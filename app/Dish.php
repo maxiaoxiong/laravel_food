@@ -86,7 +86,9 @@ class Dish extends Model
      */
     public function orders()
     {
-        return $this->belongsToMany(Order::class, 'order_dish')->withPivot('num')->withTimestamps();
+        return $this->belongsToMany(Order::class, 'order_dish')->withPivot([
+            'num', 'taste', 'tableware', 'typeone', 'typetwo', 'typethree', 'typefour'
+        ])->withTimestamps();
     }
 
     /**

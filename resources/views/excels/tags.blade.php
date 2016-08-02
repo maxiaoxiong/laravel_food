@@ -37,39 +37,17 @@
                 <br>
                 {{ $dishes[$j]['user_phone'] }}
                 <br>
-                @if(count($dishes[$j]['typeone']) != 0)
-                    @foreach($dishes[$j]['typeone'] as $typeone)
-                        {{ $typeone->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j]['typetwo']) != 0)
-                    @foreach($dishes[$j]['typetwo'] as $typetwo)
-                        {{ $typetwo->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j]['typethree']) != 0)
-                    @foreach($dishes[$j]['typethree'] as $typethree)
-                        {{ $typethree->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j]['typefour']) != 0)
-                    @foreach($dishes[$j]['typefour'] as $typefour)
-                        {{ $typefour->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j]['taste']) != 0)
-                    @foreach($dishes[$j]['taste'] as $taste)
-                        {{ $taste->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @foreach($dishes[$j]['tableware'] as $tableware)
-                    {{ $tableware->name }}
-                @endforeach
+                {{ $dishes[$j]['taste'] }}
+                <br>
+                {{ $dishes[$j]['tableware'] }}
+                <br>
+                {{ $dishes[$j]['typeone'] }}
+                <br>
+                {{ $dishes[$j]['typetwo'] }}
+                <br>
+                {{ $dishes[$j]['typethree'] }}
+                <br>
+                {{ $dishes[$j]['typefour'] }}
                 <br>
                 {{ $dishes[$j]['address'] }}
             </td>
@@ -81,39 +59,17 @@
                 <br>
                 {{ $dishes[$j+1]['user_phone'] }}
                 <br>
-                @if(count($dishes[$j+1]['typeone']) != 0)
-                    @foreach($dishes[$j+1]['typeone'] as $typeone)
-                        {{ $typeone->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j+1]['typetwo']) != 0)
-                    @foreach($dishes[$j+1]['typetwo'] as $typetwo)
-                        {{ $typetwo->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j+1]['typethree']) != 0)
-                    @foreach($dishes[$j+1]['typethree'] as $typethree)
-                        {{ $typethree->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j+1]['typefour']) != 0)
-                    @foreach($dishes[$j+1]['typefour'] as $typefour)
-                        {{ $typefour->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j+1]['taste']) != 0)
-                    @foreach($dishes[$j+1]['taste'] as $taste)
-                        {{ $taste->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @foreach($dishes[$j+1]['tableware'] as $tableware)
-                    {{ $tableware->name }}
-                @endforeach
+                {{ $dishes[$j+1]['taste'] }}
+                <br>
+                {{ $dishes[$j+1]['tableware'] }}
+                <br>
+                {{ $dishes[$j+1]['typeone'] }}
+                <br>
+                {{ $dishes[$j+1]['typetwo'] }}
+                <br>
+                {{ $dishes[$j+1]['typethree'] }}
+                <br>
+                {{ $dishes[$j+1]['typefour'] }}
                 <br>
                 {{ $dishes[$j+1]['address'] }}
             </td>
@@ -125,39 +81,17 @@
                 <br>
                 {{ $dishes[$j+2]['user_phone'] }}
                 <br>
-                @if(count($dishes[$j+2]['typeone']) != 0)
-                    @foreach($dishes[$j+2]['typeone'] as $typeone)
-                        {{ $typeone->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j+2]['typetwo']) != 0)
-                    @foreach($dishes[$j+2]['typetwo'] as $typetwo)
-                        {{ $typetwo->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j+2]['typethree']) != 0)
-                    @foreach($dishes[$j+2]['typethree'] as $typethree)
-                        {{ $typethree->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j+2]['typefour']) != 0)
-                    @foreach($dishes[$j+2]['typefour'] as $typefour)
-                        {{ $typefour->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$j+2]['taste']) != 0)
-                    @foreach($dishes[$j+2]['taste'] as $taste)
-                        {{ $taste->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @foreach($dishes[$j+2]['tableware'] as $tableware)
-                    {{ $tableware->name }}
-                @endforeach
+                {{ $dishes[$j+2]['taste'] }}
+                <br>
+                {{ $dishes[$j+2]['tableware'] }}
+                <br>
+                {{ $dishes[$j+2]['typeone'] }}
+                <br>
+                {{ $dishes[$j+2]['typetwo'] }}
+                <br>
+                {{ $dishes[$j+2]['typethree'] }}
+                <br>
+                {{ $dishes[$j+2]['typefour'] }}
                 <br>
                 {{ $dishes[$j+2]['address'] }}
             </td>
@@ -175,39 +109,17 @@
                     <br>
                     {{ $dishes[$k]['user_phone'] }}
                     <br>
-                    @if(count($dishes[$k]['typeone']) != 0)
-                        @foreach($dishes[$k]['typeone'] as $typeone)
-                            {{ $typeone->name }}
-                        @endforeach
-                        <br>
-                    @endif
-                    @if(count($dishes[$k]['typetwo']) != 0)
-                        @foreach($dishes[$k]['typetwo'] as $typetwo)
-                            {{ $typetwo->name }}
-                        @endforeach
-                        <br>
-                    @endif
-                    @if(count($dishes[$k]['typethree']) != 0)
-                        @foreach($dishes[$k]['typethree'] as $typethree)
-                            {{ $typethree->name }}
-                        @endforeach
-                        <br>
-                    @endif
-                    @if(count($dishes[$k]['typefour']) != 0)
-                        @foreach($dishes[$k]['typefour'] as $typefour)
-                            {{ $typefour->name }}
-                        @endforeach
-                        <br>
-                    @endif
-                    @if(count($dishes[$k]['taste']) != 0)
-                        @foreach($dishes[$k]['taste'] as $taste)
-                            {{ $taste->name }}
-                        @endforeach
-                        <br>
-                    @endif
-                    @foreach($dishes[$k]['tableware'] as $tableware)
-                        {{ $tableware->name }}
-                    @endforeach
+                    {{ $dishes[$k]['taste'] }}
+                    <br>
+                    {{ $dishes[$k]['tableware'] }}
+                    <br>
+                    {{ $dishes[$k]['typeone'] }}
+                    <br>
+                    {{ $dishes[$k]['typetwo'] }}
+                    <br>
+                    {{ $dishes[$k]['typethree'] }}
+                    <br>
+                    {{ $dishes[$k]['typefour'] }}
                     <br>
                     {{ $dishes[$k]['address'] }}
                 </td>

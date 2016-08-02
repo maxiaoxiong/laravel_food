@@ -125,12 +125,12 @@ class OrdersController extends Controller
                                         'dish_price' => $dish->price,
                                         'user_name' => $order->user_name,
                                         'user_phone' => $order->user_phone,
-                                        'typeone' => $order->typeones,
-                                        'typetwo' => $order->typetwos,
-                                        'typethree' => $order->typethrees,
-                                        'typefour' => $order->typefours,
-                                        'taste' => $order->tastes,
-                                        'tableware' => $order->tablewares,
+                                        'typeone' => $order->pivot->typeone,
+                                        'typetwo' => $order->pivot->typetwo,
+                                        'typethree' => $order->pivot->typethree,
+                                        'typefour' => $order->pivot->typefour,
+                                        'taste' => $order->pivot->taste,
+                                        'tableware' => $order->pivot->tableware,
                                         'address' => $order->dormitory->floor->building->name . '-' . $order->dormitory->floor->name .
                                             '-' . $order->dormitory->name,
                                     ];

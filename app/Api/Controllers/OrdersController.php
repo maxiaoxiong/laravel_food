@@ -77,27 +77,30 @@ class OrdersController extends BaseController
         $data = $request->except('dishes');
         \Cache::put($request->get('user_id'), OrderNo::getOrderNo(), 5);
         $dishes = $request->get('dishes');
-//        return $dishes[0]['typetwo_id'];
-        try {
-            $order = Order::Create(array_merge($data, ['order_no' => \Cache::get($request->get('user_id'))]));
-            foreach ($dishes as $k => $v) {
-                $order->dishes()->attach($dishes[$k]['dish_id'], ['num' => $dishes[$k]['num']]);
-                $dish = Dish::find($dishes[$k]['dish_id']);
-                $old_ordered_count = $dish->ordered_count;
-                $new_ordered_count = $old_ordered_count + $dishes[$k]['num'];
-                $dish->ordered_count = $new_ordered_count;
-                $dish->save();
-                $order->tastes()->attach($dishes[$k]['taste_id']);
-                $order->tablewares()->attach($dishes[$k]['tableware_id']);
-                $order->typeones()->attach($dishes[$k]['typeone_id']);
-                $order->typetwos()->attach($dishes[$k]['typetwo_id']);
-                $order->typethrees()->attach($dishes[$k]['typethree_id']);
-                $order->typefours()->attach($dishes[$k]['typefour_id']);
-            }
-        } catch (Exception $e) {
-            throw new StoreResourceFailedException('创建订单失败！');
+        $order = Order::Create(array_merge($data, ['order_no' => \Cache::get($request->get('user_id'))]));
+        foreach ($dishes as $k => $v) {
+            $order->dishes()->attach($dishes[$k]['dish_id'], [
+                'num' => $dishes[$k]['num'],
+                'taste'=> $dishes[$k]['taste_id'],
+                'tableware' => $dishes[$k]['tableware_id'],
+                'typeone' => $dishes[$k]['typeone_id'],
+                'typetwo' => $dishes[$k]['typetwo_id'],
+                'typethree' => $dishes[$k]['typethree_id'],
+                'typefour' => $dishes[$k]['typefour_id']
+            ]);
+            $dish = Dish::find($dishes[$k]['dish_id']);
+            $old_ordered_count = $dish->ordered_count;
+            $new_ordered_count = $old_ordered_count + $dishes[$k]['num'];
+            $dish->ordered_count = $new_ordered_count;
+            $dish->save();
+//            $order->tastes()->attach($dishes[$k]['taste_id']);
+//            $order->tablewares()->attach($dishes[$k]['tableware_id']);
+//            $order->typeones()->attach($dishes[$k]['typeone_id']);
+//            $order->typetwos()->attach($dishes[$k]['typetwo_id']);
+//            $order->typethrees()->attach($dishes[$k]['typethree_id']);
+//            $order->typefours()->attach($dishes[$k]['typefour_id']);
         }
-
+        
         $ordersToday = Order::where('created_at', '>=', Carbon::today())->count();
         $data = [
             'event' => 'ordersToday',
@@ -108,7 +111,6 @@ class OrdersController extends BaseController
         Redis::publish('test-channel', json_encode($data));
 
         return response()->json(['status_code' => 200, 'message' => '创建订单成功！']);
-
     }
 
     /**
