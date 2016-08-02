@@ -75,7 +75,7 @@ class OrdersController extends BaseController
     public function store(Request $request)
     {
         $data = $request->except('dishes');
-        \Cache::put($request->get('user_id'),OrderNo::getOrderNo(),5);
+        \Cache::put($request->get('user_id'), OrderNo::getOrderNo(), 5);
         $dishes = $request->get('dishes');
         try {
             $order = Order::Create(array_merge($data, ['order_no' => \Cache::get($request->get('user_id'))]));
@@ -89,7 +89,7 @@ class OrdersController extends BaseController
                 $order->tastes()->attach($dishes[$k]['taste_id']);
                 $order->tablewares()->attach($dishes[$k]['tableware_id']);
                 $order->typeones()->attach($dishes[$k]['typeone_id']);
-                $order->typetwos()->attach($dishes[$k]['typetwo_id']);
+                $order->typetwos()->sync($dishes[$k]['typetwo_id']);
                 $order->typethrees()->attach($dishes[$k]['typethree_id']);
                 $order->typefours()->attach($dishes[$k]['typefour_id']);
             }
@@ -154,7 +154,7 @@ class OrdersController extends BaseController
                 'client_ip' => $request->ip(),
                 'currency' => 'cny',
                 'subject' => '小胖订单-' . \Cache::get($request->get('user_id')),
-                'body' => $request->get('user_name') . ' 正在购买 ' . $dish_name ,
+                'body' => $request->get('user_name') . ' 正在购买 ' . $dish_name,
                 'extra' => array()
             )
         );

@@ -174,8 +174,6 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('push/timing', 'PushController@timing');
 
     Route::get('test', function (Request $request) {
-        return Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('1'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('1'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('1'))->second);
+        return Cache::get('2');
     });
 });
