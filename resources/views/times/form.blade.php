@@ -12,7 +12,23 @@
         </div>
         <div class="bootstrap-timepicker col-md-10 col-md-offset-1">
             <div class="form-group">
-                <label>选择时间:</label>
+                <label>选择截止订餐时间:</label>
+
+                <div class="input-group">
+                    <input type="text" name="over_time" class="form-control timepicker"
+                           value="{{ $time->over_time or '' }}">
+
+                    <div class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                </div>
+                <!-- /.input group -->
+            </div>
+            <!-- /.form group -->
+        </div>
+        <div class="bootstrap-timepicker col-md-10 col-md-offset-1">
+            <div class="form-group">
+                <label>选择时间送餐时间:</label>
 
                 <div class="input-group">
                     <input type="text" name="time" class="form-control timepicker"

@@ -13,6 +13,7 @@
                         <tr>
                             <th>ID</th>
                             <th>类型</th>
+                            <th>截止订餐时间</th>
                             <th>送餐时间</th>
                             <th>操作</th>
                         </tr>
@@ -20,6 +21,7 @@
                             <tr>
                                 <td>{{ $time->id }}</td>
                                 <td>{{ $time->name }}</td>
+                                <td>{{ $time->over_time }}</td>
                                 <td>{{ $time->time }}</td>
                                 <td><a style="float: left;margin-right: 5px;"
                                        href="{{ url('times/'.$time->id.'/edit') }}" class="btn btn-info btn-xs">编辑</a>

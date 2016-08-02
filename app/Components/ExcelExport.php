@@ -7,6 +7,7 @@
  */
 namespace App\Components;
 
+use Cache;
 use Carbon\Carbon;
 use Jleon\LaravelPnotify\Notify;
 
@@ -134,13 +135,17 @@ class ExcelExport
     static function getOrders($dish)
     {
         $lastDayTime = Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
-            '18', '30', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('3'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('3'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('3'))->second);
         $todayMorningTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '07', '00', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('1'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('1'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('1'))->second);
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '11', '30', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('2'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('1'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('1'))->second);
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '17', '30', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('3'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('3'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('3'))->second);
         $timeNow = Carbon::now();
         if ($timeNow <= $todayMorningTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $lastDayTime)

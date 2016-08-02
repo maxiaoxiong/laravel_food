@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Time;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -24,6 +25,9 @@ class TimesController extends Controller
     {
         $time = Time::firstOrCreate(array_merge($request->except('_token')));
         if ($time instanceof Time) {
+            \Cache::rememberForever($time->id, function () use ($time) {
+                return $time->over_time;
+            });
             return redirect()->route('times.index');
         }
     }
@@ -38,9 +42,13 @@ class TimesController extends Controller
     {
         $time = Time::find($id);
         $time->name = $request->get('name');
+        $time->over_time = $request->get('over_time');
         $time->time = $request->get('time');
         $flag = $time->save();
         if ($flag == 1) {
+            \Cache::rememberForever($time->id, function () use ($time) {
+                return $time->over_time;
+            });
             return redirect()->route('times.index');
         }
     }

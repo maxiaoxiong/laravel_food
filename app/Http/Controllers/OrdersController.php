@@ -7,6 +7,7 @@ use App\Components\Orders;
 use App\Floor;
 use App\Order;
 use App\Window;
+use Cache;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use PDF;
@@ -79,13 +80,17 @@ class OrdersController extends Controller
     public function printOrders($type)
     {
         $lastDayTime = Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
-            '18', '30', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('3'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('3'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('3'))->second);
         $todayMorningTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '07', '00', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('1'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('1'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('1'))->second);
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '11', '30', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('2'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('2'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('2'))->second);
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '17', '30', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('3'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('3'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('3'))->second);
         $timeNow = Carbon::now();
         switch ($type) {
             case 1:
@@ -109,8 +114,7 @@ class OrdersController extends Controller
                     foreach ($window->dishes as $dish) {
                         //窗口下所有的菜
                         //该菜的所有订单
-                        $orders = $dish->orders()->where('orders.created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-                            '6', '30', '00'))->get();
+                        $orders = ExcelExport::getOrders($dish);
                         if (count($orders) != 0) {
                             foreach ($orders as $order) {
                                 for ($i = 0; $i < $order->pivot->num; $i++) {
@@ -134,10 +138,13 @@ class OrdersController extends Controller
                             }
                         }
                     }
-                    
-                    $dishes = $dish_detail;
-                    $pdf = PDF::loadView('excels.tags', compact('dishes'));
                 }
+                if (isset($dish_detail)){
+                    $dishes = $dish_detail;
+                }else{
+                    return redirect()->back();
+                }
+                $pdf = PDF::loadView('excels.tags', compact('dishes'));
                 return $pdf->download('tags.pdf');
                 break;
             case 3:
@@ -178,8 +185,10 @@ class OrdersController extends Controller
     public function getTodayOrders()
     {
         $orders = Order::where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '18', '30', '00'))->where('created_at', '>=', Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
-            '18', '30', '00'))->where('status', '已付款')->paginate(10);
+            Carbon::createFromFormat('H:i:s', Cache::get('3'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('3'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('3'))->second))->where('created_at', '>=', Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
+            Carbon::createFromFormat('H:i:s', Cache::get('3'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('3'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('3'))->second))->where('status', '已付款')->paginate(10);
 
         return view('orders.today', compact('orders'));
     }

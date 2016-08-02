@@ -174,41 +174,8 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('push/timing', 'PushController@timing');
 
     Route::get('test', function (Request $request) {
-//        return \App\Window::find(1)->dishes[0]->orders()->where('orders.created_at','>=',Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-//            '17', '30', '00'))->get()[0]->pivot->num;
-        $windows = \App\Window::has('dishes')->get();
-        foreach ($windows as $window){
-            //所有有菜的窗口
-            foreach ($window->dishes as $dish){
-                //窗口下所有的菜
-                //该菜的所有订单
-                $orders = $dish->orders()->where('orders.created_at','>=',Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-                    '6', '30', '00'))->get();
-                if (count($orders) != 0) {
-                    foreach ($orders as $order) {
-                        for ($i=0;$i<$order->pivot->num;$i++){
-                            $dish_detail[] = [
-                                'dish_name' => $dish->name,
-                                'dish_price' => $dish->price,
-                                'user_name' => $order->user_name,
-                                'user_phone' => $order->user_phone,
-                                'typeone' => $order->typeones,
-                                'typetwo' => $order->typetwos,
-                                'typethree' => $order->typethrees,
-                                'typefour' => $order->typefours,
-                                'taste' => $order->tastes,
-                                'tableware' => $order->tablewares,
-                                'address' => $order->dormitory->floor->building->name.'-'.$order->dormitory->floor->name.
-                                    '-'.$order->dormitory->name,
-                            ];
-                        }
-                    }
-                }
-            }
-
-            $dishes = $dish_detail;
-            $pdf = PDF::loadView('excels.tags', compact('dishes'));
-        }
-        return $pdf->download('tags.pdf');
+        return Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+            Carbon::createFromFormat('H:i:s', Cache::get('1'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('1'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('1'))->second);
     });
 });

@@ -26,10 +26,12 @@
 <table>
     {{--@for($j=0;$j<count($dishes);$j++)--}}
     {{ $j = 0 }}
-    @for($i=0;$i<floor(count($dishes)/3);$i++)
+    {{ $count_dishes = count($dishes) }}
+    @for($i=0;$i<floor($count_dishes/3);$i++)
         <tr>
             <td align="center" valign="middle">
-                {{ $dishes[$j]['canteen_name'] }}-{{ $dishes[$j]['window_name'] }}-{{ $dishes[$j]['dish_name'] }} * {{ $dishes[$j]['dish_price'] }}
+                {{ $dishes[$j]['canteen_name'] }}-{{ $dishes[$j]['window_name'] }}-{{ $dishes[$j]['dish_name'] }}
+                * {{ $dishes[$j]['dish_price'] }}
                 <br>
                 {{ $dishes[$j]['user_name'] }}
                 <br>
@@ -72,7 +74,8 @@
                 {{ $dishes[$j]['address'] }}
             </td>
             <td align="center" valign="middle">
-                {{ $dishes[$j+1]['canteen_name'] }}-{{ $dishes[$j+1]['window_name'] }}-{{ $dishes[$j+1]['dish_name'] }} * {{ $dishes[$j+1]['dish_price'] }}
+                {{ $dishes[$j+1]['canteen_name'] }}-{{ $dishes[$j+1]['window_name'] }}-{{ $dishes[$j+1]['dish_name'] }}
+                * {{ $dishes[$j+1]['dish_price'] }}
                 <br>
                 {{ $dishes[$j+1]['user_name'] }}
                 <br>
@@ -115,7 +118,8 @@
                 {{ $dishes[$j+1]['address'] }}
             </td>
             <td align="center" valign="middle">
-                {{ $dishes[$j+2]['canteen_name'] }}-{{ $dishes[$j+2]['window_name'] }}-{{ $dishes[$j+2]['dish_name'] }} * {{ $dishes[$j+2]['dish_price'] }}
+                {{ $dishes[$j+2]['canteen_name'] }}-{{ $dishes[$j+2]['window_name'] }}-{{ $dishes[$j+2]['dish_name'] }}
+                * {{ $dishes[$j+2]['dish_price'] }}
                 <br>
                 {{ $dishes[$j+2]['user_name'] }}
                 <br>
@@ -160,53 +164,56 @@
         </tr>
         {{ $j = $j+3 }}
     @endfor
-    <tr>
-        @for($k=0;$k<(count($dishes))%3;$k++)
-            <td align="center" valign="middle">
-                {{ $dishes[$k]['canteen_name'] }}-{{ $dishes[$k]['window_name'] }}-{{ $dishes[$k]['dish_name'] }} * {{ $dishes[$k]['dish_price'] }}
-                <br>
-                {{ $dishes[$k]['user_name'] }}
-                <br>
-                {{ $dishes[$k]['user_phone'] }}
-                <br>
-                @if(count($dishes[$k]['typeone']) != 0)
-                    @foreach($dishes[$k]['typeone'] as $typeone)
-                        {{ $typeone->name }}
+    @if($count_dishes != 0)
+        <tr>
+            @for($k=3*floor($count_dishes/3);$k<$count_dishes;$k++)
+                <td align="center" valign="middle">
+                    {{ $dishes[$k]['canteen_name'] }}-{{ $dishes[$k]['window_name'] }}-{{ $dishes[$k]['dish_name'] }}
+                    * {{ $dishes[$k]['dish_price'] }}
+                    <br>
+                    {{ $dishes[$k]['user_name'] }}
+                    <br>
+                    {{ $dishes[$k]['user_phone'] }}
+                    <br>
+                    @if(count($dishes[$k]['typeone']) != 0)
+                        @foreach($dishes[$k]['typeone'] as $typeone)
+                            {{ $typeone->name }}
+                        @endforeach
+                        <br>
+                    @endif
+                    @if(count($dishes[$k]['typetwo']) != 0)
+                        @foreach($dishes[$k]['typetwo'] as $typetwo)
+                            {{ $typetwo->name }}
+                        @endforeach
+                        <br>
+                    @endif
+                    @if(count($dishes[$k]['typethree']) != 0)
+                        @foreach($dishes[$k]['typethree'] as $typethree)
+                            {{ $typethree->name }}
+                        @endforeach
+                        <br>
+                    @endif
+                    @if(count($dishes[$k]['typefour']) != 0)
+                        @foreach($dishes[$k]['typefour'] as $typefour)
+                            {{ $typefour->name }}
+                        @endforeach
+                        <br>
+                    @endif
+                    @if(count($dishes[$k]['taste']) != 0)
+                        @foreach($dishes[$k]['taste'] as $taste)
+                            {{ $taste->name }}
+                        @endforeach
+                        <br>
+                    @endif
+                    @foreach($dishes[$k]['tableware'] as $tableware)
+                        {{ $tableware->name }}
                     @endforeach
                     <br>
-                @endif
-                @if(count($dishes[$k]['typetwo']) != 0)
-                    @foreach($dishes[$k]['typetwo'] as $typetwo)
-                        {{ $typetwo->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$k]['typethree']) != 0)
-                    @foreach($dishes[$k]['typethree'] as $typethree)
-                        {{ $typethree->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$k]['typefour']) != 0)
-                    @foreach($dishes[$k]['typefour'] as $typefour)
-                        {{ $typefour->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @if(count($dishes[$k]['taste']) != 0)
-                    @foreach($dishes[$k]['taste'] as $taste)
-                        {{ $taste->name }}
-                    @endforeach
-                    <br>
-                @endif
-                @foreach($dishes[$k]['tableware'] as $tableware)
-                    {{ $tableware->name }}
-                @endforeach
-                <br>
-                {{ $dishes[$k]['address'] }}
-            </td>
-        @endfor
-    </tr>
+                    {{ $dishes[$k]['address'] }}
+                </td>
+            @endfor
+        </tr>
+    @endif
 </table>
 </body>
 </html>

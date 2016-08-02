@@ -9,6 +9,7 @@ use App\Name;
 use App\PreferentialDish;
 use App\Tableware;
 use App\Taste;
+use App\Time;
 use App\Type;
 use App\Typefour;
 use App\Typeone;
@@ -46,9 +47,10 @@ class DishesController extends Controller
         $typethrees = Typethree::all();
         $typefours = Typefour::all();
         $names = Name::all();
+        $times = Time::all();
 
         return view('dishes.create', compact('types', 'tastes', 'canteens', 'tablewares', 'dishtypes'
-            , 'typeones', 'typetwos', 'typethrees', 'typefours', 'names'));
+            , 'typeones', 'typetwos', 'typethrees', 'typefours', 'names', 'times'));
     }
 
     /**
@@ -190,6 +192,7 @@ class DishesController extends Controller
         $dish = Dish::find($id);
         $types = Type::all();
         $names = Name::all();
+        $times = Time::all();
 
         $typeones = Typeone::all();
         $typetwos = Typetwo::all();
@@ -224,7 +227,7 @@ class DishesController extends Controller
 
         return view('dishes.edit', compact('canteens', 'dish', 'tablewares', 'tastes', 'dishtypes',
             'taste_id_arr', 'tableware_id_arr', 'types', 'typeone_id_arr', 'typetwo_id_arr', 'typethree_id_arr'
-            , 'typefour_id_arr', 'typeones', 'typetwos', 'typethrees', 'typefours', 'names'));
+            , 'typefour_id_arr', 'typeones', 'typetwos', 'typethrees', 'typefours', 'names', 'times'));
     }
 
     /**

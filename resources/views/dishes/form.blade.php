@@ -113,7 +113,8 @@
                         <option value="">请选择类型名称</option>
                         @if(isset($names))
                             @foreach($names as $name)
-                                <option value="{{ $name->name }}" @if(isset($dish)) @if($dish->typeone_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
+                                <option value="{{ $name->name }}"
+                                        @if(isset($dish)) @if($dish->typeone_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
                             @endforeach
                         @endif
                     </select>
@@ -180,7 +181,8 @@
                         <option value="">请选择类型名称</option>
                         @if(isset($names))
                             @foreach($names as $name)
-                                <option value="{{ $name->name }}" @if(isset($dish)) @if($dish->typetwo_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
+                                <option value="{{ $name->name }}"
+                                        @if(isset($dish)) @if($dish->typetwo_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
                             @endforeach
                         @endif
                     </select>
@@ -247,7 +249,8 @@
                         <option value="">请选择类型名称</option>
                         @if(isset($names))
                             @foreach($names as $name)
-                                <option value="{{ $name->name }}" @if(isset($dish)) @if($dish->typethree_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
+                                <option value="{{ $name->name }}"
+                                        @if(isset($dish)) @if($dish->typethree_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
                             @endforeach
                         @endif
                     </select>
@@ -314,7 +317,8 @@
                         <option value="">请选择类型名称</option>
                         @if(isset($names))
                             @foreach($names as $name)
-                                <option value="{{ $name->name }}" @if(isset($dish)) @if($dish->typefour_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
+                                <option value="{{ $name->name }}"
+                                        @if(isset($dish)) @if($dish->typefour_name == $name->name) selected="selected" @endif @endif>{{ $name->name }}</option>
                             @endforeach
                         @endif
                     </select>
@@ -435,16 +439,17 @@
         </div>
         <div class="bootstrap-timepicker col-md-10 col-md-offset-1">
             <div class="form-group">
-                <label>Time picker:</label>
+                <label>送餐时间选择</label>
 
-                <div class="input-group">
-                    <input type="text" name="delivery_time" class="form-control timepicker"
-                           value="{{ $dish->delivery_time or '' }}">
-
-                    <div class="input-group-addon">
-                        <i class="fa fa-clock-o"></i>
-                    </div>
-                </div>
+                    <select name="delivery_time" class="form-control" id="">
+                        <option>请选择送餐时间</option>
+                        @if(isset($times))
+                            @foreach($times as $time)
+                                <option value="{{ $time->time }}"
+                                        @if($dish->delivery_time == $time->time) selected @endif>{{ $time->time }}</option>
+                            @endforeach
+                        @endif
+                    </select>
                 <!-- /.input group -->
             </div>
             <!-- /.form group -->
