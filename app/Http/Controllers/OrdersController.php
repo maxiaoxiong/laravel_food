@@ -9,9 +9,9 @@ use App\Order;
 use App\Window;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use PDF;
 
 use App\Http\Requests;
-use Excel;
 use Jleon\LaravelPnotify\Notify;
 use Pingpp\Charge;
 use Pingpp\Pingpp;
@@ -103,19 +103,42 @@ class OrdersController extends Controller
                 ExcelExport::exportWindowDetail($orders);
                 break;
             case 2:
-                if ($timeNow <= $todayMorningTime) {
-                    $tags = $this->getTagsResult($lastDayTime, $todayMorningTime);
-                } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-                    $tags = $this->getTagsResult($todayMorningTime, $todayNoonTime);
-                } elseif ($timeNow >= $todayNoonTime && $timeNow < Carbon::tomorrow()) {
-                    $tags = $this->getTagsResult($todayNoonTime, $todayAfterTime);
+                $windows = \App\Window::has('dishes')->get();
+                foreach ($windows as $window) {
+                    //所有有菜的窗口
+                    foreach ($window->dishes as $dish) {
+                        //窗口下所有的菜
+                        //该菜的所有订单
+                        $orders = $dish->orders()->where('orders.created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
+                            '6', '30', '00'))->get();
+                        if (count($orders) != 0) {
+                            foreach ($orders as $order) {
+                                for ($i = 0; $i < $order->pivot->num; $i++) {
+                                    $dish_detail[] = [
+                                        'canteen_name' => $dish->window->canteen->name,
+                                        'window_name' => $dish->window->name,
+                                        'dish_name' => $dish->name,
+                                        'dish_price' => $dish->price,
+                                        'user_name' => $order->user_name,
+                                        'user_phone' => $order->user_phone,
+                                        'typeone' => $order->typeones,
+                                        'typetwo' => $order->typetwos,
+                                        'typethree' => $order->typethrees,
+                                        'typefour' => $order->typefours,
+                                        'taste' => $order->tastes,
+                                        'tableware' => $order->tablewares,
+                                        'address' => $order->dormitory->floor->building->name . '-' . $order->dormitory->floor->name .
+                                            '-' . $order->dormitory->name,
+                                    ];
+                                }
+                            }
+                        }
+                    }
+                    
+                    $dishes = $dish_detail;
+                    $pdf = PDF::loadView('excels.tags', compact('dishes'));
                 }
-                $flag = ExcelExport::exportTags($tags);
-                return $flag;
-                if (!$flag) {
-                    Notify::error('当前时间段没有订单！');
-                    return back();
-                }
+                return $pdf->download('tags.pdf');
                 break;
             case 3:
                 if ($timeNow <= $todayMorningTime) {
