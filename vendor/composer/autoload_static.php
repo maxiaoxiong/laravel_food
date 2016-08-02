@@ -107,6 +107,7 @@ class ComposerStaticInit4f6176fe03180c9a18fa804d4eed3c31
         'B' => 
         array (
             'Barryvdh\\LaravelIdeHelper\\' => 26,
+            'Barryvdh\\DomPDF\\' => 16,
         ),
         'A' => 
         array (
@@ -296,6 +297,10 @@ class ComposerStaticInit4f6176fe03180c9a18fa804d4eed3c31
         'Barryvdh\\LaravelIdeHelper\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-ide-helper/src',
+        ),
+        'Barryvdh\\DomPDF\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src',
         ),
         'App\\' => 
         array (

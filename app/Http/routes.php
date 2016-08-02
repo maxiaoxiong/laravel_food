@@ -183,7 +183,7 @@ Route::group(['middleware' => ['web', 'auth']], function () {
                 //窗口下所有的菜
                 //该菜的所有订单
                 $orders = $dish->orders()->where('orders.created_at','>=',Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-                    '17', '30', '00'))->get();
+                    '6', '30', '00'))->get();
                 if (count($orders) != 0) {
                     foreach ($orders as $order) {
                         for ($i=0;$i<$order->pivot->num;$i++){
@@ -206,7 +206,9 @@ Route::group(['middleware' => ['web', 'auth']], function () {
                 }
             }
 
+            $dishes = $dish_detail;
+            $pdf = PDF::loadView('excels.tags', compact('dishes'));
         }
-        return $dish_detail;
+        return $pdf->download('tags.pdf');
     });
 });

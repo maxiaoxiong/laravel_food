@@ -177,6 +177,8 @@ return [
 
         Jleon\LaravelPnotify\NotifyServiceProvider::class,
 
+        Barryvdh\DomPDF\ServiceProvider::class,
+
     ],
 
     /*
@@ -241,6 +243,8 @@ return [
         'Flash' => Laracasts\Flash\Flash::class,
 
         'Notify' => Jleon\LaravelPnotify\Notify::class,
+
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
 ];

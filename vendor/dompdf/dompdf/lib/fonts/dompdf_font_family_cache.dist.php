@@ -1,4 +1,8 @@
 <?php return array (
+  'fireflysung' => 
+  array(
+    'normal' => DOMPDF_DIR . 'fireflysung'
+  ),
   'sans-serif' => 
   array (
     'normal' => DOMPDF_DIR . '/lib/fonts/Helvetica',

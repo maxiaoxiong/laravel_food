@@ -1,5 +1,4 @@
 <!doctype html>
-<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>标签</title>
@@ -9,12 +8,23 @@
         height: 110px;
         width: 35px;
     }
+
+    @font-face {
+        font-family: 'Noto Sans';
+        font-style: normal;
+        font-weight: 400;
+        src: url(http://eclecticgeek.com/dompdf/fonts/cjk/fireflysung.ttf) format('truetype');
+    }
+
+    * {
+        font-family: Noto Sans, DejaVu Sans, sans-serif;
+    }
 </style>
 <body>
 <table>
     {{--@for($j=0;$j<count($dishes);$j++)--}}
     {{ $j = 0 }}
-    @for($i=0;$i<floor(count($dishes))/3;$i++)
+    @for($i=0;$i<floor(count($dishes)/3);$i++)
         <tr>
             <td align="center" valign="middle">
                 {{ $dishes[$j]['dish_price'] }} * {{ $dishes[$j]['dish_price'] }}
@@ -118,8 +128,8 @@
         </tr>
         {{ $j = $j+3 }}
     @endfor
-    @for($k=0;$k<(count($dishes))%3;$k++)
-        <tr>
+    <tr>
+        @for($k=0;$k<(count($dishes))%3;$k++)
             <td align="center" valign="middle">
                 {{ $dishes[$k]['dish_price'] }} * {{ $dishes[$k]['dish_price'] }}
                 <br>
@@ -153,41 +163,9 @@
                 <br>
                 {{ $dishes[$k]['address'] }}
             </td>
-            <td align="center" valign="middle">
-                {{ $dishes[$k+1]['dish_price'] }} * {{ $dishes[$k+1]['dish_price'] }}
-                <br>
-                {{ $dishes[$k+1]['user_name'] }}
-                <br>
-                {{ $dishes[$k+1]['user_phone'] }}
-                <br>
-                @foreach($dishes[$k+1]['typeone'] as $typeone)
-                    {{ $typeone->name }}
-                @endforeach
-                <br>
-                @foreach($dishes[$k+1]['typetwo'] as $typetwo)
-                    {{ $typetwo->name }}
-                @endforeach
-                <br>
-                @foreach($dishes[$k+1]['typethree'] as $typethree)
-                    {{ $typethree->name }}
-                @endforeach
-                <br>
-                @foreach($dishes[$k+1]['typefour'] as $typefour)
-                    {{ $typefour->name }}
-                @endforeach
-                <br>
-                @foreach($dishes[$k+1]['taste'] as $taste)
-                    {{ $taste->name }}
-                @endforeach
-                <br>
-                @foreach($dishes[$k+1]['tableware'] as $tableware)
-                    {{ $tableware->name }}
-                @endforeach
-                <br>
-                {{ $dishes[$k+1]['address'] }}
-            </td>
-        </tr>
-    @endfor
+        @endfor
+    </tr>
+
     {{--@endfor--}}
 
     {{--{{ $orders = \App\Components\ExcelExport::getOrders($dish) }}--}}

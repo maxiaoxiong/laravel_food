@@ -11,6 +11,7 @@ function GetLangOpts($llcc, $adobeCJK) {
 	$coreSuitable = false;
 
 	switch($lang){
+		CASE "zh-c": $unifonts = "DroidSansFallback"; break;
 	  CASE "en":
 	  CASE "ca":
 	  CASE "cy":

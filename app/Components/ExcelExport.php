@@ -68,19 +68,8 @@ class ExcelExport
         \Excel::create('一个excel', function ($excel) use ($datas) {
             foreach ($datas as $data) {
                 $excel->sheet('标签', function ($sheet) use ($data) {
-//                    $dishes = $data->dishes;
-//                    for ($i = 0; $i < count($dishes); $i++) {
-//                        $orders = self::getOrders($dishes[$i]);
-//                        if (count($orders) == 0) {
-//                            continue;
-//                        }
-//                        $dish_list[] = $dishes[$i];
-//                    }
                     foreach ($data->dishes as $dish) {
-                        //窗口下所有的菜
-                        //该菜的所有订单
-                        $orders = $dish->orders()->where('orders.created_at', '>=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-                            '17', '30', '00'))->get();
+                        $orders = self::getOrders($dish);
                         if (count($orders) != 0) {
                             foreach ($orders as $order) {
                                 for ($i = 0; $i < $order->pivot->num; $i++) {

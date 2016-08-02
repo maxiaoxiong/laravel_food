@@ -22,7 +22,8 @@
         "jorgejavierleon/laravelpnotify": "~1.0",
         "dompdf/dompdf": " ~0.6.1",
         "mpdf/mpdf": " ~5.7.3",
-        "tecnick.com/tcpdf": " ~6.0.0"
+        "tecnick.com/tcpdf": " ~6.0.0",
+        "barryvdh/laravel-dompdf": " 0.6.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

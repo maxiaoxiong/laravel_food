@@ -111,6 +111,7 @@ class OrdersController extends Controller
                     $tags = $this->getTagsResult($todayNoonTime, $todayAfterTime);
                 }
                 $flag = ExcelExport::exportTags($tags);
+                return $flag;
                 if (!$flag) {
                     Notify::error('当前时间段没有订单！');
                     return back();

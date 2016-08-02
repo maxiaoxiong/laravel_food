@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3689df57c3a23d301fa5b4af7b3decbd",
-    "content-hash": "3107eee14787ae4357edd0699531bd8b",
+    "hash": "12a8afe1133ebff2a9f531d5adb5544a",
+    "content-hash": "7f303fdaf842951628d1d1417c7ea0f3",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -58,6 +58,54 @@
                 "theme"
             ],
             "time": "2016-05-26 18:35:55"
+        },
+        {
+            "name": "barryvdh/laravel-dompdf",
+            "version": "v0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-dompdf.git",
+                "reference": "b606788108833f7765801dca35455fb23ce9f869"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/barryvdh/laravel-dompdf/b606788108833f7765801dca35455fb23ce9f869.zip",
+                "reference": "b606788108833f7765801dca35455fb23ce9f869",
+                "shasum": ""
+            },
+            "require": {
+                "dompdf/dompdf": "0.6.*",
+                "illuminate/support": "5.0.x|5.1.x|5.2.x",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\DomPDF\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "A DOMPDF Wrapper for Laravel",
+            "keywords": [
+                "dompdf",
+                "laravel",
+                "pdf"
+            ],
+            "time": "2015-12-21 19:51:22"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
