@@ -18,8 +18,9 @@
     td {
         font-size: 10px;
         border: 1px solid black;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding: 40px;
+        width: 785px;
+        height: 479px;
     }
 
 </style>
