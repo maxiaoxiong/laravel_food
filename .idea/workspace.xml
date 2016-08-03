@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e154256a-0ee7-46ff-bf32-cb97ba6a4214" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/OrdersController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/OrdersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Api/Controllers/SearchController.php" afterPath="$PROJECT_DIR$/app/Api/Controllers/SearchController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Dish.php" afterPath="$PROJECT_DIR$/app/Dish.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/excels/tags.blade.php" afterPath="$PROJECT_DIR$/resources/views/excels/tags.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="pingplus.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,14 +33,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OrdersController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrdersController.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
-              <folding>
-                <element signature="e#40#71#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="156">
+              <caret line="116" column="70" selection-start-line="116" selection-start-column="70" selection-end-line="116" selection-end-column="70" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,8 +51,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_01_132140_add_typefour_name_id_to_dishes.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_08_01_133509_add_typeone_name_id_to_dish_typeone.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_01_133546_add_typetwo_name_id_to_dish_typetwo.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_01_133557_add_typethree_name_id_to_dish_typethree.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_01_133609_add_typefour_name_id_to_dish_typefour.php" />
@@ -97,7 +88,6 @@
         <option value="$PROJECT_DIR$/app/Time.php" />
         <option value="$PROJECT_DIR$/resources/views/times/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TimesController.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Components/ExcelExport.php" />
         <option value="$PROJECT_DIR$/resources/views/dishes/form.blade.php" />
         <option value="$PROJECT_DIR$/app/Api/Transformers/DishDetailTransformer.php" />
@@ -109,6 +99,9 @@
         <option value="$PROJECT_DIR$/resources/views/excels/tags.blade.php" />
         <option value="$PROJECT_DIR$/app/Dish.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/OrdersController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/CacheMiddleware.php" />
+        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
       </list>
     </option>
   </component>
@@ -227,38 +220,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pingplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pingplus" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pingplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pingplus" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,12 +374,12 @@
       <workItem from="1470043250565" duration="23591000" />
       <workItem from="1470067972777" duration="1895000" />
       <workItem from="1470093974160" duration="31243000" />
-      <workItem from="1470151195757" duration="8157000" />
+      <workItem from="1470151195757" duration="12647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329583000" />
+    <option name="totallyTimeSpent" value="334073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -471,20 +432,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/dompdf/dompdf/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dompdf/dompdf/dompdf_config.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="333" column="66" selection-start-line="333" selection-start-column="66" selection-end-line="333" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/dompdf/dompdf/www/demo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1077,44 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding>
-            <marker date="1470121901063" expanded="false" signature="9:390" ph="..." />
-            <marker date="1470121901063" expanded="false" signature="398:486" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="543:2703" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="566:2702" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="583:2699" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="640:2698" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2121:2691" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2168:2690" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2718:2851" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2736:2850" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2761:2801" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2809:2848" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2866:3084" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2885:3083" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2899:3004" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="2954:2998" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="3100:3302" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="3123:3301" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="3317:3406" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="3372:3405" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="3466:3481" ph=" web route ..." />
-            <marker date="1470121901063" expanded="true" signature="3556:5988" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="3604:5987" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="5124:5214" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="5159:5213" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="5232:5321" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="5266:5320" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="5909:5984" ph="..." />
-            <marker date="1470121901063" expanded="true" signature="5946:5983" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TimesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
@@ -1278,11 +1187,117 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OrdersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="80" column="5" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
+        <state relative-caret-position="405">
+          <caret line="85" column="19" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
           <folding>
-            <element signature="e#40#71#0#PHP" expanded="true" />
+            <marker date="1470180742330" expanded="true" signature="44:307" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="350:10629" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="361:374" ph=" ..." />
+            <marker date="1470180742330" expanded="true" signature="408:1279" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="535:640" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="673:1272" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="710:980" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="1017:1145" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="1166:1263" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="1288:1397" ph=" @param Request $request ..." />
+            <marker date="1470180742330" expanded="true" signature="1449:2012" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="1537:1980" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="1556:1970" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="2022:2119" ph=" @param $type ..." />
+            <marker date="1470180742330" expanded="true" signature="2160:7815" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="2205:2487" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="2533:2803" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="2846:3116" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="3160:3430" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="3491:7807" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="3511:4240" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="3564:3667" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="3739:3844" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="3914:4017" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="4057:4158" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="4260:6453" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="4370:6132" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="4457:6114" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="4641:6092" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="4699:6066" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="4777:6036" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="4832:6001" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="6175:6236" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="6242:6306" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="6473:7217" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="6526:6633" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="6705:6814" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="6884:6991" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="7031:7132" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="7237:7470" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="7367:7382" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="7490:7633" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="7653:7798" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="7825:7903" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1470180742330" expanded="true" signature="7942:8716" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="7980:8286" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="8015:8285" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="8295:8613" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="8330:8612" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="8622:8637" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="8649:8651" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="8725:8803" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1470180742330" expanded="true" signature="8841:9040" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="9078:9279" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="9288:9366" ph=" @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View ..." />
+            <marker date="1470180742330" expanded="true" signature="9407:9541" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="9550:9619" ph=" @param $time1 ..." />
+            <marker date="1470180742330" expanded="true" signature="9672:9864" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="9809:9824" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="9873:9942" ph=" @param $time1 ..." />
+            <marker date="1470180742330" expanded="true" signature="9994:10080" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="10089:10158" ph=" @param $time1 ..." />
+            <marker date="1470180742330" expanded="true" signature="10215:10390" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="10336:10351" ph="..." />
+            <marker date="1470180742330" expanded="true" signature="10442:10627" ph="{...}" />
+            <marker date="1470180742330" expanded="true" signature="10573:10588" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CacheMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <marker date="1470186061492" expanded="true" signature="43:84" ph="..." />
+            <marker date="1470186061492" expanded="true" signature="107:519" ph="{...}" />
+            <marker date="1470186061492" expanded="true" signature="117:267" ph=" Handle an incoming request. ..." />
+            <marker date="1470186061492" expanded="true" signature="321:517" ph="{...}" />
+            <marker date="1470186061492" expanded="true" signature="395:478" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="54" column="42" selection-start-line="54" selection-start-column="42" selection-end-line="54" selection-end-column="42" />
+          <folding>
+            <marker date="1470186168234" expanded="true" signature="32:121" ph="..." />
+            <marker date="1470186168234" expanded="true" signature="154:1765" ph="{...}" />
+            <marker date="1470186168234" expanded="true" signature="164:331" ph=" The application's global HTTP middleware stack. ..." />
+            <marker date="1470186168234" expanded="true" signature="363:447" ph="..." />
+            <marker date="1470186168234" expanded="true" signature="458:539" ph=" The application's route middleware groups. ..." />
+            <marker date="1470186168234" expanded="true" signature="577:997" ph="..." />
+            <marker date="1470186168234" expanded="true" signature="596:930" ph="..." />
+            <marker date="1470186168234" expanded="true" signature="952:990" ph="..." />
+            <marker date="1470186168234" expanded="true" signature="1008:1161" ph=" The application's route middleware. ..." />
+            <marker date="1470186168234" expanded="true" signature="1198:1761" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="116" column="70" selection-start-line="116" selection-start-column="70" selection-end-line="116" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>

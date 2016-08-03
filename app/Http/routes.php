@@ -112,8 +112,10 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('canteens', 'CanteensController');
 
     Route::resource('windows', 'WindowsController');
-
-    Route::resource('dishes', 'DishesController');
+    Route::group(['middleware' => ['cache']],function (){
+        Route::resource('dishes', 'DishesController');
+        Route::get('orders/today', 'OrdersController@getTodayOrders');
+    });
 
     Route::resource('dishware', 'DishwareController');
 
@@ -161,7 +163,6 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::get('getFloors/{id}', function ($id) {
         return \App\Building::find($id)->floors;
     });
-    Route::get('orders/today', 'OrdersController@getTodayOrders');
     Route::get('orders/week', 'OrdersController@getWeekOrders');
     Route::get('orders/history', 'OrdersController@getHistoryOrders');
     Route::get('orders/month', 'OrdersController@getMonthOrders');
