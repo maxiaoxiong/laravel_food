@@ -16,7 +16,7 @@ class CacheMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (!\Cache::has(2) || !\Cache::has(4) || !\Cache::has(6)){
+        if (!\Cache::has('早餐') || !\Cache::has('午餐') || !\Cache::has('晚餐')){
             Notify::error('请先更新早午晚餐项，在进行该操作');
             return back();
         }
