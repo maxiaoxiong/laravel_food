@@ -13,14 +13,16 @@
 
     * {
         font-family: Noto Sans, DejaVu Sans, sans-serif;
+        margin: 0;
+        padding: 0;
     }
 
     td {
-        font-size: 10px;
+        font-size: 12px;
         border: 1px solid black;
         padding: 40px;
         width: 100px;
-        height: 80px;
+        height: 70px;
     }
 
 </style>
