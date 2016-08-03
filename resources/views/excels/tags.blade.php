@@ -19,8 +19,8 @@
         font-size: 10px;
         border: 1px solid black;
         padding: 40px;
-        width: 785px;
-        height: 479px;
+        width: 100px;
+        height: 80px;
     }
 
 </style>
