@@ -38,17 +38,24 @@
                 <br>
                 {{ $dishes[$j]['user_name'] }}-{{ $dishes[$j]['user_phone'] }}
                 <br>
-                ({{ $dishes[$j]['taste'] }})
-
-                ({{ $dishes[$j]['tableware'] }})
-
-                ({{ $dishes[$j]['typeone'] }})
-
-                ({{ $dishes[$j]['typetwo'] }})
-
-                ({{ $dishes[$j]['typethree'] }})
-
-                ({{ $dishes[$j]['typefour'] }})
+                @if($dishes[$j]['taste'] != '')
+                    ({{ $dishes[$j]['taste'] }})
+                @endif
+                @if($dishes[$j]['tableware'] != '')
+                    ({{ $dishes[$j]['tableware'] }})
+                @endif
+                @if($dishes[$j]['typeone'] != '')
+                    ({{ $dishes[$j]['typeone'] }})
+                @endif
+                @if($dishes[$j]['typetwo'] != '')
+                    ({{ $dishes[$j]['typetwo'] }})
+                @endif
+                @if($dishes[$j]['typethree'] != '')
+                    ({{ $dishes[$j]['typethree'] }})
+                @endif
+                @if($dishes[$j]['typefour'] != '')
+                    ({{ $dishes[$j]['typefour'] }})
+                @endif
                 <br>
                 {{ $dishes[$j]['address'] }}
             </td>
@@ -58,18 +65,24 @@
                 <br>
                 {{ $dishes[$j+1]['user_name'] }}-{{ $dishes[$j+1]['user_phone'] }}
                 <br>
-                ({{ $dishes[$j+1]['taste'] }})
-
-                ({{ $dishes[$j+1]['tableware'] }})
-
-                ({{ $dishes[$j+1]['typeone'] }})
-
-                ({{ $dishes[$j+1]['typetwo'] }})
-
-                ({{ $dishes[$j+1]['typethree'] }})
-
-                ({{ $dishes[$j+1]['typefour'] }})
-
+                @if($dishes[$j+1]['taste'] != '')
+                    ({{ $dishes[$j+1]['taste'] }})
+                @endif
+                @if($dishes[$j+1]['tableware'] != '')
+                    ({{ $dishes[$j+1]['tableware'] }})
+                @endif
+                @if($dishes[$j+1]['typeone'] != '')
+                    ({{ $dishes[$j+1]['typeone'] }})
+                @endif
+                @if($dishes[$j+1]['typetwo'] != '')
+                    ({{ $dishes[$j+1]['typetwo'] }})
+                @endif
+                @if($dishes[$j+1]['typethree'] != '')
+                    ({{ $dishes[$j+1]['typethree'] }})
+                @endif
+                @if($dishes[$j+1]['typefour'] != '')
+                    ({{ $dishes[$j+1]['typefour'] }})
+                @endif
                 <br>
                 {{ $dishes[$j+1]['address'] }}
             </td>
@@ -79,18 +92,24 @@
                 <br>
                 {{ $dishes[$j+2]['user_name'] }}-{{ $dishes[$j+2]['user_phone'] }}
                 <br>
-                ({{ $dishes[$j+2]['taste'] }})
-
-                ({{ $dishes[$j+2]['tableware'] }})
-
-                ({{ $dishes[$j+2]['typeone'] }})
-
-                ({{ $dishes[$j+2]['typetwo'] }})
-
-                ({{ $dishes[$j+2]['typethree'] }})
-
-                ({{ $dishes[$j+2]['typefour'] }})
-
+                @if($dishes[$j+2]['taste'] != '')
+                    ({{ $dishes[$j+2]['taste'] }})
+                @endif
+                @if($dishes[$j+2]['tableware'] != '')
+                    ({{ $dishes[$j+2]['tableware'] }})
+                @endif
+                @if($dishes[$j+2]['typeone'] != '')
+                    ({{ $dishes[$j+2]['typeone'] }})
+                @endif
+                @if($dishes[$j+2]['typetwo'] != '')
+                    ({{ $dishes[$j+2]['typetwo'] }})
+                @endif
+                @if($dishes[$j+2]['typethree'] != '')
+                    ({{ $dishes[$j+2]['typethree'] }})
+                @endif
+                @if($dishes[$j+2]['typefour'] != '')
+                    ({{ $dishes[$j+2]['typefour'] }})
+                @endif
                 <br>
                 {{ $dishes[$j+2]['address'] }}
             </td>
@@ -106,18 +125,24 @@
                     <br>
                     {{ $dishes[$k]['user_name'] }}-{{ $dishes[$k]['user_phone'] }}
                     <br>
-                    ({{ $dishes[$k]['taste'] }})
-
-                    ({{ $dishes[$k]['tableware'] }})
-
-                    ({{ $dishes[$k]['typeone'] }})
-
-                    ({{ $dishes[$k]['typetwo'] }})
-
-                    ({{ $dishes[$k]['typethree'] }})
-
-                    ({{ $dishes[$k]['typefour'] }})
-
+                    @if($dishes[$k]['taste'] != '')
+                        ({{ $dishes[$k]['taste'] }})
+                    @endif
+                    @if($dishes[$k]['tableware'] != '')
+                        ({{ $dishes[$k]['tableware'] }})
+                    @endif
+                    @if($dishes[$k]['typeone'] != '')
+                        ({{ $dishes[$k]['typeone'] }})
+                    @endif
+                    @if($dishes[$k]['typetwo'] != '')
+                        ({{ $dishes[$k]['typetwo'] }})
+                    @endif
+                    @if($dishes[$k]['typethree'] != '')
+                        ({{ $dishes[$k]['typethree'] }})
+                    @endif
+                    @if($dishes[$k]['typefour'] != '')
+                        ({{ $dishes[$k]['typefour'] }})
+                    @endif
                     <br>
                     {{ $dishes[$k]['address'] }}
                 </td>
