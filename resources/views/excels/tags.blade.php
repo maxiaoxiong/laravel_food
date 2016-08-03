@@ -14,7 +14,6 @@
     * {
         font-family: Noto Sans, DejaVu Sans, sans-serif;
         margin: 0;
-        padding: 0;
     }
 
     td {
