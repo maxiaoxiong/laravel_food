@@ -16,6 +16,7 @@
     }
 
     td {
+        font-size: 10px;
         border: 1px solid black;
         padding-left: 40px;
         padding-right: 40px;
@@ -31,67 +32,63 @@
         <tr>
             <td align="center" valign="middle">
                 {{ $dishes[$j]['canteen_name'] }}-{{ $dishes[$j]['window_name'] }}-{{ $dishes[$j]['dish_name'] }}
-                * {{ $dishes[$j]['dish_price'] }}
+                * {{ $dishes[$j]['dish_price'] }}元
                 <br>
-                {{ $dishes[$j]['user_name'] }}
+                {{ $dishes[$j]['user_name'] }}-{{ $dishes[$j]['user_phone'] }}
                 <br>
-                {{ $dishes[$j]['user_phone'] }}
-                <br>
-                {{ $dishes[$j]['taste'] }}
-                <br>
-                {{ $dishes[$j]['tableware'] }}
-                <br>
-                {{ $dishes[$j]['typeone'] }}
-                <br>
-                {{ $dishes[$j]['typetwo'] }}
-                <br>
-                {{ $dishes[$j]['typethree'] }}
-                <br>
-                {{ $dishes[$j]['typefour'] }}
+                ({{ $dishes[$j]['taste'] }})
+
+                ({{ $dishes[$j]['tableware'] }})
+
+                ({{ $dishes[$j]['typeone'] }})
+
+                ({{ $dishes[$j]['typetwo'] }})
+
+                ({{ $dishes[$j]['typethree'] }})
+
+                ({{ $dishes[$j]['typefour'] }})
                 <br>
                 {{ $dishes[$j]['address'] }}
             </td>
             <td align="center" valign="middle">
                 {{ $dishes[$j+1]['canteen_name'] }}-{{ $dishes[$j+1]['window_name'] }}-{{ $dishes[$j+1]['dish_name'] }}
-                * {{ $dishes[$j+1]['dish_price'] }}
+                * {{ $dishes[$j+1]['dish_price'] }}元
                 <br>
-                {{ $dishes[$j+1]['user_name'] }}
+                {{ $dishes[$j+1]['user_name'] }}-{{ $dishes[$j+1]['user_phone'] }}
                 <br>
-                {{ $dishes[$j+1]['user_phone'] }}
-                <br>
-                {{ $dishes[$j+1]['taste'] }}
-                <br>
-                {{ $dishes[$j+1]['tableware'] }}
-                <br>
-                {{ $dishes[$j+1]['typeone'] }}
-                <br>
-                {{ $dishes[$j+1]['typetwo'] }}
-                <br>
-                {{ $dishes[$j+1]['typethree'] }}
-                <br>
-                {{ $dishes[$j+1]['typefour'] }}
+                ({{ $dishes[$j+1]['taste'] }})
+
+                ({{ $dishes[$j+1]['tableware'] }})
+
+                ({{ $dishes[$j+1]['typeone'] }})
+
+                ({{ $dishes[$j+1]['typetwo'] }})
+
+                ({{ $dishes[$j+1]['typethree'] }})
+
+                ({{ $dishes[$j+1]['typefour'] }})
+
                 <br>
                 {{ $dishes[$j+1]['address'] }}
             </td>
             <td align="center" valign="middle">
                 {{ $dishes[$j+2]['canteen_name'] }}-{{ $dishes[$j+2]['window_name'] }}-{{ $dishes[$j+2]['dish_name'] }}
-                * {{ $dishes[$j+2]['dish_price'] }}
+                * {{ $dishes[$j+2]['dish_price'] }}元
                 <br>
-                {{ $dishes[$j+2]['user_name'] }}
+                {{ $dishes[$j+2]['user_name'] }}-{{ $dishes[$j+2]['user_phone'] }}
                 <br>
-                {{ $dishes[$j+2]['user_phone'] }}
-                <br>
-                {{ $dishes[$j+2]['taste'] }}
-                <br>
-                {{ $dishes[$j+2]['tableware'] }}
-                <br>
-                {{ $dishes[$j+2]['typeone'] }}
-                <br>
-                {{ $dishes[$j+2]['typetwo'] }}
-                <br>
-                {{ $dishes[$j+2]['typethree'] }}
-                <br>
-                {{ $dishes[$j+2]['typefour'] }}
+                ({{ $dishes[$j+2]['taste'] }})
+
+                ({{ $dishes[$j+2]['tableware'] }})
+
+                ({{ $dishes[$j+2]['typeone'] }})
+
+                ({{ $dishes[$j+2]['typetwo'] }})
+
+                ({{ $dishes[$j+2]['typethree'] }})
+
+                ({{ $dishes[$j+2]['typefour'] }})
+
                 <br>
                 {{ $dishes[$j+2]['address'] }}
             </td>
@@ -103,23 +100,22 @@
             @for($k=3*floor($count_dishes/3);$k<$count_dishes;$k++)
                 <td align="center" valign="middle">
                     {{ $dishes[$k]['canteen_name'] }}-{{ $dishes[$k]['window_name'] }}-{{ $dishes[$k]['dish_name'] }}
-                    * {{ $dishes[$k]['dish_price'] }}
+                    * {{ $dishes[$k]['dish_price'] }}元
                     <br>
-                    {{ $dishes[$k]['user_name'] }}
+                    {{ $dishes[$k]['user_name'] }}-{{ $dishes[$k]['user_phone'] }}
                     <br>
-                    {{ $dishes[$k]['user_phone'] }}
-                    <br>
-                    {{ $dishes[$k]['taste'] }}
-                    <br>
-                    {{ $dishes[$k]['tableware'] }}
-                    <br>
-                    {{ $dishes[$k]['typeone'] }}
-                    <br>
-                    {{ $dishes[$k]['typetwo'] }}
-                    <br>
-                    {{ $dishes[$k]['typethree'] }}
-                    <br>
-                    {{ $dishes[$k]['typefour'] }}
+                    ({{ $dishes[$k]['taste'] }})
+
+                    ({{ $dishes[$k]['tableware'] }})
+
+                    ({{ $dishes[$k]['typeone'] }})
+
+                    ({{ $dishes[$k]['typetwo'] }})
+
+                    ({{ $dishes[$k]['typethree'] }})
+
+                    ({{ $dishes[$k]['typefour'] }})
+
                     <br>
                     {{ $dishes[$k]['address'] }}
                 </td>

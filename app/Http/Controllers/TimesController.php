@@ -25,7 +25,7 @@ class TimesController extends Controller
     {
         $time = Time::firstOrCreate(array_merge($request->except('_token')));
         if ($time instanceof Time) {
-            \Cache::rememberForever($time->id*2, function () use ($time) {
+            \Cache::rememberForever($time->name, function () use ($time) {
                 return $time->over_time;
             });
             return redirect()->route('times.index');
@@ -46,7 +46,7 @@ class TimesController extends Controller
         $time->time = $request->get('time');
         $flag = $time->save();
         if ($flag == 1) {
-            \Cache::rememberForever($time->id*2, function () use ($time) {
+            \Cache::rememberForever($time->name, function () use ($time) {
                 return $time->over_time;
             });
             return redirect()->route('times.index');

@@ -80,17 +80,17 @@ class OrdersController extends Controller
     public function printOrders($type)
     {
         $lastDayTime = Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('6'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('6'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('6'))->second);
+            Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
         $todayMorningTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('2'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('2'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('2'))->second);
+            Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->second);
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('4'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('4'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('4'))->second);
+            Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->second);
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('6'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('6'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('6'))->second);
+            Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
         $timeNow = Carbon::now();
         switch ($type) {
             case 1:
@@ -185,10 +185,10 @@ class OrdersController extends Controller
     public function getTodayOrders()
     {
         $orders = Order::where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('6'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('6'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('6'))->second))->where('created_at', '>=', Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('6'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('6'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('6'))->second))->where('status', '已付款')->paginate(10);
+            Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second))->where('created_at', '>=', Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
+            Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second))->where('status', '已付款')->paginate(10);
 
         return view('orders.today', compact('orders'));
     }

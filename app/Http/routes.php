@@ -175,6 +175,6 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('push/timing', 'PushController@timing');
 
     Route::get('test', function (Request $request) {
-        return Cache::get('2');
+        return Cache::get('午餐');
     });
 });
