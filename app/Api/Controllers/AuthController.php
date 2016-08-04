@@ -57,10 +57,10 @@ class AuthController extends BaseController
         if ($validator->fails()) {
             throw new StoreResourceFailedException('手机号的长度不对.', $validator->errors());
         }
-        if (count(Mobile::where('mobile', $request->get('phone'))->where('is_verified', 1)->get()) !== 0 && count(User::where('phone', $request->get('phone'))->get() !== 0)) {
+        if (count(Mobile::where('mobile', $request->get('phone'))->where('is_verified', 1)->get()) != 0 && count(User::where('phone', $request->get('phone'))->get()) != 0) {
             return response()->json(['status_code' => 400, 'message' => '请勿重复注册']);
         }
-        if (count(Mobile::where('mobile', $request->get('phone'))->where('is_verified', 1)->get()) !== 0 && count(User::where('phone', $request->get('phone'))->get() == 0)) {
+        if (count(Mobile::where('mobile', $request->get('phone'))->where('is_verified', 1)->get()) != 0 && count(User::where('phone', $request->get('phone'))->get()) == 0) {
             return response()->json(['status_code' => 401, 'message' => '您已经验证过手机，正在为您跳转页面！！']);
         }
         $Code = VerifyCode::generate_code(4);

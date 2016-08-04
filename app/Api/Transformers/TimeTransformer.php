@@ -21,6 +21,7 @@ class TimeTransformer extends TransformerAbstract
             'id' => $time['id'],
             'name' => $time['name'],
             'time' => $time['time'],
+            'over_time' => $time['over_time']
         ];
     }
 }
