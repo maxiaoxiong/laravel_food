@@ -94,7 +94,7 @@ class OrdersController extends Controller
         $timeNow = Carbon::now();
         switch ($type) {
             case 1:
-                if ($timeNow <= $todayMorningTime) {
+                if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
                     $orders = $this->getPrintResult($lastDayTime, $todayMorningTime);
                 } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
                     $orders = $this->getPrintResult($todayMorningTime, $todayNoonTime);

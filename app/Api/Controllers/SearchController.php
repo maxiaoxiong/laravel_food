@@ -32,7 +32,7 @@ class SearchController extends BaseController
             Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
             , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
         $timeNow = Carbon::now();
-        if ($timeNow <= $todayMorningTime || $timeNow >= $todayNoonTime) {
+        if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
             $dishes = Dish::where('dishtype_id', 1)->where('name', 'like', '%' . $keyword . '%')->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
             $dishes = Dish::where('dishtype_id', 2)->where('name', 'like', '%' . $keyword . '%')->get();
