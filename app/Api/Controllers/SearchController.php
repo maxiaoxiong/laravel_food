@@ -20,17 +20,17 @@ class SearchController extends BaseController
     public function search($keyword)
     {
         $lastDayTime = Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('6'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('6'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('6'))->second);
+            Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
         $todayMorningTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('2'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('2'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('2'))->second);
+            Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->second);
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('4'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('4'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('4'))->second);
+            Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->second);
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            Carbon::createFromFormat('H:i:s', Cache::get('6'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('6'))->minute
-            , Carbon::createFromFormat('H:i:s', Cache::get('6'))->second);
+            Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
         $timeNow = Carbon::now();
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayNoonTime) {
             $dishes = Dish::where('dishtype_id', 1)->where('name', 'like', '%' . $keyword . '%')->get();
