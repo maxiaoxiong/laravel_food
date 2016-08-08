@@ -54,6 +54,17 @@ $api->version('v1', function ($api) {
             $api->get('orders/{id}', 'OrdersController@show');
             $api->get('user/me', 'AuthController@getAuthenticatedUser');
 
+            $api->get('test',function (){
+                $user = \JWTAuth::parseToken()->authenticate();
+                foreach ($user->orders as $order) {
+                    foreach ($order->dishes as $dish) {
+                        $comment_list[] = $dish->id;
+                    }
+                }
+
+                $list =  array_count_values($comment_list);
+                
+            });
         });
     });
 });
@@ -175,6 +186,6 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('push/timing', 'PushController@timing');
 
     Route::get('test', function (Request $request) {
-        return Cache::get('午餐');
+//        return ;
     });
 });

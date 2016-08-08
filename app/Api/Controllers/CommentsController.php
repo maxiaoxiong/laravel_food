@@ -19,12 +19,13 @@ class CommentsController extends BaseController
                 $comment_list[] = $dish->id;
             }
         }
+        $list = array_count_values($comment_list);
         if (!in_array($request->get('dish_id'), $comment_list)) {
             return response()->json(['status_code' => 403, 'message' => '您未购买过该菜，没有权限评论！']);
         }
         $isComment = Comment::where('user_id', $user->id)->where('dish_id', $request->get('dish_id'))->get();
-        if (count($isComment) !== 0) {
-            return response()->json(['status_code' => 200, 'message' => '请勿重复评论']);
+        if (count($isComment) == $list[$request->get('dish_id')]) {
+            return response()->json(['status_code' => 200, 'message' => '您的评论次数已达上限，请再次购买后评论！']);
         }
         $comment = Comment::create(array_merge($request->all(), ['user_id' => $user->id]));
         if ($comment instanceof $comment) {

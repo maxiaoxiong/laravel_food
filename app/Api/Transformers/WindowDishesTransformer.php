@@ -16,11 +16,6 @@ class WindowDishesTransformer extends TransformerAbstract
 {
     public function transform(Dish $dish)
     {
-        $sales = 0;
-        for ($i = 0; $i < count($dish->orders); $i ++) {
-            $sales += $dish->orders[ $i ]->pivot->num;
-        }
-
         $range_sum = 0;
         $range_length = count($dish->ranges);
         switch ($range_length) {
@@ -40,7 +35,7 @@ class WindowDishesTransformer extends TransformerAbstract
             'name' => $dish['name'],
             'img_url' => $dish['dish_img'],
             'price' => (string) $dish['price'],
-            'sales' => $sales,
+            'sales' => $dish['ordered_count'],
             'delivery_time' => $dish['delivery_time'],
             'range' => $average
         ];

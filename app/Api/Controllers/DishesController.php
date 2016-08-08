@@ -18,6 +18,7 @@ use App\Dish;
 use App\Order;
 use App\Range;
 use App\Window;
+use Cache;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use JWTAuth;
@@ -30,11 +31,14 @@ class DishesController extends BaseController
     public function getHot()
     {
         $todayMorningTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '07', '00', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->second);
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '11', '30', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->second);
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '17', '30', '00');
+            Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
+            , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
         $timeNow = Carbon::now();
 
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
@@ -54,15 +58,15 @@ class DishesController extends BaseController
     public function getWindowDishes($id)
     {
         $timeNow = Carbon::now()->createFromTime()->toTimeString();
-        if ($timeNow < "06:30:00" || $timeNow > "17:30:00") {
+        if ($timeNow < Cache::get('早餐') || $timeNow > Cache::get('晚餐')) {
             $dishes = Window::find($id)->dishes()->where('dishtype_id', 1)->get();
-        } elseif ($timeNow > "06:30:00" && $timeNow < "11:30:00") {
+        } elseif ($timeNow > Cache::get('早餐') && $timeNow < Cache::get('午餐')) {
             $dishes = Window::find($id)->dishes()->where(function ($query) {
                 $query->where('dishtype_id', 2)->orWhere(function ($query) {
                     $query->where('dishtype_id', 4);
                 });
             })->get();
-        } elseif ($timeNow > "11:30:00" && $timeNow < "17:30:00") {
+        } elseif ($timeNow > Cache::get('午餐') && $timeNow < Cache::get('晚餐')) {
             $dishes = Window::find($id)->dishes()->where(function ($query) {
                 $query->where('dishtype_id', 3)->orWhere(function ($query) {
                     $query->where('dishtype_id', 4);
@@ -82,15 +86,15 @@ class DishesController extends BaseController
     public function getWindowTypeDishes($window_id, $type_id)
     {
         $timeNow = Carbon::now()->createFromTime()->toTimeString();
-        if ($timeNow < "06:30:00" || $timeNow > "17:30:00") {
+        if ($timeNow < Cache::get('早餐') || $timeNow > Cache::get('晚餐')) {
             $dishes = Window::find($window_id)->dishes()->where('dishtype_id', 1)->where('type_id', $type_id)->get();
-        } elseif ($timeNow > "06:30:00" && $timeNow < "11:30:00") {
+        } elseif ($timeNow > Cache::get('早餐') && $timeNow < Cache::get('午餐')) {
             $dishes = Window::find($window_id)->dishes()->where(function ($query) {
                 $query->where('dishtype_id', 2)->orWhere(function ($query) {
                     $query->where('dishtype_id', 4);
                 });
             })->where('type_id', $type_id)->get();
-        } elseif ($timeNow > "11:30:00" && $timeNow < "17:30:00") {
+        } elseif ($timeNow > Cache::get('午餐') && $timeNow < Cache::get('晚餐')) {
             $dishes = Window::find($window_id)->dishes()->where(function ($query) {
                 $query->where('dishtype_id', 3)->orWhere(function ($query) {
                     $query->where('dishtype_id', 4);
@@ -142,7 +146,7 @@ class DishesController extends BaseController
         if (count($isRange) !== 0) {
             return response()->json(['status_code' => 200, 'message' => '请勿重复评分']);
         }
-        if (count($isRange) == 0){
+        if (count($isRange) == 0) {
             $range = Range::create(array_merge($request->except('token'), ['user_id' => $user->id]));
             if ($range instanceof Range) {
                 return response()->json(['status_code' => 200, 'message' => '评分成功'])->setStatusCode(200);
