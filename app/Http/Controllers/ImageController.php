@@ -14,10 +14,9 @@ use Jleon\LaravelPnotify\Notify;
 
 class ImageController extends Controller
 {
-    public function upload(Request $request)
+    public function upload()
     {
         $form_data = Input::all();
-
         $photo = $form_data['img'];
 
         $original_name = $photo->getClientOriginalName();
@@ -27,7 +26,6 @@ class ImageController extends Controller
         $allowed_filename = $this->createUniqueFilename($filename);
 
         $filename_ext = $allowed_filename . '.jpg';
-
         $manager = new ImageManager();
         $image = $manager->make($photo)->encode('jpg')->save(public_path('uploads/dish/original/') . $filename_ext);
 
@@ -67,7 +65,6 @@ class ImageController extends Controller
 
         $filename_array = explode('/', $image_url);
         $filename = $filename_array[sizeof($filename_array) - 1];
-
         $manager = new ImageManager();
         $image = $manager->make($image_url);
         $image->resize($imgW, $imgH)->rotate(-$angle)->crop($cropW, $cropH, $imgX1, $imgY1)->save(public_path('uploads/dish/crop/') . 'cropped-' . $filename);

@@ -441,15 +441,15 @@
             <div class="form-group">
                 <label>送餐时间选择</label>
 
-                    <select name="delivery_time" class="form-control" id="">
-                        <option>请选择送餐时间</option>
-                        @if(isset($times) && isset($dish))
-                            @foreach($times as $time)
-                                <option value="{{ $time->time }}"
-                                        @if($dish->delivery_time == $time->time) selected @endif>{{ $time->time }}</option>
-                            @endforeach
-                        @endif
-                    </select>
+                <select name="delivery_time" class="form-control" id="">
+                    <option>请选择送餐时间</option>
+                    @if(isset($times) && isset($dish))
+                        @foreach($times as $time)
+                            <option value="{{ $time->time }}"
+                                    @if($dish->delivery_time == $time->time) selected @endif>{{ $time->time }}</option>
+                        @endforeach
+                    @endif
+                </select>
                 <!-- /.input group -->
             </div>
             <!-- /.form group -->
@@ -460,7 +460,7 @@
             <div class="row margin-bottom-40">
                 @if(isset($dish->dish_img))
                     <div class="col-md-4">
-                        <img src="{{ $dish->dish_img }}" alt="">
+                        <img src="{{ $dish->dish_img or '' }}" alt="">
                     </div>
                 @endif
                 <div class="col-md-6">
@@ -485,12 +485,12 @@
     var croppedOptions = {
         uploadUrl: '/image/upload',
         cropUrl: '/image/crop',
-        processInline: true,
+        modal:true,
         cropData: {
             'width': eyeCandy.width(),
             'height': eyeCandy.height()
         },
-        outputUrlId: 'dish_img',
+        outputUrlId: 'dish_img'
     };
     var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
 
