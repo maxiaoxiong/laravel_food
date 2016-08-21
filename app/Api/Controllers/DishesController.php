@@ -44,9 +44,9 @@ class DishesController extends BaseController
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
             $dishes = Dish::where('dishtype_id', 1)->orderBy('ordered_count', 'desc')->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $dishes = Dish::where('dishtype_id', 2)->orderBy('ordered_count', 'desc')->get();
+            $dishes = Dish::where('dishtype_id', 2)->orWhere('dishtype_id', 4)->orderBy('ordered_count', 'desc')->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $dishes = Dish::where('dishtype_id', 3)->orderBy('ordered_count', 'desc')->get();
+            $dishes = Dish::where('dishtype_id', 3)->orWhere('dishtype_id', 4)->orderBy('ordered_count', 'desc')->get();
         }
         return $this->response->collection($dishes, new HotDishTransformer())->setStatusCode(200);
     }
