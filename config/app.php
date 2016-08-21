@@ -181,6 +181,8 @@ return [
 
         Barryvdh\Snappy\ServiceProvider::class,
 
+        Overtrue\LaravelPinyin\ServiceProvider::class,
+
     ],
 
     /*
@@ -247,6 +249,8 @@ return [
         'Notify' => Jleon\LaravelPnotify\Notify::class,
 
         'PDF' => Barryvdh\DomPDF\Facade::class,
+
+        'Pinyin' => Overtrue\LaravelPinyin\Facades\Pinyin::class,
 
 //        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
 //        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
 use Input;
 use Jleon\LaravelPnotify\Notify;
+use Pinyin;
 
 class ImageController extends Controller
 {
@@ -23,7 +24,7 @@ class ImageController extends Controller
         $original_name_without_ext = substr($original_name, 0, strlen($original_name) - 4);
 
         $filename = $this->sanitize($original_name_without_ext);
-        $allowed_filename = $this->createUniqueFilename($filename);
+        $allowed_filename = Pinyin::permalink($this->createUniqueFilename($filename));
 
         $filename_ext = $allowed_filename . '.jpg';
         $manager = new ImageManager();

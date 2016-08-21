@@ -20,4 +20,5 @@ return array(
     'f4e9c7747917193061b46ee142399603' => $vendorDir . '/dingo/api/src/helpers.php',
     '968b13b9abb3514a5bb0365cd5f391eb' => $vendorDir . '/jpush/jpush/src/JPush/JPush.php',
     'e23faeee409e941dc9b4c80386209c39' => $vendorDir . '/laracasts/flash/src/Laracasts/Flash/functions.php',
+    'cda2d2f579338909929d3104d0afc501' => $vendorDir . '/overtrue/laravel-pinyin/src/helpers.php',
 );

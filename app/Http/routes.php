@@ -16,6 +16,7 @@ use App\Mobile;
 use App\Order;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Pinyin;
 
 $api = app('Dingo\Api\Routing\Router');
 
@@ -186,6 +187,6 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('push/timing', 'PushController@timing');
 
     Route::get('test', function (Request $request) {
-//        return ;
+        return Pinyin::permalink('小米粥ss');
     });
 });
