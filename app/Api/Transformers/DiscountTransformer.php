@@ -39,7 +39,8 @@ class DiscountTransformer extends TransformerAbstract
             'sales' => (int)$dish->ordered_count,
             'address' => $dish->window->canteen->name.' '.$dish->window->name,
             'delivery_time' => $dish->delivery_time,
-            'range' => $average
+            'range' => $average,
+            'desc' => '掌柜推荐'
         ];
     }
 }

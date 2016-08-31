@@ -35,9 +35,9 @@ class SearchController extends BaseController
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
             $dishes = Dish::where('dishtype_id', 1)->where('name', 'like', '%' . $keyword . '%')->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $dishes = Dish::where('dishtype_id', 2)->where('name', 'like', '%' . $keyword . '%')->get();
+            $dishes = Dish::where('dishtype_id', 2)->orWhere('dishtype_id',4)->where('name', 'like', '%' . $keyword . '%')->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $dishes = Dish::where('dishtype_id', 3)->where('name', 'like', '%' . $keyword . '%')->get();
+            $dishes = Dish::where('dishtype_id', 3)->orWhere('dishtype_id',4)->where('name', 'like', '%' . $keyword . '%')->get();
         }
         return $this->response->collection($dishes, new DishTransformer())->setStatusCode(200);
     }

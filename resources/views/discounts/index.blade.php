@@ -23,7 +23,7 @@
                     <td>{{ $preferential->dish->window->name }}</td>
                     <td>{{ $preferential->dish->window->canteen->name }}</td>
                     <td>{{ $preferential->dish->price }}</td>
-                    <td><a href="#" data-toggle="modal" data-target="#changePrice" data-transdishid="{{ $preferential->dish->id }}" data-transname="{{ $preferential->dish->name }}" data-transprice="{{ $preferential->dish->price }}" data-transid="{{ $preferential->id }}" class="btn btn-success btn-xs">移除优惠列表</a></td>
+                    <td><a href="#" data-toggle="modal" data-target="#changePrice" data-transdishid="{{ $preferential->dish->id }}" data-transname="{{ $preferential->dish->name }}" data-transprice="{{ $preferential->dish->price }}" data-transid="{{ $preferential->id }}" class="btn btn-danger btn-xs">移除掌柜推荐列表</a></td>
                 </tr>
                     @endforeach
             </table>
@@ -48,8 +48,9 @@
 
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">价格:</label>
-                            <input type="text" class="form-control price" name="price" id="recipient-name">
+                            {{--<label for="recipient-name" class="control-label">价格:</label>--}}
+                            {{--<input type="text" class="form-control price" name="price" id="recipient-name">--}}
+                            确定移除嘛？？？
                             <input type="hidden" class="form-control" name="type" value="removeFromDiscount">
                             <input type="hidden" class="form-control id" name="id">
                             <input type="hidden" class="form-control dish_id" name="dish_id">
@@ -70,14 +71,14 @@
         $('#changePrice').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget); // Button that triggered the modal
             var name = button.data('transname'); // Extract info from data-* attributes
-            var price = button.data('transprice');
+//            var price = button.data('transprice');
             var id = button.data('transid');
             var dish_id = button.data('transdishid');
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
             var modal = $(this);
             modal.find('.modal-title').text('更改 ' + name + ' 价格');
-            modal.find('.price').val(price);
+//            modal.find('.price').val(price);
             modal.find('.id').val(id);
             modal.find('.dish_id').val(dish_id);
         });

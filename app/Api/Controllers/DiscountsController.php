@@ -31,9 +31,9 @@ class DiscountsController extends BaseController
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
             $discounts = Dish::has('preferentialDish')->where('dishtype_id',1)->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',2)->get();
+            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',2)->orWhere('dishtype_id',4)->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',3)->get();
+            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',3)->orWhere('dishtype_id',4)->get();
         }
         return $this->response->collection($discounts,new DiscountTransformer())->setStatusCode(200);
     }

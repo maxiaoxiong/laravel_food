@@ -57,7 +57,7 @@
                     <li><a href="{{ url('dishtypes') }}">早午晚餐</a></li>
                     <li><a href="{{ url('types') }}">类型管理</a></li>
                     <li><a href="{{ url('tastes') }}">口味管理</a></li>
-                    <li><a href="{{ url('discounts') }}">优惠菜品</a></li>
+                    <li><a href="{{ url('discounts') }}">掌柜推荐</a></li>
                 </ul>
             </li>
             <li class="treeview">

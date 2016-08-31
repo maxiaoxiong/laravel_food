@@ -14,6 +14,7 @@
 use App\Dish;
 use App\Mobile;
 use App\Order;
+use App\Time;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -46,7 +47,9 @@ $api->version('v1', function ($api) {
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
             $api->post('pay', 'OrdersController@pay');
             $api->get('user/{id}/orders', 'UsersController@show');
-            $api->post('orders', 'OrdersController@store');
+            $api->group(['middleware' => ['time']],function ($api){
+                $api->post('orders', 'OrdersController@store');
+            });
             $api->get('orders', 'OrdersController@index');
 
             $api->post('dishes/range', 'DishesController@postRange');

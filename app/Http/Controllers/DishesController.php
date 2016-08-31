@@ -122,8 +122,10 @@ class DishesController extends Controller
         return redirect()->route('dishes.index');
     }
 
+
     /**
      * @param $request
+     * @return bool
      */
     public function addToDisCount($request)
     {

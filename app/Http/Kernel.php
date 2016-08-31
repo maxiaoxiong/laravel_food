@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\CacheMiddleware;
+use App\Http\Middleware\TimeLimit;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -53,5 +54,6 @@ class Kernel extends HttpKernel
         'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class,
         'cache' => CacheMiddleware::class,
+        'time' => TimeLimit::class,
     ];
 }
