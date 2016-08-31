@@ -56,18 +56,19 @@
                                     {{--<div class="form-group">--}}
                                         {{--<label for="recipient-name" class="control-label">价格:</label>--}}
                                         {{--<input type="text" class="form-control price" name="price" id="recipient-name">--}}
+                                    加入掌柜推荐后会在首页显示哟！您确定吗？
                                         <input type="hidden" class="form-control" name="type" value="addToDiscount">
                                         <input type="hidden" class="form-control id" name="id">
                                     {{--</div>--}}
-                                    <div class="form-group">
-                                        <label for="">选择图片</label>
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="">选择图片</label>--}}
 
-                                        <div class="row margin-bottom-40">
-                                            <div class="col-md-6">
-                                                <div id="cropContainerEyecandy"></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        {{--<div class="row margin-bottom-40">--}}
+                                            {{--<div class="col-md-6">--}}
+                                                {{--<div id="cropContainerEyecandy"></div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
 
                                     <input type="text" name="discount_dish_img" id="discount_dish_img" value="{{ $dish->dish_img or '' }}"
                                            class="form-control hidden">
@@ -87,23 +88,23 @@
 @endsection
 
 @section('self_scripts')
-    <script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>
-    <script>
-        var eyeCandy = $('#cropContainerEyecandy');
-        eyeCandy.width(300);
-        eyeCandy.height(200);
-        var croppedOptions = {
-            uploadUrl: '/image/upload',
-            cropUrl: '/image/crop',
+    {{--<script src="{{ asset('/plugins/croppic/croppic.min.js') }}"></script>--}}
+    {{--<script>--}}
+        {{--var eyeCandy = $('#cropContainerEyecandy');--}}
+        {{--eyeCandy.width(300);--}}
+        {{--eyeCandy.height(200);--}}
+        {{--var croppedOptions = {--}}
+            {{--uploadUrl: '/image/upload',--}}
+            {{--cropUrl: '/image/crop',--}}
             {{--loadPicture: '{{ $dish->dish_img or '' }}',--}}
-            cropData: {
-                'width': eyeCandy.width(),
-                'height': eyeCandy.height()
-            },
-            outputUrlId: 'discount_dish_img'
-        };
-        var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);
-    </script>
+            {{--cropData: {--}}
+                {{--'width': eyeCandy.width(),--}}
+                {{--'height': eyeCandy.height()--}}
+            {{--},--}}
+            {{--outputUrlId: 'discount_dish_img'--}}
+        {{--};--}}
+        {{--var cropperBox = new Croppic('cropContainerEyecandy', croppedOptions);--}}
+    {{--</script>--}}
 
     <script>
         $('#changePrice').on('show.bs.modal', function (event) {
