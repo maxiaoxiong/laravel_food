@@ -47,11 +47,10 @@ $api->version('v1', function ($api) {
         $api->group(['middleware' => 'jwt.auth'], function ($api) {
             $api->post('pay', 'OrdersController@pay');
             $api->get('user/{id}/orders', 'UsersController@show');
+            $api->get('orders', 'OrdersController@index');
             $api->group(['middleware' => ['time']],function ($api){
                 $api->post('orders', 'OrdersController@store');
             });
-            $api->get('orders', 'OrdersController@index');
-
             $api->post('dishes/range', 'DishesController@postRange');
             $api->post('comments', 'CommentsController@store');
             $api->get('orders/{id}', 'OrdersController@show');
@@ -189,6 +188,5 @@ Route::group(['middleware' => ['web', 'auth']], function () {
     Route::post('push/timing', 'PushController@timing');
 
     Route::get('test', function (Request $request) {
-//        return Pinyin::permalink('小米粥ss');
     });
 });

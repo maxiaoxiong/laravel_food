@@ -28,7 +28,7 @@
         </div>
         <div class="bootstrap-timepicker col-md-10 col-md-offset-1">
             <div class="form-group">
-                <label>选择时间送餐时间:</label>
+                <label>选择开始订餐时间:</label>
 
                 <div class="input-group">
                     <input type="text" name="time" class="form-control timepicker"
