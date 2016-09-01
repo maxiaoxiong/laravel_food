@@ -18,8 +18,7 @@ class TimeLimit
     public function handle($request, Closure $next)
     {
         $noon_time = Time::where('name', '午餐')->first();
-        $after_time = Time::where('name', '晚餐')->first();
-        if ((Carbon::now()->hour . ':' . Carbon::now()->minute . ":00") >= $noon_time->over_time && (Carbon::now()->hour . ':' . Carbon::now()->minute . ":00") <= $after_time->time) {
+        if ((Carbon::now()->hour . ':' . Carbon::now()->minute . ":00") >= $noon_time->over_time && (Carbon::now()->hour . ':' . Carbon::now()->minute . ":00") <= "13:30:00") {
             return response()->json(['status_code' => 200, 'message' => '该时间段内不能订餐！']);
         }
         return $next($request);

@@ -14,7 +14,7 @@
                             <th>ID</th>
                             <th>类型</th>
                             <th>截止订餐时间</th>
-                            <th>开始订餐时间</th>
+                            <th>送餐时间</th>
                             <th>操作</th>
                         </tr>
                         @foreach($times as $time)
