@@ -18,23 +18,17 @@ class DiscountsController extends BaseController
 {
     public function getDishes()
     {
-        $lastDayTime = Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
-            '18', '30', '00');
-        $todayMorningTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '07', '00', '00');
-        $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '11', '30', '00');
-        $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
-            '17', '30', '00');
-        $timeNow = Carbon::now();
-
+        $timeNow = Carbon::now()->createFromTime()->toTimeString();
+        $todayMorningTime = \Cache::get('早餐');
+        $todayAfterTime = \Cache::get('晚餐');
+        $todayNoonTime = \Cache::get('午餐');
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
-            $discounts = Dish::has('preferentialDish')->where('dishtype_id',1)->get();
+            $discounts = Dish::has('preferentialDish')->where('dishtype_id', 1)->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',2)->orWhere('dishtype_id',4)->get();
+            $discounts = Dish::has('PreferentialDish')->where('dishtype_id', 2)->orWhere('dishtype_id', 4)->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id',3)->orWhere('dishtype_id',4)->get();
+            $discounts = Dish::has('PreferentialDish')->where('dishtype_id', 3)->orWhere('dishtype_id', 4)->get();
         }
-        return $this->response->collection($discounts,new DiscountTransformer())->setStatusCode(200);
+        return $this->response->collection($discounts, new DiscountTransformer())->setStatusCode(200);
     }
 }
