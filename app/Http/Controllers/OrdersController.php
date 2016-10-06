@@ -99,7 +99,7 @@ class OrdersController extends Controller
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
             , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
-        $timeNow = Carbon::now()->format('h:i:s');
+        $timeNow = Carbon::now()->toTimeString();
         switch ($type) {
             case 1:
                 if ($timeNow <= $morningDeliverTime) {

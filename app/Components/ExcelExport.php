@@ -147,7 +147,7 @@ class ExcelExport
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
             , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
-        $timeNow = Carbon::now()->format('h:i:s');
+        $timeNow = Carbon::now()->toTimeString();
 
         $morningDeliverTime = Time::find(1)->time;
         $noonDeliverTime = Time::find(2)->time;
