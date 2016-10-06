@@ -7,6 +7,7 @@
  */
 namespace App\Components;
 
+use App\Time;
 use Cache;
 use Carbon\Carbon;
 use Jleon\LaravelPnotify\Notify;
@@ -146,16 +147,21 @@ class ExcelExport
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
             , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
-        $timeNow = Carbon::now();
-        if ($timeNow <= $todayMorningTime) {
+        $timeNow = Carbon::now()->format('h:i:s');
+
+        $morningDeliverTime = Time::find(1)->time;
+        $noonDeliverTime = Time::find(2)->time;
+        $afterDeliverTime = Time::find(3)->time;
+        
+        if ($timeNow <= $morningDeliverTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $lastDayTime)
                 ->where('orders.created_at', '<=', $todayMorningTime)
                 ->where('orders.status', '已付款')->get();
-        } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
+        } elseif ($timeNow >= $morningDeliverTime && $timeNow <= $noonDeliverTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $todayMorningTime)
                 ->where('orders.created_at', '<=', $todayNoonTime)
                 ->where('orders.status', '已付款')->get();
-        } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
+        } elseif ($timeNow >= $noonDeliverTime) {
             $orders = $dish->orders()->where('orders.created_at', '>=', $todayNoonTime)
                 ->where('orders.created_at', '<=', $todayAfterTime)
                 ->where('orders.status', '已付款')->get();

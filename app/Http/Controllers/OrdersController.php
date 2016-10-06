@@ -6,10 +6,12 @@ use App\Components\ExcelExport;
 use App\Components\Orders;
 use App\Floor;
 use App\Order;
+use App\Time;
 use App\Window;
 use Cache;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Laracasts\Flash\Flash;
 use PDF;
 
 use App\Http\Requests;
@@ -82,27 +84,33 @@ class OrdersController extends Controller
         $lastDayTime = Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
             Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
             , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
+
+        $morningDeliverTime = Time::find(1)->time;
         $todayMorningTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->minute
             , Carbon::createFromFormat('H:i:s', Cache::get('早餐'))->second);
+        $noonDeliverTime = Time::find(2)->time;
+
         $todayNoonTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->minute
             , Carbon::createFromFormat('H:i:s', Cache::get('午餐'))->second);
+        $afterDeliverTime = Time::find(3)->time;
+
         $todayAfterTime = Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
             , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
-        $timeNow = Carbon::now();
+        $timeNow = Carbon::now()->format('h:i:s');
         switch ($type) {
             case 1:
-                if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
+                if ($timeNow <= $morningDeliverTime) {
                     $orders = $this->getPrintResult($lastDayTime, $todayMorningTime);
-                } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
+                } elseif ($timeNow >= $morningDeliverTime && $timeNow <= $noonDeliverTime) {
                     $orders = $this->getPrintResult($todayMorningTime, $todayNoonTime);
-                } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
+                } elseif ($timeNow >= $noonDeliverTime) {
                     $orders = $this->getPrintResult($todayNoonTime, $todayAfterTime);
                 }
                 if (!isset($orders)) {
-                    Notify::error('非三餐时间不能打印！');
+                    flash('当前无订单，不能打印！', 'error');
                     return back();
                 }
                 ExcelExport::exportWindowDetail($orders);
@@ -142,17 +150,18 @@ class OrdersController extends Controller
                 if (isset($dish_detail)){
                     $dishes = $dish_detail;
                 }else{
-                    return redirect()->back();
+                    Flash::error('当前时间段无订单。');
+                    return redirect()->to('orders/today');
                 }
                 $pdf = PDF::loadView('excels.tags', compact('dishes'));
                 return $pdf->download('tags.pdf');
                 break;
             case 3:
-                if ($timeNow <= $todayMorningTime) {
+                if ($timeNow <= $morningDeliverTime) {
                     $orders = $this->getDormitoryResult($lastDayTime, $todayMorningTime);
-                } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
+                } elseif ($timeNow >= $morningDeliverTime && $timeNow <= $noonDeliverTime) {
                     $orders = $this->getDormitoryResult($todayMorningTime, $todayNoonTime);
-                } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
+                } elseif ($timeNow >= $noonDeliverTime) {
                     $orders = $this->getDormitoryResult($todayNoonTime, $todayAfterTime);
                 }
                 if (!isset($orders)) {

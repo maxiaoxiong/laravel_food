@@ -45,7 +45,8 @@ class TimesController extends Controller
         $time->over_time = $request->get('over_time');
         $time->time = $request->get('time');
         $flag = $time->save();
-        if ($flag == 1) {
+        if ($flag) {
+            \Cache::pull($time->name);
             \Cache::rememberForever($time->name, function () use ($time) {
                 return $time->over_time;
             });

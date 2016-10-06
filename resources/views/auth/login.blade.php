@@ -49,7 +49,6 @@
     </form>
 
     <a href="{{ url('/password/reset') }}">重置密码</a><br>
-    <a href="{{ url('/register') }}" class="text-center">注册一个账号</a>
 
 </div><!-- /.login-box-body -->
 
