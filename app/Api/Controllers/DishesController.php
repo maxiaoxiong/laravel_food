@@ -42,12 +42,21 @@ class DishesController extends BaseController
             , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
         $timeNow = Carbon::now();
 
+        $mor = Dishtype::where('name', '早餐')->first();
+        $mor_id = $mor->id;
+        $non = Dishtype::where('name', '午餐')->first();
+        $non_id = $non->id;
+        $aft = Dishtype::where('name', '晚餐')->first();
+        $aft_id = $aft->id;
+        $non_aft = Dishtype::where('name', '午晚餐')->first();
+        $non_aft_id = $non_aft->id;
+        
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
-            $dishes = Dish::where('dishtype_id', 1)->orderBy('ordered_count', 'desc')->get();
+            $dishes = Dish::where('dishtype_id', $mor_id)->orderBy('ordered_count', 'desc')->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $dishes = Dish::where('dishtype_id', 2)->orWhere('dishtype_id', 4)->orderBy('ordered_count', 'desc')->get();
+            $dishes = Dish::where('dishtype_id', $non_id)->orWhere('dishtype_id', $non_aft_id)->orderBy('ordered_count', 'desc')->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $dishes = Dish::where('dishtype_id', 3)->orWhere('dishtype_id', 4)->orderBy('ordered_count', 'desc')->get();
+            $dishes = Dish::where('dishtype_id', $aft_id)->orWhere('dishtype_id', $non_aft_id)->orderBy('ordered_count', 'desc')->get();
         }
         return $this->response->collection($dishes, new HotDishTransformer())->setStatusCode(200);
     }
@@ -94,19 +103,27 @@ class DishesController extends BaseController
      */
     public function getWindowTypeDishes($window_id, $type_id)
     {
+        $mor = Dishtype::where('name', '早餐')->first();
+        $mor_id = $mor->id;
+        $non = Dishtype::where('name', '午餐')->first();
+        $non_id = $non->id;
+        $aft = Dishtype::where('name', '晚餐')->first();
+        $aft_id = $aft->id;
+        $non_aft = Dishtype::where('name', '午晚餐')->first();
+        $non_aft_id = $non_aft->id;
         $timeNow = Carbon::now()->createFromTime()->toTimeString();
         if ($timeNow < Cache::get('早餐') || $timeNow > Cache::get('晚餐')) {
-            $dishes = Window::find($window_id)->dishes()->where('dishtype_id', 1)->where('type_id', $type_id)->get();
+            $dishes = Window::find($window_id)->dishes()->where('dishtype_id', $mor_id)->where('type_id', $type_id)->get();
         } elseif ($timeNow > Cache::get('早餐') && $timeNow < Cache::get('午餐')) {
-            $dishes = Window::find($window_id)->dishes()->where(function ($query) {
-                $query->where('dishtype_id', 2)->orWhere(function ($query) {
-                    $query->where('dishtype_id', 4);
+            $dishes = Window::find($window_id)->dishes()->where(function ($query) use ($non_id, $non_aft_id){
+                $query->where('dishtype_id', $non_id)->orWhere(function ($query) use ($non_aft_id){
+                    $query->where('dishtype_id', $non_aft_id);
                 });
             })->where('type_id', $type_id)->get();
         } elseif ($timeNow > Cache::get('午餐') && $timeNow < Cache::get('晚餐')) {
-            $dishes = Window::find($window_id)->dishes()->where(function ($query) {
-                $query->where('dishtype_id', 3)->orWhere(function ($query) {
-                    $query->where('dishtype_id', 4);
+            $dishes = Window::find($window_id)->dishes()->where(function ($query) use ($aft_id, $non_aft_id){
+                $query->where('dishtype_id', $aft_id)->orWhere(function ($query) use ($non_aft_id){
+                    $query->where('dishtype_id', $non_aft_id);
                 });
             })->where('type_id', $type_id)->get();
         }
@@ -119,7 +136,9 @@ class DishesController extends BaseController
      */
     public function getBreakfast()
     {
-        $dishes = Dish::where('dishtype_id', 1)->get();
+        $mor = Dishtype::where('name', '早餐')->first();
+        $mor_id = $mor->id;
+        $dishes = Dish::where('dishtype_id', $mor_id)->get();
 
         return $this->response->collection($dishes, new DishTransformer())->setStatusCode(200);
     }
