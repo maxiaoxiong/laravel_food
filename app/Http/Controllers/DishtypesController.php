@@ -50,7 +50,6 @@ class DishtypesController extends Controller
     public function edit($id)
     {
         $dishtype = Dishtype::find($id);
-        return $dishtype;
         return view('dishtypes.edit',compact('dishtype'));
     }
 

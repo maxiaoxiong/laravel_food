@@ -15,6 +15,7 @@ use App\Api\Transformers\DishTransformer;
 use App\Api\Transformers\HotDishTransformer;
 use App\Api\Transformers\WindowDishesTransformer;
 use App\Dish;
+use App\Dishtype;
 use App\Order;
 use App\Range;
 use App\Window;
@@ -57,19 +58,27 @@ class DishesController extends BaseController
      */
     public function getWindowDishes($id)
     {
+        $mor = Dishtype::where('name', '早餐')->first();
+        $mor_id = $mor->id;
+        $non = Dishtype::where('name', '午餐')->first();
+        $non_id = $non->id;
+        $aft = Dishtype::where('name', '晚餐')->first();
+        $aft_id = $aft->id;
+        $non_aft = Dishtype::where('name', '午晚餐')->first();
+        $non_aft_id = $non_aft->id;
         $timeNow = Carbon::now()->createFromTime()->toTimeString();
         if ($timeNow < Cache::get('早餐') || $timeNow > Cache::get('晚餐')) {
-            $dishes = Window::find($id)->dishes()->where('dishtype_id', 1)->get();
+            $dishes = Window::find($id)->dishes()->where('dishtype_id', $mor_id)->get();
         } elseif ($timeNow > Cache::get('早餐') && $timeNow < Cache::get('午餐')) {
-            $dishes = Window::find($id)->dishes()->where(function ($query) {
-                $query->where('dishtype_id', 2)->orWhere(function ($query) {
-                    $query->where('dishtype_id', 4);
+            $dishes = Window::find($id)->dishes()->where(function ($query) use ($non_id, $non_aft_id){
+                $query->where('dishtype_id', $non_id)->orWhere(function ($query) use ($non_aft_id){
+                    $query->where('dishtype_id', $non_aft_id);
                 });
             })->get();
         } elseif ($timeNow > Cache::get('午餐') && $timeNow < Cache::get('晚餐')) {
-            $dishes = Window::find($id)->dishes()->where(function ($query) {
-                $query->where('dishtype_id', 3)->orWhere(function ($query) {
-                    $query->where('dishtype_id', 4);
+            $dishes = Window::find($id)->dishes()->where(function ($query) use($aft_id, $non_aft_id) {
+                $query->where('dishtype_id', $aft_id)->orWhere(function ($query) use ($non_aft_id){
+                    $query->where('dishtype_id', $non_aft_id);
                 });
             })->get();
         }
