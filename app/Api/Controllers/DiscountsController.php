@@ -11,6 +11,7 @@ namespace App\Api\Controllers;
 
 use App\Api\Transformers\DiscountTransformer;
 use App\Dish;
+use App\Dishtype;
 use App\PreferentialDish;
 use Carbon\Carbon;
 
@@ -22,12 +23,22 @@ class DiscountsController extends BaseController
         $todayMorningTime = \Cache::get('早餐');
         $todayAfterTime = \Cache::get('晚餐');
         $todayNoonTime = \Cache::get('午餐');
+
+        $mor = Dishtype::where('name', '早餐')->first();
+        $mor_id = $mor->id;
+        $non = Dishtype::where('name', '午餐')->first();
+        $non_id = $non->id;
+        $aft = Dishtype::where('name', '晚餐')->first();
+        $aft_id = $aft->id;
+        $non_aft = Dishtype::where('name', '午晚餐')->first();
+        $non_aft_id = $non_aft->id;
+        
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
-            $discounts = Dish::has('preferentialDish')->where('dishtype_id', 1)->get();
+            $discounts = Dish::has('preferentialDish')->where('dishtype_id', $mor_id)->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id', 2)->orWhere('dishtype_id', 4)->get();
+            $discounts = Dish::has('PreferentialDish')->where('dishtype_id', $non_id)->orWhere('dishtype_id', $non_aft_id)->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $discounts = Dish::has('PreferentialDish')->where('dishtype_id', 3)->orWhere('dishtype_id', 4)->get();
+            $discounts = Dish::has('PreferentialDish')->where('dishtype_id', $aft_id)->orWhere('dishtype_id', $non_aft_id)->get();
         }
         return $this->response->collection($discounts, new DiscountTransformer())->setStatusCode(200);
     }
