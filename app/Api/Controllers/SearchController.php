@@ -11,6 +11,7 @@ namespace App\Api\Controllers;
 
 use App\Api\Transformers\DishTransformer;
 use App\Dish;
+use App\Dishtype;
 use Cache;
 use Carbon\Carbon;
 use Searchy;
@@ -32,12 +33,22 @@ class SearchController extends BaseController
             Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->hour, Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->minute
             , Carbon::createFromFormat('H:i:s', Cache::get('晚餐'))->second);
         $timeNow = Carbon::now();
+
+        $mor = Dishtype::where('name', '早餐')->first();
+        $mor_id = $mor->id;
+        $non = Dishtype::where('name', '午餐')->first();
+        $non_id = $non->id;
+        $aft = Dishtype::where('name', '晚餐')->first();
+        $aft_id = $aft->id;
+        $non_aft = Dishtype::where('name', '午晚餐')->first();
+        $non_aft_id = $non_aft->id;
+        
         if ($timeNow <= $todayMorningTime || $timeNow >= $todayAfterTime) {
-            $dishes = Dish::where('dishtype_id', 1)->where('name', 'like', '%' . $keyword . '%')->get();
+            $dishes = Dish::where('dishtype_id', $mor_id)->where('name', 'like', '%' . $keyword . '%')->get();
         } elseif ($timeNow >= $todayMorningTime && $timeNow <= $todayNoonTime) {
-            $dishes = Dish::where('dishtype_id', 2)->orWhere('dishtype_id',4)->where('name', 'like', '%' . $keyword . '%')->get();
+            $dishes = Dish::where('dishtype_id', $non_id)->orWhere('dishtype_id',$non_aft_id)->where('name', 'like', '%' . $keyword . '%')->get();
         } elseif ($timeNow >= $todayNoonTime && $timeNow <= $todayAfterTime) {
-            $dishes = Dish::where('dishtype_id', 3)->orWhere('dishtype_id',4)->where('name', 'like', '%' . $keyword . '%')->get();
+            $dishes = Dish::where('dishtype_id', $aft_id)->orWhere('dishtype_id',$non_aft_id)->where('name', 'like', '%' . $keyword . '%')->get();
         }
         return $this->response->collection($dishes, new DishTransformer())->setStatusCode(200);
     }
