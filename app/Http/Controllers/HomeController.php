@@ -40,7 +40,7 @@ class HomeController extends Controller
     {
         $ordersToday = Order::where('created_at', '<=', Carbon::create(Carbon::today()->year, Carbon::today()->month, Carbon::today()->day,
             '18', '30', '00'))->where('created_at','>=',Carbon::create(Carbon::yesterday()->year, Carbon::yesterday()->month, Carbon::yesterday()->day,
-            '18', '30', '00'))->count();
+            '18', '30', '00'))->where('status', '已付款')->count();
         $ordersHistory = Order::count();
         $users = User::count() - 1;
         $comments = Comment::count();
